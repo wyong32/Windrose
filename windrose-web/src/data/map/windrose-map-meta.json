@@ -1,0 +1,10 @@
+{
+  "basemapPublicPath": "",
+  "basemapPixelWidth": null,
+  "basemapPixelHeight": null,
+  "basemapIsOgSocialCard": false,
+  "useRasterBasemap": false,
+  "leafletVirtualSize": 1000,
+  "leafletVirtualWidth": 1000,
+  "leafletVirtualHeight": 854
+}

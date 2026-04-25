@@ -1,0 +1,1893 @@
+/**
+ * Windrose 单图数据包（对齐 roadtovostok-web `src/data/map/maps/map01.js`）：
+ * - `mapCategories`：侧栏大类（`id` 1…n、`name`、`list`）；`list[]` 含数字 `id`、`category`（与 pins 的 `category` 对应）、`name`、`pinIcon`（无 `markerType` 时的图钉回退；着色见地图样式）
+ * - `pins`：扁平数组；每条写 `category`（与 `mapCategories[].list[].category` 一致）、`x`、`y` 等
+ * - default：Leaflet 用 imageUrl、terrain、pins、mapCategories…
+ *
+ * `windrose-map-meta.json`（仅本页会读的字段）：
+ * - basemapPublicPath：public 下栅格底图路径，空字符串表示不用图片底图
+ * - useRasterBasemap / basemapIsOgSocialCard：是否叠加栅格图
+ * - leafletVirtualWidth / leafletVirtualHeight：矢量模式 Leaflet 逻辑宽高（与岛屿绘制一致）
+ * - basemapPixel*：若用栅格图且需对齐像素时可填
+ *
+ * `windrose-terrain.json`：海面填充色与岛屿多边形（矢量底）。图钉为 `public/map-markers/` 下图片，见 `pinIcons.js` / `markerIconPaths.js`。
+ */
+import meta from './windrose-map-meta.json'
+import terrain from './windrose-terrain.json'
+
+export const mapCategories = [
+  {
+    id: 1,
+    name: 'Camps',
+    list: [
+      { id: 1, category: 'camps-brethren', name: 'Brethren Camp', pinIcon: 'brethrenIcon' },
+      { id: 2, category: 'camps-buccaneer', name: 'Buccaneer Camp', pinIcon: 'buccaneerIcon' },
+      { id: 3, category: 'camps-civilian', name: 'Civilian Camp', pinIcon: 'civilianIcon' },
+      { id: 4, category: 'camps-coastal', name: 'Coastal Camp', pinIcon: 'hideout' },
+      { id: 5, category: 'camps-farm', name: 'Farm', pinIcon: 'location' },
+      { id: 6, category: 'camps-hut', name: 'Hut', pinIcon: 'hideout' },
+      { id: 7, category: 'camps-outpost-a', name: 'Outpost (Type A)', pinIcon: 'locked_structure' },
+      { id: 8, category: 'camps-outpost-b', name: 'Outpost (Type B)', pinIcon: 'bolt' },
+      { id: 9, category: 'camps-smuggler-a', name: 'Smuggler Camp (Type A)', pinIcon: 'hideout' },
+      { id: 10, category: 'camps-smuggler-b', name: 'Smuggler Camp (Type B)', pinIcon: 'key' },
+      { id: 11, category: 'camps-tortuga', name: 'Tortuga', pinIcon: 'hideout' },
+    ],
+  },
+  {
+    id: 2,
+    name: 'Resources',
+    list: [{ id: 1, category: 'resources-mine', name: 'Mine', pinIcon: 'location' }],
+  },
+  {
+    id: 3,
+    name: 'Ruins & Corruption',
+    list: [
+      { id: 1, category: 'ruins-altar', name: 'Altar', pinIcon: 'key' },
+      { id: 2, category: 'ruins-ancient', name: 'Ancient Ruins', pinIcon: 'key' },
+      { id: 3, category: 'ruins-ancient-table', name: 'Ancient Table', pinIcon: 'key' },
+      { id: 4, category: 'ruins-corrupted', name: 'Corrupted Site', pinIcon: 'enemy_spawn' },
+      { id: 5, category: 'ruins-fire-sanctuary', name: 'Fire Sanctuary', pinIcon: 'fire_candle' },
+      { id: 6, category: 'ruins-panno', name: 'Panno Ruins', pinIcon: 'key' },
+      { id: 7, category: 'ruins-ruin', name: 'Ruin', pinIcon: 'key' },
+    ],
+  },
+  {
+    id: 4,
+    name: 'Wrecks',
+    list: [
+      { id: 1, category: 'wrecks-ship-battle', name: 'Ship Battle', pinIcon: 'fishing_spot' },
+      { id: 2, category: 'wrecks-shipwreck', name: 'Shipwreck', pinIcon: 'fishing_spot' },
+    ],
+  },
+  {
+    id: 5,
+    name: 'Exploration',
+    list: [
+      { id: 1, category: 'explore-ancient-pool', name: 'Ancient Pool', pinIcon: 'location' },
+      { id: 2, category: 'explore-boss-arena', name: 'Boss Arena', pinIcon: 'radio' },
+      { id: 3, category: 'explore-cave', name: 'Cave', pinIcon: 'locked_structure' },
+      { id: 4, category: 'explore-dungeon-a', name: 'Dungeon (Type A)', pinIcon: 'radio' },
+      { id: 5, category: 'explore-dungeon-b', name: 'Dungeon (Type B)', pinIcon: 'radio' },
+      { id: 6, category: 'explore-mystery', name: 'Mystery', pinIcon: 'tasks' },
+      { id: 7, category: 'explore-stargazer', name: 'Stargazer Tower', pinIcon: 'radio' },
+      { id: 8, category: 'explore-start', name: 'Start Location', pinIcon: 'location' },
+    ],
+  },
+  {
+    id: 6,
+    name: 'Quests',
+    list: [
+      { id: 1, category: 'quests-main', name: 'Main Quest', pinIcon: 'tasks' },
+      { id: 2, category: 'quests-side', name: 'Side Quest', pinIcon: 'tasks' },
+      { id: 3, category: 'quests-treasure', name: 'Treasure Map', pinIcon: 'tasks' },
+    ],
+  },
+]
+
+/** 标点（与 roadtovostok `map01.js`：mapCategories 后是 pins[]） */
+const pins = [
+  {
+    "id": "camps-01",
+    "title": "Brethren of the Coast Main Base",
+    "category": "camps-brethren",
+    "x": 0.6335570035057234,
+    "y": 0.5317488363182099,
+    "content": "<p>No loot present.</p>",
+    "markerType": "T_MapIcon_Brethren"
+  },
+  {
+    "id": "camps-02",
+    "title": "Rogue Buccaneers Main base",
+    "category": "camps-buccaneer",
+    "x": 0.7938021648931631,
+    "y": 0.6902703111495907,
+    "content": "<p>No loot present.</p>",
+    "markerType": "T_MapIcon_Buccaneers"
+  },
+  {
+    "id": "camps-03",
+    "title": "People of Tortuga Main base",
+    "category": "camps-civilian",
+    "x": 0.2830887727135006,
+    "y": 0.6497407523096942,
+    "content": "<p>No loot present.</p>",
+    "markerType": "T_MapIcon_Civilians"
+  },
+  {
+    "id": "wr-439961-1-0",
+    "title": "Tortuga",
+    "category": "camps-tortuga",
+    "markerType": "Tortuga",
+    "x": 0.4588820055044266,
+    "y": 0.6425511478203272,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Tortuga.MapMarker</code></p>"
+  },
+  {
+    "id": "wr-439961-1-0-quest-DA_QP_MainQuest_Seafarer_Core",
+    "title": "How My Sea Adventure Began",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.4588820055044266,
+    "y": 0.6425511478203272,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Tortuga.Zone</code></p>"
+  },
+  {
+    "id": "wr-439961-2-0",
+    "title": "Ancient Sanctuary",
+    "category": "explore-boss-arena",
+    "markerType": "T_IconPOI_BossArena",
+    "x": 0.02439339862261245,
+    "y": 0.48025168919106953,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.BossArena.01</code></p>"
+  },
+  {
+    "id": "wr-439961-4-0",
+    "title": "Ancient Temple",
+    "category": "explore-boss-arena",
+    "markerType": "T_IconPOI_BossArena",
+    "x": 0.6079097018424096,
+    "y": 0.112850250958088,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.BossArena.01</code></p>"
+  },
+  {
+    "id": "wr-439961-4-1",
+    "title": "Trial Circle Ruins",
+    "category": "explore-dungeon-a",
+    "markerType": "T_MapIcon_Dungeon_04",
+    "x": 0.6113480399713183,
+    "y": 0.12090132407189445,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.01</code></p>"
+  },
+  {
+    "id": "wr-439961-4-2",
+    "title": "Trial Circle Ruins",
+    "category": "explore-dungeon-a",
+    "markerType": "T_MapIcon_Dungeon_04",
+    "x": 0.604471363713501,
+    "y": 0.12090132407189445,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.03</code></p>"
+  },
+  {
+    "id": "wr-439961-4-3",
+    "title": "Ancient Farm",
+    "category": "camps-farm",
+    "markerType": "T_IconPOI_Farm",
+    "x": 0.599313856520138,
+    "y": 0.12693962890724927,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Farm.01</code></p>"
+  },
+  {
+    "id": "wr-439961-5-0",
+    "title": "Blackbeard Crew’s Sixth Map",
+    "category": "quests-treasure",
+    "markerType": "T_IconPOI_Quest",
+    "x": 0.9177457311063771,
+    "y": 0.8138653926349878,
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.06.Marker</code></p>"
+  },
+  {
+    "id": "wr-439961-7-0-quest-DA_QP_MainQuest_Seafarer_Core",
+    "title": "How My Sea Adventure Began",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.2830887727135006,
+    "y": 0.6497407523096942,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.TradingPosts.ResidentsOfTortuga</code></p>"
+  },
+  {
+    "id": "wr-439961-10-0",
+    "title": "Start Location",
+    "category": "explore-start",
+    "markerType": "StartLocation",
+    "x": 0.9743211580508535,
+    "y": 0.7814114662297393,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Volume.CJ.StartingPOI</code></p>"
+  },
+  {
+    "id": "wr-439961-10-1",
+    "title": "Copper Deposit",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.96732527524864,
+    "y": 0.7666708516239322,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.09</code></p>"
+  },
+  {
+    "id": "wr-439961-10-1-quest-DA_QP_MainQuest_Islander_Core",
+    "title": "How My Shore Adventure Began",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.96732527524864,
+    "y": 0.7666708516239322,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.Onboarding</code></p>"
+  },
+  {
+    "id": "wr-439961-10-2",
+    "title": "traveler's Camp",
+    "category": "camps-smuggler-a",
+    "markerType": "T_IconPOI_Camp_Smuggler",
+    "x": 0.9560077894083849,
+    "y": 0.7775234213227541,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.01</code></p>"
+  },
+  {
+    "id": "wr-439961-10-3",
+    "title": "Ancient Ruins",
+    "category": "ruins-ancient",
+    "markerType": "T_MapIcon_Ruins_02",
+    "x": 0.9710977701679718,
+    "y": 0.7579887962450009,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.Easy.01</code></p>"
+  },
+  {
+    "id": "wr-439961-10-4",
+    "title": "Ancient Ruins",
+    "category": "ruins-ancient",
+    "markerType": "T_MapIcon_Ruins_02",
+    "x": 0.9596605231253758,
+    "y": 0.7631222340801398,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.02</code></p>"
+  },
+  {
+    "id": "wr-439961-10-5",
+    "title": "Pirate Remains",
+    "category": "explore-mystery",
+    "markerType": "T_IconPOI_Mystery",
+    "x": 0.9787934808626388,
+    "y": 0.7709511050518205,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.DeadmanChest.02</code></p>"
+  },
+  {
+    "id": "wr-439961-11-0",
+    "title": "Jungle Cave",
+    "category": "explore-cave",
+    "markerType": "T_IconPOI_Cave",
+    "x": 0.8735509664679569,
+    "y": 0.7084066698422115,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Cave.01</code></p>"
+  },
+  {
+    "id": "wr-439961-11-1",
+    "title": "Copper Deposit",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.8987699796646001,
+    "y": 0.6861219285720717,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.01</code></p>"
+  },
+  {
+    "id": "wr-439961-11-2",
+    "title": "Destroyed Buccaneer Fort",
+    "category": "ruins-ruin",
+    "markerType": "T_IconPOI_Ruin",
+    "x": 0.8814319080242669,
+    "y": 0.6824078047102765,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Buccaneer.Defence_01</code></p>"
+  },
+  {
+    "id": "wr-439961-11-2-quest-DA_QP_SideQuest_HuntingForAHunter_Core",
+    "title": "Glorious Hunters",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.8814319080242669,
+    "y": 0.6824078047102765,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.HuntingForAHunter.PartOfWeapon.02</code></p>"
+  },
+  {
+    "id": "wr-439961-11-3",
+    "title": "Abandoned Buccaneer Camp",
+    "category": "ruins-ruin",
+    "markerType": "T_IconPOI_Ruin",
+    "x": 0.8893128501217064,
+    "y": 0.6861219285720717,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Buccaneer.Habbitable_01</code></p>"
+  },
+  {
+    "id": "wr-439961-11-3-quest-DA_QP_SideQuest_HuntingForAHunter_Core",
+    "title": "Glorious Hunters",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.8893128501217064,
+    "y": 0.6861219285720717,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.HuntingForAHunter.PartOfWeapon.03</code></p>"
+  },
+  {
+    "id": "wr-439961-11-4",
+    "title": "Abandoned Buccaneer Warehouse",
+    "category": "ruins-ruin",
+    "markerType": "T_IconPOI_Ruin",
+    "x": 0.8924652266360041,
+    "y": 0.6898360518003233,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Buccaneer.Storage_01</code></p>"
+  },
+  {
+    "id": "wr-439961-11-4-quest-DA_QP_SideQuest_HuntingForAHunter_Core",
+    "title": "Glorious Hunters",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.8924652266360041,
+    "y": 0.6898360518003233,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.HuntingForAHunter.PartOfWeapon.01</code></p>"
+  },
+  {
+    "id": "wr-439961-11-5",
+    "title": "Blackbeard Pirate Camp",
+    "category": "camps-coastal",
+    "markerType": "T_IconPOI_CoastalCamp",
+    "x": 0.8924652266360041,
+    "y": 0.7158349169322581,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PirateBeachCampPrison.01</code></p>"
+  },
+  {
+    "id": "wr-439961-11-5-quest-DA_QP_MainQuest_RescueOfProsoners_Core",
+    "title": "Rescuing the Crew",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.8924652266360041,
+    "y": 0.7158349169322581,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.RescueOfProsoners.POI.01</code></p>"
+  },
+  {
+    "id": "wr-439961-11-6",
+    "title": "Shipwreck",
+    "category": "wrecks-shipwreck",
+    "markerType": "T_IconPOI_Shipwreck",
+    "x": 0.8925152643584534,
+    "y": 0.708996213282169,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BiggerBoat.02</code></p>"
+  },
+  {
+    "id": "wr-439961-11-6-quest-DA_QP_MainQuest_INeedBiggerBoat_Core",
+    "title": "I Need a Bigger Boat",
+    "category": "wrecks-shipwreck",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.8925152643584534,
+    "y": 0.708996213282169,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.ShipRepair.02</code></p>"
+  },
+  {
+    "id": "wr-439961-11-7",
+    "title": "Shipwreck",
+    "category": "wrecks-shipwreck",
+    "markerType": "T_IconPOI_Shipwreck",
+    "x": 0.8814319080242669,
+    "y": 0.7121207937040066,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BiggerBoat.03</code></p>"
+  },
+  {
+    "id": "wr-439961-11-7-quest-DA_QP_MainQuest_INeedBiggerBoat_Core",
+    "title": "I Need a Bigger Boat",
+    "category": "wrecks-shipwreck",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.8814319080242669,
+    "y": 0.7121207937040066,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.ShipRepair.03</code></p>"
+  },
+  {
+    "id": "wr-439961-11-8",
+    "title": "POI_SeaAdventure_ShipBattle_KetchForDestroy",
+    "category": "wrecks-ship-battle",
+    "markerType": "POI_SeaAdventure_ShipBattle_KetchForDestroy",
+    "x": 0.9098032982763377,
+    "y": 0.7139778553181324,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.BrethrenBonnetSidequest</code></p>"
+  },
+  {
+    "id": "wr-439961-12-0",
+    "title": "Copper Deposit",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.9887151356227232,
+    "y": 0.67721938732085,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.05</code></p>"
+  },
+  {
+    "id": "wr-439961-12-1",
+    "title": "Trial Circle Ruins",
+    "category": "explore-dungeon-a",
+    "markerType": "T_MapIcon_Dungeon_04",
+    "x": 0.9814268155067507,
+    "y": 0.6724802043527078,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Dungeon.01</code></p>"
+  },
+  {
+    "id": "wr-439961-12-2",
+    "title": "Blackbeard Pirate Camp",
+    "category": "camps-coastal",
+    "markerType": "T_IconPOI_CoastalCamp",
+    "x": 0.9850709755647369,
+    "y": 0.6630018390499672,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PirateBeachCampPrison.02</code></p>"
+  },
+  {
+    "id": "wr-439961-12-2-quest-DA_QP_MainQuest_RescueOfProsoners_Core",
+    "title": "Rescuing the Crew",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.9850709755647369,
+    "y": 0.6630018390499672,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.RescueOfProsoners.POI.02.01</code></p>"
+  },
+  {
+    "id": "wr-439961-12-3",
+    "title": "Blackbeard Pirate Camp",
+    "category": "camps-coastal",
+    "markerType": "T_IconPOI_CoastalCamp",
+    "x": 0.9887151356227232,
+    "y": 0.6866977526235905,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PirateBeachCampPrison.03</code></p>"
+  },
+  {
+    "id": "wr-439961-12-3-quest-DA_QP_MainQuest_RescueOfProsoners_Core",
+    "title": "Rescuing the Crew",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.9887151356227232,
+    "y": 0.6866977526235905,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.RescueOfProsoners.POI.03.01</code></p>"
+  },
+  {
+    "id": "wr-439961-12-4",
+    "title": "Blackbeard Pirate Camp",
+    "category": "camps-coastal",
+    "markerType": "T_IconPOI_CoastalCamp",
+    "x": 0.9704943358739216,
+    "y": 0.6582626567153689,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PirateBeachCampPrison.04</code></p>"
+  },
+  {
+    "id": "wr-439961-12-4-quest-DA_QP_MainQuest_RescueOfProsoners_Core",
+    "title": "Rescuing the Crew",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.9704943358739216,
+    "y": 0.6582626567153689,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.RescueOfProsoners.POI.04.01</code></p>"
+  },
+  {
+    "id": "wr-439961-12-5",
+    "title": "Smuggler's Cache",
+    "category": "camps-coastal",
+    "markerType": "T_IconPOI_CoastalCamp",
+    "x": 0.9741384959319079,
+    "y": 0.6630018390499672,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Smuggler.01</code></p>"
+  },
+  {
+    "id": "wr-439961-12-6",
+    "title": "POI_SeaAdventure_ShipBattle_BB_01",
+    "category": "wrecks-ship-battle",
+    "markerType": "POI_SeaAdventure_ShipBattle_BB_01",
+    "x": 0.9577397756709699,
+    "y": 0.6938065264422599,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.Hunter3Sidequest</code></p>"
+  },
+  {
+    "id": "wr-439961-13-0",
+    "title": "Copper Deposit",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.8522110967380389,
+    "y": 0.5332218919014863,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.07</code></p>"
+  },
+  {
+    "id": "wr-439961-13-1",
+    "title": "Blackbeard Pirate Camp",
+    "category": "explore-boss-arena",
+    "markerType": "T_IconPOI_BossArena",
+    "x": 0.8503135026002085,
+    "y": 0.5271123134018804,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BoatswainBossArena.Point</code></p>"
+  },
+  {
+    "id": "wr-439961-13-1-quest-DA_QP_MainQuest_Revenge_Core",
+    "title": "Revenge Is Best Served Cold",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.8503135026002085,
+    "y": 0.5271123134018804,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BoatswainBossArena.Point</code></p>"
+  },
+  {
+    "id": "wr-439961-13-1-quest-DA_QP_SideQuest_AboutDoctorsAndSecretsQuest_Core",
+    "title": "The Bitter Pill",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.8503135026002085,
+    "y": 0.5271123134018804,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BoatswainBossArena.Zone</code></p>"
+  },
+  {
+    "id": "wr-439961-13-2",
+    "title": "Ancient Ruins",
+    "category": "ruins-ancient",
+    "markerType": "T_MapIcon_Ruins_02",
+    "x": 0.8598014738304895,
+    "y": 0.5128566302361331,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.01</code></p>"
+  },
+  {
+    "id": "wr-439961-13-3",
+    "title": "Ancient Ruins",
+    "category": "ruins-ancient",
+    "markerType": "T_MapIcon_Ruins_02",
+    "x": 0.8522110967380389,
+    "y": 0.5128566302361331,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.03</code></p>"
+  },
+  {
+    "id": "wr-439961-13-4",
+    "title": "Smuggler's Cache",
+    "category": "camps-coastal",
+    "markerType": "T_IconPOI_CoastalCamp",
+    "x": 0.8635966626472796,
+    "y": 0.5413679965676276,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Smuggler.02</code></p>"
+  },
+  {
+    "id": "wr-439961-13-5",
+    "title": "Blackbeard Pirate Camp",
+    "category": "camps-coastal",
+    "markerType": "T_IconPOI_CoastalCamp",
+    "x": 0.8598014738304895,
+    "y": 0.5250757872353451,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PiratesBeachCamp.01</code></p>"
+  },
+  {
+    "id": "wr-439961-14-0",
+    "title": "Copper Deposit",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.7378611389310852,
+    "y": 0.8460983193640194,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.04</code></p>"
+  },
+  {
+    "id": "wr-439961-14-1",
+    "title": "Blackbeard Outpost in Ancient Ruins",
+    "category": "ruins-ruin",
+    "markerType": "T_IconPOI_Ruin",
+    "x": 0.7430186461244481,
+    "y": 0.8400600145286645,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.01</code></p>"
+  },
+  {
+    "id": "wr-439961-14-1-quest-DA_QP_MainQuest_Revenge_Core",
+    "title": "Revenge Is Best Served Cold",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.7430186461244481,
+    "y": 0.8400600145286645,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.01</code></p>"
+  },
+  {
+    "id": "wr-439961-14-2",
+    "title": "traveler's Camp",
+    "category": "camps-smuggler-a",
+    "markerType": "T_IconPOI_Camp_Smuggler",
+    "x": 0.7309844626732679,
+    "y": 0.8219451000226,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.02</code></p>"
+  },
+  {
+    "id": "wr-439961-14-3",
+    "title": "POI_SeaAdventure_ShipBattle_BB_07",
+    "category": "wrecks-ship-battle",
+    "markerType": "POI_SeaAdventure_ShipBattle_BB_07",
+    "x": 0.7602103367689913,
+    "y": 0.811881258630342,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.GalenSidequest</code></p>"
+  },
+  {
+    "id": "wr-439961-15-0",
+    "title": "Ancient Ruins",
+    "category": "ruins-ancient",
+    "markerType": "T_MapIcon_Ruins_02",
+    "x": 0.824166554778631,
+    "y": 0.6367163011037155,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.05</code></p>"
+  },
+  {
+    "id": "wr-439961-15-1",
+    "title": "Blackbeard Pirate Camp",
+    "category": "camps-coastal",
+    "markerType": "T_IconPOI_CoastalCamp",
+    "x": 0.8367983770247489,
+    "y": 0.6194623724618045,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PiratesBeachCamp.02</code></p>"
+  },
+  {
+    "id": "wr-439961-15-2",
+    "title": "Blackbeard Camp Near Shipwreck",
+    "category": "camps-outpost-b",
+    "markerType": "T_IconPOI_Camp_Smuggler",
+    "x": 0.8410089846204981,
+    "y": 0.6453432654246709,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.02</code></p>"
+  },
+  {
+    "id": "wr-439961-15-2-quest-DA_QP_MainQuest_Revenge_Core",
+    "title": "Revenge Is Best Served Cold",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.8410089846204981,
+    "y": 0.6453432654246709,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.02</code></p>"
+  },
+  {
+    "id": "wr-439961-15-3",
+    "title": "POI_SeaAdventure_ShipBattle_BB_03",
+    "category": "wrecks-ship-battle",
+    "markerType": "POI_SeaAdventure_ShipBattle_BB_03",
+    "x": 0.8094294284640736,
+    "y": 0.5993327890462417,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.Hunter1Sidequest</code></p>"
+  },
+  {
+    "id": "wr-439961-16-0-quest-DA_QP_MainQuest_Seafarer_Core",
+    "title": "How My Sea Adventure Began",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.7938021648931631,
+    "y": 0.6902703111495907,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.TradingPosts.Buccaneers</code></p>"
+  },
+  {
+    "id": "wr-439961-19-0",
+    "title": "Undead-Infested Shipwrecks",
+    "category": "wrecks-shipwreck",
+    "markerType": "T_IconPOI_Shipwreck",
+    "x": 0.8120827573095586,
+    "y": 0.9210512150586349,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BattleShipwrecks.01</code></p>"
+  },
+  {
+    "id": "wr-439961-19-1",
+    "title": "Copper Deposit",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.7892764590951084,
+    "y": 0.9023604093454214,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.06</code></p>"
+  },
+  {
+    "id": "wr-439961-19-2",
+    "title": "Trial Circle Ruins",
+    "category": "explore-dungeon-a",
+    "markerType": "T_MapIcon_Dungeon_04",
+    "x": 0.7938377187379984,
+    "y": 0.8982068969647072,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Dungeon.07</code></p>"
+  },
+  {
+    "id": "wr-439961-19-3",
+    "title": "Ancient Grave",
+    "category": "explore-mystery",
+    "markerType": "T_IconPOI_Mystery",
+    "x": 0.803829049358561,
+    "y": 0.8986683986923109,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Grave.01</code></p>"
+  },
+  {
+    "id": "wr-439961-19-4",
+    "title": "Ancient Ruins",
+    "category": "ruins-ancient",
+    "markerType": "T_MapIcon_Ruins_02",
+    "x": 0.7915570891871182,
+    "y": 0.9106674341068496,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.04</code></p>"
+  },
+  {
+    "id": "wr-439961-20-0",
+    "title": "traveler's Camp",
+    "category": "camps-smuggler-a",
+    "markerType": "T_IconPOI_Camp_Smuggler",
+    "x": 0.32033655427639224,
+    "y": 0.22097390619391252,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.04</code></p>"
+  },
+  {
+    "id": "wr-439961-20-1",
+    "title": "POI_SeaAdventure_Ship_PrancingPony",
+    "category": "wrecks-ship-battle",
+    "markerType": "POI_SeaAdventure_Ship_PrancingPony",
+    "x": 0.2794454054105283,
+    "y": 0.24428081697766454,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.PrancingSidequest</code></p>"
+  },
+  {
+    "id": "wr-439961-20-2",
+    "title": "Ancient Debris Site",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.3124951725481045,
+    "y": 0.21373292447963477,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.BigMetal.01</code></p>"
+  },
+  {
+    "id": "wr-439961-20-3",
+    "title": "Ruin with a Flowerbed",
+    "category": "camps-farm",
+    "markerType": "T_IconPOI_Farm",
+    "x": 0.3124951725481045,
+    "y": 0.1974407151473522,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.GardenRuin.01</code></p>"
+  },
+  {
+    "id": "wr-439961-20-4",
+    "title": "Ruin with a Flowerbed",
+    "category": "camps-farm",
+    "markerType": "T_IconPOI_Farm",
+    "x": 0.3159740954046915,
+    "y": 0.20151376748042285,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.GardenRuin.02</code></p>"
+  },
+  {
+    "id": "wr-439961-20-5",
+    "title": "Ruin with a Flowerbed",
+    "category": "camps-farm",
+    "markerType": "T_IconPOI_Farm",
+    "x": 0.30901624969151753,
+    "y": 0.20151376748042285,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.GardenRuin.03</code></p>"
+  },
+  {
+    "id": "wr-439961-20-6",
+    "title": "Priestess's Chambers",
+    "category": "ruins-ancient",
+    "markerType": "T_MapIcon_Ruins_02",
+    "x": 0.29857948112175664,
+    "y": 0.21373292447963477,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PriestessHut</code></p>"
+  },
+  {
+    "id": "wr-439961-20-6-quest-DA_QP_MainQuest_ForgottenRelic_Core",
+    "title": "Forgotten Relics",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.29857948112175664,
+    "y": 0.21373292447963477,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PriestessHut</code></p>"
+  },
+  {
+    "id": "wr-439961-20-7",
+    "title": "Sacrificial Altar",
+    "category": "explore-ancient-pool",
+    "markerType": "T_MapIcon_Pool",
+    "x": 0.3020584039783436,
+    "y": 0.2178059768127054,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.01</code></p>"
+  },
+  {
+    "id": "wr-439961-20-7-quest-DA_QP_SideQuest_JokesOfTheGods_Core",
+    "title": "Jokes of the Gods",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.3020584039783436,
+    "y": 0.2178059768127054,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.01</code></p>"
+  },
+  {
+    "id": "wr-439961-20-8",
+    "title": "Sacrificial Altar",
+    "category": "explore-ancient-pool",
+    "markerType": "T_MapIcon_Pool",
+    "x": 0.29880036485497025,
+    "y": 0.20843149113336581,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.02</code></p>"
+  },
+  {
+    "id": "wr-439961-20-8-quest-DA_QP_SideQuest_JokesOfTheGods_Core",
+    "title": "Jokes of the Gods",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.29880036485497025,
+    "y": 0.20843149113336581,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.02</code></p>"
+  },
+  {
+    "id": "wr-439961-20-9",
+    "title": "Sacrificial Altar",
+    "category": "explore-ancient-pool",
+    "markerType": "T_MapIcon_Pool",
+    "x": 0.2951005582651697,
+    "y": 0.2178059768127054,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.03</code></p>"
+  },
+  {
+    "id": "wr-439961-20-9-quest-DA_QP_SideQuest_JokesOfTheGods_Core",
+    "title": "Jokes of the Gods",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.2951005582651697,
+    "y": 0.2178059768127054,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.03</code></p>"
+  },
+  {
+    "id": "wr-439961-21-0",
+    "title": "traveler's Camp",
+    "category": "camps-smuggler-a",
+    "markerType": "T_IconPOI_Camp_Smuggler",
+    "x": 0.16055674765797673,
+    "y": 0.546003927754158,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.05</code></p>"
+  },
+  {
+    "id": "wr-439961-21-1",
+    "title": "Ancient Ruins",
+    "category": "ruins-ancient-table",
+    "markerType": "T_MapIcon_Table",
+    "x": 0.17661331431374985,
+    "y": 0.5309649653910576,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.01</code></p>"
+  },
+  {
+    "id": "wr-439961-21-1-quest-DA_QP_MainQuest_ForgottenRelic_Core",
+    "title": "Forgotten Relics",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.17661331431374985,
+    "y": 0.5309649653910576,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.01</code></p>"
+  },
+  {
+    "id": "wr-439961-21-2",
+    "title": "Ancient Ruins",
+    "category": "ruins-ancient-table",
+    "markerType": "T_MapIcon_Table",
+    "x": 0.17661331431374985,
+    "y": 0.5347247062986046,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.04</code></p>"
+  },
+  {
+    "id": "wr-439961-21-2-quest-DA_QP_MainQuest_ForgottenRelic_Core",
+    "title": "Forgotten Relics",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.17661331431374985,
+    "y": 0.5347247062986046,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.04</code></p>"
+  },
+  {
+    "id": "wr-439961-21-3",
+    "title": "Ancient Debris Site",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.18785291156803374,
+    "y": 0.5648026310248051,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.BigMetal.02</code></p>"
+  },
+  {
+    "id": "wr-439961-21-4",
+    "title": "Ancient Debris Site",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.16537371760059572,
+    "y": 0.5591630202970285,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.BigMetal.03</code></p>"
+  },
+  {
+    "id": "wr-439961-21-5",
+    "title": "Tainted Ruins",
+    "category": "ruins-corrupted",
+    "markerType": "T_MapIcon_Corrupted",
+    "x": 0.1798246279695823,
+    "y": 0.5554032793894815,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.02</code></p>"
+  },
+  {
+    "id": "wr-439961-21-5-quest-DA_QP_MainQuest_ForgottenRelic_Core",
+    "title": "Forgotten Relics",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.1798246279695823,
+    "y": 0.5554032793894815,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.02</code></p>"
+  },
+  {
+    "id": "wr-439961-21-6",
+    "title": "Tainted Ruins",
+    "category": "ruins-corrupted",
+    "markerType": "T_MapIcon_Corrupted",
+    "x": 0.1798501146374346,
+    "y": 0.561162247212816,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.03</code></p>"
+  },
+  {
+    "id": "wr-439961-21-6-quest-DA_QP_MainQuest_ForgottenRelic_Core",
+    "title": "Forgotten Relics",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.1798501146374346,
+    "y": 0.561162247212816,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.03</code></p>"
+  },
+  {
+    "id": "wr-439961-24-0",
+    "title": "Copper Deposit",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.7872066471827182,
+    "y": 0.5142823702430457,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.03</code></p>"
+  },
+  {
+    "id": "wr-439961-24-1",
+    "title": "Inhabited Ruin",
+    "category": "ruins-ancient",
+    "markerType": "T_MapIcon_Ruins_02",
+    "x": 0.7687852392895214,
+    "y": 0.509968888082568,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.HabbitableRuinQuest</code></p>"
+  },
+  {
+    "id": "wr-439961-24-1-quest-DA_QP_SideQuest_FearHasBigEyes_Core",
+    "title": "Eyes Wide with Fear",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.7687852392895214,
+    "y": 0.509968888082568,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.HabbitableRuinQuest</code></p>"
+  },
+  {
+    "id": "wr-439961-24-2",
+    "title": "Old Cabin",
+    "category": "camps-hut",
+    "markerType": "T_MapIcon_Hut_02",
+    "x": 0.7872066471827182,
+    "y": 0.5056554059220902,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.HutQuest</code></p>"
+  },
+  {
+    "id": "wr-439961-24-2-quest-DA_QP_SideQuest_FearHasBigEyes_Core",
+    "title": "Eyes Wide with Fear",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.7872066471827182,
+    "y": 0.5056554059220902,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.HutQuest</code></p>"
+  },
+  {
+    "id": "wr-439961-24-3",
+    "title": "Shipwreck Site",
+    "category": "wrecks-shipwreck",
+    "markerType": "T_IconPOI_Shipwreck",
+    "x": 0.7706273800788411,
+    "y": 0.49918518268137363,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.WreckQuest</code></p>"
+  },
+  {
+    "id": "wr-439961-24-3-quest-DA_QP_SideQuest_FearHasBigEyes_Core",
+    "title": "Eyes Wide with Fear",
+    "category": "wrecks-shipwreck",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.7706273800788411,
+    "y": 0.49918518268137363,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.WreckQuest</code></p>"
+  },
+  {
+    "id": "wr-439961-25-0",
+    "title": "Ancient Altar",
+    "category": "ruins-altar",
+    "markerType": "T_MapIcon_Altar_02",
+    "x": 0.18550633129354657,
+    "y": 0.38636076446692874,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Altar.02</code></p>"
+  },
+  {
+    "id": "wr-439961-25-1",
+    "title": "Ancient Altar",
+    "category": "ruins-altar",
+    "markerType": "T_MapIcon_Altar_02",
+    "x": 0.1879530459960696,
+    "y": 0.40447316570520575,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Altar.03</code></p>"
+  },
+  {
+    "id": "wr-439961-25-2",
+    "title": "Ancient Altar",
+    "category": "ruins-altar",
+    "markerType": "T_MapIcon_Altar_02",
+    "x": 0.1885137516065607,
+    "y": 0.3948052612384208,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Altar.04</code></p>"
+  },
+  {
+    "id": "wr-439961-25-3",
+    "title": "Ancient Altar",
+    "category": "ruins-altar",
+    "markerType": "T_MapIcon_Altar_02",
+    "x": 0.20637986843306835,
+    "y": 0.38636076446692874,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Altar.05</code></p>"
+  },
+  {
+    "id": "wr-439961-25-4",
+    "title": "Ancient Altar",
+    "category": "ruins-altar",
+    "markerType": "T_MapIcon_Altar_02",
+    "x": 0.20637986843306835,
+    "y": 0.40327959728380236,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Altar.06</code></p>"
+  },
+  {
+    "id": "wr-439961-25-5",
+    "title": "Ancient Debris Site",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.20477421160515213,
+    "y": 0.4107990784653525,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.BigMetal.04</code></p>"
+  },
+  {
+    "id": "wr-439961-25-6",
+    "title": "Crypt",
+    "category": "explore-dungeon-b",
+    "markerType": "T_MapIcon_Dungeon_03",
+    "x": 0.1951402711787845,
+    "y": 0.4107990784653525,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Crypt.01</code></p>"
+  },
+  {
+    "id": "wr-439961-26-0",
+    "title": "Frescoed Ruins",
+    "category": "ruins-panno",
+    "markerType": "T_MapIcon_PannoRuins",
+    "x": 0.1025915822126487,
+    "y": 0.4132123128730615,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.01</code></p>"
+  },
+  {
+    "id": "wr-439961-26-0-quest-DA_QP_MainQuest_ForgottenRelic_Core",
+    "title": "Forgotten Relics",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.1025915822126487,
+    "y": 0.4132123128730615,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.01</code></p>"
+  },
+  {
+    "id": "wr-439961-26-1",
+    "title": "Frescoed Ruins",
+    "category": "ruins-panno",
+    "markerType": "T_MapIcon_PannoRuins",
+    "x": 0.1025915822126487,
+    "y": 0.40945257196551454,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.02</code></p>"
+  },
+  {
+    "id": "wr-439961-26-1-quest-DA_QP_MainQuest_ForgottenRelic_Core",
+    "title": "Forgotten Relics",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.1025915822126487,
+    "y": 0.40945257196551454,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.02</code></p>"
+  },
+  {
+    "id": "wr-439961-26-2",
+    "title": "Frescoed Ruins",
+    "category": "ruins-panno",
+    "markerType": "T_MapIcon_PannoRuins",
+    "x": 0.08492935872895938,
+    "y": 0.3944136096024143,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.03</code></p>"
+  },
+  {
+    "id": "wr-439961-26-2-quest-DA_QP_MainQuest_ForgottenRelic_Core",
+    "title": "Forgotten Relics",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.08492935872895938,
+    "y": 0.3944136096024143,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.03</code></p>"
+  },
+  {
+    "id": "wr-439961-26-3",
+    "title": "Ruin with a Flowerbed",
+    "category": "camps-farm",
+    "markerType": "T_IconPOI_Farm",
+    "x": 0.10580289586848118,
+    "y": 0.39253373978218453,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.GardenRuin.Medium.01</code></p>"
+  },
+  {
+    "id": "wr-439961-26-4",
+    "title": "Stargazer tower",
+    "category": "explore-stargazer",
+    "markerType": "T_MapIcon_StargazerTower",
+    "x": 0.09456329915532702,
+    "y": 0.41133244241928796,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.01</code></p>"
+  },
+  {
+    "id": "wr-439961-26-4-quest-DA_QP_SideQuest_FaitOfTheProphet_Core",
+    "title": "Fate of the Prophets",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.09456329915532702,
+    "y": 0.41133244241928796,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.01</code></p>"
+  },
+  {
+    "id": "wr-439961-26-5",
+    "title": "Stargazer tower",
+    "category": "explore-stargazer",
+    "markerType": "T_MapIcon_StargazerTower",
+    "x": 0.11061986581110017,
+    "y": 0.3887739988746377,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.02</code></p>"
+  },
+  {
+    "id": "wr-439961-26-5-quest-DA_QP_SideQuest_FaitOfTheProphet_Core",
+    "title": "Fate of the Prophets",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.11061986581110017,
+    "y": 0.3887739988746377,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.02</code></p>"
+  },
+  {
+    "id": "wr-439961-26-6",
+    "title": "Stargazer tower",
+    "category": "explore-stargazer",
+    "markerType": "T_MapIcon_StargazerTower",
+    "x": 0.1090142095243136,
+    "y": 0.4207317940546116,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.03</code></p>"
+  },
+  {
+    "id": "wr-439961-26-6-quest-DA_QP_SideQuest_FaitOfTheProphet_Core",
+    "title": "Fate of the Prophets",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.1090142095243136,
+    "y": 0.4207317940546116,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.03</code></p>"
+  },
+  {
+    "id": "wr-439961-27-0",
+    "title": "POI_SeaAdventure_ShipBattle_Bonnet",
+    "category": "wrecks-ship-battle",
+    "markerType": "POI_SeaAdventure_ShipBattle_Bonnet",
+    "x": 0.30473312530435265,
+    "y": 0.3476390561020968,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.BrethrenBonnetSidequest</code></p>"
+  },
+  {
+    "id": "wr-439961-29-0",
+    "title": "Very Old Shipwreck",
+    "category": "wrecks-shipwreck",
+    "markerType": "T_IconPOI_Shipwreck",
+    "x": 0.15068601428514558,
+    "y": 0.35029873710156306,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.SecretOfTheExpedition.Ship.Skeleton</code></p>"
+  },
+  {
+    "id": "wr-439961-29-0-quest-DA_QP_SideQuest_SecretOfTheExpedition_Core",
+    "title": "Mystery of the Expedition",
+    "category": "wrecks-shipwreck",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.15068601428514558,
+    "y": 0.35029873710156306,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.SecretOfTheExpedition.Ship.Skeleton</code></p>"
+  },
+  {
+    "id": "wr-439961-30-0",
+    "title": "Blackbeard Ruins Excavation Site",
+    "category": "camps-outpost-b",
+    "markerType": "T_MapIcon_Outpost_02",
+    "x": 0.6028037464524031,
+    "y": 0.31653458344189606,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.BigRuins.01</code></p>"
+  },
+  {
+    "id": "wr-439961-30-1",
+    "title": "Ancient Farm",
+    "category": "ruins-ancient",
+    "markerType": "T_MapIcon_Ruins_02",
+    "x": 0.6158999510574701,
+    "y": 0.3203677761368736,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.FarmSacrifice.01</code></p>"
+  },
+  {
+    "id": "wr-439961-30-1-quest-DA_QP_SideQuest_SacrificialLamb_Core",
+    "title": "Sacrificial Lamb",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.6158999510574701,
+    "y": 0.3203677761368736,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.SacrificialLamb.Body.01</code></p>"
+  },
+  {
+    "id": "wr-439961-30-2",
+    "title": "Ransacked Blackbeard Pirate Camp",
+    "category": "camps-smuggler-a",
+    "markerType": "T_IconPOI_Camp_Smuggler",
+    "x": 0.6077148231793033,
+    "y": 0.30695160170445224,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.GroveWolfCamp.01</code></p>"
+  },
+  {
+    "id": "wr-439961-30-3",
+    "title": "Iron Deposit",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.6240850789356368,
+    "y": 0.31845117978938486,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.01</code></p>"
+  },
+  {
+    "id": "wr-439961-30-4",
+    "title": "Small Pirate Camp",
+    "category": "camps-outpost-a",
+    "markerType": "T_MapIcon_Outpost_01",
+    "x": 0.6158999510574701,
+    "y": 0.2973686199670084,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.01</code></p>"
+  },
+  {
+    "id": "wr-439961-30-4-quest-DA_QP_MainQuest_LostCargo_Core",
+    "title": "Needle in a Haystack",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.6158999510574701,
+    "y": 0.2973686199670084,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.01</code></p>"
+  },
+  {
+    "id": "wr-439961-30-5",
+    "title": "Small Pirate Camp",
+    "category": "camps-outpost-a",
+    "markerType": "T_MapIcon_Outpost_01",
+    "x": 0.633907232389437,
+    "y": 0.3146179870944073,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.02</code></p>"
+  },
+  {
+    "id": "wr-439961-30-5-quest-DA_QP_MainQuest_LostCargo_Core",
+    "title": "Needle in a Haystack",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.633907232389437,
+    "y": 0.3146179870944073,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.02</code></p>"
+  },
+  {
+    "id": "wr-439961-30-6",
+    "title": "Small Pirate Camp",
+    "category": "camps-outpost-a",
+    "markerType": "T_MapIcon_Outpost_01",
+    "x": 0.6257221045112702,
+    "y": 0.2954520236195196,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.03</code></p>"
+  },
+  {
+    "id": "wr-439961-30-6-quest-DA_QP_MainQuest_LostCargo_Core",
+    "title": "Needle in a Haystack",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.6257221045112702,
+    "y": 0.2954520236195196,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.03</code></p>"
+  },
+  {
+    "id": "wr-439961-30-7",
+    "title": "POI_SeaAdventure_ShipBattle_BB_04",
+    "category": "wrecks-ship-battle",
+    "markerType": "POI_SeaAdventure_ShipBattle_BB_04",
+    "x": 0.5897075418473362,
+    "y": 0.2705362711021656,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.Brethren2Sidequest</code></p>"
+  },
+  {
+    "id": "wr-439961-31-0",
+    "title": "Blackbeard Crew’s Fifth Map",
+    "category": "quests-treasure",
+    "markerType": "T_IconPOI_Quest",
+    "x": 0.7741521685478719,
+    "y": 0.40136616928826846,
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.05.Marker</code></p>"
+  },
+  {
+    "id": "wr-439961-32-0",
+    "title": "Ancient Village",
+    "category": "camps-farm",
+    "markerType": "T_IconPOI_Farm",
+    "x": 0.8136361015057568,
+    "y": 0.33750442443941714,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.FarmVillage.01</code></p>"
+  },
+  {
+    "id": "wr-439961-32-1",
+    "title": "Ancient Farm",
+    "category": "ruins-ancient",
+    "markerType": "T_MapIcon_Ruins_02",
+    "x": 0.8276951279088003,
+    "y": 0.3164806238929367,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.FarmSacrifice.02</code></p>"
+  },
+  {
+    "id": "wr-439961-32-1-quest-DA_QP_SideQuest_SacrificialLamb_Core",
+    "title": "Sacrificial Lamb",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.8276951279088003,
+    "y": 0.3164806238929367,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.SacrificialLamb.Body.02</code></p>"
+  },
+  {
+    "id": "wr-439961-32-2",
+    "title": "Iron Deposit",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.8113232487633595,
+    "y": 0.3164806238929367,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.02</code></p>"
+  },
+  {
+    "id": "wr-439961-32-3",
+    "title": "traveler's Camp",
+    "category": "camps-smuggler-a",
+    "markerType": "T_IconPOI_Camp_Smuggler",
+    "x": 0.8358810674815206,
+    "y": 0.32989812876709074,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.06</code></p>"
+  },
+  {
+    "id": "wr-439961-32-4",
+    "title": "POI_SeaAdventure_ShipBattle_BB_08",
+    "category": "wrecks-ship-battle",
+    "markerType": "POI_SeaAdventure_ShipBattle_BB_08",
+    "x": 0.8407926312251529,
+    "y": 0.35289956569421194,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.ShipbattleMainstory</code></p>"
+  },
+  {
+    "id": "wr-439961-33-0",
+    "title": "Ancient Farm",
+    "category": "camps-farm",
+    "markerType": "T_IconPOI_Farm",
+    "x": 0.6821143195490235,
+    "y": 0.21682064342940918,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Farm.06</code></p>"
+  },
+  {
+    "id": "wr-439961-33-1",
+    "title": "Blackbeard Outpost",
+    "category": "camps-outpost-b",
+    "markerType": "T_MapIcon_Outpost_02",
+    "x": 0.677061598334618,
+    "y": 0.18993551404039966,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.GigaCampBB.01</code></p>"
+  },
+  {
+    "id": "wr-439961-33-1-quest-DA_QP_FactionQuest_ResidentOfTortuga_Core",
+    "title": "Catastrophe’s Aftermath",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.677061598334618,
+    "y": 0.18993551404039966,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.ResidentsOfTortuga.JimCodart</code></p>"
+  },
+  {
+    "id": "wr-439961-33-2",
+    "title": "Iron Deposit",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.68037485812073,
+    "y": 0.209301162247859,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.03</code></p>"
+  },
+  {
+    "id": "wr-439961-33-3",
+    "title": "POI_SeaAdventure_ShipBattle_BB_05",
+    "category": "wrecks-ship-battle",
+    "markerType": "POI_SeaAdventure_ShipBattle_BB_05",
+    "x": 0.7064667795451323,
+    "y": 0.23185960579250942,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.BrethrenSidequest</code></p>"
+  },
+  {
+    "id": "wr-439961-34-0",
+    "title": "Ancient Fire Sanctuary",
+    "category": "ruins-fire-sanctuary",
+    "markerType": "T_MapIcon_Firebowl",
+    "x": 0.5841871839199517,
+    "y": 0.4197540834688999,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.FireBowlRuins.02</code></p>"
+  },
+  {
+    "id": "wr-439961-34-1",
+    "title": "Trial Circle Ruins",
+    "category": "explore-dungeon-a",
+    "markerType": "T_MapIcon_Dungeon_04",
+    "x": 0.5798256785187865,
+    "y": 0.42358765629008677,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.02</code></p>"
+  },
+  {
+    "id": "wr-439961-34-2",
+    "title": "Trial Circle Ruins",
+    "category": "explore-dungeon-a",
+    "markerType": "T_MapIcon_Dungeon_04",
+    "x": 0.5798256785187865,
+    "y": 0.415920510647713,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.Vase.01</code></p>"
+  },
+  {
+    "id": "wr-439961-34-3",
+    "title": "Ancient Farm",
+    "category": "camps-farm",
+    "markerType": "T_IconPOI_Farm",
+    "x": 0.5907294420216995,
+    "y": 0.4370051611642409,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Farm.02</code></p>"
+  },
+  {
+    "id": "wr-439961-34-4",
+    "title": "Iron Deposit",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.5907294420216995,
+    "y": 0.4101701514159327,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.04</code></p>"
+  },
+  {
+    "id": "wr-439961-35-0",
+    "title": "Ancient Fire Sanctuary",
+    "category": "ruins-fire-sanctuary",
+    "markerType": "T_MapIcon_Firebowl",
+    "x": 0.5436367395139098,
+    "y": 0.22128215307124047,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.FireBowlRuins.01</code></p>"
+  },
+  {
+    "id": "wr-439961-35-0-quest-DA_QP_MainQuest_LostCargo_Core",
+    "title": "Needle in a Haystack",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.5436367395139098,
+    "y": 0.22128215307124047,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.KeyCamp.Zone</code></p>"
+  },
+  {
+    "id": "wr-439961-35-1",
+    "title": "Trial Circle Ruins",
+    "category": "explore-dungeon-a",
+    "markerType": "T_MapIcon_Dungeon_04",
+    "x": 0.5321764241121013,
+    "y": 0.23086608512420767,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.04</code></p>"
+  },
+  {
+    "id": "wr-439961-35-2",
+    "title": "Trial Circle Ruins",
+    "category": "explore-dungeon-a",
+    "markerType": "T_MapIcon_Dungeon_04",
+    "x": 0.5370879878557335,
+    "y": 0.21361500742886672,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.Vase.02</code></p>"
+  },
+  {
+    "id": "wr-439961-35-3",
+    "title": "Ancient Farm",
+    "category": "camps-farm",
+    "markerType": "T_IconPOI_Farm",
+    "x": 0.5239904845393809,
+    "y": 0.22511572589242734,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Farm.03</code></p>"
+  },
+  {
+    "id": "wr-439961-35-4",
+    "title": "Iron Deposit",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.5305392361975572,
+    "y": 0.21361500742886672,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.05</code></p>"
+  },
+  {
+    "id": "wr-439961-35-5",
+    "title": "POI_SeaAdventure_ShipBattle_BB_06",
+    "category": "wrecks-ship-battle",
+    "markerType": "POI_SeaAdventure_ShipBattle_BB_06",
+    "x": 0.5567342428302624,
+    "y": 0.1982807161441192,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.SmugglerSidequest</code></p>"
+  },
+  {
+    "id": "wr-439961-36-0",
+    "title": "Iron Deposit",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.6873286691708428,
+    "y": 0.40560972279773244,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.06</code></p>"
+  },
+  {
+    "id": "wr-439961-36-1",
+    "title": "Large Pirate Camp",
+    "category": "camps-outpost-a",
+    "markerType": "T_MapIcon_Outpost_01",
+    "x": 0.6689121314449675,
+    "y": 0.39842248649464956,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.BigCampBB.01</code></p>"
+  },
+  {
+    "id": "wr-439961-36-1-quest-DA_QP_MainQuest_LostCargo_Core",
+    "title": "Needle in a Haystack",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.6689121314449675,
+    "y": 0.39842248649464956,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.BigCamp.01</code></p>"
+  },
+  {
+    "id": "wr-439961-36-2",
+    "title": "Large Pirate Camp",
+    "category": "camps-outpost-a",
+    "markerType": "T_MapIcon_Outpost_01",
+    "x": 0.6888633806479991,
+    "y": 0.4289682407827518,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.BigCampBB.02</code></p>"
+  },
+  {
+    "id": "wr-439961-36-3",
+    "title": "Large Pirate Camp",
+    "category": "camps-outpost-a",
+    "markerType": "T_MapIcon_Outpost_01",
+    "x": 0.6781204003079052,
+    "y": 0.4199841954038982,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.BigCampBB.03</code></p>"
+  },
+  {
+    "id": "wr-439961-36-3-quest-DA_QP_MainQuest_LostCargo_Core",
+    "title": "Needle in a Haystack",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.6781204003079052,
+    "y": 0.4199841954038982,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.BigCamp.03</code></p>"
+  },
+  {
+    "id": "wr-439961-36-4",
+    "title": "Cliffside Pirate Camp",
+    "category": "camps-outpost-a",
+    "markerType": "T_MapIcon_Outpost_01",
+    "x": 0.699606360988093,
+    "y": 0.39842248649464956,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.RockyCamp.01</code></p>"
+  },
+  {
+    "id": "wr-439961-36-4-quest-DA_QP_FactionQuest_Smugglers_Core",
+    "title": "Smugglers",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.699606360988093,
+    "y": 0.39842248649464956,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Highlands.FactionSmugglerQuest.Mob</code></p>"
+  },
+  {
+    "id": "wr-439961-36-5",
+    "title": "Cliffside Pirate Camp",
+    "category": "camps-outpost-a",
+    "markerType": "T_MapIcon_Outpost_01",
+    "x": 0.6934675150794679,
+    "y": 0.39482886834310815,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.RockyCamp.02</code></p>"
+  },
+  {
+    "id": "wr-439961-36-6",
+    "title": "traveler's Camp",
+    "category": "camps-smuggler-a",
+    "markerType": "T_IconPOI_Camp_Smuggler",
+    "x": 0.6765856888307489,
+    "y": 0.4325618589342933,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.07</code></p>"
+  },
+  {
+    "id": "wr-439961-37-0",
+    "title": "Copper Deposit",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.6698808802365742,
+    "y": 0.8253596692263875,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.02</code></p>"
+  },
+  {
+    "id": "wr-439961-37-1",
+    "title": "Jungle Cave",
+    "category": "explore-cave",
+    "markerType": "T_IconPOI_Cave",
+    "x": 0.6780692548929553,
+    "y": 0.8445332352254619,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.04</code></p>"
+  },
+  {
+    "id": "wr-439961-37-1-quest-DA_QP_MainQuest_Revenge_Core",
+    "title": "Revenge Is Best Served Cold",
+    "category": "explore-cave",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.6780692548929553,
+    "y": 0.8445332352254619,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.04</code></p>"
+  },
+  {
+    "id": "wr-439961-37-2",
+    "title": "traveler's Camp",
+    "category": "camps-smuggler-a",
+    "markerType": "T_IconPOI_Camp_Smuggler",
+    "x": 0.6780692548929553,
+    "y": 0.8349464522259247,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.03</code></p>"
+  },
+  {
+    "id": "wr-439961-37-3",
+    "title": "Fisherman's Hut",
+    "category": "camps-hut",
+    "markerType": "T_MapIcon_Hut_02",
+    "x": 0.6801163485570506,
+    "y": 0.8277563649762718,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.FishermanHut.01</code></p>"
+  },
+  {
+    "id": "wr-439961-37-3-quest-DA_QP_SideQuest_SacrificialLamb_Core",
+    "title": "Sacrificial Lamb",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.6801163485570506,
+    "y": 0.8277563649762718,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.SacrificialLamb.Body.01</code></p>"
+  },
+  {
+    "id": "wr-439961-37-4",
+    "title": "Smuggler's Cache",
+    "category": "camps-smuggler-a",
+    "markerType": "T_IconPOI_Camp_Smuggler",
+    "x": 0.6698808802365742,
+    "y": 0.8445332352254619,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Smuggler.03</code></p>"
+  },
+  {
+    "id": "wr-439961-37-4-quest-DA_QP_SideQuest_UndergroundWebQuest_Core",
+    "title": "Underground Network",
+    "category": "quests-side",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.6698808802365742,
+    "y": 0.8445332352254619,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UndergroundWeb.Hale</code></p>"
+  },
+  {
+    "id": "wr-439961-38-0",
+    "title": "POI_SeaAdventure_ShipBattle_BonySue",
+    "category": "wrecks-ship-battle",
+    "markerType": "POI_SeaAdventure_ShipBattle_BonySue",
+    "x": 0.7285435661973049,
+    "y": 0.679705484320365,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.BonySueSidequest</code></p>"
+  },
+  {
+    "id": "wr-439961-39-0",
+    "title": "Shipwrecked Brig",
+    "category": "wrecks-shipwreck",
+    "markerType": "T_IconPOI_Shipwreck",
+    "x": 0.8205596747692306,
+    "y": 0.2501161198457275,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.BrigReefsUndead.01</code></p>"
+  },
+  {
+    "id": "wr-439961-39-0-quest-DA_QP_FactionQuest_Brotherhood_Core",
+    "title": "Brethren of The Coast",
+    "category": "wrecks-shipwreck",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.8205596747692306,
+    "y": 0.2501161198457275,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.Brotherhood.Survivors.02</code></p>"
+  },
+  {
+    "id": "wr-439961-40-0",
+    "title": "Shipwrecked Brig",
+    "category": "wrecks-shipwreck",
+    "markerType": "T_IconPOI_Shipwreck",
+    "x": 0.7710257576012128,
+    "y": 0.22263533648794542,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.BrigReefsUndead.02</code></p>"
+  },
+  {
+    "id": "wr-439961-40-0-quest-DA_QP_FactionQuest_Brotherhood_Core",
+    "title": "Brethren of The Coast",
+    "category": "wrecks-shipwreck",
+    "markerType": "T_QuestIcon_Side_Active",
+    "x": 0.7710257576012128,
+    "y": 0.22263533648794542,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.Brotherhood.Survivors.01</code></p>"
+  },
+  {
+    "id": "wr-439961-41-0-quest-DA_QP_MainQuest_Seafarer_Core",
+    "title": "How My Sea Adventure Began",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.6335570035057234,
+    "y": 0.5317488363182099,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.TradingPosts.Brotherhood</code></p>"
+  },
+  {
+    "id": "wr-439961-42-0",
+    "title": "Blackbeard Crew’s Eighth Map",
+    "category": "quests-treasure",
+    "markerType": "T_IconPOI_Quest",
+    "x": 0.5617229083572786,
+    "y": 0.039870776677995295,
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.08.Marker</code></p>"
+  },
+  {
+    "id": "wr-439961-43-0",
+    "title": "Blackbeard Crew’s Ninth Map",
+    "category": "quests-treasure",
+    "markerType": "T_IconPOI_Quest",
+    "x": 0.7274603803784988,
+    "y": 0.3065547284014168,
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.09.Marker</code></p>"
+  },
+  {
+    "id": "wr-439961-44-0",
+    "title": "POI_SeaAdventure_ShipBattle_Weevil",
+    "category": "wrecks-ship-battle",
+    "markerType": "POI_SeaAdventure_ShipBattle_Weevil",
+    "x": 0.38232402716815483,
+    "y": 0.8785429915967014,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.CitizensSidequest</code></p>"
+  },
+  {
+    "id": "wr-439961-45-0",
+    "title": "Shipwrecked Brigantine",
+    "category": "wrecks-shipwreck",
+    "markerType": "T_IconPOI_Shipwreck",
+    "x": 0.7174946825308082,
+    "y": 0.9118063340439133,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.BrigantineReefsUndead.01</code></p>"
+  },
+  {
+    "id": "wr-439961-46-0",
+    "title": "Shipwreck",
+    "category": "wrecks-shipwreck",
+    "markerType": "T_IconPOI_Shipwreck",
+    "x": 0.8267113330058189,
+    "y": 0.7868701286458027,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.KetchShelf.01</code></p>"
+  },
+  {
+    "id": "wr-439961-47-0",
+    "title": "Blackbeard Crew’s Seventh Map",
+    "category": "quests-treasure",
+    "markerType": "T_IconPOI_Quest",
+    "x": 0.5335630051211395,
+    "y": 0.32433768312367106,
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.07.Marker</code></p>"
+  },
+  {
+    "id": "wr-439961-48-0",
+    "title": "POI_SeaAdventure_Ship_NewArk",
+    "category": "wrecks-ship-battle",
+    "markerType": "POI_SeaAdventure_Ship_NewArk",
+    "x": 0.4071018313442236,
+    "y": 0.44829690714484827,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.NewArkSidequest</code></p>"
+  },
+  {
+    "id": "wr-439961-50-0",
+    "title": "Blackbeard Crew’s Fourth Map",
+    "category": "quests-treasure",
+    "markerType": "T_IconPOI_Quest",
+    "x": 0.37070989564844536,
+    "y": 0.6705805914107086,
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.04.Marker</code></p>"
+  },
+  {
+    "id": "wr-439961-51-0",
+    "title": "Blackbeard Crew’s Third Map",
+    "category": "quests-treasure",
+    "markerType": "T_IconPOI_Quest",
+    "x": 0.7903741412375114,
+    "y": 0.7493501639500496,
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.03.Marker</code></p>"
+  },
+  {
+    "id": "wr-439961-52-0",
+    "title": "Blackbeard Crew’s First Map",
+    "category": "quests-treasure",
+    "markerType": "T_IconPOI_Quest",
+    "x": 0.6192047556919822,
+    "y": 0.6769455646730397,
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.01.Marker</code></p>"
+  },
+  {
+    "id": "wr-439961-53-0",
+    "title": "Blackbeard Crew’s Second Map",
+    "category": "quests-treasure",
+    "markerType": "T_IconPOI_Quest",
+    "x": 0.45373811584002394,
+    "y": 0.8268446373315208,
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.02.Marker</code></p>"
+  },
+  {
+    "id": "wr-439961-56-0",
+    "title": "Smugglers of Port Royal Main base",
+    "category": "camps-smuggler-b",
+    "markerType": "T_MapIcon_Smugglers",
+    "x": 0.351759148727956,
+    "y": 0.469248621824077,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Trade.Smugglers.Base1</code></p>"
+  },
+  {
+    "id": "wr-439961-56-0-quest-DA_QP_MainQuest_Seafarer_Core",
+    "title": "How My Sea Adventure Began",
+    "category": "quests-main",
+    "markerType": "T_QuestIcon_Main_Active",
+    "x": 0.351759148727956,
+    "y": 0.469248621824077,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.TradingPosts.Smugglers</code></p>"
+  },
+  {
+    "id": "wr-439961-60-0",
+    "title": "Copper Deposit",
+    "category": "resources-mine",
+    "markerType": "T_MapIcon_Mine",
+    "x": 0.7219400965858834,
+    "y": 0.9758467806585807,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.08</code></p>"
+  },
+  {
+    "id": "wr-439961-60-1",
+    "title": "POI_SeaAdventure_ShipBattle_BB_02",
+    "category": "wrecks-ship-battle",
+    "markerType": "POI_SeaAdventure_ShipBattle_BB_02",
+    "x": 0.6900126708712476,
+    "y": 1,
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.Hunter1Sidequest</code></p>"
+  },
+]
+
+const base = (import.meta.env.BASE_URL || '/').replace(/([^/])$/, '$1/')
+const path = meta.basemapPublicPath
+const basemap = typeof path === 'string' && path.trim() !== '' ? path.replace(/^\//, '') : ''
+
+export const windroseMapMeta = meta
+
+const size = meta.leafletVirtualSize ?? 1000
+
+export default {
+  imageUrl: basemap ? `${base}${basemap}` : '',
+  basemapPixelWidth: meta.basemapPixelWidth ?? null,
+  basemapPixelHeight: meta.basemapPixelHeight ?? null,
+  basemapIsOgSocialCard: meta.basemapIsOgSocialCard === true,
+  useRasterBasemap: meta.useRasterBasemap ?? !meta.basemapIsOgSocialCard,
+  leafletVirtualSize: size,
+  leafletVirtualWidth: meta.leafletVirtualWidth ?? size,
+  leafletVirtualHeight: meta.leafletVirtualHeight ?? size,
+  terrain,
+  pins,
+  mapCategories,
+}

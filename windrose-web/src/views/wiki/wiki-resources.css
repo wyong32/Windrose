@@ -1,0 +1,252 @@
+/* Resources 列表页（与全站暗色航海 UI 一致） */
+
+.wiki-res-page {
+  padding-bottom: 3rem;
+}
+
+.wiki-res-heading {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+  color: var(--color-parchment);
+}
+
+.wiki-res-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: flex-end;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+}
+
+.wiki-res-toolbar--end {
+  justify-content: flex-end;
+}
+
+.wiki-res-search {
+  flex: 1 1 14rem;
+  max-width: 22rem;
+}
+
+.wiki-res-search input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.55rem 0.75rem;
+  border-radius: 8px;
+  border: 1px solid rgba(160, 188, 210, 0.22);
+  background: rgba(8, 12, 20, 0.65);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.92rem;
+}
+
+.wiki-res-search input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.85;
+}
+
+.wiki-res-search input:focus {
+  outline: 2px solid rgba(212, 180, 106, 0.45);
+  outline-offset: 1px;
+}
+
+.wiki-res-table-wrap {
+  overflow-x: auto;
+  border-radius: 10px;
+  border: 1px solid rgba(160, 188, 210, 0.16);
+  background: rgba(10, 14, 22, 0.55);
+  box-shadow: 0 12px 36px rgba(0, 0, 0, 0.28);
+}
+
+.wiki-res-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.88rem;
+}
+
+.wiki-res-table th,
+.wiki-res-table td {
+  padding: 0.55rem 0.75rem;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(160, 188, 210, 0.1);
+}
+
+.wiki-res-table th {
+  font-size: 0.68rem;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-weight: 700;
+  background: rgba(18, 26, 38, 0.75);
+  position: sticky;
+  top: 0;
+  z-index: 1;
+}
+
+.wiki-res-table tbody tr:hover {
+  background: rgba(212, 180, 106, 0.05);
+}
+
+.wiki-res-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.wiki-res-thumb {
+  width: 44px;
+  height: 44px;
+  border-radius: 8px;
+  object-fit: contain;
+  background: rgba(6, 9, 16, 0.65);
+  border: 1px solid rgba(160, 188, 210, 0.14);
+  display: block;
+}
+
+.wiki-res-thumb--mono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.78rem;
+  font-weight: 800;
+  color: var(--color-parchment);
+  text-transform: uppercase;
+}
+
+.wiki-res-name {
+  font-weight: 600;
+  color: var(--color-parchment);
+}
+
+.wiki-res-id {
+  display: block;
+  margin-top: 0.15rem;
+  font-size: 0.72rem;
+  color: var(--color-text-muted);
+  font-family: ui-monospace, monospace;
+}
+
+.wiki-res-rarity {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.12rem 0.45rem;
+  border-radius: 999px;
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+  border: 1px solid rgba(160, 188, 210, 0.2);
+}
+
+.wiki-res-rarity--common {
+  color: #c5d0de;
+  background: rgba(120, 140, 160, 0.12);
+}
+
+.wiki-res-rarity--uncommon {
+  color: #9dd89d;
+  background: rgba(80, 140, 100, 0.15);
+}
+
+.wiki-res-rarity--rare {
+  color: #8ec8ff;
+  background: rgba(60, 110, 180, 0.18);
+}
+
+.wiki-res-rarity--epic {
+  color: #c4b6dc;
+  background: rgba(100, 80, 140, 0.2);
+}
+
+.wiki-res-rarity--legendary {
+  color: #f0d78c;
+  background: rgba(180, 140, 60, 0.18);
+}
+
+.wiki-res-stack {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+}
+
+.wiki-res-desc {
+  max-width: 28rem;
+  min-width: 12rem;
+  color: var(--color-text-muted);
+  line-height: 1.45;
+  white-space: pre-line;
+}
+
+@media (max-width: 640px) {
+  .wiki-res-table-wrap {
+    border: none;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .wiki-res-table,
+  .wiki-res-table thead,
+  .wiki-res-table tbody,
+  .wiki-res-table th,
+  .wiki-res-table td,
+  .wiki-res-table tr {
+    display: block;
+  }
+
+  .wiki-res-table thead {
+    display: none;
+  }
+
+  .wiki-res-table tbody tr {
+    margin-bottom: 0.75rem;
+    padding: 0.65rem 0.75rem;
+    border-radius: 10px;
+    border: 1px solid rgba(160, 188, 210, 0.14);
+    background: rgba(10, 14, 22, 0.55);
+  }
+
+  .wiki-res-table tbody td {
+    border: none;
+    padding: 0.35rem 0;
+  }
+
+  .wiki-res-table tbody td::before {
+    display: block;
+    font-size: 0.62rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--color-text-muted);
+    margin-bottom: 0.15rem;
+  }
+
+  .wiki-res-table tbody td:nth-child(1)::before {
+    content: 'Icon';
+  }
+
+  .wiki-res-table tbody td:nth-child(2)::before {
+    content: 'Item';
+  }
+
+  .wiki-res-table tbody td:nth-child(3)::before {
+    content: 'Rarity';
+  }
+
+  .wiki-res-table tbody td:nth-child(4)::before {
+    content: 'Stack';
+  }
+
+  .wiki-res-table tbody td:nth-child(5)::before {
+    content: 'Description';
+  }
+
+  .wiki-res-table tbody td:nth-child(1),
+  .wiki-res-table tbody td:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 0.65rem;
+  }
+
+  .wiki-res-table tbody td:nth-child(1)::before,
+  .wiki-res-table tbody td:nth-child(2)::before {
+    display: none;
+  }
+}
