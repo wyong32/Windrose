@@ -283,6 +283,7 @@ import { computed, onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
 import { publicAssetUrl } from '@/utils/publicAssetUrl.js'
 import { resolveCanonicalUrl } from '@/seo/documentMeta.js'
+import { buildDocumentTitle } from '@/utils/pageSeo.js'
 
 const route = useRoute()
 const imgHero = computed(() => publicAssetUrl('/images/bg.webp'))
@@ -291,7 +292,7 @@ const imgAbout = computed(() => publicAssetUrl('/images/about-img.jpg'))
 const JSON_LD_ATTR = 'data-wr-jsonld-getting-started'
 
 onMounted(() => {
-  const headline = String(route.meta.title || '')
+  const headline = buildDocumentTitle(String(route.meta.title || ''))
   const description = String(route.meta.description || '')
   const url = resolveCanonicalUrl('/getting-started')
   const ld = {

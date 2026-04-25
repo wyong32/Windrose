@@ -30,7 +30,7 @@ export default [
     imageUrl: '/images/bg.webp',
     imageAlt: 'Nautical night atmosphere behind Windrose Compass guides',
     seo: {
-      title: 'How to Play Windrose Online with Friends — Multiplayer & Co-op Guide | Windrose Compass',
+      title: 'Windrose Co-op Online — Friends, Invite Codes & Dedicated Servers',
       description:
         'Play Windrose online with friends: official solo-or-co-op pitch, invite codes, Play → Connect to Server, passwords, same-patch checks, UPnP and firewall tips, and when to use a dedicated server—all in plain language for crews.',
       keywords:
@@ -181,10 +181,10 @@ export default [
     description: "Discover exactly how to get quagmire powder in windrose and the best farming routes. Learn how to use quagmire powder in windrose to craft Mire Metal Ingots.",
     tags: ["windrose", "quagmire powder", "farming guide", "late-game resources", "mire metal ingot"],
     publishDate: "2026-04-25",
-    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777105142/cms-uploads/cms-1777105142831-934087553.png",
+    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777105662/cms-uploads/cms-1777105662173-881866006.webp",
     imageAlt: "Player opening an Ancient Chest in a Swamp Crypt Tablet House in Windrose, obtaining Quagmire Powder.",
     seo: {
-      title: "Windrose Quagmire Powder Guide: Get & Use for Late-Game Progression",
+      title: 'Windrose Quagmire Powder — Swamp Farm, Mire Metal & Late Game',
       description: "Master Windrose's late-game with this Quagmire Powder guide. Learn efficient farming methods in Cursed Swamps and how to craft Mire Metal Ingots to unlock enchantments and advanced gear.",
       keywords: "windrose quagmire powder, windrose farming guide, get quagmire powder, use quagmire powder, mire metal ingot, cursed swamps, windrose late game, israel hands, ancient scraps"
     },
@@ -365,10 +365,10 @@ export default [
     description: "Stuck at 1/2 unique chests in Windrose? Learn how to locate the hidden second chest at the Traveler's Camp in the Coastal Jungle using the shovel digging mechanic.",
     tags: ["Windrose","Travelers Camp","Hidden Chest","Exploration Guide","Survival Game"],
     publishDate: "2026-04-25",
-    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777106865/cms-uploads/cms-1777106865199-859118164.png",
+    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777107374/cms-uploads/cms-1777107374896-953265952.webp",
     imageAlt: "A map screenshot showing the Windrose Traveler's Camp icon with 1/2 unique chests looted progress, indicating a hidden second chest.",
     seo: {
-      title: "Windrose Traveler's Camp: Find the Hidden Second Chest Guide",
+      title: "Windrose Traveler's Camp — Hidden Chest, Shovel Digs & Exploration XP",
       description: "Master Windrose's Traveler's Camp by uncovering the hidden second chest. This in-depth guide reveals how to use a Shovel to find the secret loot and gain +50 exploration XP, bypassing misleading old strategies.",
       keywords: "windrose, travelers camp, hidden chest, second chest, shovel, exploration guide, survival game, unique chests, twist of fancy, red cloth tree, sparkling particles"
     },
@@ -476,7 +476,356 @@ export default [
   </p>
   <p> A: Not strictly fixed, but it heavily leans towards valuable mid-tier consumables. In documented gameplay (including German client tests), players consistently pulled stacks of Homemade Gunpowder (up to 10x) and high-tier healing potions, making this an excellent early-game boost for your combat reserves.
   </p>`,
+  },
+
+  {
+    id: 4,
+    head: `{
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "How to Get and Craft Hewn Stone in Windrose",
+    "description": "Hardcore SEO guide explaining exactly how to get hewn stone in Windrose. Learn the Cursed Swamps location to mine Ancient Scraps, the Iron Pickaxe requirement, and how to upgrade your Workbench to Level 3 using a Sawhorse and Toolbox.",
+    "thumbnailUrl": [
+      "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777110044/cms-uploads/cms-1777110044431-338918537.png"
+    ],
+    "uploadDate": "2026-04-25T12:00:00+08:00",
+    "duration": "PT1M17S",
+    "contentUrl": "https://www.youtube.com/watch?v=COk3Bf44GtA",
+    "embedUrl": "https://www.youtube.com/embed/COk3Bf44GtA",
+    "hasPart": [
+      {
+        "@type": "Clip",
+        "name": "Map Location: Ancient Debris Site in Cursed Swamps",
+        "startOffset": 8,
+        "endOffset": 29,
+        "url": "https://windrosegame.net/guides/windrose-hewn-stone-guide-unlock-crafting-explained#video&t=8s"
+      },
+      {
+        "@type": "Clip",
+        "name": "Mining Ancient Scraps with Iron Pickaxe to Unlock Schematic",
+        "startOffset": 29,
+        "endOffset": 50,
+        "url": "https://windrosegame.net/guides/windrose-hewn-stone-guide-unlock-crafting-explained#video&t=29s"
+      },
+      {
+        "@type": "Clip",
+        "name": "Upgrading Workbench to Level 3 (Sawhorse + Toolbox)",
+        "startOffset": 50,
+        "endOffset": 77,
+        "url": "https://windrosegame.net/guides/windrose-hewn-stone-guide-unlock-crafting-explained#video&t=50s"
+      }
+    ]
+  }`,
+    title: "Windrose Hewn Stone Guide: Unlock & Crafting Explained",
+    description: "Stop banging rocks at level 1. Discover how to get hewn stone in Windrose by finding Ancient Scraps in the Cursed Swamps and upgrading your Workbench to Level 3.",
+    tags: ["Windrose","Hewn Stone","Crafting Guide","Unlock Schematic","Base Building"],
+    publishDate: "2026-04-25",
+    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777110044/cms-uploads/cms-1777110044431-338918537.png",
+    imageAlt: "Windrose Hewn Stone crafting guide, showing unlock steps and workbench upgrades",
+    seo: {
+      title: "Windrose Hewn Stone Guide: Unlock Crafting & Base Upgrades Explained",
+      description: "Master Hewn Stone crafting in Windrose. Discover how to unlock the schematic by finding Ancient Scraps in Cursed Swamps and upgrade your workbench to Level 3 for efficient production.",
+      keywords: "Windrose Hewn Stone, crafting guide, unlock schematic, Ancient Scraps, Cursed Swamps, Iron Pickaxe, workbench upgrade, Level 3, base building, survival game"
+    },
+    addressBar: "windrose-hewn-stone-guide-unlock-crafting-explained",
+    detailsHtml: `<h1>Windrose Hewn Stone Guide
+  </h1>
+  <p>Stop hitting normal rocks at your starter base wondering why the Hewn Stone recipe won't appear. This schematic is NOT unlocked by simply leveling up your character. A lot of generic wikis will tell you to "just craft it with 3 stones," which is completely misleading for new players. The objective reality of the game's tech tree is this: You must push into the 3rd biome (Cursed Swamps), use an Iron Pickaxe to mine infected "Ancient Debris" to obtain "Ancient Scraps." Only looting this specific scrap will trigger the schematic unlock. After that, you still can't craft it until you return to base and force your Workbench to Level 3 by placing a Sawhorse and a Toolbox right next to it.
+  </p>
+  <iframe src="https://www.youtube.com/embed/COk3Bf44GtA" class="ql-video" width="800" height="450" allowfullscreen="true" frameborder="0">
+  </iframe>
+  <p><br>
+  
+  </p>
+  <p>Skip the fluff? Jump straight to the key moments:
+  </p>
+  <ol>
+  <li><a href="https://www.youtube.com/watch?v=COk3Bf44GtA&amp;t=8s">00:08</a> - 🗺️ Map positioning: Finding the "Ancient Debris Site" in the Cursed Swamps.
+  </li>
+  <li><a href="https://www.youtube.com/watch?v=COk3Bf44GtA&amp;t=29s">00:29</a> - ⛏️ Tool requirement: Mining Ancient Scraps with an Iron Pickaxe to trigger the schematic.
+  </li>
+  <li><a href="https://www.youtube.com/watch?v=COk3Bf44GtA&amp;t=50s">00:50</a> - 🔨 Base setup: Pushing the Workbench to Level 3 using a Sawhorse and Toolbox.
+  </li>
+  </ol>
+  <h2>Step-by-Step Acquisition
+  </h2>
+  <p>In Windrose, Hewn Stone is the mandatory bottleneck resource for transitioning your base from a thatched-roof shack into a mid-game stone fortress. However, because the game uses a "loot-to-discover" schematic system, the vast majority of players get hard-stuck here.
+  </p>
+  <p>Do not waste time scouring the starting Coastal Jungle. The underlying logic to acquire this is: Push main quest -&gt; Enter high-tier biome -&gt; Mine specific node -&gt; Upgrade base stations -&gt; Mass produce.
+  </p>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777110457/cms-uploads/cms-1777110457462-440608789.webp" alt="Windrose Ancient Debris Site map" width="50%">
+  </p>
+  <h2>Unlocking the Schematic: The Swamp Run
+  </h2>
+  <p>The most frustrating part for beginners is that the recipe list is hidden by default. To make Hewn Stone appear in your crafting UI, you are forced to extract a resource called Ancient Scraps.
+  </p>
+  <ol>
+  <li>Access the Swamps: You cannot do this until you have defeated the second local threat boss, Israel Hands, in the Foothills, which unlocks the Cursed Swamps biome.
+  </li>
+  <li>Locate the Node: Open your map in the swamp and look for a ruined pillar icon labeled Ancient Debris Site.
+  </li>
+  <li>Hardcore Mining: Upon arrival, you'll see glowing, infected rock formations. Warning! A normal stone pickaxe will bounce right off this. You are strictly required to have an Iron Pickaxe equipped.
+  </li>
+  <li>Trigger the Blueprint: The moment you shatter the node and the Ancient Scraps enter your inventory, a bright notification will pop up on the right side of your screen: New schematics obtained: Hewn Stone. The tech lock is now removed.
+  </li>
+  </ol>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777110482/cms-uploads/cms-1777110482131-440120267.webp" alt="Windrose Ancient Debris Site 2" width="50%">
+  </p>
+  <h2>Sourcing the Raw Materials
+  </h2>
+  <p>The irony of this game's progression design is wild: unlocking the recipe requires a dangerous trek into a high-level infected zone, but the actual material needed to craft it is the most common trash item in the game—Stone.
+  </p>
+  <p>You can find regular Stone literally anywhere: beaches, forests, or right outside your front door. There are no biome restrictions for gathering the raw crafting material. One swing at a generic grey rock pile will yield dozens.
+  </p>
+  <h2>Level 3 Workbench Upgrades
+  </h2>
+  <p>Many rookies grab the schematic, farm 500 stones, run back to base, and open their Workbench only to find the Hewn Stone text is greyed out with a glaring red warning: Level 3 station is required.
+  </p>
+  <p>A vanilla Level 1 Workbench is only good for bandages and ropes. You have to install "add-ons" to increase its Comfort Level/Station Tier.
+  </p>
+  <ol>
+  <li>Reaching Level 2: Usually achieved just by building a roof and basic walls around the bench.
+  </li>
+  <li>Forcing Level 3: You must craft and place two specific utility structures in extremely close proximity to the Workbench: a Sawhorse and a Toolbox.
+  </li>
+  </ol>
+  <p>Placement matters. Drop them close and check the top of your Workbench UI. Once it reads [Lv. 3], the recipe will light up green.
+  </p>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777110512/cms-uploads/cms-1777110512647-745756596.webp" alt="Windrose Hewn Stone " width="50%">
+  </p>
+  <h2>Crafting Costs &amp; Tier Requirements
+  </h2>
+  <p>Once you overcome the brutal unlocking phase, the actual production cost is practically free. Here is the hardcore data breakdown:
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-l8fd7d">Item / Facility Name
+  </td>
+  <td data-row="row-l8fd7d">Category
+  </td>
+  <td data-row="row-l8fd7d">Unlock Prerequisite
+  </td>
+  <td data-row="row-l8fd7d">Crafting Cost
+  </td>
+  <td data-row="row-l8fd7d">Station Level Required
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-f3hhu9">Hewn Stone
+  </td>
+  <td data-row="row-f3hhu9">Building Material
+  </td>
+  <td data-row="row-f3hhu9">Mine 'Ancient Scraps'
+  </td>
+  <td data-row="row-f3hhu9">3x Stone
+  </td>
+  <td data-row="row-f3hhu9">Workbench (Level 3)
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-nxyocf">Sawhorse
+  </td>
+  <td data-row="row-nxyocf">Base Upgrade
+  </td>
+  <td data-row="row-nxyocf">Basic Carpentry progression
+  </td>
+  <td data-row="row-nxyocf">Wood Planks, Nails, etc.
+  </td>
+  <td data-row="row-nxyocf">None
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-u4g947">Toolbox
+  </td>
+  <td data-row="row-u4g947">Base Upgrade
+  </td>
+  <td data-row="row-u4g947">Basic Blacksmithing progression
+  </td>
+  <td data-row="row-u4g947">10x Nails, 5x Tumbaga Iron Ingot
+  </td>
+  <td data-row="row-u4g947">None
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <h3>FAQ: Hewn Stone Troubleshooting
+  </h3>
+  <p>Q: I found Ancient Debris in the Cursed Swamps, but my character does 0 damage to it. Why?
+  </p>
+  <p> A: You are using the wrong tool tier. Windrose enforces strict material hardness checks. A Stone Pickaxe or Copper Pickaxe will not scratch Ancient Debris. You must upgrade to an Iron Pickaxe via your blacksmithing station before attempting this run.
+  </p>
+  <p>Q: My Workbench is Level 3 and I have a chest full of stone, but the recipe is entirely missing. What gives?
+  </p>
+  <p> A: Did you sequence-break or join a friend's world? If your specific character's inventory has never physically picked up "Ancient Scraps," the schematic will remain hidden forever, regardless of your base level. You must go to the swamp and mine the scrap yourself to flip the hidden progression switch.
+  </p>
+  <p>Q: Do the Sawhorse and Toolbox have to be physically touching the Workbench?
+  </p>
+  <p> A: They don't need to clip into each other, but the game uses a very tight proximity radius (usually within the same 1x1 or 2x2 foundation block). If you place the Toolbox on the opposite side of a large room, the Workbench will not register the +1 level buff.
+  </p>`,
+  },
+
+  {
+    id: 5,
+    head: `{
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "Windrose Fishing Guide & Rod Crafting",
+    "description": "Hardcore SEO guide on windrose fishing. Learn exactly how to craft the fishing rod by finding Divi-Divi hardwood in the Foothills, the best fishing mechanics for deep water, and the meta Seafood Platter recipe for massive Vitality buffs.",
+    "thumbnailUrl": [
+      "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777111580/cms-uploads/cms-1777111580649-334899069.webp"
+    ],
+    "uploadDate": "2026-04-25T14:00:00+08:00",
+    "duration": "PT8M10S",
+    "contentUrl": "https://www.youtube.com/watch?v=f4ubyXc7xx8",
+    "embedUrl": "https://www.youtube.com/embed/f4ubyXc7xx8",
+    "hasPart": [
+      {
+        "@type": "Clip",
+        "name": "Finding Divi-Divi Hardwood in the Foothills",
+        "startOffset": 21,
+        "endOffset": 66,
+        "url": "https://windrosegame.net/guides/windrose-fishing-guide-rod-crafting-best-food-meta#video&t=21s"
+      },
+      {
+        "@type": "Clip",
+        "name": "Crafting the Fishing Rod at Level 2 Workbench",
+        "startOffset": 66,
+        "endOffset": 169,
+        "url": "https://windrosegame.net/guides/windrose-fishing-guide-rod-crafting-best-food-meta#video&t=66s"
+      },
+      {
+        "@type": "Clip",
+        "name": "Fishing Mechanics and Water Types",
+        "startOffset": 169,
+        "endOffset": 250,
+        "url": "https://windrosegame.net/guides/windrose-fishing-guide-rod-crafting-best-food-meta#video&t=169s"
+      }
+    ]
+  }`,
+    title: "Windrose Fishing Guide: Rod Crafting & Best Food Meta",
+    description: "Stop wasting time looking for a rod early. This hardcore windrose fishing guide shows you where to find Divi-Divi hardwood to craft the rod, catch mechanics, and cook the +20 Vitality Seafood Platter.",
+    tags: ["Windrose","Fishing Guide","Rod Crafting","Survival Game","Food Meta","Boss Strategy"],
+    publishDate: "2026-04-25",
+    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777111580/cms-uploads/cms-1777111580649-334899069.webp",
+    imageAlt: "A player character in Windrose standing on a boat, fishing in deep water with a successful 'Flat Splash' visual effect.",
+    seo: {
+      title: "Windrose Fishing Guide: Master Rod Crafting & Unlock +20 Vitality Food Meta",
+      description: "Unravel the secrets of fishing in Windrose! This guide covers essential mid-game rod crafting, finding Divi-Divi hardwood, simple fishing mechanics, and the game-changing Seafood Platter for +20 Vitality to dominate boss fights.",
+      keywords: "Windrose fishing, rod crafting, Divi-Divi hardwood, fishing guide, seafood platter, vitality food, boss meta, survival game tips"
+    },
+    addressBar: "windrose-fishing-guide-rod-crafting-best-food-meta",
+    detailsHtml: `<h1>Windrose Fishing Guide
+  </h1>
+  <p>Many assume fishing is just a casual side activity, which is a massive misconception. In Windrose, fishing is an absolute mid-to-late game requirement for bossing. Stop searching the starter Coastal Jungle for a recipe. You must defeat the first boss, unlock the Foothills biome, and farm Iron Ingots alongside Hardwood from Divi-Divi trees just to craft the rod at a Level 2 Workbench. Unlike games with overly complex bait mechanics, catching fish here is a simple reaction test. The real endgame lies in the kitchen: processing hundreds of Fish Fillets at a Level 3 Cooking Pot to mass-produce the Seafood Platter. That +20 Vitality buff is the definitive meta that prevents you from getting one-shot by late-game enemies.
+  </p>
+  <iframe src="https://www.youtube.com/embed/f4ubyXc7xx8" class="ql-video" width="800" height="450" allowfullscreen="true" frameborder="0">
+  </iframe>
+  <p><br>
+  
+  </p>
+  <p>Skip the fluff? Jump straight to the key moments:
+  </p>
+  <ol>
+  <li><a href="https://www.youtube.com/watch?v=f4ubyXc7xx8&amp;t=21s">00:21</a> - 🪓 Identifying and chopping the curly Divi-Divi trees for Hardwood.
+  </li>
+  <li><a href="https://www.youtube.com/watch?v=f4ubyXc7xx8&amp;t=66s">01:06</a> - 🔨 The exact material cost for crafting the Rod at a Lv.2 Workbench.
+  </li>
+  <li><a href="https://www.youtube.com/watch?v=f4ubyXc7xx8&amp;t=169s">02:49</a> - 🎣 Execution: Waiting for the "flat splash" to reel in perfectly.
+  </li>
+  </ol>
+  <h2>Fishing Rod: Mid-Game Crafting Prerequisites
+  </h2>
+  <p>Do not attempt to craft a fishing rod on the starting beach. The game's progression system strictly gates this activity: Fishing is a designated mid-game mechanic.
+  </p>
+  <p>Players get hard-stuck because two core ingredients do not exist in the initial spawn zones. You must journey to the Foothills:
+  </p>
+  <ol>
+  <li>Iron Ingots: Mine iron nodes scattered across the rocky elevations (requires a Copper Pickaxe or better) and smelt them.
+  </li>
+  <li>Hardwood: This is the real bottleneck. You must locate a highly specific tree called the Divi-Divi. Look for trunks with a strange, bendy, swirly shape. They are often guarded by goats or pirate camps. Chop them down with a Copper Axe.
+  </li>
+  </ol>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777113932/cms-uploads/cms-1777113932162-175136626.webp" alt="windrose divdiv-divdiv tree" width="50%">
+  </p>
+  <p>Counter-Intuitive Check: Even with the materials in your bag, you cannot craft it at a vanilla station. You are forced to upgrade your Workbench to Level 2 by placing a Sawhorse nearby. Only then will the recipe for the Simple Fishing Rod (2x Iron Ingots, 3x Crude Rope, 5x Hardwood) become available.
+  </p>
+  <h2>Complete Fishing Guide: Mechanics and Cooking Meta
+  </h2>
+  <p>Once you have the rod, how do you optimize your time? Some generic guides will tell you to hunt for specific bait or secret biomes. Ignore that. In the current Early Access build, Windrose fishing is brutally simplified. Stand on the deck of your ship or a coastal peninsula, and cast directly into deep water.
+  </p>
+  <p>The Hardcore Catch Mechanic:
+  </p>
+  <p> Stop squinting at the bobber's micro-movements. Cast your line and watch the water surface. The moment you see a large, flat white splash accompanied by a distinct sound cue, instantly left-click to reel it in. It is a 100% catch rate if you nail this timing.
+  </p>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777113903/cms-uploads/cms-1777113903294-236656430.webp" alt="windrose fishing rod" width="50%">
+  </p>
+  <p>Fish Tiers and Fillet Yields:
+  </p>
+  <p> Don't discard "low-tier" catches. Your sole objective is hoarding Fish Fillets. Epic quality fish are walking meat-stashes.
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-045kqm">Fish Rarity
+  </td>
+  <td data-row="row-045kqm">Notable Examples
+  </td>
+  <td data-row="row-045kqm">Fish Fillet Yield Per Catch
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-dhqcys">Uncommon (Green)
+  </td>
+  <td data-row="row-dhqcys">Pink Wrasse, Emerald Bluefish
+  </td>
+  <td data-row="row-dhqcys">2 to 4 Fillets
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-zeln1p">Rare (Blue)
+  </td>
+  <td data-row="row-zeln1p">Reef Snapper, Red Snapper
+  </td>
+  <td data-row="row-zeln1p">4 to 12 Fillets
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-psdntn">Epic (Purple)
+  </td>
+  <td data-row="row-psdntn">Giant Mackerel, Large Barracuda
+  </td>
+  <td data-row="row-psdntn">Up to 20 Fillets
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p>Warning: Tooltips lie. The in-game text for the Moon Angelfish claims it is caught in "shallow waters," but actual gameplay confirms it frequently bites in the deep ocean. Just cast deep to maximize large fillet yields.
+  </p>
+  <p>The Ultimate Goal: Why bother?
+  </p>
+  <p> Is it for the Master Fisherman achievement? No. Catching all 10 fish grants the Minor Fisherman Ring (+15% chance to catch extra fish), which is just a nice quality-of-life tool.
+  </p>
+  <p> The true power spike is the kitchen. Upgrade your cooking station to Level 3 (Cookware Shelf). Do NOT waste your Crab Legs on the Level 1 Seafood Skewer (+5 Strength). Save them, combine them with Limes (found under tall Foothill trees), looted Salt, and your Fish Fillets to craft the Seafood Platter. This masterpiece grants a staggering +20 Vitality for 30 minutes. This health buffer is the absolute meta for surviving late-game pirate encounters.
+  </p>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777113849/cms-uploads/cms-1777113849216-563738810.webp" alt="windrose fish cooking" width="50%">
+  </p>
+  <h3>FAQ: Hardcore Fishing Truths
+  </h3>
+  <p>Q: I've been fishing in the starting Coastal Jungle, why am I only getting low-yield fish?
+  </p>
+  <p> A: While you *can* fish from the starter shores, the Deep Ocean drop table has a significantly higher chance of spawning Epic-tier giants like the Giant Mackerel. Sail your ship into open water to exponentially increase your Fillet-per-minute ratio.
+  </p>
+  <p>Q: Is grinding for the Minor Fisherman Ring worth my time early on?
+  </p>
+  <p> A: Only passively. The ring provides a 15% chance for bonus fish drops, which is great when you are mass-producing food late game. However, grinding for it immediately upon getting the rod is a waste of progression time. Catch them naturally as you explore.
+  </p>
+  <p>Q: The Seafood Platter requires a ton of Salt. Can I mine it or gather it from seawater?
+  </p>
+  <p> A: No, Windrose doesn't feature seawater distillation for salt yet. Salt is strictly a lootable resource. You must farm it by cracking open pirate loot crates on land or successfully boarding and looting enemy ships marked with the "golden chest" icon. Treat salt as a premium combat resource.
+  </p>`,
   }
+
 
 
 ]

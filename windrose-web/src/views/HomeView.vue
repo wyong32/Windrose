@@ -6,7 +6,7 @@
           <p class="hero-eyebrow">Windrose · Early Access · All-out PvE war on the tide</p>
           <div class="hero-rule" aria-hidden="true" />
           <h1 id="hero-heading">
-            Windrose Game — Maps, Wiki Articles &amp; Player Guides for Early Access
+            Windrose Game — Windrose Wiki, Interactive Map, Guides &amp; Mods for Early Access
           </h1>
 
           <ul class="hero-strip" aria-label="What you will find here">

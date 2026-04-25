@@ -31,7 +31,7 @@ export default [
     downloadUrl: 'https://www.nexusmods.com/windrose/mods/167',
     stars: 4,
     seo: {
-      title: 'Windrose mod — Merchant & order timing companion | Windrose Compass',
+      title: 'Windrose Mod — Merchant UI, Order Timing & Economy QoL (Nexus)',
       description:
         'Windrose mod spotlight for merchant and order-time QoL: Nexus facts via Download mod, Compass notes on backups, ~mods install, co-op economy parity, and wiki cross-checks.',
       keywords:
@@ -114,7 +114,7 @@ export default [
     downloadUrl: 'https://www.nexusmods.com/windrose/mods/156',
     stars: 4,
     seo: {
-      title: 'Windrose mod — Host parity & multiplayer manifest | Windrose Compass',
+      title: 'Windrose Mod — Host Parity, Multiplayer Manifest & Co-op Installs',
       description:
         'Windrose mod co-op manifest: read Nexus via Download mod for features, then use Compass tips for host/client pak parity, WindowsServer paths, and invite-night rehearsal.',
       keywords:
@@ -190,7 +190,7 @@ export default [
     downloadUrl: 'https://www.nexusmods.com/windrose/mods/152',
     stars: 4,
     seo: {
-      title: 'Windrose mod — Save backup & rollback drill | Windrose Compass',
+      title: 'Mod Spotlight — Save Backups, Rollback & Safer Early Access Installs',
       description:
         'Windrose mod install prep focused on saves: profile snapshots, rollback order, when to test on a throwaway pirate; feature facts stay on Nexus via Download mod.',
       keywords:
@@ -271,7 +271,7 @@ export default [
     downloadUrl: 'https://www.nexusmods.com/windrose/mods/153',
     stars: 4,
     seo: {
-      title: 'Windrose mod — Load order & conflict triage | Windrose Compass',
+      title: 'Windrose Mod — Load Order, Conflicts & Nexus Troubleshooting',
       description:
         'Windrose mod troubleshooting playbook: bisect ~mods paks, Steam-clean boots, reading Nexus posts for conflicts—feature facts remain on the listing opened via Download mod.',
       keywords:

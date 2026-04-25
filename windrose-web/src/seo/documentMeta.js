@@ -1,3 +1,5 @@
+import { buildDocumentTitle } from '@/utils/pageSeo.js'
+
 import { seoConfig } from './config.js'
 
 /**
@@ -68,7 +70,8 @@ export function applyDocumentSeo({ path, title, description, keywords, ogImage, 
 
   const canonicalUrl = resolveCanonicalUrl(path)
 
-  document.title = title || seoConfig.defaults.title
+  const resolvedTitle = title || buildDocumentTitle(seoConfig.defaults.title)
+  document.title = resolvedTitle
 
   setMeta('name', 'description', description || seoConfig.defaults.description)
   if (keywords) setMeta('name', 'keywords', keywords)
@@ -78,7 +81,7 @@ export function applyDocumentSeo({ path, title, description, keywords, ogImage, 
 
   const absImage = toAbsoluteUrl(ogImage || seoConfig.defaultOgImage)
 
-  setMeta('property', 'og:title', title || seoConfig.defaults.title)
+  setMeta('property', 'og:title', resolvedTitle)
   setMeta('property', 'og:description', description || seoConfig.defaults.description)
   setMeta('property', 'og:image', absImage)
   setMeta('property', 'og:url', canonicalUrl)
@@ -87,7 +90,7 @@ export function applyDocumentSeo({ path, title, description, keywords, ogImage, 
   setMeta('property', 'og:locale', 'en_US')
 
   setMeta('name', 'twitter:card', 'summary_large_image')
-  setMeta('name', 'twitter:title', title || seoConfig.defaults.title)
+  setMeta('name', 'twitter:title', resolvedTitle)
   setMeta('name', 'twitter:description', description || seoConfig.defaults.description)
   setMeta('name', 'twitter:image', absImage)
   if (seoConfig.social.twitterSite) {
@@ -102,7 +105,7 @@ export function applyDocumentSeo({ path, title, description, keywords, ogImage, 
   const ld =
     jsonLd ||
     buildDefaultWebPageJsonLd({
-      name: title || seoConfig.defaults.title,
+      name: resolvedTitle,
       description: description || seoConfig.defaults.description,
       url: canonicalUrl,
     })

@@ -9,7 +9,8 @@ export const seoConfig = {
   /** 默认分享图（站内路径，运行时拼为绝对 URL） */
   defaultOgImage: '/images/bg.webp',
   defaults: {
-    title: 'Windrose Wiki, Interactive Map & Guides — Early Access | Windrose Compass',
+    /** 仅「|」右侧描述段；须含品牌词 Windrose，并与首页 meta 一致 */
+    title: 'Windrose Wiki, Interactive Map, Guides & Mods',
     description:
       'Windrose Compass: fan wiki tables, interactive map with POI search, and guides for Early Access pirate survival—ships, camps, and sailing in one hub.',
     keywords:

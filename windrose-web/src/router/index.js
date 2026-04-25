@@ -26,7 +26,7 @@ const router = createRouter({
       name: 'home',
       component: () => import('@/views/HomeView.vue'),
       meta: {
-        title: 'Windrose Wiki, Interactive Map & Guides — Early Access',
+        title: 'Windrose Wiki, Interactive Map, Guides & Mods',
         description:
           'Windrose Compass: fan wiki tables, interactive map with POI search, and guides for Early Access pirate survival—ships, camps, and sailing in one hub.',
         keywords:
@@ -42,7 +42,7 @@ const router = createRouter({
       name: 'getting-started',
       component: () => import('@/views/GettingStartedView.vue'),
       meta: {
-        title: "Windrose Beginner's Guide: Tips for Your First 10 Hours",
+        title: 'Windrose Beginner Guide — First 10 Hours, Talents & Shelter',
         description:
           'Windrose beginner guide: talents, first gathering, shelter, starter boat, and food buff planning for Early Access—fan hub with map and wiki links.',
         keywords:
@@ -54,7 +54,7 @@ const router = createRouter({
       name: 'advanced',
       component: () => import('@/views/AdvancedView.vue'),
       meta: {
-        title: 'Windrose Advanced Progression: Mid-to-Late Game Strategy',
+        title: 'Windrose Advanced Guide — Combat, Ships, Forts & Endgame',
         description:
           'Windrose advanced guide: soulslite combat cadence, ship outfit choices, gunpowder routes, forts, dedicated server notes—pairs with wiki and map.',
         keywords:
@@ -66,7 +66,7 @@ const router = createRouter({
       name: 'wiki',
       component: () => import('@/views/wiki/WikiHubView.vue'),
       meta: {
-        title: 'Windrose Wiki Hub — Resources, Weapons, Ship & Item Tables',
+        title: 'Windrose Wiki Hub — Resources, Weapons, Ship, Armor & Items',
         description:
           'Six Windrose wiki decks: resources, consumables, weapons, equipment, ship, misc—filterable fan tables for crafting, loadouts, and trade in Early Access.',
         keywords:
@@ -78,7 +78,7 @@ const router = createRouter({
       name: 'wiki-resources',
       component: () => import('@/views/wiki/WikiResourcesView.vue'),
       meta: {
-        title: 'Windrose Resources Wiki — Ores, Fibers, Salvage & Drops',
+        title: 'Windrose Resources Wiki — Ores, Fibers, Salvage & Biome Drops',
         description:
           'Windrose resources table: ores, fibers, salvage, biome drops—filter by name for crafting chains, camp upgrades, and trade planning in Early Access.',
         keywords:
@@ -90,7 +90,7 @@ const router = createRouter({
       name: 'wiki-consumables',
       component: () => import('@/views/wiki/WikiConsumablesView.vue'),
       meta: {
-        title: 'Windrose Consumables Wiki — Food, Medicine & Buff Items',
+        title: 'Windrose Consumables Wiki — Food, Buffs, Medicine & Survival',
         description:
           'Windrose consumables: food, tonics, buffs, expendables—search by name or effect to plan loadouts and survival rotations for PvE Early Access.',
         keywords:
@@ -102,7 +102,7 @@ const router = createRouter({
       name: 'wiki-weapons',
       component: () => import('@/views/wiki/WikiWeaponsView.vue'),
       meta: {
-        title: 'Windrose Weapons Wiki — Melee, Ranged & Thrown',
+        title: 'Windrose Weapons Wiki — Melee, Ranged, Thrown & Builds',
         description:
           'Windrose weapons table: melee, ranged, and thrown—filter by category, stats, and rarity to compare DPS families, stamina costs, and Early Access builds.',
         keywords:
@@ -114,7 +114,7 @@ const router = createRouter({
       name: 'wiki-equipment',
       component: () => import('@/views/wiki/WikiEquipmentView.vue'),
       meta: {
-        title: 'Windrose Equipment Wiki — Armor, Tools & Trinkets',
+        title: 'Windrose Equipment Wiki — Armor, Tools, Trinkets & Loadouts',
         description:
           'Windrose equipment table: armor, tools, trinkets—plan resist stacks, harvesting kits, outfit swaps for camps and naval runs in Early Access.',
         keywords:
@@ -126,7 +126,7 @@ const router = createRouter({
       name: 'wiki-ship',
       component: () => import('@/views/wiki/WikiShipView.vue'),
       meta: {
-        title: 'Windrose Ship Wiki — Hulls, Cannons & Deck Modules',
+        title: 'Windrose Ship Wiki — Hulls, Cannons, Gunports & Deck Modules',
         description:
           'Windrose ship parts: hulls, cannons, gunports, deck gear—stat snippets for naval builds; pair with our map when routes need firepower or cargo.',
         keywords:
@@ -150,7 +150,7 @@ const router = createRouter({
       name: 'map',
       component: () => import('@/views/MapView.vue'),
       meta: {
-        title: 'Windrose Interactive Map — POI Search & Coordinates',
+        title: 'Windrose Interactive Map — POIs, Camps & Coordinates',
         description:
           'Fan Windrose map: pan and zoom the archipelago, toggle camps and resources, search POIs by name or tag, read coordinates for wiki notes and callouts.',
         keywords:
@@ -162,7 +162,7 @@ const router = createRouter({
       name: 'guides',
       component: () => import('@/views/guides/GuidesListView.vue'),
       meta: {
-        title: 'Windrose Guides — Online Co-op, Map Tips & Early Access Help',
+        title: 'Windrose Guides — Co-op, Invite Codes, Map Tips & Early Access',
         description:
           'Windrose guides: play online with friends (invite codes, joining), interactive map how-tos, and practical Early Access notes for crews.',
         keywords:
@@ -187,7 +187,7 @@ const router = createRouter({
       name: 'mods',
       component: () => import('@/views/mods/ModsListView.vue'),
       meta: {
-        title: 'Windrose Mods — QoL & Gameplay Spotlights',
+        title: 'Windrose Mods — Nexus Spotlights, QoL, Gameplay & Install Notes',
         description:
           'Curated Windrose Early Access mods: QoL and gameplay spotlights, summaries, tags, version notes, author download links for solo, co-op, and servers.',
         keywords:
@@ -220,7 +220,7 @@ const router = createRouter({
       name: 'privacy-policy',
       component: () => import('@/views/legal/PrivacyPolicyView.vue'),
       meta: {
-        title: 'Privacy Policy — Data, Cookies & Fan Site Practices',
+        title: 'Windrose Fan Site Privacy — Data, Cookies & Compass Practices',
         description:
           'Windrose Compass privacy: browsing data, cookies, embeds, and updates to this fan-run wiki and map site—no accounts required for most pages.',
         keywords:
@@ -232,7 +232,7 @@ const router = createRouter({
       name: 'terms-of-use',
       component: () => import('@/views/legal/TermsOfUseView.vue'),
       meta: {
-        title: 'Terms of Use — Fan Site Rules & Disclaimer',
+        title: 'Windrose Fan Site Terms — Rules, Disclaimer & Trademark Notes',
         description:
           'Windrose Compass terms: acceptable use, trademark notices, fan disclaimer, liability limits—this site is independent from the Windrose game and publishers.',
         keywords:
@@ -244,7 +244,7 @@ const router = createRouter({
       name: 'copyright',
       component: () => import('@/views/legal/CopyrightView.vue'),
       meta: {
-        title: 'Copyright — Notices & Takedown Information',
+        title: 'Windrose Fan Site Copyright — Notices, Fair Use & Takedowns',
         description:
           'Copyright on Windrose Compass: fair-use context, how rights holders may request changes, third-party links, and rules for any future user-submitted content.',
         keywords:
@@ -256,7 +256,7 @@ const router = createRouter({
       name: 'about-us',
       component: () => import('@/views/legal/AboutUsView.vue'),
       meta: {
-        title: 'About Us — Windrose Compass Fan Project',
+        title: 'About Windrose Compass — Fan Wiki, Map & How We Work',
         description:
           'About Windrose Compass: a volunteer-run companion for Windrose Early Access—wiki tables, guides, and map—not official support; how we think about accuracy and contributions.',
         keywords:
@@ -268,7 +268,7 @@ const router = createRouter({
       name: 'contact-us',
       component: () => import('@/views/legal/ContactUsView.vue'),
       meta: {
-        title: 'Contact Us — Official Support vs Site Feedback',
+        title: 'Windrose Compass Contact — Site Feedback vs Official Support',
         description:
           'Contact: use Steam and official Windrose channels for game support; for this fan site, reach maintainers via the community or repo they publish—no form here.',
         keywords:
@@ -286,7 +286,7 @@ router.afterEach((to) => {
     if (!g) {
       applyDocumentSeo({
         path,
-        title: buildDocumentTitle('Guide not found'),
+        title: buildDocumentTitle('Windrose Guide Not Found — Browse All Guides'),
         description: 'The requested Windrose guide is not available on Windrose Compass.',
         keywords: seoConfig.defaults.keywords,
       })
@@ -303,7 +303,7 @@ router.afterEach((to) => {
       ogType: 'article',
       jsonLd: mergeArticleJsonLdWithHead(
         buildArticleJsonLd({
-          headline: g.seo?.title || g.title,
+          headline: buildDocumentTitle(g.seo?.title || g.title),
           description,
           url: resolveCanonicalUrl(path),
           datePublished: g.publishDate,
@@ -322,7 +322,7 @@ router.afterEach((to) => {
     if (!m) {
       applyDocumentSeo({
         path,
-        title: buildDocumentTitle('Mod not found'),
+        title: buildDocumentTitle('Windrose Mod Not Found — Browse All Mods'),
         description: 'The requested Windrose mod entry is not available on Windrose Compass.',
         keywords: seoConfig.defaults.keywords,
       })
@@ -338,7 +338,7 @@ router.afterEach((to) => {
       ogImage: m.imageUrl,
       ogType: 'article',
       jsonLd: buildArticleJsonLd({
-        headline: m.seo?.title || m.title,
+        headline: buildDocumentTitle(m.seo?.title || m.title),
         description,
         url: resolveCanonicalUrl(path),
         datePublished: m.publishDate,
@@ -348,9 +348,7 @@ router.afterEach((to) => {
     return
   }
 
-  const title = to.meta?.title
-    ? buildDocumentTitle(to.meta.title)
-    : seoConfig.defaults.title
+  const title = buildDocumentTitle(to.meta?.title ?? seoConfig.defaults.title)
   const description = to.meta?.description || seoConfig.defaults.description
   const keywords = to.meta?.keywords || seoConfig.defaults.keywords
   applyDocumentSeo({
