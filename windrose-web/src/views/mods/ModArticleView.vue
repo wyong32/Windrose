@@ -167,10 +167,6 @@ const asideItems = computed(() => {
   padding-bottom: 3rem;
 }
 
-.page-hero--detail {
-  padding-bottom: 1rem;
-}
-
 .mod-article__split-wrap {
   padding: 1.5rem 0 2.5rem;
 }

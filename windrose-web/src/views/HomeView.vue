@@ -1093,7 +1093,11 @@ const faqItems = [
   margin-bottom: 0;
 }
 
-/* 与地图页不同：首页没有 .wr-map__map-column 固定高度，必须给预览区明确高度，Leaflet 才能绘制 */
+/*
+ * 首页地图预览：与 MapView 共用 WindroseMapViewport 内部结构。
+ * :deep 目标（.windrose-map-viewport、.wr-map__map-wrap、.wr-map__map、.rtv-map-host）须与
+ * MapView.vue 无 scoped 样式中的 .wr-map / .map-page 约定保持一致；重命名地图内核类时请两边同改。
+ */
 .map-teaser-visual {
   position: relative;
   z-index: 0;

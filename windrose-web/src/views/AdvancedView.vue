@@ -392,18 +392,4 @@ onUnmounted(() => {
   flex-direction: column;
   gap: 1.35rem;
 }
-
-.guide-chunk {
-  margin: 0;
-  padding: 1.35rem 1.45rem 1.45rem;
-  border-radius: 0.35rem;
-  border: 1px solid rgba(201, 164, 92, 0.24);
-  background: rgba(8, 9, 12, 0.82);
-  box-shadow: 0 16px 42px rgba(0, 0, 0, 0.42);
-}
-
-.guide-chunk :deep(h2:first-child),
-.guide-chunk :deep(figure:first-child) {
-  margin-top: 0;
-}
 </style>

@@ -1,5 +1,5 @@
 <template>
-  <article class="guide-article map-page map-raster-page windrose-map-page wr-map">
+  <article class="map-page wr-map">
     <section class="page-hero page-hero--chart" aria-labelledby="map-hero-title">
       <div class="container">
         <nav class="page-breadcrumb" aria-label="Breadcrumb">
@@ -266,7 +266,12 @@ function onMasterChange(cat, e) {
 }
 </script>
 
-<!-- Map page layout + Leaflet; unscoped so child (MapPinSearch) and Leaflet DOM match -->
+<!--
+  Map page layout + Leaflet：本块样式无 scoped，子组件与 Leaflet 注入的 DOM 才能匹配。
+  约定（首页 map-teaser 的 :deep 依赖于此，改名须同步改 HomeView）：
+  - .wr-map / .wr-map__*：地图壳层 BEM，视为对外稳定类名。
+  - .map-page：Leaflet / rtv-* 控件层叠作用域前缀，避免污染全站。
+-->
 <style>
 /* Map page — aligned with site tokens; ocean fill matches chart edges */
 .wr-map {

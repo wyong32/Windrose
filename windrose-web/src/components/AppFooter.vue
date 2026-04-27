@@ -118,7 +118,6 @@ const outbound = computed(() =>
 <style scoped>
 .site-footer {
   position: relative;
-  margin-top: auto;
   padding: 2.75rem 0 2.25rem;
   border-top: 1px solid rgba(160, 188, 210, 0.2);
   background:
@@ -307,18 +306,6 @@ const outbound = computed(() =>
   margin: 0;
   font-size: 0.82rem;
   color: var(--color-text-muted);
-}
-
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
 }
 
 /* ≤1024：与全站平板档一致，整栏纵向堆叠、略收间距 */

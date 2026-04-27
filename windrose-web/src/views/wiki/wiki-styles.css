@@ -1,17 +1,4 @@
-/* Wiki 模块：与全站 page-hero / 暗色航海主题对齐 */
-
-/* 表格筛选等处的仅屏幕阅读可见标签（各 Wiki 页共用） */
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
+/* Wiki 模块：与全站 page-hero / 暗色航海主题对齐（.sr-only 见 main.css） */
 
 .wiki-module {
   padding-bottom: 3rem;
@@ -200,11 +187,7 @@
   font-size: 0.92rem;
 }
 
-/* Wiki 数据表页：航海日志式 ledger（与全站 parchment / brass / sea 色板一致） */
-
-.wiki-res-page {
-  padding-bottom: 3rem;
-}
+/* Wiki 数据表页：航海日志式 ledger（与全站 parchment / brass / sea 色板一致；底边距由 .wiki-module 承担） */
 
 .wiki-res-heading {
   margin: 0;
@@ -650,10 +633,6 @@
 
   .wiki-category-row__excerpt {
     font-size: 0.82rem;
-  }
-
-  .wiki-res-page {
-    padding-bottom: 2rem;
   }
 
   .wiki-res-heading {
