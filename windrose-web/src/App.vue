@@ -25,4 +25,10 @@ import AppFooter from '@/components/AppFooter.vue'
   flex: 1 0 auto;
   padding-top: 4.5rem;
 }
+
+@media (max-width: 768px) {
+  .app-main {
+    padding-top: 4.15rem;
+  }
+}
 </style>

@@ -183,6 +183,7 @@ export default [
     publishDate: "2026-04-25",
     imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777105662/cms-uploads/cms-1777105662173-881866006.webp",
     imageAlt: "Player opening an Ancient Chest in a Swamp Crypt Tablet House in Windrose, obtaining Quagmire Powder.",
+    isHome: true,
     seo: {
       title: 'Windrose Quagmire Powder — Swamp Farm, Mire Metal & Late Game',
       description: "Master Windrose's late-game with this Quagmire Powder guide. Learn efficient farming methods in Cursed Swamps and how to craft Mire Metal Ingots to unlock enchantments and advanced gear.",
@@ -319,7 +320,7 @@ export default [
   <p>Q: I don't have enough Ancient Scraps. Can I craft anything using just the powder?
   </p>
   <p> A: Not under the current game mechanics. Quagmire Powder must be paired with Ancient Scraps to create a chemical reaction in the Large Smelting Furnace, producing the actually useful Mire Metal Ingot. These two items are bound together as upstream and downstream materials.
-  </p>`,
+  </p>`.trim(),
   },
 
   {
@@ -367,6 +368,7 @@ export default [
     publishDate: "2026-04-25",
     imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777107374/cms-uploads/cms-1777107374896-953265952.webp",
     imageAlt: "A map screenshot showing the Windrose Traveler's Camp icon with 1/2 unique chests looted progress, indicating a hidden second chest.",
+    isHome: true,
     seo: {
       title: "Windrose Traveler's Camp — Hidden Chest, Shovel Digs & Exploration XP",
       description: "Master Windrose's Traveler's Camp by uncovering the hidden second chest. This in-depth guide reveals how to use a Shovel to find the secret loot and gain +50 exploration XP, bypassing misleading old strategies.",
@@ -475,7 +477,7 @@ export default [
   <p>Q: Is the loot from the second chest always the same?
   </p>
   <p> A: Not strictly fixed, but it heavily leans towards valuable mid-tier consumables. In documented gameplay (including German client tests), players consistently pulled stacks of Homemade Gunpowder (up to 10x) and high-tier healing potions, making this an excellent early-game boost for your combat reserves.
-  </p>`,
+  </p>`.trim(),
   },
 
   {
@@ -519,6 +521,7 @@ export default [
     title: "Windrose Hewn Stone Guide: Unlock & Crafting Explained",
     description: "Stop banging rocks at level 1. Discover how to get hewn stone in Windrose by finding Ancient Scraps in the Cursed Swamps and upgrading your Workbench to Level 3.",
     tags: ["Windrose","Hewn Stone","Crafting Guide","Unlock Schematic","Base Building"],
+    isHome: true,
     publishDate: "2026-04-25",
     imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777110044/cms-uploads/cms-1777110044431-338918537.png",
     imageAlt: "Windrose Hewn Stone crafting guide, showing unlock steps and workbench upgrades",
@@ -662,7 +665,7 @@ export default [
   <p>Q: Do the Sawhorse and Toolbox have to be physically touching the Workbench?
   </p>
   <p> A: They don't need to clip into each other, but the game uses a very tight proximity radius (usually within the same 1x1 or 2x2 foundation block). If you place the Toolbox on the opposite side of a large room, the Workbench will not register the +1 level buff.
-  </p>`,
+  </p>`.trim(),
   },
 
   {
@@ -714,6 +717,7 @@ export default [
       description: "Unravel the secrets of fishing in Windrose! This guide covers essential mid-game rod crafting, finding Divi-Divi hardwood, simple fishing mechanics, and the game-changing Seafood Platter for +20 Vitality to dominate boss fights.",
       keywords: "Windrose fishing, rod crafting, Divi-Divi hardwood, fishing guide, seafood platter, vitality food, boss meta, survival game tips"
     },
+    isHome: true,
     addressBar: "windrose-fishing-guide-rod-crafting-best-food-meta",
     detailsHtml: `<h1>Windrose Fishing Guide
   </h1>
@@ -823,7 +827,7 @@ export default [
   <p>Q: The Seafood Platter requires a ton of Salt. Can I mine it or gather it from seawater?
   </p>
   <p> A: No, Windrose doesn't feature seawater distillation for salt yet. Salt is strictly a lootable resource. You must farm it by cracking open pirate loot crates on land or successfully boarding and looting enemy ships marked with the "golden chest" icon. Treat salt as a premium combat resource.
-  </p>`,
+  </p>`.trim(),
   }
 
 

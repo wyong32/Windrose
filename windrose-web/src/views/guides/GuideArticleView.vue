@@ -459,7 +459,7 @@ const asideMoreShowGuidesLink = hasOtherGuides
   color: var(--color-brass);
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   .guide-detail__split {
     grid-template-columns: 1fr;
   }

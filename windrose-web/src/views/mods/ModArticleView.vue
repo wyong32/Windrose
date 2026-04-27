@@ -374,7 +374,7 @@ const asideItems = computed(() => {
   overflow-x: auto;
 }
 
-@media (max-width: 1023px) {
+@media (max-width: 1024px) {
   .mod-article__split {
     grid-template-columns: 1fr;
   }

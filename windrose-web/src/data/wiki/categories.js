@@ -54,7 +54,3 @@ export const WIKI_CATEGORY_META = {
       'Quest items, currencies, trophies, and anything that refuses a tidy bucket—still searchable from the hub.',
   },
 }
-
-export function getCategoryMeta(slug) {
-  return WIKI_CATEGORY_META[slug] ?? null
-}

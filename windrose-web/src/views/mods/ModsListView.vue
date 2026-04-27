@@ -143,7 +143,7 @@ function excerpt(item) {
   padding-left: 1rem;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .mods-ledger-page__masthead-grid {
     grid-template-columns: 1fr;
   }
@@ -264,7 +264,7 @@ function excerpt(item) {
     box-shadow 0.18s ease;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .mods-ledger__row {
     display: flex;
     flex-wrap: wrap;
@@ -355,7 +355,7 @@ function excerpt(item) {
   display: block;
 }
 
-@media (max-width: 720px) {
+@media (max-width: 768px) {
   .mods-ledger__thumb {
     flex: 0 0 4.5rem;
     max-width: 4.5rem;

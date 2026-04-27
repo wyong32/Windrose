@@ -204,7 +204,8 @@ watch(
   border: 0;
 }
 
-@media (max-width: 960px) {
+/* ≤1024：平板与手机共用抽屉导航（汉堡） */
+@media (max-width: 1024px) {
   .nav-toggle {
     display: inline-flex;
   }
@@ -236,16 +237,39 @@ watch(
     border-left: 3px solid var(--color-blood);
     padding-left: 0.5rem;
   }
+}
 
-  .brand-title {
-    font-size: 0.88rem;
-    letter-spacing: 0.08em;
+@media (min-width: 1025px) {
+  .nav-toggle {
+    display: none;
   }
 }
 
-@media (min-width: 961px) {
+/* ≤768：窄屏顶栏与触控目标 */
+@media (max-width: 768px) {
+  .header-inner {
+    min-height: 3.85rem;
+    gap: 0.65rem;
+  }
+
+  .brand-title {
+    font-size: 0.82rem;
+    letter-spacing: 0.07em;
+  }
+
   .nav-toggle {
-    display: none;
+    min-width: 2.75rem;
+    min-height: 2.75rem;
+    padding: 0.45rem;
+  }
+
+  .site-nav {
+    padding: 0.65rem 1rem 0.9rem;
+  }
+
+  .nav-link {
+    padding: 0.7rem 0;
+    font-size: 0.8rem;
   }
 }
 </style>

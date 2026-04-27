@@ -26,20 +26,6 @@
             Guides—including how to play online with friends and the interactive map walkthrough—live under Guides in the
             top nav. Windrose Compass is independent fan work—not affiliated with the game’s publisher.
           </p>
-          <ul class="page-hero__highlights">
-            <li>
-              <strong>Categories</strong>
-              Six tables from resources to misc—open the page that matches what you are looking up.
-            </li>
-            <li>
-              <strong>Search</strong>
-              Use the page filter, then your browser’s find shortcut (Ctrl+F or ⌘F) on the table.
-            </li>
-            <li>
-              <strong>Updates</strong>
-              Tables follow Early Access as we can; after a big patch, names or icons may lag for a short while.
-            </li>
-          </ul>
         </div>
       </div>
     </section>
@@ -48,7 +34,8 @@
       <div class="container">
         <h2 id="wiki-roster-heading" class="wiki-hub-roster-section__title">Data deck index</h2>
         <p class="wiki-hub-roster-section__lede">
-          Ledger-style index—each row opens the full table for that topic.
+          Ledger-style index—each row opens that deck’s full table. Use the filter on each page, then Ctrl+F or ⌘F on
+          the table if you need a second pass. After big patches, names or icons may lag briefly while we refresh.
         </p>
         <ol class="wiki-hub-roster">
           <li v-for="(slug, index) in WIKI_CATEGORY_ORDER" :key="slug" class="wiki-hub-roster__item">

@@ -95,16 +95,16 @@ function excerpt(item) {
   padding: 0;
   display: grid;
   gap: 1.1rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-@media (min-width: 640px) {
+@media (max-width: 768px) {
   .guides-hub__grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
+    grid-template-columns: 1fr;
   }
 }
 
-@media (min-width: 1100px) {
+@media (min-width: 1025px) {
   .guides-hub__grid {
     grid-template-columns: repeat(3, minmax(0, 1fr));
   }

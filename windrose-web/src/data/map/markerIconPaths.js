@@ -6,7 +6,7 @@
  */
 
 /** @param {string} type */
-export function markerRelativePath(type) {
+function markerRelativePath(type) {
   const t = String(type || '')
   if (t === 'StartLocation') return 'BuildingBits/T_RespawnTent_01.webp'
   if (t === 'Tortuga') return 'map/T_IconPOI_Fort.webp'

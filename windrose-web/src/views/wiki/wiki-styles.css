@@ -1,5 +1,18 @@
 /* Wiki 模块：与全站 page-hero / 暗色航海主题对齐 */
 
+/* 表格筛选等处的仅屏幕阅读可见标签（各 Wiki 页共用） */
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
 .wiki-module {
   padding-bottom: 3rem;
 }
@@ -156,7 +169,7 @@
   background: rgba(12, 18, 28, 0.55);
 }
 
-@media (min-width: 720px) {
+@media (min-width: 1025px) {
   .wiki-category-row {
     grid-template-columns: minmax(0, 220px) minmax(0, 1fr);
     align-items: start;
@@ -185,4 +198,476 @@
   border: 1px dashed rgba(160, 188, 210, 0.25);
   color: var(--color-text-muted);
   font-size: 0.92rem;
+}
+
+/* Wiki 数据表页：航海日志式 ledger（与全站 parchment / brass / sea 色板一致） */
+
+.wiki-res-page {
+  padding-bottom: 3rem;
+}
+
+.wiki-res-heading {
+  margin: 0;
+  font-family: var(--font-heading);
+  font-size: clamp(1.25rem, 2.2vw, 1.5rem);
+  color: var(--color-parchment);
+}
+
+.wiki-res-toolbar {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 1.35rem;
+  padding: 0.65rem 1rem 0.65rem 1.1rem;
+  border-radius: 12px;
+  background: linear-gradient(165deg, rgba(14, 22, 36, 0.92) 0%, rgba(8, 12, 20, 0.88) 100%);
+  border: 1px solid rgba(106, 168, 196, 0.18);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.04),
+    0 10px 28px rgba(0, 0, 0, 0.22);
+}
+
+.wiki-res-toolbar--end {
+  justify-content: flex-end;
+}
+
+.wiki-res-search {
+  position: relative;
+  flex: 1 1 16rem;
+  max-width: 26rem;
+}
+
+.wiki-res-search::before {
+  content: '';
+  position: absolute;
+  left: 1rem;
+  top: 50%;
+  width: 1rem;
+  height: 1rem;
+  transform: translateY(-50%);
+  opacity: 0.5;
+  pointer-events: none;
+  background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='none' viewBox='0 0 24 24' stroke='%23aab6c5' stroke-width='2'%3E%3Cpath stroke-linecap='round' d='M11 19a8 8 0 100-16 8 8 0 000 16z'/%3E%3Cpath stroke-linecap='round' d='M21 21l-4.3-4.3'/%3E%3C/svg%3E")
+    center / contain no-repeat;
+}
+
+.wiki-res-search input {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.65rem 0.85rem 0.65rem 2.65rem;
+  border-radius: 999px;
+  border: 1px solid rgba(160, 188, 210, 0.22);
+  background: rgba(4, 8, 14, 0.75);
+  color: var(--color-text);
+  font: inherit;
+  font-size: 0.92rem;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease,
+    background 0.2s ease;
+}
+
+.wiki-res-search input::placeholder {
+  color: var(--color-text-muted);
+  opacity: 0.88;
+}
+
+.wiki-res-search input:hover {
+  border-color: rgba(106, 168, 196, 0.35);
+}
+
+.wiki-res-search input:focus {
+  outline: none;
+  border-color: rgba(212, 180, 106, 0.55);
+  box-shadow: 0 0 0 2px rgba(212, 180, 106, 0.2);
+  background: rgba(6, 10, 18, 0.9);
+}
+
+/* 表格外框：细金青渐变边 + 内凹底 */
+.wiki-res-table-wrap {
+  position: relative;
+  overflow-x: auto;
+  border-radius: 14px;
+  padding: 1px;
+  background: linear-gradient(
+    135deg,
+    rgba(212, 180, 106, 0.35) 0%,
+    rgba(106, 168, 196, 0.22) 42%,
+    rgba(60, 80, 110, 0.25) 100%
+  );
+  box-shadow:
+    0 0 0 1px rgba(0, 0, 0, 0.35),
+    0 22px 48px rgba(0, 0, 0, 0.32);
+}
+
+.wiki-res-table-wrap::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  height: 3px;
+  border-radius: 14px 14px 0 0;
+  background: linear-gradient(90deg, transparent, rgba(212, 180, 106, 0.55), rgba(106, 168, 196, 0.45), transparent);
+  opacity: 0.85;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.wiki-res-table-wrap::after {
+  content: '';
+  position: absolute;
+  inset: 1px;
+  border-radius: 13px;
+  background: linear-gradient(180deg, rgba(10, 16, 28, 0.97) 0%, rgba(6, 9, 14, 0.96) 100%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+.wiki-res-table-wrap .wiki-res-table {
+  position: relative;
+  z-index: 1;
+}
+
+.wiki-res-table {
+  width: 100%;
+  border-collapse: separate;
+  border-spacing: 0;
+  font-size: 0.9rem;
+}
+
+.wiki-res-table th,
+.wiki-res-table td {
+  padding: 0.78rem 1rem;
+  text-align: left;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(106, 168, 196, 0.08);
+}
+
+.wiki-res-table td:first-child {
+  width: 3.75rem;
+  padding-right: 0.5rem;
+}
+
+.wiki-res-table thead th {
+  font-size: 0.65rem;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  font-weight: 700;
+  color: rgba(250, 246, 238, 0.72);
+  background: linear-gradient(180deg, rgba(26, 36, 52, 0.98) 0%, rgba(16, 24, 38, 0.95) 100%);
+  border-bottom: 2px solid rgba(212, 180, 106, 0.28);
+  position: sticky;
+  top: 0;
+  z-index: 3;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.wiki-res-table thead th:first-child {
+  border-radius: 12px 0 0 0;
+}
+
+.wiki-res-table thead th:last-child {
+  border-radius: 0 12px 0 0;
+}
+
+.wiki-res-table tbody tr {
+  transition: background 0.18s ease;
+}
+
+.wiki-res-table tbody tr:nth-child(even) {
+  background: rgba(255, 255, 255, 0.015);
+}
+
+.wiki-res-table tbody tr:hover {
+  background: rgba(212, 180, 106, 0.06);
+}
+
+.wiki-res-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.wiki-res-table tbody tr:last-child td:first-child {
+  border-radius: 0 0 0 12px;
+}
+
+.wiki-res-table tbody tr:last-child td:last-child {
+  border-radius: 0 0 12px 0;
+}
+
+.wiki-res-thumb {
+  width: 48px;
+  height: 48px;
+  border-radius: 10px;
+  object-fit: contain;
+  background: radial-gradient(circle at 30% 25%, rgba(106, 168, 196, 0.12), rgba(4, 8, 14, 0.9));
+  border: 1px solid rgba(160, 188, 210, 0.2);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.06),
+    0 2px 8px rgba(0, 0, 0, 0.25);
+  display: block;
+}
+
+.wiki-res-thumb--mono {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+  color: var(--color-parchment);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.wiki-res-name {
+  font-weight: 650;
+  color: var(--color-parchment);
+  letter-spacing: 0.01em;
+}
+
+.wiki-res-id {
+  display: block;
+  margin-top: 0.2rem;
+  font-size: 0.7rem;
+  color: var(--color-text-muted);
+  font-family: ui-monospace, monospace;
+  opacity: 0.92;
+}
+
+.wiki-res-rarity {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.2rem 0.55rem;
+  border-radius: 999px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.2);
+}
+
+.wiki-res-rarity--common {
+  color: #c5d0de;
+  background: rgba(120, 140, 160, 0.16);
+}
+
+.wiki-res-rarity--uncommon {
+  color: #9dd89d;
+  background: rgba(80, 140, 100, 0.2);
+}
+
+.wiki-res-rarity--rare {
+  color: #8ec8ff;
+  background: rgba(60, 110, 180, 0.22);
+}
+
+.wiki-res-rarity--epic {
+  color: #c4b6dc;
+  background: rgba(100, 80, 140, 0.24);
+}
+
+.wiki-res-rarity--legendary {
+  color: #f0d78c;
+  background: rgba(180, 140, 60, 0.22);
+}
+
+.wiki-res-stack {
+  font-variant-numeric: tabular-nums;
+  color: var(--color-text-muted);
+  font-size: 0.88rem;
+}
+
+.wiki-res-desc {
+  max-width: 28rem;
+  min-width: 12rem;
+  color: var(--color-text-muted);
+  line-height: 1.5;
+  white-space: pre-line;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .wiki-res-table tbody tr,
+  .wiki-res-search input {
+    transition: none;
+  }
+}
+
+/* —— 窄屏：卡片行 + 按 deck 区分的列标签 —— */
+@media (max-width: 768px) {
+  .wiki-res-table-wrap {
+    padding: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .wiki-res-table-wrap::before,
+  .wiki-res-table-wrap::after {
+    display: none;
+  }
+
+  .wiki-res-table,
+  .wiki-res-table thead,
+  .wiki-res-table tbody,
+  .wiki-res-table th,
+  .wiki-res-table td,
+  .wiki-res-table tr {
+    display: block;
+  }
+
+  .wiki-res-table thead {
+    display: none;
+  }
+
+  .wiki-res-table tbody tr {
+    margin-bottom: 0.85rem;
+    padding: 0.85rem 0.9rem;
+    border-radius: 12px;
+    border: 1px solid rgba(106, 168, 196, 0.2);
+    background: linear-gradient(165deg, rgba(14, 22, 36, 0.95) 0%, rgba(8, 12, 20, 0.92) 100%);
+    box-shadow: 0 12px 28px rgba(0, 0, 0, 0.28);
+  }
+
+  .wiki-res-table tbody td {
+    border: none;
+    padding: 0.4rem 0;
+  }
+
+  .wiki-res-table tbody td::before {
+    display: block;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: rgba(170, 182, 197, 0.9);
+    margin-bottom: 0.2rem;
+  }
+
+  .wiki-res-table tbody td:nth-child(1),
+  .wiki-res-table tbody td:nth-child(2) {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .wiki-res-table tbody td:nth-child(1)::before,
+  .wiki-res-table tbody td:nth-child(2)::before {
+    display: none;
+  }
+
+  /* resources：Icon | Item · Rarity · Stack · Description */
+  [data-wiki-deck='resources'] .wiki-res-table tbody td:nth-child(3)::before {
+    content: 'Rarity';
+  }
+  [data-wiki-deck='resources'] .wiki-res-table tbody td:nth-child(4)::before {
+    content: 'Stack';
+  }
+  [data-wiki-deck='resources'] .wiki-res-table tbody td:nth-child(5)::before {
+    content: 'Description';
+  }
+
+  /* weapons / ship：+ Category · Stat */
+  [data-wiki-deck='weapons'] .wiki-res-table tbody td:nth-child(3)::before,
+  [data-wiki-deck='ship'] .wiki-res-table tbody td:nth-child(3)::before {
+    content: 'Description';
+  }
+  [data-wiki-deck='weapons'] .wiki-res-table tbody td:nth-child(4)::before,
+  [data-wiki-deck='ship'] .wiki-res-table tbody td:nth-child(4)::before {
+    content: 'Category';
+  }
+  [data-wiki-deck='weapons'] .wiki-res-table tbody td:nth-child(5)::before,
+  [data-wiki-deck='ship'] .wiki-res-table tbody td:nth-child(5)::before {
+    content: 'Stat';
+  }
+  [data-wiki-deck='weapons'] .wiki-res-table tbody td:nth-child(6)::before,
+  [data-wiki-deck='ship'] .wiki-res-table tbody td:nth-child(6)::before {
+    content: 'Rarity';
+  }
+
+  /* consumables / equipment / misc */
+  [data-wiki-deck='consumables'] .wiki-res-table tbody td:nth-child(3)::before,
+  [data-wiki-deck='equipment'] .wiki-res-table tbody td:nth-child(3)::before,
+  [data-wiki-deck='misc'] .wiki-res-table tbody td:nth-child(3)::before {
+    content: 'Description';
+  }
+  [data-wiki-deck='consumables'] .wiki-res-table tbody td:nth-child(4)::before,
+  [data-wiki-deck='equipment'] .wiki-res-table tbody td:nth-child(4)::before,
+  [data-wiki-deck='misc'] .wiki-res-table tbody td:nth-child(4)::before {
+    content: 'Category';
+  }
+  [data-wiki-deck='consumables'] .wiki-res-table tbody td:nth-child(5)::before,
+  [data-wiki-deck='equipment'] .wiki-res-table tbody td:nth-child(5)::before,
+  [data-wiki-deck='misc'] .wiki-res-table tbody td:nth-child(5)::before {
+    content: 'Rarity';
+  }
+}
+
+@media (max-width: 768px) {
+  .wiki-module {
+    padding-bottom: 2rem;
+  }
+
+  .wiki-hub-roster-section__title {
+    font-size: clamp(1.08rem, 4vw, 1.32rem);
+  }
+
+  .wiki-hub-roster-section__lede {
+    margin-bottom: 0.9rem;
+    font-size: 0.84rem;
+    line-height: 1.5;
+  }
+
+  .wiki-hub-roster__link {
+    padding: 0.72rem 0.85rem;
+    gap: 0.4rem 0.65rem;
+  }
+
+  .wiki-hub-roster__label {
+    font-size: 0.92rem;
+  }
+
+  .wiki-hub-roster__tagline {
+    font-size: 0.78rem;
+  }
+
+  .wiki-category-section {
+    padding: 1.25rem 0 2rem;
+  }
+
+  .wiki-page-table-heading {
+    margin-bottom: 0.75rem;
+    font-size: clamp(0.95rem, 3.5vw, 1.08rem);
+  }
+
+  .wiki-category-row {
+    padding: 0.72rem 0.85rem;
+  }
+
+  .wiki-category-row__title {
+    font-size: 0.92rem;
+  }
+
+  .wiki-category-row__excerpt {
+    font-size: 0.82rem;
+  }
+
+  .wiki-res-page {
+    padding-bottom: 2rem;
+  }
+
+  .wiki-res-heading {
+    font-size: clamp(1.05rem, 3.5vw, 1.22rem);
+  }
+
+  .wiki-res-toolbar {
+    margin-bottom: 1rem;
+    padding: 0.5rem 0.75rem 0.55rem 0.85rem;
+    gap: 0.75rem;
+  }
+
+  .wiki-res-search input {
+    padding: 0.52rem 0.65rem 0.52rem 2.4rem;
+    font-size: 0.86rem;
+  }
 }

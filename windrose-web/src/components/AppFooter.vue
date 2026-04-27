@@ -246,7 +246,7 @@ const outbound = computed(() =>
 .footer-right {
   display: grid;
   gap: 1.5rem 2rem;
-  grid-template-columns: 1fr;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 .footer-nav-heading {
@@ -321,13 +321,13 @@ const outbound = computed(() =>
   border: 0;
 }
 
-@media (min-width: 720px) {
+@media (max-width: 768px) {
   .footer-right {
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: 1fr;
   }
 }
 
-@media (min-width: 960px) {
+@media (min-width: 1025px) {
   .footer-shell {
     grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
     align-items: start;

@@ -76,7 +76,7 @@ const router = createRouter({
     {
       path: '/wiki/resources',
       name: 'wiki-resources',
-      component: () => import('@/views/wiki/WikiResourcesView.vue'),
+      component: () => import('@/views/wiki/WikiResourcesPage.vue'),
       meta: {
         title: 'Windrose Resources Wiki — Ores, Fibers, Salvage & Biome Drops',
         description:
@@ -88,7 +88,7 @@ const router = createRouter({
     {
       path: '/wiki/consumables',
       name: 'wiki-consumables',
-      component: () => import('@/views/wiki/WikiConsumablesView.vue'),
+      component: () => import('@/views/wiki/WikiConsumablesPage.vue'),
       meta: {
         title: 'Windrose Consumables Wiki — Food, Buffs, Medicine & Survival',
         description:
@@ -100,7 +100,7 @@ const router = createRouter({
     {
       path: '/wiki/weapons',
       name: 'wiki-weapons',
-      component: () => import('@/views/wiki/WikiWeaponsView.vue'),
+      component: () => import('@/views/wiki/WikiWeaponsPage.vue'),
       meta: {
         title: 'Windrose Weapons Wiki — Melee, Ranged, Thrown & Builds',
         description:
@@ -112,7 +112,7 @@ const router = createRouter({
     {
       path: '/wiki/equipment',
       name: 'wiki-equipment',
-      component: () => import('@/views/wiki/WikiEquipmentView.vue'),
+      component: () => import('@/views/wiki/WikiEquipmentPage.vue'),
       meta: {
         title: 'Windrose Equipment Wiki — Armor, Tools, Trinkets & Loadouts',
         description:
@@ -124,7 +124,7 @@ const router = createRouter({
     {
       path: '/wiki/ship',
       name: 'wiki-ship',
-      component: () => import('@/views/wiki/WikiShipView.vue'),
+      component: () => import('@/views/wiki/WikiShipPage.vue'),
       meta: {
         title: 'Windrose Ship Wiki — Hulls, Cannons, Gunports & Deck Modules',
         description:
@@ -136,7 +136,7 @@ const router = createRouter({
     {
       path: '/wiki/misc',
       name: 'wiki-misc',
-      component: () => import('@/views/wiki/WikiMiscView.vue'),
+      component: () => import('@/views/wiki/WikiMiscPage.vue'),
       meta: {
         title: 'Windrose Misc Wiki — Quest Items, Currencies & Trophies',
         description:

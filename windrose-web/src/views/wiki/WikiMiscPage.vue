@@ -1,5 +1,5 @@
 <template>
-  <article class="wiki-module wiki-res-page wiki-msc-page">
+  <article class="wiki-module wiki-res-page">
     <section class="page-hero page-hero--tome" aria-labelledby="wiki-msc-heading">
       <div class="container">
         <nav class="page-breadcrumb" aria-label="Breadcrumb">
@@ -37,7 +37,7 @@
           </div>
         </div>
 
-        <div class="wiki-res-table-wrap">
+        <div class="wiki-res-table-wrap" data-wiki-deck="misc">
           <table class="wiki-res-table wiki-msc-table">
             <thead>
               <tr>
@@ -52,7 +52,6 @@
               <tr
                 v-for="row in filtered"
                 :key="row.id"
-                class="wiki-res-row"
                 :title="descriptionTitle(row)"
               >
                 <td>
@@ -78,9 +77,10 @@
 
 <script setup>
 import { computed, ref } from 'vue'
+import bundledItems from '@/data/wiki/items/misc.js'
 
 const props = defineProps({
-  items: { type: Array, required: true },
+  items: { type: Array, default: undefined },
   title: {
     type: String,
     default: 'Windrose Misc Wiki — Quest Items, Currencies & Oddities',
@@ -107,7 +107,7 @@ const filter = ref('')
 
 const filtered = computed(() => {
   const q = filter.value.trim().toLowerCase()
-  const rows = props.items ?? []
+  const rows = props.items ?? bundledItems
   if (!q) return rows
   return rows.filter((r) => {
     const cat = String(r.category ?? '').toLowerCase()
@@ -147,21 +147,8 @@ function descriptionTitle(row) {
 </script>
 
 <style src="./wiki-styles.css"></style>
-<style src="./wiki-resources.css"></style>
 
 <style scoped>
-.sr-only {
-  position: absolute;
-  width: 1px;
-  height: 1px;
-  padding: 0;
-  margin: -1px;
-  overflow: hidden;
-  clip: rect(0, 0, 0, 0);
-  white-space: nowrap;
-  border: 0;
-}
-
 .wiki-msc-desc {
   max-width: 32rem;
 }
