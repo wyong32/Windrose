@@ -539,7 +539,8 @@ const faqItems = [
 
   .hero-section {
     padding: clamp(4rem, 10vw, 5.25rem) 0 clamp(1.5rem, 5vw, 2.25rem);
-    min-height: 0;
+    /* 保留占位，避免首屏内容随字体/折行在背景图解码前后跳动（CLS） */
+    min-height: min(52vh, 22rem);
   }
 
   .hero-card {
