@@ -3,6 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <link rel="icon" href="/favicon.ico" />
+    <!-- 首页 Hero 背景（LCP）；与 og:image 同源，避免 CSS background 晚于首帧才发起请求 -->
+    <link rel="preload" href="/images/bg.webp" as="image" type="image/webp" fetchpriority="high" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta name="theme-color" content="#060910" />
     <meta

@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router'
+import HomeView from '@/views/HomeView.vue'
 import guideArticles from '@/data/guides/guideArticles.js'
 import modArticles from '@/data/mods/modArticles.js'
 import { seoConfig } from '@/seo/config.js'
@@ -24,7 +25,8 @@ const router = createRouter({
     {
       path: '/',
       name: 'home',
-      component: () => import('@/views/HomeView.vue'),
+      /* 同步首页：避免首屏 RouterView 空壳 + main 弹性占位导致页脚先贴视口底、chunk 到达后整块下移（CLS≈1） */
+      component: HomeView,
       meta: {
         title: 'Windrose Wiki, Interactive Map, Guides & Mods',
         description:
