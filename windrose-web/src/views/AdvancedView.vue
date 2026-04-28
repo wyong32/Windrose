@@ -30,7 +30,7 @@
           <ul class="page-hero__highlights">
             <li>
               <strong>Figures</strong>
-              Two still plates break doctrine-heavy sections—same `bg.webp` / `about-img.jpg` pairing as the beginner deck.
+              Full-width art between heavy sections keeps long combat and logistics reads easier to scan.
             </li>
             <li>
               <strong>Tables</strong>
@@ -51,14 +51,13 @@
           <div class="guide-chunk wr-html-prose">
             <figure>
               <img
-                :src="imgHero"
-                alt="Night sea plate reused as the advanced chapter masthead."
+                src="/images/advanced-01.webp"
+                alt="Stylized night sea scene at the top of this advanced guide."
                 width="1120"
                 height="480"
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>Visual continuity: readers recognize the chapter even before they read the H2 stack.</figcaption>
             </figure>
           </div>
 
@@ -94,14 +93,13 @@
           <div class="guide-chunk wr-html-prose">
             <figure>
               <img
-                :src="imgAbout"
+                src="/images/advanced-02.webp"
                 alt="Lantern still-life between combat doctrine and ship logistics."
                 width="960"
                 height="420"
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>Mid-article figure: resets eye strain before tables stack again.</figcaption>
             </figure>
             <h2>Soulslite combat mastery</h2>
             <p>
@@ -218,14 +216,13 @@
           <div class="guide-chunk wr-html-prose">
             <figure>
               <img
-                :src="imgHero"
-                alt="Second wide plate before fort and server sections."
+                src="/images/advanced-03.webp"
+                alt="Wide coastal scene before the forts and dedicated server sections."
                 width="960"
                 height="400"
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>Repeat banner before heavy ops sections—mirrors the old long-article cadence.</figcaption>
             </figure>
             <h2>Territory &amp; forts</h2>
             <p>
@@ -240,17 +237,13 @@
             <h2>Meta progression &amp; workers</h2>
             <figure>
               <img
-                :src="imgAbout"
+                src="/images/advanced-03.webp"
                 alt="Warm interior still-life for meta/worker discussion."
                 width="880"
                 height="400"
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>
-                Meta systems (rep grinds, worker assignments, mod risk) read easier with a visual palate cleanser—same
-                asset language as Getting Started.
-              </figcaption>
             </figure>
             <p>
               Reputation and worker loops reward consistent labeling in chests and pinned map notes—if the crew cannot
@@ -343,8 +336,6 @@ import { resolveCanonicalUrl } from '@/seo/documentMeta.js'
 import { buildDocumentTitle } from '@/utils/pageSeo.js'
 
 const route = useRoute()
-const imgHero = computed(() => publicAssetUrl('/images/bg.webp'))
-const imgAbout = computed(() => publicAssetUrl('/images/about-img.jpg'))
 
 const JSON_LD_ATTR = 'data-wr-jsonld-advanced'
 

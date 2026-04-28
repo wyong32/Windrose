@@ -36,11 +36,11 @@
             </li>
             <li>
               <strong>Figures</strong>
-              Two still images (`bg.webp`, `about-img.jpg`) break dense text—same assets the home hero trusts.
+              Full-width art between sections makes long reads easier to scan without losing your place.
             </li>
             <li>
-              <strong>Structured data</strong>
-              TechArticle JSON-LD (plus VideoGame <code>about</code>) mounts while this tab stays open.
+              <strong>Skim-friendly</strong>
+              Headings and tables are chunked so you can jump straight to talents, shelter, or boats.
             </li>
           </ul>
         </div>
@@ -53,22 +53,19 @@
           <div class="guide-chunk wr-html-prose">
             <figure>
               <img
-                :src="imgHero"
-                alt="Wide coastal night plate used across Windrose Compass landing pages."
+                src="/images/getting-01.webp"
+                alt="Stylized coastal night scene at the top of this beginner guide."
                 width="1120"
                 height="480"
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>
-                Atmosphere plate—not an in-game HUD capture. Swap <code>/public/images/bg.webp</code> if you want a
-                different banner; layout spacing already accounts for wide figures.
-              </figcaption>
             </figure>
             <p>
-              Treat Early Access like a living chart: quest text beats blog posts, but this fan atlas still helps when
-              you need English search terms for the wiki or a second monitor for map pins. Nothing here is official
-              support—just player prose with outbound links you can audit.
+              Early Access changes often—if something disagrees with your game, trust the quest text and tooltips you
+              see that week. Keep the <RouterLink to="/wiki">wiki</RouterLink> open for names and stats and the
+              <RouterLink to="/map">map</RouterLink> when you need places pinned; this page is player-written tips, not
+              official support from the developers.
             </p>
           </div>
 
@@ -146,17 +143,13 @@
           <div class="guide-chunk wr-html-prose">
             <figure>
               <img
-                :src="imgAbout"
+                src="/images/getting-02.webp"
                 alt="Warm lantern and kit still-life used as a visual divider between early and mid sections."
                 width="960"
                 height="420"
                 loading="lazy"
                 decoding="async"
               />
-              <figcaption>
-                Second figure slot (`about-img.jpg`) mirrors the original Compass article rhythm: prose → table →
-                figure → prose.
-              </figcaption>
             </figure>
             <h2>The first 30 minutes: gathering &amp; tools</h2>
             <p>
@@ -286,8 +279,6 @@ import { resolveCanonicalUrl } from '@/seo/documentMeta.js'
 import { buildDocumentTitle } from '@/utils/pageSeo.js'
 
 const route = useRoute()
-const imgHero = computed(() => publicAssetUrl('/images/bg.webp'))
-const imgAbout = computed(() => publicAssetUrl('/images/about-img.jpg'))
 
 const JSON_LD_ATTR = 'data-wr-jsonld-getting-started'
 
