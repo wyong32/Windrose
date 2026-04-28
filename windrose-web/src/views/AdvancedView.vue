@@ -14,31 +14,35 @@
           <p class="page-hero__eyebrow">Windrose Compass · advanced deck · logistics &amp; pressure</p>
           <h1 id="adv-h1">Windrose Pro Tips: Mastering Combat, Ships, and Logistics</h1>
           <div class="page-hero__meta">
-            <span>Parry cadence</span>
-            <span>Gunpowder ops</span>
-            <span>Fleet forts</span>
+            <span>Land &amp; boarding</span>
+            <span>Powder &amp; hauls</span>
+            <span>Forts &amp; hosts</span>
           </div>
           <p class="page-hero__lead">
-            This is the long-form sibling to Getting Started: same panel + table + figure rhythm, but tuned for crews
-            who already speak wiki shorthand and need decision frames for combat, industry, forts, and headless servers.
+            Built for crews who cleared the opening archipelago and now juggle harder POIs, faction hauls, and fleet
+            nights where one bad powder bank wipes the expedition. Early Access currently spans multiple biomes and
+            dozens of islands with dense authored content—pressure comes from timers overlapping, not from lacking things
+            to do.
           </p>
           <p class="page-hero__lead">
-            Pair with <RouterLink to="/wiki">wiki tables</RouterLink> and the <RouterLink to="/map">interactive map</RouterLink>.
-            Night-one questions stay on <RouterLink to="/getting-started">Getting Started</RouterLink>; co-op vocabulary
-            overlaps <RouterLink to="/guides/play-windrose-online">Play online</RouterLink>.
+            Pair every opinion here with live numbers on the <RouterLink to="/wiki">wiki</RouterLink> and coordinates on
+            the <RouterLink to="/map">map</RouterLink>. New captains should stay on
+            <RouterLink to="/getting-started">Getting Started</RouterLink>; session logistics overlap
+            <RouterLink to="/guides/play-windrose-online">Play online</RouterLink>.
           </p>
           <ul class="page-hero__highlights">
             <li>
-              <strong>Figures</strong>
-              Full-width art between heavy sections keeps long combat and logistics reads easier to scan.
+              <strong>Combat discipline</strong>
+              Spacing, parry audio tells, and voice calls matter more than raw DPS once elites start one-tapping greedy
+              stamina bars—especially during boarding transitions.
             </li>
             <li>
-              <strong>Tables</strong>
-              Operating picture, land roles, mission vs hull, gunpowder beats, weekly server ops, related routes.
+              <strong>Fleet economics</strong>
+              Hull stance, repair stacks, and a gunpowder pipeline beat cosmetic rigging once broadsides become routine.
             </li>
             <li>
-              <strong>Anchor</strong>
-              Hash <code>#dedicated-server</code> still targets the dedicated-server chunk for share links.
+              <strong>Hosts &amp; saves</strong>
+              Dedicated servers and mod swings need backups and dry runs—patch day is the wrong time to learn SteamCMD.
             </li>
           </ul>
         </div>
@@ -52,13 +56,18 @@
             <figure>
               <img
                 src="/images/advanced-01.webp"
-                alt="Stylized night sea scene at the top of this advanced guide."
+                alt="Storm-lit open ocean: long sails, naval pickets, and the space where broadsides or boarding decide the night."
                 width="1120"
                 height="480"
                 loading="lazy"
                 decoding="async"
               />
             </figure>
+            <p>
+              The header art is the emotional truth of advanced Windrose: you are no longer scraping fiber—you are routing
+              cargo through contested water, juggling faction timers, and keeping repair kits somewhere the boatswain can
+              find them in the dark. Below is how experienced crews keep that chaos legible.
+            </p>
           </div>
 
           <div class="guide-chunk wr-html-prose">
@@ -73,14 +82,19 @@
               </thead>
               <tbody>
                 <tr>
+                  <td>Early EA mastery</td>
+                  <td>Finishing biome quests while stockpiling charcoal, ballistics, and med stacks for the next island hop.</td>
+                  <td>One navigator owns pins; one quartermaster owns chest tabs; nobody “just sails.”</td>
+                </tr>
+                <tr>
                   <td>Mid-game</td>
                   <td>Timers overlap—smelt, sail, and defend in one calendar day.</td>
                   <td>Split voice roles: navigator, quartermaster, boatswain.</td>
                 </tr>
                 <tr>
                   <td>Late-game</td>
-                  <td>Biome gates + rare ingots punish ad-hoc trips.</td>
-                  <td>Route contracts: who banks mats, who owns pins, who patches.</td>
+                  <td>Biome gates + rare ingots punish ad-hoc trips; fort nights spike CPU on busy hosts.</td>
+                  <td>Route contracts: who banks mats, who owns pins, who patches; downshift party size if frames tank.</td>
                 </tr>
               </tbody>
             </table>
@@ -94,7 +108,7 @@
             <figure>
               <img
                 src="/images/advanced-02.webp"
-                alt="Lantern still-life between combat doctrine and ship logistics."
+                alt="Harbor-night workbench: charts, lantern, and sidearms laid out before a hard expedition."
                 width="960"
                 height="420"
                 loading="lazy"
@@ -103,9 +117,11 @@
             </figure>
             <h2>Soulslite combat mastery</h2>
             <p>
-              Melee rewards spacing reads: dodge on committed animations, parry on audio tells, posture breaks before you
-              empty stamina vanity-swinging. Ranged adds reload windows—pair musket shots with teammate staggers. For raw
-              stats, pivot to <RouterLink to="/wiki/weapons">weapons</RouterLink> and
+              Windrose sells its melee as soulslite-adjacent: dodge on committed animations, parry on audio tells, and
+              posture breaks before you empty stamina vanity-swinging. Firearms buy space—pair musket windows with
+              teammate staggers so elites never get a free reset. Boarding blurs the rules: treat deck fights like brawls
+              with fall hazards and friendly fire discipline, not duels. For raw numbers, pivot to
+              <RouterLink to="/wiki/weapons">weapons</RouterLink> and
               <RouterLink to="/wiki/equipment">equipment</RouterLink> once you pick a build lane.
             </p>
             <h3>Land party roles (shorthand)</h3>
@@ -214,10 +230,45 @@
           </div>
 
           <div class="guide-chunk wr-html-prose">
+            <h2>Faction hauls &amp; Tortuga rhythm</h2>
+            <p>
+              Tortuga is your bank, bulletin board, and reputation sink. Advanced crews batch faction errands with smelting
+              cycles and map sweeps so every sail clears multiple quest counters—never dock with empty cargo slots on the
+              return leg if vendors buy salvage you already planned to farm.
+            </p>
+            <table>
+              <thead>
+                <tr>
+                  <th scope="col">Goal</th>
+                  <th scope="col">Playbook</th>
+                  <th scope="col">Anti-pattern</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>Stable income</td>
+                  <td>Rotate easy board quests while heavier story gates percolate.</td>
+                  <td>Everyone grabs the same elite contract without powder banks.</td>
+                </tr>
+                <tr>
+                  <td>Reputation spikes</td>
+                  <td>Track which vendors unlock workers, recipes, or hull modules.</td>
+                  <td>Dump random gifts into the wrong faction because the UI looked similar.</td>
+                </tr>
+                <tr>
+                  <td>Return logistics</td>
+                  <td>Pre-label chest tabs for “sell tonight” vs “craft tomorrow.”</td>
+                  <td>Mix quest items with salvage so quartermasters rage-quit sorting.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+
+          <div class="guide-chunk wr-html-prose">
             <figure>
               <img
                 src="/images/advanced-03.webp"
-                alt="Wide coastal scene before the forts and dedicated server sections."
+                alt="Wide coastal bastions and surf: the kind of shoreline where fort guns and landing parties trade tempo."
                 width="960"
                 height="400"
                 loading="lazy"
@@ -228,8 +279,13 @@
             <p>
               Forts buy time, not immortality: funnel naval AI into overlapping fields of fire, keep repair stations
               manned, and stockpile boarding tools on upper decks. Sync wall damage callouts with map pins so off-watch
-              crew knows which segment is hot. Long-form POI writeups live in <RouterLink to="/guides">Guides</RouterLink>
-              when you need screenshots beyond tables.
+              crew knows which segment is hot. When performance dips, strip cosmetic clutter from the build grid, shorten
+              draw distance if settings allow, and consider splitting mega-bases across two harbors instead of one
+              particle-heavy megafort—Late EA sessions punish overloaded hosts harder than solo beach huts.
+            </p>
+            <p>
+              Long-form POI writeups live in <RouterLink to="/guides">Guides</RouterLink> when authors publish
+              screenshot-heavy articles beyond our tables.
             </p>
           </div>
 
@@ -237,8 +293,8 @@
             <h2>Meta progression &amp; workers</h2>
             <figure>
               <img
-                src="/images/advanced-03.webp"
-                alt="Warm interior still-life for meta/worker discussion."
+                src="/images/advanced-02.webp"
+                alt="Same harbor-night kit table: planning worker shifts, faction hauls, and who banks rares overnight."
                 width="880"
                 height="400"
                 loading="lazy"
@@ -246,17 +302,20 @@
               />
             </figure>
             <p>
-              Reputation and worker loops reward consistent labeling in chests and pinned map notes—if the crew cannot
-              agree on words, they will not agree on who owns the next upgrade path. Mods shift risk: snapshot saves before
-              reordering loadouts and read author notes on <RouterLink to="/mods">Mods</RouterLink>.
+              Reputation swings in Tortuga and faction arcs feed better gear and worker slots—treat them like production
+              pipelines, not side quests you “catch up on later.” NPC workers only help if chests are labeled, inputs are
+              stocked, and someone owns the morning checklist. If the crew cannot agree on words for pins and tabs, they
+              will not agree on who owns the next upgrade path. Mods shift risk: snapshot saves before reordering
+              loadouts and read author notes on <RouterLink to="/mods">Mods</RouterLink>.
             </p>
           </div>
 
           <div class="guide-chunk wr-html-prose">
             <h2 id="dedicated-server">Dedicated server management</h2>
             <p>
-              Dedicated hosts keep the archipelago alive when the captain’s PC sleeps—paid for with Windows-only
-              tooling, JSON edits, and SteamCMD rehearsals. Pair the official
+              Dedicated hosts keep the archipelago alive when the captain’s PC sleeps—paid for with Windows-focused
+              tooling, JSON edits, and SteamCMD rehearsals. Share this section’s link with a trailing
+              <code>#dedicated-server</code> hash so Discord mates land on the checklist immediately. Pair the official
               <a href="https://playwindrose.com/dedicated-server-guide/" rel="noopener noreferrer" target="_blank">Dedicated Server Guide</a>
               with our <RouterLink to="/guides/play-windrose-online">play online</RouterLink> article so invite-code crews
               and headless hosts share vocabulary (ports, passwords, world folders).
@@ -329,9 +388,8 @@
 </template>
 
 <script setup>
-import { computed, onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { publicAssetUrl } from '@/utils/publicAssetUrl.js'
 import { resolveCanonicalUrl } from '@/seo/documentMeta.js'
 import { buildDocumentTitle } from '@/utils/pageSeo.js'
 

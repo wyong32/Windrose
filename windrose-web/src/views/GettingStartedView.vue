@@ -14,33 +14,35 @@
           <p class="page-hero__eyebrow">Windrose Compass · beginner deck · Early Access</p>
           <h1 id="gs-h1">Windrose Starting Guide: From Shipwreck to Captain</h1>
           <div class="page-hero__meta">
-            <span>First 10 hours</span>
-            <span>Camp loop</span>
-            <span>Tables + figures</span>
+            <span>First nights ashore</span>
+            <span>Camp &amp; crafting</span>
+            <span>Sails &amp; Tortuga</span>
           </div>
           <p class="page-hero__lead">
-            Windrose is sold as a PvE pirate survival action game: procedural islands, hand-authored POIs, crafting,
-            sailing, and soulslike-leaning melee. This long read mirrors the original Compass layout—hero, dark panels,
-            tables, and figures—so you can skim between voyages without hunting patch notes in Discord first.
+            Windrose is a PvE pirate survival adventure: procedural archipelagos stitched with hand-built forts, camps,
+            and quest hubs, plus soulslite-style melee and full naval fights with boarding. In Early Access the main
+            story is already long-form for many crews (often cited around 50–70 hours, depending on how much you explore),
+            with multiple biomes, dozens of islands, and 90+ authored points of interest in the shipping build—always
+            double-check patch notes because EA moves fast.
           </p>
           <p class="page-hero__lead">
             Use the <RouterLink to="/map">interactive map</RouterLink> for coordinates and the
-            <RouterLink to="/wiki">wiki hub</RouterLink> for numbers; this page keeps the narrative spine. Multiplayer
-            flow lives in <RouterLink to="/guides/play-windrose-online">Play online with friends</RouterLink>. When you
-            outgrow checklists, open <RouterLink to="/advanced">Advanced</RouterLink>.
+            <RouterLink to="/wiki">wiki hub</RouterLink> for item names and stats. For invites and session flow, read
+            <RouterLink to="/guides/play-windrose-online">Play online with friends</RouterLink>. When you are comfortable
+            sailing farther and defending harder sites, continue to <RouterLink to="/advanced">Advanced</RouterLink>.
           </p>
           <ul class="page-hero__highlights">
             <li>
-              <strong>Panels</strong>
-              Each block below is its own “chart table” so long sessions do not blur together.
+              <strong>Survive the shoreline</strong>
+              Fiber, stone tools, food, and a safe fire loop come before chasing every distant smoke column.
             </li>
             <li>
-              <strong>Figures</strong>
-              Full-width art between sections makes long reads easier to scan without losing your place.
+              <strong>Claim a foothold</strong>
+              Compact bases with benches, storage, and lighting beat sprawling builds you cannot defend or restock.
             </li>
             <li>
-              <strong>Skim-friendly</strong>
-              Headings and tables are chunked so you can jump straight to talents, shelter, or boats.
+              <strong>Grow into the world</strong>
+              Talents, Tortuga errands, factions, and your first proper hull are stepping stones—not a day-one sprint.
             </li>
           </ul>
         </div>
@@ -54,7 +56,7 @@
             <figure>
               <img
                 src="/images/getting-01.webp"
-                alt="Stylized coastal night scene at the top of this beginner guide."
+                alt="Moonlit archipelago: islands, reefs, and distant sails evoking your first open-water nights."
                 width="1120"
                 height="480"
                 loading="lazy"
@@ -62,40 +64,70 @@
               />
             </figure>
             <p>
-              Early Access changes often—if something disagrees with your game, trust the quest text and tooltips you
-              see that week. Keep the <RouterLink to="/wiki">wiki</RouterLink> open for names and stats and the
-              <RouterLink to="/map">map</RouterLink> when you need places pinned; this page is player-written tips, not
-              official support from the developers.
+              You spend a lot of time reading the horizon: where to beach for clay, which bay hides salvage, when to
+              risk a night crossing. Early Access rebalance patches can nudge recipes and damage—if a number here drifts
+              from your client, trust the quest journal and tooltips you see that week. Keep the
+              <RouterLink to="/wiki">wiki</RouterLink> open for names and stats and the <RouterLink to="/map">map</RouterLink>
+              when you need pins; this hub is fan-written guidance, not official support from Windrose Crew or publishers.
             </p>
           </div>
 
           <div class="guide-chunk wr-html-prose">
-            <h2>EA pillars vs. what we publish</h2>
+            <h2>What Windrose asks of you in EA</h2>
             <table>
               <thead>
                 <tr>
                   <th scope="col">Pillar</th>
-                  <th scope="col">What the game stresses</th>
-                  <th scope="col">On this compass</th>
+                  <th scope="col">In practice</th>
+                  <th scope="col">Companion pages</th>
                 </tr>
               </thead>
               <tbody>
                 <tr>
                   <td>Combat</td>
-                  <td>Stamina, lock-on, parries—wildlife and bandits punish greedy swings.</td>
                   <td>
-                    Weapons + consumables tables once you know item names; Advanced for cadence talk.
+                    Lock-on melee with dodge and parry windows, firearms for spacing—wildlife, forts, and bosses punish
+                    greedy stamina use on land and during boarding.
+                  </td>
+                  <td>
+                    <RouterLink to="/wiki/weapons">Weapons</RouterLink> &amp;
+                    <RouterLink to="/wiki/consumables">consumables</RouterLink> tables; deeper cadence notes in
+                    <RouterLink to="/advanced">Advanced</RouterLink>.
                   </td>
                 </tr>
                 <tr>
-                  <td>Crafting</td>
-                  <td>Bench chains, fuel, repairs—boats and guns sit on top of humble fiber math.</td>
-                  <td>Resources wiki for ores/fibers; map pins for clay and salvage bays.</td>
+                  <td>Crafting &amp; workers</td>
+                  <td>
+                    Bench chains, charcoal, repairs, and ammunition feed everything from stone axes to frigate outfits.
+                    NPC workers can lighten harvest and production once you unlock them—plan chest labels early.
+                  </td>
+                  <td>
+                    <RouterLink to="/wiki/resources">Resources</RouterLink> wiki; map pins for clay, salvage, and rare
+                    beaches.
+                  </td>
                 </tr>
                 <tr>
-                  <td>Sailing</td>
-                  <td>Wind, draft, crew tasks—cargo vs speed is a conscious trade every embark.</td>
-                  <td>Ship wiki after you unlock hull families; map for route callouts.</td>
+                  <td>Sailing &amp; naval</td>
+                  <td>
+                    Wind, draft, and crew tasks matter: trade broadsides at range or commit to boarding with seamless
+                    ship-to-shore transitions. Early Access ships range from a nimble ketch up to heavier brigs and
+                    frigates as you progress.
+                  </td>
+                  <td>
+                    <RouterLink to="/wiki/ship">Ship wiki</RouterLink> once modules unlock;
+                    <RouterLink to="/map">map</RouterLink> for route callouts.
+                  </td>
+                </tr>
+                <tr>
+                  <td>Tortuga &amp; factions</td>
+                  <td>
+                    The pirate town anchors quests, trade, and reputation swings that feed better gear and workers. Treat
+                    return trips as resupply beats, not sightseeing detours.
+                  </td>
+                  <td>
+                    Story specifics stay in-game; use <RouterLink to="/guides">Guides</RouterLink> for focused walkthroughs
+                    when writers publish them.
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -135,8 +167,9 @@
               </tbody>
             </table>
             <p>
-              Respec rules and exact numbers move patch-to-patch—read each tooltip the week you play. The point of the
-              table is to **commit to a crew-facing role** early so talents support habits, not the other way around.
+              Respec rules and exact numbers move patch-to-patch—read each tooltip the week you play. The point is to
+              <strong>commit to a crew-facing role</strong> early so talents reinforce habits (navigation, crafting, medic,
+              bruiser), not the other way around.
             </p>
           </div>
 
@@ -144,7 +177,7 @@
             <figure>
               <img
                 src="/images/getting-02.webp"
-                alt="Warm lantern and kit still-life used as a visual divider between early and mid sections."
+                alt="Lantern, tools, and camp supplies: the quiet moment between shoreline scrambles and your first real base push."
                 width="960"
                 height="420"
                 loading="lazy"
@@ -153,15 +186,16 @@
             </figure>
             <h2>The first 30 minutes: gathering &amp; tools</h2>
             <p>
-              Touch every starter loop once: punch trees and rocks, pick fiber, loot nearby crates, and craft stone tools
-              before you sprint for distant smoke. Clay and salvage usually hug shorelines—bank them early because
-              furnaces and mortars gate boats and ballistics. If wildlife deletes you, treat it as a spacing lesson: lock
-              on, back off, use elevation, and keep a spare meal in the hotbar.
+              The still-life beat above is the fantasy of “camp solved”—in reality you earn it minute by minute. Touch
+              every starter loop once: punch trees and rocks, pick fiber, loot nearby crates, and craft stone tools before
+              you sprint for distant smoke. Clay and salvage usually hug shorelines—bank them early because furnaces and
+              mortars gate boats and ballistics. If wildlife deletes you, treat it as a spacing lesson: lock on, back off,
+              use elevation, and keep a spare meal in the hotbar.
             </p>
           </div>
 
           <div class="guide-chunk wr-html-prose">
-            <h2>First-week checklist (Valheim-style cadence)</h2>
+            <h2>First-week checklist (survival cadence)</h2>
             <table>
               <thead>
                 <tr>
@@ -186,24 +220,43 @@
                   <td>First reliable boat + bail-out plan</td>
                   <td>Anchor map pins for home bay, clay, and repair beaches.</td>
                 </tr>
+                <tr>
+                  <td>When Tortuga unlocks</td>
+                  <td>Cash-in quests, buy missing basics, hire first workers</td>
+                  <td>Travel light: sell junk, bank rares, note which vendors reset which recipes.</td>
+                </tr>
               </tbody>
             </table>
+          </div>
+
+          <div class="guide-chunk wr-html-prose">
+            <h2>Co-op headcount (performance-aware)</h2>
+            <p>
+              Early Access supports larger parties on self-hosted and dedicated servers, but late-game forts and naval
+              brawls get heavy—many crews treat four players as the comfort ceiling and split bigger guilds across voice
+              channels instead of one overloaded instance. Details change patch to patch; see
+              <RouterLink to="/guides/play-windrose-online">Play online with friends</RouterLink> for connectivity
+              patterns that survive router quirks.
+            </p>
           </div>
 
           <div class="guide-chunk wr-html-prose">
             <h2>Building your first shelter</h2>
             <p>
               Start compact near water but off obvious patrol vectors: foundation ring, walls, bed or bedroll, storage,
-              and a sheltered crafting cluster beat a sprawling fort you cannot light or defend. Learn roof snapping
-              early—mid-game teardowns tax morale. Keep interior lights for night benches and pin a repair hammer so
-              storm chip damage never strands you off-cycle.
+              and a sheltered crafting cluster beat a sprawling fort you cannot light or defend. EA building includes
+              several distinctive style families—pick one early so pieces snap cleanly and upgrades feel cohesive. Learn
+              roof snapping before you decorate; mid-game teardowns tax morale. Keep interior lights for night benches
+              and pin a repair hammer so storm chip damage never strands you off-cycle.
             </p>
             <h2>Crafting your first boat</h2>
             <p>
               Hull reliability beats figurehead glam: anchor feel, rudder response, and cargo for one extra expedition
-              matter more than cosmetics. Read mast and sail requirements carefully—missing one rope or tar brick sends
-              the whole crew back to shore. When gunports unlock, skim the <RouterLink to="/wiki/ship">ship wiki</RouterLink>
-              before you spend rare ingots on a frigate your helmsman hates.
+              matter more than cosmetics. You will progress from a small ketch toward brigs and frigates as recipes and
+              story beats unlock—read mast, sail, and gunport requirements carefully because missing one rope or tar brick
+              sends the whole crew back to shore. When gunports matter, skim the
+              <RouterLink to="/wiki/ship">ship wiki</RouterLink> before you spend rare ingots on a hull your helmsman
+              dreads steering.
             </p>
           </div>
 
@@ -261,8 +314,9 @@
               </tbody>
             </table>
             <p>
-              After you finish this page, keep Advanced open in another tab for combat cadence, gunpowder beats, forts,
-              and dedicated server hygiene—the same “two-pane” workflow the original Windrose Compass writers used.
+              When nights stay calm and sails feel predictable, open <RouterLink to="/advanced">Advanced</RouterLink> for
+              tighter combat cadence, gunpowder beats, fort defense, and dedicated server hygiene—those topics assume you
+              already speak wiki shorthand.
             </p>
           </div>
         </div>
@@ -272,9 +326,8 @@
 </template>
 
 <script setup>
-import { computed, onMounted, onUnmounted } from 'vue'
+import { onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
-import { publicAssetUrl } from '@/utils/publicAssetUrl.js'
 import { resolveCanonicalUrl } from '@/seo/documentMeta.js'
 import { buildDocumentTitle } from '@/utils/pageSeo.js'
 
