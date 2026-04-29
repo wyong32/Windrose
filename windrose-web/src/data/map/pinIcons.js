@@ -1,5 +1,5 @@
 /**
- * 图钉：与 windrose.tools 一致使用 `<img>`，资源在 `public/map-markers/`（由脚本从 CDN 拉取）。
+ * 图钉：使用 `<img>`，资源在 `public/map-markers/`（由脚本从 CDN 拉取）。
  * 每条 pin 的 `markerType` 对应 API `markers[].type`；无字段时按侧栏 `pinIcon` 回退。
  */
 import { markerIconPublicUrl } from '@/data/map/markerIconPaths.js'

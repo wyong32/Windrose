@@ -25,15 +25,14 @@
         <button type="button" class="wr-talent-btn wr-talent-btn--primary" @click="copyShareLink">Copy link</button>
       </div>
       <p class="wr-talent-planner__hint">
-        Left-click to add a rank, right-click or Shift-click to remove. Cap follows
-        <a href="https://windrose.tools/talents" rel="noopener noreferrer" target="_blank">Windrose.tools</a>:
+        Left-click to add a rank, right-click or Shift-click to remove. Cap matches in-game rules:
         <strong>max points = level − 1</strong> (levels 1–50; default 50 → 49 points). You cannot set level below
         <span class="wr-talent-planner__hint-mono">spent + 1</span> while a build is loaded.
       </p>
     </header>
 
     <div class="wr-talent-planner__body">
-      <!-- 与 windrose.tools 一致：1200 逻辑单位 → %；背景图 scale(1.75)+cover；节点 7%×7% -->
+      <!-- 与游戏内树布局一致：1200 逻辑单位 → %；背景图 scale(1.75)+cover；节点 7%×7% -->
       <div class="wr-talent-planner__frame" tabindex="0">
         <img
           class="wr-talent-planner__bg"
@@ -149,15 +148,15 @@ import { useRoute, useRouter } from 'vue-router'
 import talentTree from '@/data/talents/talentTree.json'
 import { formatPerkDescription } from '@/utils/talentFormat.js'
 
-/** 与 windrose.tools 一致：默认等级 50、可用天赋点 = clamp(等级,1..50) − 1 */
+/** 与客户端一致：默认等级 50、可用天赋点 = clamp(等级,1..50) − 1 */
 const DEFAULT_CHARACTER_LEVEL = 50
 
 /**
- * windrose.tools 将 JSON position 映射到正方形容器内的百分比：
+ * JSON position 映射到正方形容器内的百分比：
  * left = 50 + x/1200*100, top = 50 + y/1200*100（见站点打包脚本中的内联 style）。
  */
 const POSITION_DIVISOR = 1200
-/** 主天赋槽按钮宽高均为容器的 7%（与 windrose.tools 一致）。 */
+/** 主天赋槽按钮宽高均为容器的 7%（与客户端树一致）。 */
 const NODE_SIZE_PCT = 7
 
 const tree = talentTree
@@ -248,7 +247,7 @@ const selectedNode = computed(() => tree.nodes.find((n) => n.id === selectedId.v
 
 const selectedPerkList = computed(() => (selectedNode.value ? perksFor(selectedNode.value) : []))
 
-/** 与 windrose.tools 相同：branch → tier → slot，只列 level > 0 的节点 */
+/** branch → tier → slot，只列 level > 0 的节点 */
 function compareNodesByTreeOrder(a, b) {
   if (a.branchIndex !== b.branchIndex) return a.branchIndex - b.branchIndex
   if (a.tierIndex !== b.tierIndex) return a.tierIndex - b.tierIndex
@@ -568,7 +567,7 @@ watch(
   gap: 0;
 }
 
-/* 与 windrose.tools：正方形容器 + 背景图 scale(1.75) + cover，节点用 % 叠在上面 */
+/* 正方形容器 + 背景图 scale(1.75) + cover，节点用 % 叠在上面 */
 .wr-talent-planner__frame {
   position: relative;
   width: 100%;

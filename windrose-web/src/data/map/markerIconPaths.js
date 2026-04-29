@@ -1,6 +1,5 @@
 /**
- * 与 windrose.tools 一致：图标资源位于 `public/map-markers/`，与 CDN
- * `cdn.pixel6.tools/windrose/images/icons/` 路径对应。
+ * 图标资源位于 `public/map-markers/`，与游戏内图钉资源路径对应。
  *
  * `pin.markerType` 为 API 的 `markers[].type`（手动大本营为 `T_MapIcon_*`）。
  */

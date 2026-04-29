@@ -6,13 +6,13 @@
           <ol>
             <li><a href="/">Home</a></li>
             <li class="page-breadcrumb__sep" aria-hidden="true">/</li>
-            <li><span aria-current="page">Talents</span></li>
+            <li><span aria-current="page">Talents &amp; Build</span></li>
           </ol>
         </nav>
         <div class="page-hero__shell">
           <span class="page-hero__sigil" aria-hidden="true" />
           <p class="page-hero__eyebrow">Windrose Compass · talent points · Early Access</p>
-          <h1 id="talents-h1">Windrose Talent Tree Planner</h1>
+          <h1 id="talents-h1">Windrose Talents &amp; Build — Talent Tree Planner</h1>
           <div class="page-hero__meta">
             <span>Fencer · Crusher</span>
             <span>Marksman · Toughguy</span>
@@ -21,9 +21,8 @@
           <p class="page-hero__lead">
             This page is an <strong>interactive skill tree</strong>: you click nodes to assign
             <strong>talent points</strong> (same four branches as the game), see locks and three ranks per talent, and
-            copy a link so your crew loads the same plan. Rules follow
-            <a href="https://windrose.tools/talents" rel="noopener noreferrer" target="_blank">Windrose.tools</a>; data
-            can drift after patches—double-check in-game.
+            copy a link so your crew loads the same plan. Point cap and branch layout mirror the live client; data can
+            drift after patches—double-check in-game.
           </p>
           <p class="page-hero__lead">
             English sites often say “<strong>talent builder</strong>”—it just means a <strong>web tool to plan your
@@ -97,10 +96,9 @@
             <h2 id="patches-and-planning">Patches change numbers—plan talent order here</h2>
             <p>
               Early Access patches often tweak damage, stamina, and guns. A screenshot of your tree goes out of date fast;
-              this planner tracks the same layout rules as
-              <a href="https://windrose.tools/talents" rel="noopener noreferrer" target="_blank">Windrose.tools</a> so
-              you can agree with your crew which <strong>Marksman</strong> reload nodes or <strong>Toughguy</strong>
-              survival picks you are testing, then match ranks after you log in.
+              this planner keeps the same tree layout as the character screen so you can agree with your crew which
+              <strong>Marksman</strong> reload nodes or <strong>Toughguy</strong> survival picks you are testing, then
+              match ranks after you log in.
             </p>
           </div>
         </div>
@@ -163,7 +161,7 @@ onMounted(() => {
     headline,
     description,
     keywords:
-      'Windrose Talents, Windrose skill, Windrose skills, Windrose skill tree, Windrose talent tree, Windrose Fencer, Windrose Crusher, Windrose Marksman, Windrose Toughguy, Windrose respec, Windrose Early Access',
+      'Windrose Talents & Build, Windrose build, Windrose Talents, Windrose skill tree, Windrose talent tree, Windrose Fencer, Windrose Crusher, Windrose Marksman, Windrose Toughguy, Windrose respec, Windrose Early Access',
     author: { '@type': 'Organization', name: 'Windrose Compass' },
     about: {
       '@type': 'VideoGame',

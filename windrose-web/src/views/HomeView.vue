@@ -418,7 +418,7 @@ const faqItems = [
   },
   {
     q: 'Where should I start if we want to play Windrose online together?',
-    a: 'Open the “Play online with friends” guide for invite codes, who hosts, and connection checks. If you need a 24/7 world, continue from there into the official Dedicated Server Guide on playwindrose.com.',
+    a: 'Open the “Play online with friends” guide for invite codes, who hosts, and connection checks. If you need a 24/7 world, use the publisher’s dedicated-server documentation from Steam, Epic, or the official game channels.',
   },
   {
     q: 'Can I reuse your map or lists elsewhere?',

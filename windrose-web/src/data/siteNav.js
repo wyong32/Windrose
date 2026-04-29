@@ -3,7 +3,7 @@ export const PRIMARY_NAV = [
   { label: 'Home', to: '/' },
   { label: 'Getting Started', to: '/getting-started' },
   { label: 'Advanced', to: '/advanced' },
-  { label: 'Talents', to: '/talents' },
+  { label: 'Talents & Build', to: '/talents' },
   { label: 'Wiki', to: '/wiki' },
   { label: 'Interactive Map', to: '/map' },
   { label: 'Guides', to: '/guides' },
@@ -18,21 +18,5 @@ export const LEGAL_NAV = [
   { label: 'Contact Us', to: '/contact-us' },
 ]
 
-/** 游戏与工具外链（页脚图标行）；`rel` 含 noopener noreferrer */
-export const OFFICIAL_OUTBOUND = [
-  {
-    label: 'Windrose official site',
-    href: 'https://windrosecrew.com/',
-    icon: 'globe',
-  },
-  {
-    label: 'Windrose on Steam',
-    href: 'https://store.steampowered.com/app/3041230/Windrose/',
-    icon: 'steam',
-  },
-  {
-    label: 'Official Windrose interactive map',
-    href: 'https://windrose.tools/map',
-    icon: 'map',
-  },
-]
+/** 页脚「官方外链」行：留空则整段不渲染（全站内链，不指向第三方） */
+export const OFFICIAL_OUTBOUND = []

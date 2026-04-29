@@ -73,11 +73,11 @@ const router = createRouter({
       component: () => import('@/views/TalentsView.vue'),
       meta: {
         title:
-          'Windrose Talent Tree Planner — Click Nodes, Share Talent Point Builds (Fencer, Crusher, Marksman, Toughguy)',
+          'Windrose Talents & Build — Talent Tree Planner — Click Nodes, Share Builds (Fencer, Crusher, Marksman, Toughguy)',
         description:
-          'Free interactive Windrose skill tree: click talent nodes to spend points, see branch gates and 3 ranks per node, respect the level cap, copy a shareable URL. In-game respec costs nothing—use this page to try a build before you commit. Guides cover stats, Rapier, Halberd boarding, Musketeer, Saber crit.',
+          'Free interactive Windrose skill tree: plan talents and builds—click nodes to spend points, see branch gates and 3 ranks per node, respect the level cap, copy a shareable URL. In-game respec costs nothing—use this page to try a build before you commit. Guides cover stats, Rapier, Halberd boarding, Musketeer, Saber crit.',
         keywords:
-          'Windrose Talents, Windrose skill, Windrose skills, Windrose skill tree, Windrose talent tree, Windrose skill planner, Windrose Fencer, Windrose Crusher, Windrose Marksman, Windrose Toughguy, Windrose talent points, Windrose respec, Windrose Early Access, Windrose Compass',
+          'Windrose Talents & Build, Windrose build, Windrose Talents, Windrose skill, Windrose skills, Windrose skill tree, Windrose talent tree, Windrose skill planner, Windrose Fencer, Windrose Crusher, Windrose Marksman, Windrose Toughguy, Windrose talent points, Windrose respec, Windrose Early Access, Windrose Compass',
       },
     },
     {

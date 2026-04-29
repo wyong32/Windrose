@@ -1,8 +1,8 @@
 /**
  * Windrose 单图数据包（对齐 roadtovostok-web `src/data/map/maps/map01.js`）：
  * - `mapCategories`：侧栏大类（`id` 1…n、`name`、`list`）；`list[]` 含数字 `id`、`category`（与 pins 的 `category` 对应）、`name`、`pinIcon`（无 `markerType` 时的图钉回退；着色见地图样式）
- * - `pins`：扁平数组；每条写 `category`、`x`、`y`、`content` 等；有任务/POI 摘要时写 `describe`（可与 [windrose.tools](https://windrose.tools/map?layout=1f2f09693d80952d) 的 `GET /api/map/runtime?layout=...` 返回的 `markers[].questPopup.description` 等对齐），无则省略
- * - **`mapLoot`（可选，极少使用）**：仅当某标点箱表在公开 `GET /api/map/runtime` 中**没有**、且你又从 [windrose.tools 地图](https://windrose.tools/map?layout=1f2f09693d80952d) 弹窗**逐条核对**过时才写；用 `cloneMapLoot(...)` 深拷贝。勿再使用全图通用模板充数。
+ * - `pins`：扁平数组；每条写 `category`、`x`、`y`、`content` 等；有任务/POI 摘要时写 `describe`（可与同布局 `GET /api/map/runtime?layout=...` 返回的 `markers[].questPopup.description` 等对齐），无则省略
+ * - **`mapLoot`（可选，极少使用）**：仅当某标点箱表在公开 `GET /api/map/runtime` 中**没有**、且你又从游戏内或同布局 runtime 弹窗**逐条核对**过时才写；用 `cloneMapLoot(...)` 深拷贝。勿再使用全图通用模板充数。
  * - 任务奖励、探索 XP 等以 `windrose-map-pin-popups.json`（同布局 runtime）为准，与 `mapLoot` 在 `useWindroseMap.popupForPin` 合并。
  * - default：Leaflet 用 imageUrl、terrain、pins、mapCategories…
  *
@@ -14,7 +14,7 @@
  *
  * `windrose-terrain.json`：海面填充色与岛屿多边形（矢量底）。图钉为 `public/map-markers/` 下图片，见 `pinIcons.js` / `markerIconPaths.js`。
  *
- * `windrose-map-pin-popups.json`：`pinPopups` — 由 `scripts/sync-map-pin-popups.mjs` 从同布局 `GET /api/map/runtime` 生成（与 [windrose.tools 地图](https://windrose.tools/map?layout=1f2f09693d80952d) 同源）。探索/任务 XP 为 0 时写入 `null`；任务奖励行不含 API 未提供的 `chance`。
+ * `windrose-map-pin-popups.json`：`pinPopups` — 由 `scripts/sync-map-pin-popups.mjs` 从同布局 `GET /api/map/runtime` 生成（与上述 runtime 同源）。探索/任务 XP 为 0 时写入 `null`；任务奖励行不含 API 未提供的 `chance`。
  */
 import meta from './windrose-map-meta.json'
 import terrain from './windrose-terrain.json'
@@ -98,7 +98,7 @@ function cloneMapLoot(o) {
 }
 
 /**
- * Blackbeard 藏宝图 01 — 与 windrose.tools 地图弹窗一致（Chests 1；Piastre / Silver Ingot / Style Book）。
+ * Blackbeard 藏宝图 01 — 与同布局 runtime 弹窗一致（Chests 1；Piastre / Silver Ingot / Style Book）。
  */
 const MAP_LOOT_BLACKBEARD_TREASURE_01 = {
   chestCount: 1,

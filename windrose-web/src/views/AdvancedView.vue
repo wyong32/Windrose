@@ -74,8 +74,7 @@
             <h2 id="talent-builder">Interactive talent builder</h2>
             <p>
               The in-game tree matches what you can rehearse on our
-              <a href="/talents">Windrose talent planner</a>—same Fencer, Crusher, Marksman, and Toughguy branches as
-              <a href="https://windrose.tools/talents" rel="noopener noreferrer" target="_blank">Windrose.tools</a>, with
+              <a href="/talents">Windrose talent planner</a>—same Fencer, Crusher, Marksman, and Toughguy branches, with
               branch gates, three ranks per node, and a shareable URL for Discord. Use it when you are about to respec
               after a patch so you do not buy a node that your new musket or halberd never procs.
             </p>
@@ -324,10 +323,10 @@
             <p>
               Dedicated hosts keep the archipelago alive when the captain’s PC sleeps—paid for with Windows-focused
               tooling, JSON edits, and SteamCMD rehearsals. Share this section’s link with a trailing
-              <code>#dedicated-server</code> hash so Discord mates land on the checklist immediately. Pair the official
-              <a href="https://playwindrose.com/dedicated-server-guide/" rel="noopener noreferrer" target="_blank">Dedicated Server Guide</a>
-              with our play-online article so invite-code crews and headless hosts share vocabulary (ports, passwords,
-              world folders).
+              <code>#dedicated-server</code> hash so Discord mates land on the checklist immediately. Pair the
+              publisher’s dedicated-server documentation (Steam, Epic, or the official game site) with our
+              <a href="/guides/play-windrose-online">play-online guide</a> so invite-code crews and headless hosts share
+              vocabulary (ports, passwords, world folders).
             </p>
             <table>
               <thead>

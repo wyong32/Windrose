@@ -22,7 +22,7 @@
           </div>
         </div>
 
-        <div class="footer-external-wrap">
+        <div v-if="outbound.length" class="footer-external-wrap">
           <p class="footer-external-label">Official Windrose</p>
           <ul class="footer-external" aria-label="Official Windrose links">
             <li v-for="item in outbound" :key="item.href">

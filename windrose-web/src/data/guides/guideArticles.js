@@ -37,7 +37,7 @@ export default [
         'Windrose multiplayer, play Windrose online, Windrose co-op, Windrose with friends, invite code Windrose, connect to server Windrose, Windrose online guide, Early Access multiplayer, PvE co-op Windrose',
     },
     addressBar: 'play-windrose-online',
-    isHome: true,
+    isHome: false,
     detailsHtml: `
 <p>
   Windrose is built as a <strong>survival adventure you can play solo or with friends</strong>—that is how the
@@ -181,9 +181,9 @@ export default [
     description: "Discover exactly how to get quagmire powder in windrose and the best farming routes. Learn how to use quagmire powder in windrose to craft Mire Metal Ingots.",
     tags: ["windrose", "quagmire powder", "farming guide", "late-game resources", "mire metal ingot"],
     publishDate: "2026-04-25",
-    imageUrl: "/images/guides/guides02.webp",
+    imageUrl: "/images/guides/guide02.webp",
     imageAlt: "Player opening an Ancient Chest in a Swamp Crypt Tablet House in Windrose, obtaining Quagmire Powder.",
-    isHome: true,
+    isHome: false,
     seo: {
       title: 'Windrose Quagmire Powder — Swamp Farm, Mire Metal & Late Game',
       description: "Master Windrose's late-game with this Quagmire Powder guide. Learn efficient farming methods in Cursed Swamps and how to craft Mire Metal Ingots to unlock enchantments and advanced gear.",
@@ -213,7 +213,7 @@ export default [
   </h2>
   <p>A lot of rookies get hard-stuck on this resource because they are simply grinding in the wrong map. Quagmire Powder exclusively drops in the game's third biome: the Cursed Swamps.
   </p>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777105662/cms-uploads/cms-1777105662173-881866006.webp" alt="the Cursed Swamps map entrance and surrounding environment" width="50%">
+  <p><img src="/images/guides/guide02-01.webp" alt="the Cursed Swamps map entrance and surrounding environment" width="50%">
   </p>
   <p>The Unlock Requirement: You must first eliminate the local threat boss "Israel Hands" in the Foothills region. After taking him down, follow the system-assigned "The Forgotten Relics" quest to officially set foot in this mudland.
   </p>
@@ -279,7 +279,7 @@ export default [
   </tr>
   </tbody>
   </table>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777105732/cms-uploads/cms-1777105732639-411539755.webp" alt="Ancient Chest in the swamp ruins to obtain powder" width="50%">
+  <p><img src="/images/guides/guide02-02.webp" alt="Ancient Chest in the swamp ruins to obtain powder" width="50%">
   </p>
   <h2>Use Quagmire Powder in Windrose: Advancing to Late-Game
   </h2>
@@ -363,11 +363,11 @@ export default [
   }`,
     title: "Windrose Travelers Camp Guide: Find the Hidden Second Chest",
     description: "Stuck at 1/2 unique chests in Windrose? Learn how to locate the hidden second chest at the Traveler's Camp in the Coastal Jungle using the shovel digging mechanic.",
-    tags: ["Windrose","Travelers Camp","Hidden Chest","Exploration Guide","Survival Game"],
+    tags: ["Windrose", "Travelers Camp", "Hidden Chest", "Exploration Guide", "Survival Game"],
     publishDate: "2026-04-25",
-    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777107374/cms-uploads/cms-1777107374896-953265952.webp",
+    imageUrl: "/images/guides/guide03.webp",
     imageAlt: "A map screenshot showing the Windrose Traveler's Camp icon with 1/2 unique chests looted progress, indicating a hidden second chest.",
-    isHome: true,
+    isHome: false,
     seo: {
       title: "Windrose Traveler's Camp — Hidden Chest, Shovel Digs & Exploration XP",
       description: "Master Windrose's Traveler's Camp by uncovering the hidden second chest. This in-depth guide reveals how to use a Shovel to find the secret loot and gain +50 exploration XP, bypassing misleading old strategies.",
@@ -393,7 +393,7 @@ export default [
   </h2>
   <p>Don't bother searching Reddit for exact X/Y map coordinates. Windrose utilizes a procedurally generated map, meaning everyone's Traveler's Camp is located in a different spot. However, it will always spawn within your starting biome, the Coastal Jungle.
   </p>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777107374/cms-uploads/cms-1777107374896-953265952.webp" alt="Windrose  the Traveler's Camp map icon stuck at 02 progression" width="50%">
+  <p><img src="/images/guides/guide03-01.webp" alt="Windrose  the Traveler's Camp map icon stuck at 02 progression" width="50%">
   </p>
   <p>Hard Requirement: Do not go to this POI empty-handed. Extracting the second chest strictly requires you to equip a Shovel. If you are fresh off the boat and don't have one, you need to farm Clay near water sources, build a basic Smelter, and set up your workbench first. Slashing the ground with your cutlass will do absolutely nothing.
   </p>
@@ -405,7 +405,7 @@ export default [
   </p>
   <p> The intended roleplay path is to read the note to decipher the pirate's hidden stash location. But as a min-maxer, here is the objective truth: you can completely ignore reading the note. The chest is already spawned in the world; you just need to know the visual cue.
   </p>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777107405/cms-uploads/cms-1777107405083-362258592.webp" alt="Windrose  opening the Curios tab to view the Twist of Fancy note" width="50%">
+  <p><img src="/images/guides/guide03-02.webp" alt="Windrose  opening the Curios tab to view the Twist of Fancy note" width="50%">
   </p>
   <h2>Locating the Hidden Second Chest
   </h2>
@@ -427,7 +427,7 @@ export default [
   <li>Once you spot the sparkles, dig exactly on that spot one more time. The second "Decrepit Chest" will literally pop out of the ground.
   </li>
   </ol>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777107432/cms-uploads/cms-1777107432351-488767366.webp" alt="Windrose  the glowing  particles in the dirt right before the chest is unearthed" width="50%">
+  <p><img src="/images/guides/guide03-03.webp" alt="Windrose  the glowing  particles in the dirt right before the chest is unearthed" width="50%">
   </p>
   <p>Confirmed Loot Drops:
   </p>
@@ -519,10 +519,10 @@ export default [
   }`,
     title: "Windrose Hewn Stone Guide: Unlock & Crafting Explained",
     description: "Stop banging rocks at level 1. Discover how to get hewn stone in Windrose by finding Ancient Scraps in the Cursed Swamps and upgrading your Workbench to Level 3.",
-    tags: ["Windrose","Hewn Stone","Crafting Guide","Unlock Schematic","Base Building"],
-    isHome: true,
+    tags: ["Windrose", "Hewn Stone", "Crafting Guide", "Unlock Schematic", "Base Building"],
+    isHome: false,
     publishDate: "2026-04-25",
-    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777110044/cms-uploads/cms-1777110044431-338918537.png",
+    imageUrl: "/images/guides/guide04.webp",
     imageAlt: "Windrose Hewn Stone crafting guide, showing unlock steps and workbench upgrades",
     seo: {
       title: "Windrose Hewn Stone Guide: Unlock Crafting & Base Upgrades Explained",
@@ -555,7 +555,7 @@ export default [
   </p>
   <p>Do not waste time scouring the starting Coastal Jungle. The underlying logic to acquire this is: Push main quest -&gt; Enter high-tier biome -&gt; Mine specific node -&gt; Upgrade base stations -&gt; Mass produce.
   </p>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777110457/cms-uploads/cms-1777110457462-440608789.webp" alt="Windrose Ancient Debris Site map" width="50%">
+  <p><img src="/images/guides/guide04-01.webp" alt="Windrose Ancient Debris Site map" width="50%">
   </p>
   <h2>Unlocking the Schematic: The Swamp Run
   </h2>
@@ -571,7 +571,7 @@ export default [
   <li>Trigger the Blueprint: The moment you shatter the node and the Ancient Scraps enter your inventory, a bright notification will pop up on the right side of your screen: New schematics obtained: Hewn Stone. The tech lock is now removed.
   </li>
   </ol>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777110482/cms-uploads/cms-1777110482131-440120267.webp" alt="Windrose Ancient Debris Site 2" width="50%">
+  <p><img src="/images/guides/guide04-02.webp" alt="Windrose Ancient Debris Site 2" width="50%">
   </p>
   <h2>Sourcing the Raw Materials
   </h2>
@@ -593,7 +593,7 @@ export default [
   </ol>
   <p>Placement matters. Drop them close and check the top of your Workbench UI. Once it reads [Lv. 3], the recipe will light up green.
   </p>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777110512/cms-uploads/cms-1777110512647-745756596.webp" alt="Windrose Hewn Stone " width="50%">
+  <p><img src="/images/guides/guide04-03.webp" alt="Windrose Hewn Stone " width="50%">
   </p>
   <h2>Crafting Costs &amp; Tier Requirements
   </h2>
@@ -707,9 +707,9 @@ export default [
   }`,
     title: "Windrose Fishing Guide: Rod Crafting & Best Food Meta",
     description: "Stop wasting time looking for a rod early. This hardcore windrose fishing guide shows you where to find Divi-Divi hardwood to craft the rod, catch mechanics, and cook the +20 Vitality Seafood Platter.",
-    tags: ["Windrose","Fishing Guide","Rod Crafting","Survival Game","Food Meta","Boss Strategy"],
+    tags: ["Windrose", "Fishing Guide", "Rod Crafting", "Survival Game", "Food Meta", "Boss Strategy"],
     publishDate: "2026-04-25",
-    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777111580/cms-uploads/cms-1777111580649-334899069.webp",
+    imageUrl: "/images/guides/guide05.webp",
     imageAlt: "A player character in Windrose standing on a boat, fishing in deep water with a successful 'Flat Splash' visual effect.",
     seo: {
       title: "Windrose Fishing Guide: Master Rod Crafting & Unlock +20 Vitality Food Meta",
@@ -749,7 +749,7 @@ export default [
   <li>Hardwood: This is the real bottleneck. You must locate a highly specific tree called the Divi-Divi. Look for trunks with a strange, bendy, swirly shape. They are often guarded by goats or pirate camps. Chop them down with a Copper Axe.
   </li>
   </ol>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777113932/cms-uploads/cms-1777113932162-175136626.webp" alt="windrose divdiv-divdiv tree" width="50%">
+  <p><img src="/images/guides/guide05-01.webp" alt="windrose divdiv-divdiv tree" width="50%">
   </p>
   <p>Counter-Intuitive Check: Even with the materials in your bag, you cannot craft it at a vanilla station. You are forced to upgrade your Workbench to Level 2 by placing a Sawhorse nearby. Only then will the recipe for the Simple Fishing Rod (2x Iron Ingots, 3x Crude Rope, 5x Hardwood) become available.
   </p>
@@ -761,7 +761,7 @@ export default [
   </p>
   <p> Stop squinting at the bobber's micro-movements. Cast your line and watch the water surface. The moment you see a large, flat white splash accompanied by a distinct sound cue, instantly left-click to reel it in. It is a 100% catch rate if you nail this timing.
   </p>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777113903/cms-uploads/cms-1777113903294-236656430.webp" alt="windrose fishing rod" width="50%">
+  <p><img src="/images/guides/guide05-02.webp" alt="windrose fishing rod" width="50%">
   </p>
   <p>Fish Tiers and Fillet Yields:
   </p>
@@ -811,7 +811,7 @@ export default [
   </p>
   <p> The true power spike is the kitchen. Upgrade your cooking station to Level 3 (Cookware Shelf). Do NOT waste your Crab Legs on the Level 1 Seafood Skewer (+5 Strength). Save them, combine them with Limes (found under tall Foothill trees), looted Salt, and your Fish Fillets to craft the Seafood Platter. This masterpiece grants a staggering +20 Vitality for 30 minutes. This health buffer is the absolute meta for surviving late-game pirate encounters.
   </p>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777113849/cms-uploads/cms-1777113849216-563738810.webp" alt="windrose fish cooking" width="50%">
+  <p><img src="/images/guides/guide05-03.webp" alt="windrose fish cooking" width="50%">
   </p>
   <h3>FAQ: Hardcore Fishing Truths
   </h3>
@@ -833,10 +833,11 @@ export default [
     id: 6,
     title: "Best Windrose Rapier Build: The S+ Tier Precision Setup",
     description: "Master the S+ Tier Rapier Precision build in Windrose. Stop splitting stats. Learn the 4k damage Plague combo, exact gear progression from Thousand Cuts to Devastation, and the 0 Endurance coffee trick.",
-    tags: ["Windrose","Windrose Rapier Build"],
+    tags: ["Windrose", "Windrose Rapier Build"],
     publishDate: "2026-04-29",
-    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777431772/cms-uploads/cms-1777431772400-121557798.webp",
+    imageUrl: "/images/guides/guide06.webp",
     imageAlt: "windrose-best-builds-rapier-build-set-up",
+    isHome: true,
     seo: {
       title: "Best Windrose Rapier Build: The S+ Tier Precision Setup",
       description: "Master the S+ Tier Rapier Precision build in Windrose. Stop splitting stats. Learn the 4k damage Plague combo, exact gear progression from Thousand Cuts to Devastation, and the 0 Endurance coffee trick.",
@@ -926,7 +927,7 @@ export default [
   </p>
   <p>Never fight a boss without Coffee and the Elixir Of Cruelty (+8% Damage) active.
   </p>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777431843/cms-uploads/cms-1777431843304-684867807.webp" alt="windrose-best-builds-rapier-build-stats" width="80%">
+  <p><img src="/images/guides/guide06-01.webp" alt="windrose-best-builds-rapier-build-stats" width="80%">
   </p>
   <h2>Playstyle Execution: The 4,000 Damage Combo
   </h2>
@@ -954,7 +955,7 @@ export default [
   </ol>
   <p>Because the target has Vulnerability and 8 Plague Marks, this specific sequence will easily result in almost 4,000 damage while simultaneously healing your character to full. If you master this, you do not need healing potions.
   </p>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777432526/cms-uploads/cms-1777432526404-282747609.webp" alt="windrose-best-builds-rapier-build-consuming-plague-marks" width="80%">
+  <p><img src="/images/guides/guide06-02.webp" alt="windrose-best-builds-rapier-build-consuming-plague-marks" width="80%">
   </p>
   <h2>Exact Talent Tree Sequences
   </h2>
@@ -974,7 +975,7 @@ export default [
   <li>You Will Answer For This (2/3) -&gt; Insane synergy with the Bleed DoT passive.
   </li>
   </ol>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777432558/cms-uploads/cms-1777432558754-251555469.webp" alt="windrose-best-builds-rapier-build-rapier-of-a-thousand-cuts-talents" width="80%">
+  <p><img src="/images/guides/guide06-03.webp" alt="windrose-best-builds-rapier-build-rapier-of-a-thousand-cuts-talents" width="80%">
   </p>
   <p>For Rapier Of Devastation (The Final Form):
   </p>
@@ -992,7 +993,7 @@ export default [
   <li>Deep Impact (3/3) -&gt; Massive boost to your Pierce Damage for the heavy attack nuke.
   </li>
   </ol>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777432577/cms-uploads/cms-1777432577455-608043739.webp" alt="windrose-best-builds-rapier-build-rapier-of-devastation-talents" width="80%">
+  <p><img src="/images/guides/guide06-04.webp" alt="windrose-best-builds-rapier-build-rapier-of-devastation-talents" width="80%">
   </p>
   <h3>FAQ: Rapier Build Troubleshooting
   </h3>
@@ -1016,8 +1017,9 @@ export default [
     description: "Dominate ship boarding in Windrose with the Plague Halberd AoE Cleave build. Learn how to bypass the lack of Perfect Block, melt enemy posture, and utilize the 35% massive self-heal Special Attack.",
     tags: ["Windrose Best Boarding Build"],
     publishDate: "2026-04-29",
-    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777433192/cms-uploads/cms-1777433192494-113586333.webp",
+    imageUrl: "/images/guides/guide07.webp",
     imageAlt: "windrose-best-builds-rapier-build-set-up",
+    isHome: true,
     seo: {
       title: "Windrose Best Boarding Build: Plague Halberd AoE Cleave",
       description: "Dominate ship boarding in Windrose with the Plague Halberd AoE Cleave build. Learn how to bypass the lack of Perfect Block, melt enemy posture, and utilize the 35% massive self-heal Special Attack.",
@@ -1033,7 +1035,7 @@ export default [
   </h2>
   <p>This is not a starter build. The core weapon, the Plague Halberd, is exclusively looted from Crypts or Ruins deep within the Cursed Swamps. Do not bother running the Sturdy Halberd or the Executioner; their lack of a killer Special Attack makes the halberd's slow animation a pure liability.
   </p>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777433646/cms-uploads/cms-1777433646703-219472995.webp" alt="windrose-best-builds-plague-halberd-on-pirate ship-deck " width="80%">
+  <p><img src="/images/guides/guide07-01.webp" alt="windrose-best-builds-plague-halberd-on-pirate ship-deck " width="80%">
   </p>
   <table>
   <tbody>
@@ -1105,7 +1107,7 @@ export default [
   </ol>
   <p>The Boarding Diet: Before you throw your grappling hooks to board an enemy ship, you must eat a Meaty Croc Kebab (Strength food) and drink the Elixir Of Firm Hand (+13% Melee Damage). Without these, your cleave won't hit the critical threshold to one-shot low-tier pirate deckhands.
   </p>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777433672/cms-uploads/cms-1777433672771-654605092.webp" alt="windrose-best-builds-plague-halberd-stats" width="80%">
+  <p><img src="/images/guides/guide07-02.webp" alt="windrose-best-builds-plague-halberd-stats" width="80%">
   </p>
   <h2>The Anti-Block Playstyle: "If-Then" Execution
   </h2>
@@ -1145,7 +1147,7 @@ export default [
   <li>Massive (1/3)
   </li>
   </ol>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777433699/cms-uploads/cms-1777433699490-949119500.webp" alt="windrose-best-builds-plague-halberd-talents" width="80%">
+  <p><img src="/images/guides/guide07-03.webp" alt="windrose-best-builds-plague-halberd-talents" width="80%">
   </p>
   <h3>FAQ: Halberd Build Troubleshooting
   </h3>
@@ -1169,8 +1171,9 @@ export default [
     description: "Think guns are just secondary weapons? Wrong. Master the Reliable Musketeer build in Windrose. Learn the 0 Stamina stat exploit, sub-2-second reload trick, and the ultimate FPS headshot playstyle.",
     tags: ["Windrose Best Ranged Build"],
     publishDate: "2026-04-29",
-    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777434631/cms-uploads/cms-1777434631774-485868697.webp",
+    imageUrl: "/images/guides/guide08.webp",
     imageAlt: "windrose-best-builds-best-ranged-build",
+    isHome: true,
     seo: {
       title: "Windrose Best Ranged Build: Reliable Musketeer",
       description: "Hardcore breakdown of the ultimate pure ranged build in Windrose. Learn how to exploit the zero-stamina shooting mechanic, combine the Reliable Musket with the Quick Hand talent for sub-2-second reloads, and stack 30% Crit Damage for massive headshots.",
@@ -1189,7 +1192,7 @@ export default [
   </h2>
   <p>Do not attempt this build with a generic starting musket. The entire playstyle hinges on a specific weapon drop: the Reliable Musket. It drops randomly from POIs in the Coastal Jungle and Foothills. Without its inherent reload speed buff, you will be swarmed and killed between shots.
   </p>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777435100/cms-uploads/cms-1777435100123-875636507.webp" alt="windrose-best-builds-best-ranged-build-reliable-musket" width="80%">
+  <p><img src="/images/guides/guide08-01.webp" alt="windrose-best-builds-best-ranged-build-reliable-musket" width="80%">
   </p>
   <table>
   <tbody>
@@ -1259,7 +1262,7 @@ export default [
   </ol>
   <p>The "Double Food" Buff: To push your Precision beyond normal limits, you must double-stack food buffs. Eat a Swamp Pie (+20 Precision) and follow it immediately with a Banana Muffin (+10 Precision). Combine this with the Elixir Of Concentration (+30% Critical Damage), and your headshots will instantly delete anything short of a boss.
   </p>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777435134/cms-uploads/cms-1777435134193-741517559.webp" alt="windrose-best-builds-best-ranged-build-stats" width="80%">
+  <p><img src="/images/guides/guide08-02.webp" alt="windrose-best-builds-best-ranged-build-stats" width="80%">
   </p>
   <h2>The Glass Cannon Playstyle: "If-Then" Execution
   </h2>
@@ -1291,7 +1294,7 @@ export default [
   <li>Firearm Training (1/3)
   </li>
   </ol>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777435188/cms-uploads/cms-1777435188673-532540595.webp" alt="windrose-best-builds-best-ranged-build-talents" width="80%">
+  <p><img src="/images/guides/guide08-03.webp" alt="windrose-best-builds-best-ranged-build-talents" width="80%">
   </p>
   <h3>FAQ: Musketeer Build Troubleshooting
   </h3>
@@ -1315,8 +1318,9 @@ export default [
     description: "Hardcore breakdown of the ultimate Agility Crit build in Windrose. Learn the exact math to reach 50.2% Crit Chance, how to perfectly weave Blunderbuss shots into Saber combos, and the punishing reality of maintaining the Deadly Finale buff.",
     tags: ["Windrose Best Crit Build"],
     publishDate: "2026-04-29",
-    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777446121/cms-uploads/cms-1777446121256-409191052.webp",
+    imageUrl: "/images/guides/guide09.webp",
     imageAlt: "windrose-best-builds-saber-dragon-set-up",
+    isHome: true,
     seo: {
       title: "Windrose Saber & Dragon's Breath Crit Build Guide",
       description: "Master the highest auto-attack DPS build in Windrose. Learn how to stack over 50% Crit Chance with the Saber and Dragon's Breath Blunderbuss, the hybrid combat rotation, and the strict Perfect Block requirements.",
@@ -1333,7 +1337,7 @@ export default [
   </h2>
   <p>This build requires a massive shift in gear philosophy. We are abandoning Strength and Precision entirely. Both our melee and ranged weapons scale exclusively with Agility.
   </p>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777446521/cms-uploads/cms-1777446521205-801913957.webp" alt="windrose-best-builds-saber-dragon-weapons" width="80%">
+  <p><img src="/images/guides/guide09-01.webp" alt="windrose-best-builds-saber-dragon-weapons" width="80%">
   </p>
   <table>
   <tbody>
@@ -1437,7 +1441,7 @@ export default [
   <li>Mastery: 0 (+20 from Taco)
   </li>
   </ol>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777446589/cms-uploads/cms-1777446589047-625009364.webp" alt="windrose-best-builds-saber-dragon-stats" width="80%">
+  <p><img src="/images/guides/guide09-02.webp" alt="windrose-best-builds-saber-dragon-stats" width="80%">
   </p>
   <p>The Talent Sequence:
   </p>
@@ -1455,7 +1459,7 @@ export default [
   <li>Executioner's Grace (1/3) -&gt; Your ONLY source of self-sustain (Heals over 20s on kill, lost on taking damage).
   </li>
   </ol>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777446607/cms-uploads/cms-1777446607308-232355277.webp" alt="windrose-best-builds-saber-dragon-talents" width="80%">
+  <p><img src="/images/guides/guide09-03.webp" alt="windrose-best-builds-saber-dragon-talents" width="80%">
   </p>
   <h3>FAQ: Saber Crit Build Troubleshooting
   </h3>
@@ -1479,8 +1483,9 @@ export default [
     description: "Hardcore breakdown of the windrose character build system. Learn how to allocate your max talent points, avoid splitting weapon stats, and why the Rapier double-dips the Precision stat. Complete windrose leveling guide for early game.",
     tags: ["windrose Talents build"],
     publishDate: "2026-04-29",
-    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777448065/cms-uploads/cms-1777448065751-665676947.webp",
+    imageUrl: "/images/guides/guide10.webp",
     imageAlt: "best-talents-and-stats-windrose-talents",
+    isHome: true,
     seo: {
       title: "Windrose Talents Build & Stats Guide: Early Game Progression",
       description: "Stop building weak characters. This hardcore Windrose progression guide explains the exact stats guide, weapon scaling, and the best survival talents to level up first. Free respec mechanics explained.",
@@ -1496,7 +1501,7 @@ export default [
   </h2>
   <p>A major trap for new players looking up a windrose leveling guide is misunderstanding how the six core stats work. Three of them are strictly for damage scaling, and three are supportive utility. You must pick ONE damage stat and ignore the other two.
   </p>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777448303/cms-uploads/cms-1777448303883-354825961.webp" alt="the Windrose Character Stat screen highlighting the 6 core attributes" width="80%">
+  <p><img src="/images/guides/guide10-01.webp" alt="the Windrose Character Stat screen highlighting the 6 core attributes" width="80%">
   </p>
   <table>
   <tbody>
@@ -1590,7 +1595,7 @@ export default [
   <li>Stout Frame: Grants +120/180/240 Health. At rank 3, this gives 240 HP, which is mathematically equivalent to wasting almost 20 points in Vitality. Take this to free up your stat points for pure damage.
   </li>
   </ol>
-  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777448352/cms-uploads/cms-1777448352903-916129428.webp" alt="best-talents-and-stats-windrose-talents-picks" width="80%">
+  <p><img src="/images/guides/guide10-02.webp" alt="best-talents-and-stats-windrose-talents-picks" width="80%">
   </p>
   <p>Once you secure these core survival nodes, you have built the ultimate safety net. From there, use the free respec system to tailor the rest of your points toward your specific weapon mastery.
   </p>
