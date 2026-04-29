@@ -1,7 +1,9 @@
 /**
  * Windrose 单图数据包（对齐 roadtovostok-web `src/data/map/maps/map01.js`）：
  * - `mapCategories`：侧栏大类（`id` 1…n、`name`、`list`）；`list[]` 含数字 `id`、`category`（与 pins 的 `category` 对应）、`name`、`pinIcon`（无 `markerType` 时的图钉回退；着色见地图样式）
- * - `pins`：扁平数组；每条写 `category`（与 `mapCategories[].list[].category` 一致）、`x`、`y` 等
+ * - `pins`：扁平数组；每条写 `category`、`x`、`y`、`content` 等；有任务/POI 摘要时写 `describe`（可与 [windrose.tools](https://windrose.tools/map?layout=1f2f09693d80952d) 的 `GET /api/map/runtime?layout=...` 返回的 `markers[].questPopup.description` 等对齐），无则省略
+ * - **`mapLoot`（可选，极少使用）**：仅当某标点箱表在公开 `GET /api/map/runtime` 中**没有**、且你又从 [windrose.tools 地图](https://windrose.tools/map?layout=1f2f09693d80952d) 弹窗**逐条核对**过时才写；用 `cloneMapLoot(...)` 深拷贝。勿再使用全图通用模板充数。
+ * - 任务奖励、探索 XP 等以 `windrose-map-pin-popups.json`（同布局 runtime）为准，与 `mapLoot` 在 `useWindroseMap.popupForPin` 合并。
  * - default：Leaflet 用 imageUrl、terrain、pins、mapCategories…
  *
  * `windrose-map-meta.json`（仅本页会读的字段）：
@@ -11,9 +13,12 @@
  * - basemapPixel*：若用栅格图且需对齐像素时可填
  *
  * `windrose-terrain.json`：海面填充色与岛屿多边形（矢量底）。图钉为 `public/map-markers/` 下图片，见 `pinIcons.js` / `markerIconPaths.js`。
+ *
+ * `windrose-map-pin-popups.json`：`pinPopups` — 由 `scripts/sync-map-pin-popups.mjs` 从同布局 `GET /api/map/runtime` 生成（与 [windrose.tools 地图](https://windrose.tools/map?layout=1f2f09693d80952d) 同源）。探索/任务 XP 为 0 时写入 `null`；任务奖励行不含 API 未提供的 `chance`。
  */
 import meta from './windrose-map-meta.json'
 import terrain from './windrose-terrain.json'
+import pinPopups from './windrose-map-pin-popups.json'
 
 export const mapCategories = [
   {
@@ -84,6 +89,47 @@ export const mapCategories = [
   },
 ]
 
+/**
+ * `cloneMapLoot`：仅在极少数手写 `mapLoot` 的 pin 上使用，避免对象共用引用。
+ * `MAP_LOOT_BLACKBEARD_TREASURE_01`：Blackbeard 第一张藏宝图标点 — 与官网地图弹窗逐项核对（API 不返回 POI 箱表）。
+ */
+function cloneMapLoot(o) {
+  return JSON.parse(JSON.stringify(o))
+}
+
+/**
+ * Blackbeard 藏宝图 01 — 与 windrose.tools 地图弹窗一致（Chests 1；Piastre / Silver Ingot / Style Book）。
+ */
+const MAP_LOOT_BLACKBEARD_TREASURE_01 = {
+  chestCount: 1,
+  rewards: [
+    {
+      label: 'Piastre',
+      quantity: 50,
+      rarity: 'rare',
+      image: '/images/wiki/resources/piastre.webp',
+      wikiCategory: 'resources',
+      wikiItemId: 'piastre',
+    },
+    {
+      label: 'Silver Ingot',
+      quantity: 10,
+      rarity: 'rare',
+      image: '/images/wiki/resources/silverIngot.webp',
+      wikiCategory: 'resources',
+      wikiItemId: 'silverIngot',
+    },
+    {
+      label: 'Style Book: Blackbeard Flag Designs',
+      quantity: 1,
+      rarity: 'rare',
+      image: '/images/wiki/misc/did-misc-item-item-unlock-ship-custom-flags-blackbeard.webp',
+      wikiCategory: 'misc',
+      wikiItemId: 'did-misc-item-item-unlock-ship-custom-flags-blackbeard',
+    },
+  ],
+}
+
 /** 标点（与 roadtovostok `map01.js`：mapCategories 后是 pins[]） */
 const pins = [
   {
@@ -120,13 +166,14 @@ const pins = [
     "markerType": "Tortuga",
     "x": 0.4588820055044266,
     "y": 0.6425511478203272,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Tortuga.MapMarker</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Tortuga.MapMarker</code></p>",
   },
   {
     "id": "wr-439961-1-0-quest-DA_QP_MainQuest_Seafarer_Core",
     "title": "How My Sea Adventure Began",
     "category": "quests-main",
     "markerType": "T_QuestIcon_Main_Active",
+    "describe": "I got myself a pretty good ship. But Caribbean waters are too rough to sail without a few good cannons.",
     "x": 0.4588820055044266,
     "y": 0.6425511478203272,
     "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Tortuga.Zone</code></p>"
@@ -138,7 +185,7 @@ const pins = [
     "markerType": "T_IconPOI_BossArena",
     "x": 0.02439339862261245,
     "y": 0.48025168919106953,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.BossArena.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.BossArena.01</code></p>",
   },
   {
     "id": "wr-439961-4-0",
@@ -147,7 +194,7 @@ const pins = [
     "markerType": "T_IconPOI_BossArena",
     "x": 0.6079097018424096,
     "y": 0.112850250958088,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.BossArena.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.BossArena.01</code></p>",
   },
   {
     "id": "wr-439961-4-1",
@@ -156,7 +203,7 @@ const pins = [
     "markerType": "T_MapIcon_Dungeon_04",
     "x": 0.6113480399713183,
     "y": 0.12090132407189445,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.01</code></p>",
   },
   {
     "id": "wr-439961-4-2",
@@ -165,7 +212,7 @@ const pins = [
     "markerType": "T_MapIcon_Dungeon_04",
     "x": 0.604471363713501,
     "y": 0.12090132407189445,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.03</code></p>",
   },
   {
     "id": "wr-439961-4-3",
@@ -174,7 +221,7 @@ const pins = [
     "markerType": "T_IconPOI_Farm",
     "x": 0.599313856520138,
     "y": 0.12693962890724927,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Farm.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Farm.01</code></p>",
   },
   {
     "id": "wr-439961-5-0",
@@ -183,13 +230,15 @@ const pins = [
     "markerType": "T_IconPOI_Quest",
     "x": 0.9177457311063771,
     "y": 0.8138653926349878,
-    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.06.Marker</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.06.Marker</code></p>",
+
   },
   {
     "id": "wr-439961-7-0-quest-DA_QP_MainQuest_Seafarer_Core",
     "title": "How My Sea Adventure Began",
     "category": "quests-main",
     "markerType": "T_QuestIcon_Main_Active",
+    "describe": "I got myself a pretty good ship. But Caribbean waters are too rough to sail without a few good cannons.",
     "x": 0.2830887727135006,
     "y": 0.6497407523096942,
     "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.TradingPosts.ResidentsOfTortuga</code></p>"
@@ -210,7 +259,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.96732527524864,
     "y": 0.7666708516239322,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.09</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.09</code></p>",
+
   },
   {
     "id": "wr-439961-10-1-quest-DA_QP_MainQuest_Islander_Core",
@@ -219,7 +269,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.96732527524864,
     "y": 0.7666708516239322,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.Onboarding</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.Onboarding</code></p>",
+    "describe": "After the pirate attack, the sea washed me ashore on a deserted island. If I want to stay alive, I’ll have to set up camp."
   },
   {
     "id": "wr-439961-10-2",
@@ -228,7 +279,7 @@ const pins = [
     "markerType": "T_IconPOI_Camp_Smuggler",
     "x": 0.9560077894083849,
     "y": 0.7775234213227541,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.01</code></p>",
   },
   {
     "id": "wr-439961-10-3",
@@ -237,7 +288,7 @@ const pins = [
     "markerType": "T_MapIcon_Ruins_02",
     "x": 0.9710977701679718,
     "y": 0.7579887962450009,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.Easy.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.Easy.01</code></p>",
   },
   {
     "id": "wr-439961-10-4",
@@ -246,7 +297,7 @@ const pins = [
     "markerType": "T_MapIcon_Ruins_02",
     "x": 0.9596605231253758,
     "y": 0.7631222340801398,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.02</code></p>",
   },
   {
     "id": "wr-439961-10-5",
@@ -255,7 +306,7 @@ const pins = [
     "markerType": "T_IconPOI_Mystery",
     "x": 0.9787934808626388,
     "y": 0.7709511050518205,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.DeadmanChest.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.DeadmanChest.02</code></p>",
   },
   {
     "id": "wr-439961-11-0",
@@ -264,7 +315,7 @@ const pins = [
     "markerType": "T_IconPOI_Cave",
     "x": 0.8735509664679569,
     "y": 0.7084066698422115,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Cave.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Cave.01</code></p>",
   },
   {
     "id": "wr-439961-11-1",
@@ -273,7 +324,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.8987699796646001,
     "y": 0.6861219285720717,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.01</code></p>",
+
   },
   {
     "id": "wr-439961-11-2",
@@ -282,7 +334,7 @@ const pins = [
     "markerType": "T_IconPOI_Ruin",
     "x": 0.8814319080242669,
     "y": 0.6824078047102765,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Buccaneer.Defence_01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Buccaneer.Defence_01</code></p>",
   },
   {
     "id": "wr-439961-11-2-quest-DA_QP_SideQuest_HuntingForAHunter_Core",
@@ -291,7 +343,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.8814319080242669,
     "y": 0.6824078047102765,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.HuntingForAHunter.PartOfWeapon.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.HuntingForAHunter.PartOfWeapon.02</code></p>",
+    "describe": "I came across an abandoned Buccaneers’ camp. Their notes suggest pirates attacked, forcing them to defend themselves and hide in the jungle."
   },
   {
     "id": "wr-439961-11-3",
@@ -300,7 +353,7 @@ const pins = [
     "markerType": "T_IconPOI_Ruin",
     "x": 0.8893128501217064,
     "y": 0.6861219285720717,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Buccaneer.Habbitable_01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Buccaneer.Habbitable_01</code></p>",
   },
   {
     "id": "wr-439961-11-3-quest-DA_QP_SideQuest_HuntingForAHunter_Core",
@@ -309,7 +362,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.8893128501217064,
     "y": 0.6861219285720717,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.HuntingForAHunter.PartOfWeapon.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.HuntingForAHunter.PartOfWeapon.03</code></p>",
+    "describe": "I came across an abandoned Buccaneers’ camp. Their notes suggest pirates attacked, forcing them to defend themselves and hide in the jungle."
   },
   {
     "id": "wr-439961-11-4",
@@ -318,7 +372,7 @@ const pins = [
     "markerType": "T_IconPOI_Ruin",
     "x": 0.8924652266360041,
     "y": 0.6898360518003233,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Buccaneer.Storage_01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Buccaneer.Storage_01</code></p>",
   },
   {
     "id": "wr-439961-11-4-quest-DA_QP_SideQuest_HuntingForAHunter_Core",
@@ -327,7 +381,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.8924652266360041,
     "y": 0.6898360518003233,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.HuntingForAHunter.PartOfWeapon.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.HuntingForAHunter.PartOfWeapon.01</code></p>",
+    "describe": "I came across an abandoned Buccaneers’ camp. Their notes suggest pirates attacked, forcing them to defend themselves and hide in the jungle."
   },
   {
     "id": "wr-439961-11-5",
@@ -336,7 +391,7 @@ const pins = [
     "markerType": "T_IconPOI_CoastalCamp",
     "x": 0.8924652266360041,
     "y": 0.7158349169322581,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PirateBeachCampPrison.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PirateBeachCampPrison.01</code></p>",
   },
   {
     "id": "wr-439961-11-5-quest-DA_QP_MainQuest_RescueOfProsoners_Core",
@@ -345,7 +400,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.8924652266360041,
     "y": 0.7158349169322581,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.RescueOfProsoners.POI.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.RescueOfProsoners.POI.01</code></p>",
+    "describe": "The pirates are holding plenty of sailors captive. If we free them, they might help us get off this island."
   },
   {
     "id": "wr-439961-11-6",
@@ -354,7 +410,8 @@ const pins = [
     "markerType": "T_IconPOI_Shipwreck",
     "x": 0.8925152643584534,
     "y": 0.708996213282169,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BiggerBoat.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BiggerBoat.02</code></p>",
+
   },
   {
     "id": "wr-439961-11-6-quest-DA_QP_MainQuest_INeedBiggerBoat_Core",
@@ -363,7 +420,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.8925152643584534,
     "y": 0.708996213282169,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.ShipRepair.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.ShipRepair.02</code></p>",
+    "describe": "Even if this island looks like a little paradise, I won’t last long here. I need to get back to civilization."
   },
   {
     "id": "wr-439961-11-7",
@@ -372,7 +430,8 @@ const pins = [
     "markerType": "T_IconPOI_Shipwreck",
     "x": 0.8814319080242669,
     "y": 0.7121207937040066,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BiggerBoat.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BiggerBoat.03</code></p>",
+
   },
   {
     "id": "wr-439961-11-7-quest-DA_QP_MainQuest_INeedBiggerBoat_Core",
@@ -381,7 +440,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.8814319080242669,
     "y": 0.7121207937040066,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.ShipRepair.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.ShipRepair.03</code></p>",
+    "describe": "Even if this island looks like a little paradise, I won’t last long here. I need to get back to civilization."
   },
   {
     "id": "wr-439961-11-8",
@@ -390,7 +450,8 @@ const pins = [
     "markerType": "POI_SeaAdventure_ShipBattle_KetchForDestroy",
     "x": 0.9098032982763377,
     "y": 0.7139778553181324,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.BrethrenBonnetSidequest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.BrethrenBonnetSidequest</code></p>",
+
   },
   {
     "id": "wr-439961-12-0",
@@ -399,7 +460,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.9887151356227232,
     "y": 0.67721938732085,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.05</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.05</code></p>",
+
   },
   {
     "id": "wr-439961-12-1",
@@ -408,7 +470,7 @@ const pins = [
     "markerType": "T_MapIcon_Dungeon_04",
     "x": 0.9814268155067507,
     "y": 0.6724802043527078,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Dungeon.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Dungeon.01</code></p>",
   },
   {
     "id": "wr-439961-12-2",
@@ -417,7 +479,7 @@ const pins = [
     "markerType": "T_IconPOI_CoastalCamp",
     "x": 0.9850709755647369,
     "y": 0.6630018390499672,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PirateBeachCampPrison.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PirateBeachCampPrison.02</code></p>",
   },
   {
     "id": "wr-439961-12-2-quest-DA_QP_MainQuest_RescueOfProsoners_Core",
@@ -426,7 +488,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.9850709755647369,
     "y": 0.6630018390499672,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.RescueOfProsoners.POI.02.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.RescueOfProsoners.POI.02.01</code></p>",
+    "describe": "The pirates are holding plenty of sailors captive. If we free them, they might help us get off this island."
   },
   {
     "id": "wr-439961-12-3",
@@ -435,7 +498,7 @@ const pins = [
     "markerType": "T_IconPOI_CoastalCamp",
     "x": 0.9887151356227232,
     "y": 0.6866977526235905,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PirateBeachCampPrison.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PirateBeachCampPrison.03</code></p>",
   },
   {
     "id": "wr-439961-12-3-quest-DA_QP_MainQuest_RescueOfProsoners_Core",
@@ -444,7 +507,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.9887151356227232,
     "y": 0.6866977526235905,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.RescueOfProsoners.POI.03.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.RescueOfProsoners.POI.03.01</code></p>",
+    "describe": "The pirates are holding plenty of sailors captive. If we free them, they might help us get off this island."
   },
   {
     "id": "wr-439961-12-4",
@@ -453,7 +517,7 @@ const pins = [
     "markerType": "T_IconPOI_CoastalCamp",
     "x": 0.9704943358739216,
     "y": 0.6582626567153689,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PirateBeachCampPrison.04</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PirateBeachCampPrison.04</code></p>",
   },
   {
     "id": "wr-439961-12-4-quest-DA_QP_MainQuest_RescueOfProsoners_Core",
@@ -462,7 +526,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.9704943358739216,
     "y": 0.6582626567153689,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.RescueOfProsoners.POI.04.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.RescueOfProsoners.POI.04.01</code></p>",
+    "describe": "The pirates are holding plenty of sailors captive. If we free them, they might help us get off this island."
   },
   {
     "id": "wr-439961-12-5",
@@ -471,7 +536,7 @@ const pins = [
     "markerType": "T_IconPOI_CoastalCamp",
     "x": 0.9741384959319079,
     "y": 0.6630018390499672,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Smuggler.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Smuggler.01</code></p>",
   },
   {
     "id": "wr-439961-12-6",
@@ -480,7 +545,8 @@ const pins = [
     "markerType": "POI_SeaAdventure_ShipBattle_BB_01",
     "x": 0.9577397756709699,
     "y": 0.6938065264422599,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.Hunter3Sidequest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.Hunter3Sidequest</code></p>",
+
   },
   {
     "id": "wr-439961-13-0",
@@ -489,7 +555,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.8522110967380389,
     "y": 0.5332218919014863,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.07</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.07</code></p>",
+
   },
   {
     "id": "wr-439961-13-1",
@@ -498,7 +565,7 @@ const pins = [
     "markerType": "T_IconPOI_BossArena",
     "x": 0.8503135026002085,
     "y": 0.5271123134018804,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BoatswainBossArena.Point</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BoatswainBossArena.Point</code></p>",
   },
   {
     "id": "wr-439961-13-1-quest-DA_QP_MainQuest_Revenge_Core",
@@ -507,7 +574,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.8503135026002085,
     "y": 0.5271123134018804,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BoatswainBossArena.Point</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BoatswainBossArena.Point</code></p>",
+    "describe": "Thomas Richards killed my crew, sank my ship, and threw me into the sea. Time to pay that bastard a visit and settle the score. While I’m at it, I’ll take the artifact back—if I’m lucky, it’ll lift this blight from my body."
   },
   {
     "id": "wr-439961-13-1-quest-DA_QP_SideQuest_AboutDoctorsAndSecretsQuest_Core",
@@ -516,7 +584,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.8503135026002085,
     "y": 0.5271123134018804,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BoatswainBossArena.Zone</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BoatswainBossArena.Zone</code></p>",
+    "describe": "Someone tipped the pirates off about my ship’s route. Doctor Galen is convinced that the traitor is among the Governor’s inner circle."
   },
   {
     "id": "wr-439961-13-2",
@@ -525,7 +594,7 @@ const pins = [
     "markerType": "T_MapIcon_Ruins_02",
     "x": 0.8598014738304895,
     "y": 0.5128566302361331,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.01</code></p>",
   },
   {
     "id": "wr-439961-13-3",
@@ -534,7 +603,7 @@ const pins = [
     "markerType": "T_MapIcon_Ruins_02",
     "x": 0.8522110967380389,
     "y": 0.5128566302361331,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.03</code></p>",
   },
   {
     "id": "wr-439961-13-4",
@@ -543,7 +612,7 @@ const pins = [
     "markerType": "T_IconPOI_CoastalCamp",
     "x": 0.8635966626472796,
     "y": 0.5413679965676276,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Smuggler.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Smuggler.02</code></p>",
   },
   {
     "id": "wr-439961-13-5",
@@ -552,7 +621,7 @@ const pins = [
     "markerType": "T_IconPOI_CoastalCamp",
     "x": 0.8598014738304895,
     "y": 0.5250757872353451,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PiratesBeachCamp.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PiratesBeachCamp.01</code></p>",
   },
   {
     "id": "wr-439961-14-0",
@@ -561,7 +630,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.7378611389310852,
     "y": 0.8460983193640194,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.04</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.04</code></p>",
+
   },
   {
     "id": "wr-439961-14-1",
@@ -570,7 +640,7 @@ const pins = [
     "markerType": "T_IconPOI_Ruin",
     "x": 0.7430186461244481,
     "y": 0.8400600145286645,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.01</code></p>",
   },
   {
     "id": "wr-439961-14-1-quest-DA_QP_MainQuest_Revenge_Core",
@@ -579,7 +649,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.7430186461244481,
     "y": 0.8400600145286645,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.01</code></p>",
+    "describe": "Thomas Richards killed my crew, sank my ship, and threw me into the sea. Time to pay that bastard a visit and settle the score. While I’m at it, I’ll take the artifact back—if I’m lucky, it’ll lift this blight from my body."
   },
   {
     "id": "wr-439961-14-2",
@@ -588,7 +659,7 @@ const pins = [
     "markerType": "T_IconPOI_Camp_Smuggler",
     "x": 0.7309844626732679,
     "y": 0.8219451000226,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.02</code></p>",
   },
   {
     "id": "wr-439961-14-3",
@@ -597,7 +668,8 @@ const pins = [
     "markerType": "POI_SeaAdventure_ShipBattle_BB_07",
     "x": 0.7602103367689913,
     "y": 0.811881258630342,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.GalenSidequest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.GalenSidequest</code></p>",
+
   },
   {
     "id": "wr-439961-15-0",
@@ -606,7 +678,7 @@ const pins = [
     "markerType": "T_MapIcon_Ruins_02",
     "x": 0.824166554778631,
     "y": 0.6367163011037155,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.05</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.05</code></p>",
   },
   {
     "id": "wr-439961-15-1",
@@ -615,7 +687,7 @@ const pins = [
     "markerType": "T_IconPOI_CoastalCamp",
     "x": 0.8367983770247489,
     "y": 0.6194623724618045,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PiratesBeachCamp.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.PiratesBeachCamp.02</code></p>",
   },
   {
     "id": "wr-439961-15-2",
@@ -624,7 +696,7 @@ const pins = [
     "markerType": "T_IconPOI_Camp_Smuggler",
     "x": 0.8410089846204981,
     "y": 0.6453432654246709,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.02</code></p>",
   },
   {
     "id": "wr-439961-15-2-quest-DA_QP_MainQuest_Revenge_Core",
@@ -633,7 +705,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.8410089846204981,
     "y": 0.6453432654246709,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.02</code></p>",
+    "describe": "Thomas Richards killed my crew, sank my ship, and threw me into the sea. Time to pay that bastard a visit and settle the score. While I’m at it, I’ll take the artifact back—if I’m lucky, it’ll lift this blight from my body."
   },
   {
     "id": "wr-439961-15-3",
@@ -642,13 +715,15 @@ const pins = [
     "markerType": "POI_SeaAdventure_ShipBattle_BB_03",
     "x": 0.8094294284640736,
     "y": 0.5993327890462417,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.Hunter1Sidequest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.Hunter1Sidequest</code></p>",
+
   },
   {
     "id": "wr-439961-16-0-quest-DA_QP_MainQuest_Seafarer_Core",
     "title": "How My Sea Adventure Began",
     "category": "quests-main",
     "markerType": "T_QuestIcon_Main_Active",
+    "describe": "I got myself a pretty good ship. But Caribbean waters are too rough to sail without a few good cannons.",
     "x": 0.7938021648931631,
     "y": 0.6902703111495907,
     "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.TradingPosts.Buccaneers</code></p>"
@@ -660,7 +735,8 @@ const pins = [
     "markerType": "T_IconPOI_Shipwreck",
     "x": 0.8120827573095586,
     "y": 0.9210512150586349,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BattleShipwrecks.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BattleShipwrecks.01</code></p>",
+
   },
   {
     "id": "wr-439961-19-1",
@@ -669,7 +745,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.7892764590951084,
     "y": 0.9023604093454214,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.06</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.06</code></p>",
+
   },
   {
     "id": "wr-439961-19-2",
@@ -678,7 +755,7 @@ const pins = [
     "markerType": "T_MapIcon_Dungeon_04",
     "x": 0.7938377187379984,
     "y": 0.8982068969647072,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Dungeon.07</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Dungeon.07</code></p>",
   },
   {
     "id": "wr-439961-19-3",
@@ -687,7 +764,7 @@ const pins = [
     "markerType": "T_IconPOI_Mystery",
     "x": 0.803829049358561,
     "y": 0.8986683986923109,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Grave.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Grave.01</code></p>",
   },
   {
     "id": "wr-439961-19-4",
@@ -696,7 +773,7 @@ const pins = [
     "markerType": "T_MapIcon_Ruins_02",
     "x": 0.7915570891871182,
     "y": 0.9106674341068496,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.04</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UniversallRuins.04</code></p>",
   },
   {
     "id": "wr-439961-20-0",
@@ -705,7 +782,7 @@ const pins = [
     "markerType": "T_IconPOI_Camp_Smuggler",
     "x": 0.32033655427639224,
     "y": 0.22097390619391252,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.04</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.04</code></p>",
   },
   {
     "id": "wr-439961-20-1",
@@ -714,7 +791,8 @@ const pins = [
     "markerType": "POI_SeaAdventure_Ship_PrancingPony",
     "x": 0.2794454054105283,
     "y": 0.24428081697766454,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.PrancingSidequest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.PrancingSidequest</code></p>",
+
   },
   {
     "id": "wr-439961-20-2",
@@ -723,7 +801,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.3124951725481045,
     "y": 0.21373292447963477,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.BigMetal.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.BigMetal.01</code></p>",
+
   },
   {
     "id": "wr-439961-20-3",
@@ -732,7 +811,7 @@ const pins = [
     "markerType": "T_IconPOI_Farm",
     "x": 0.3124951725481045,
     "y": 0.1974407151473522,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.GardenRuin.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.GardenRuin.01</code></p>",
   },
   {
     "id": "wr-439961-20-4",
@@ -741,7 +820,7 @@ const pins = [
     "markerType": "T_IconPOI_Farm",
     "x": 0.3159740954046915,
     "y": 0.20151376748042285,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.GardenRuin.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.GardenRuin.02</code></p>",
   },
   {
     "id": "wr-439961-20-5",
@@ -750,7 +829,7 @@ const pins = [
     "markerType": "T_IconPOI_Farm",
     "x": 0.30901624969151753,
     "y": 0.20151376748042285,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.GardenRuin.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.GardenRuin.03</code></p>",
   },
   {
     "id": "wr-439961-20-6",
@@ -759,7 +838,7 @@ const pins = [
     "markerType": "T_MapIcon_Ruins_02",
     "x": 0.29857948112175664,
     "y": 0.21373292447963477,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PriestessHut</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PriestessHut</code></p>",
   },
   {
     "id": "wr-439961-20-6-quest-DA_QP_MainQuest_ForgottenRelic_Core",
@@ -768,7 +847,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.29857948112175664,
     "y": 0.21373292447963477,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PriestessHut</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PriestessHut</code></p>",
+    "describe": "It turns out the artifact is one of Charon’s Obols—relics of an ancient being who ferries souls to the realm of the dead. The traveler I rescued warned that this relic will soon turn me into one of the undead. To avoid such a grim fate, I’ll have to find the remaining Obols."
   },
   {
     "id": "wr-439961-20-7",
@@ -777,7 +857,7 @@ const pins = [
     "markerType": "T_MapIcon_Pool",
     "x": 0.3020584039783436,
     "y": 0.2178059768127054,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.01</code></p>",
   },
   {
     "id": "wr-439961-20-7-quest-DA_QP_SideQuest_JokesOfTheGods_Core",
@@ -786,7 +866,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.3020584039783436,
     "y": 0.2178059768127054,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.01</code></p>",
+    "describe": "At the centre of the flooded platform stands an ancient stone altar. Carved into it is the beginning of a tale about the Itzeltek's priest and his daughter."
   },
   {
     "id": "wr-439961-20-8",
@@ -795,7 +876,7 @@ const pins = [
     "markerType": "T_MapIcon_Pool",
     "x": 0.29880036485497025,
     "y": 0.20843149113336581,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.02</code></p>",
   },
   {
     "id": "wr-439961-20-8-quest-DA_QP_SideQuest_JokesOfTheGods_Core",
@@ -804,7 +885,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.29880036485497025,
     "y": 0.20843149113336581,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.02</code></p>",
+    "describe": "At the centre of the flooded platform stands an ancient stone altar. Carved into it is the beginning of a tale about the Itzeltek's priest and his daughter."
   },
   {
     "id": "wr-439961-20-9",
@@ -813,7 +895,7 @@ const pins = [
     "markerType": "T_MapIcon_Pool",
     "x": 0.2951005582651697,
     "y": 0.2178059768127054,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.03</code></p>",
   },
   {
     "id": "wr-439961-20-9-quest-DA_QP_SideQuest_JokesOfTheGods_Core",
@@ -822,7 +904,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.2951005582651697,
     "y": 0.2178059768127054,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.JokesOfTheGods.Pool.03</code></p>",
+    "describe": "At the centre of the flooded platform stands an ancient stone altar. Carved into it is the beginning of a tale about the Itzeltek's priest and his daughter."
   },
   {
     "id": "wr-439961-21-0",
@@ -831,7 +914,7 @@ const pins = [
     "markerType": "T_IconPOI_Camp_Smuggler",
     "x": 0.16055674765797673,
     "y": 0.546003927754158,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.05</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.05</code></p>",
   },
   {
     "id": "wr-439961-21-1",
@@ -840,7 +923,7 @@ const pins = [
     "markerType": "T_MapIcon_Table",
     "x": 0.17661331431374985,
     "y": 0.5309649653910576,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.01</code></p>",
   },
   {
     "id": "wr-439961-21-1-quest-DA_QP_MainQuest_ForgottenRelic_Core",
@@ -849,7 +932,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.17661331431374985,
     "y": 0.5309649653910576,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.01</code></p>",
+    "describe": "It turns out the artifact is one of Charon’s Obols—relics of an ancient being who ferries souls to the realm of the dead. The traveler I rescued warned that this relic will soon turn me into one of the undead. To avoid such a grim fate, I’ll have to find the remaining Obols."
   },
   {
     "id": "wr-439961-21-2",
@@ -858,7 +942,7 @@ const pins = [
     "markerType": "T_MapIcon_Table",
     "x": 0.17661331431374985,
     "y": 0.5347247062986046,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.04</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.04</code></p>",
   },
   {
     "id": "wr-439961-21-2-quest-DA_QP_MainQuest_ForgottenRelic_Core",
@@ -867,7 +951,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.17661331431374985,
     "y": 0.5347247062986046,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.04</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.04</code></p>",
+    "describe": "It turns out the artifact is one of Charon’s Obols—relics of an ancient being who ferries souls to the realm of the dead. The traveler I rescued warned that this relic will soon turn me into one of the undead. To avoid such a grim fate, I’ll have to find the remaining Obols."
   },
   {
     "id": "wr-439961-21-3",
@@ -876,7 +961,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.18785291156803374,
     "y": 0.5648026310248051,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.BigMetal.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.BigMetal.02</code></p>",
+
   },
   {
     "id": "wr-439961-21-4",
@@ -885,7 +971,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.16537371760059572,
     "y": 0.5591630202970285,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.BigMetal.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.BigMetal.03</code></p>",
+
   },
   {
     "id": "wr-439961-21-5",
@@ -894,7 +981,7 @@ const pins = [
     "markerType": "T_MapIcon_Corrupted",
     "x": 0.1798246279695823,
     "y": 0.5554032793894815,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.02</code></p>",
   },
   {
     "id": "wr-439961-21-5-quest-DA_QP_MainQuest_ForgottenRelic_Core",
@@ -903,7 +990,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.1798246279695823,
     "y": 0.5554032793894815,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.02</code></p>",
+    "describe": "It turns out the artifact is one of Charon’s Obols—relics of an ancient being who ferries souls to the realm of the dead. The traveler I rescued warned that this relic will soon turn me into one of the undead. To avoid such a grim fate, I’ll have to find the remaining Obols."
   },
   {
     "id": "wr-439961-21-6",
@@ -912,7 +1000,7 @@ const pins = [
     "markerType": "T_MapIcon_Corrupted",
     "x": 0.1798501146374346,
     "y": 0.561162247212816,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.03</code></p>",
   },
   {
     "id": "wr-439961-21-6-quest-DA_QP_MainQuest_ForgottenRelic_Core",
@@ -921,7 +1009,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.1798501146374346,
     "y": 0.561162247212816,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.ReceiveTabletsRuin.03</code></p>",
+    "describe": "It turns out the artifact is one of Charon’s Obols—relics of an ancient being who ferries souls to the realm of the dead. The traveler I rescued warned that this relic will soon turn me into one of the undead. To avoid such a grim fate, I’ll have to find the remaining Obols."
   },
   {
     "id": "wr-439961-24-0",
@@ -930,7 +1019,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.7872066471827182,
     "y": 0.5142823702430457,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.03</code></p>",
+
   },
   {
     "id": "wr-439961-24-1",
@@ -939,7 +1029,7 @@ const pins = [
     "markerType": "T_MapIcon_Ruins_02",
     "x": 0.7687852392895214,
     "y": 0.509968888082568,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.HabbitableRuinQuest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.HabbitableRuinQuest</code></p>",
   },
   {
     "id": "wr-439961-24-1-quest-DA_QP_SideQuest_FearHasBigEyes_Core",
@@ -948,7 +1038,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.7687852392895214,
     "y": 0.509968888082568,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.HabbitableRuinQuest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.HabbitableRuinQuest</code></p>",
+    "describe": "I came across pages from the journal of another man who, like me, was shipwrecked and struggled to survive."
   },
   {
     "id": "wr-439961-24-2",
@@ -957,7 +1048,7 @@ const pins = [
     "markerType": "T_MapIcon_Hut_02",
     "x": 0.7872066471827182,
     "y": 0.5056554059220902,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.HutQuest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.HutQuest</code></p>",
   },
   {
     "id": "wr-439961-24-2-quest-DA_QP_SideQuest_FearHasBigEyes_Core",
@@ -966,7 +1057,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.7872066471827182,
     "y": 0.5056554059220902,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.HutQuest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.HutQuest</code></p>",
+    "describe": "I came across pages from the journal of another man who, like me, was shipwrecked and struggled to survive."
   },
   {
     "id": "wr-439961-24-3",
@@ -975,7 +1067,8 @@ const pins = [
     "markerType": "T_IconPOI_Shipwreck",
     "x": 0.7706273800788411,
     "y": 0.49918518268137363,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.WreckQuest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.WreckQuest</code></p>",
+
   },
   {
     "id": "wr-439961-24-3-quest-DA_QP_SideQuest_FearHasBigEyes_Core",
@@ -984,7 +1077,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.7706273800788411,
     "y": 0.49918518268137363,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.WreckQuest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Robinson.WreckQuest</code></p>",
+    "describe": "I came across pages from the journal of another man who, like me, was shipwrecked and struggled to survive."
   },
   {
     "id": "wr-439961-25-0",
@@ -993,7 +1087,7 @@ const pins = [
     "markerType": "T_MapIcon_Altar_02",
     "x": 0.18550633129354657,
     "y": 0.38636076446692874,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Altar.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Altar.02</code></p>",
   },
   {
     "id": "wr-439961-25-1",
@@ -1002,7 +1096,7 @@ const pins = [
     "markerType": "T_MapIcon_Altar_02",
     "x": 0.1879530459960696,
     "y": 0.40447316570520575,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Altar.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Altar.03</code></p>",
   },
   {
     "id": "wr-439961-25-2",
@@ -1011,7 +1105,7 @@ const pins = [
     "markerType": "T_MapIcon_Altar_02",
     "x": 0.1885137516065607,
     "y": 0.3948052612384208,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Altar.04</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Altar.04</code></p>",
   },
   {
     "id": "wr-439961-25-3",
@@ -1020,7 +1114,7 @@ const pins = [
     "markerType": "T_MapIcon_Altar_02",
     "x": 0.20637986843306835,
     "y": 0.38636076446692874,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Altar.05</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Altar.05</code></p>",
   },
   {
     "id": "wr-439961-25-4",
@@ -1029,7 +1123,7 @@ const pins = [
     "markerType": "T_MapIcon_Altar_02",
     "x": 0.20637986843306835,
     "y": 0.40327959728380236,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Altar.06</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Altar.06</code></p>",
   },
   {
     "id": "wr-439961-25-5",
@@ -1038,7 +1132,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.20477421160515213,
     "y": 0.4107990784653525,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.BigMetal.04</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.BigMetal.04</code></p>",
+
   },
   {
     "id": "wr-439961-25-6",
@@ -1047,7 +1142,7 @@ const pins = [
     "markerType": "T_MapIcon_Dungeon_03",
     "x": 0.1951402711787845,
     "y": 0.4107990784653525,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Crypt.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.Crypt.01</code></p>",
   },
   {
     "id": "wr-439961-26-0",
@@ -1056,7 +1151,7 @@ const pins = [
     "markerType": "T_MapIcon_PannoRuins",
     "x": 0.1025915822126487,
     "y": 0.4132123128730615,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.01</code></p>",
   },
   {
     "id": "wr-439961-26-0-quest-DA_QP_MainQuest_ForgottenRelic_Core",
@@ -1065,7 +1160,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.1025915822126487,
     "y": 0.4132123128730615,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.01</code></p>",
+    "describe": "It turns out the artifact is one of Charon’s Obols—relics of an ancient being who ferries souls to the realm of the dead. The traveler I rescued warned that this relic will soon turn me into one of the undead. To avoid such a grim fate, I’ll have to find the remaining Obols."
   },
   {
     "id": "wr-439961-26-1",
@@ -1074,7 +1170,7 @@ const pins = [
     "markerType": "T_MapIcon_PannoRuins",
     "x": 0.1025915822126487,
     "y": 0.40945257196551454,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.02</code></p>",
   },
   {
     "id": "wr-439961-26-1-quest-DA_QP_MainQuest_ForgottenRelic_Core",
@@ -1083,7 +1179,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.1025915822126487,
     "y": 0.40945257196551454,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.02</code></p>",
+    "describe": "It turns out the artifact is one of Charon’s Obols—relics of an ancient being who ferries souls to the realm of the dead. The traveler I rescued warned that this relic will soon turn me into one of the undead. To avoid such a grim fate, I’ll have to find the remaining Obols."
   },
   {
     "id": "wr-439961-26-2",
@@ -1092,7 +1189,7 @@ const pins = [
     "markerType": "T_MapIcon_PannoRuins",
     "x": 0.08492935872895938,
     "y": 0.3944136096024143,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.03</code></p>",
   },
   {
     "id": "wr-439961-26-2-quest-DA_QP_MainQuest_ForgottenRelic_Core",
@@ -1101,7 +1198,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.08492935872895938,
     "y": 0.3944136096024143,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.PannoRead.03</code></p>",
+    "describe": "It turns out the artifact is one of Charon’s Obols—relics of an ancient being who ferries souls to the realm of the dead. The traveler I rescued warned that this relic will soon turn me into one of the undead. To avoid such a grim fate, I’ll have to find the remaining Obols."
   },
   {
     "id": "wr-439961-26-3",
@@ -1110,7 +1208,7 @@ const pins = [
     "markerType": "T_IconPOI_Farm",
     "x": 0.10580289586848118,
     "y": 0.39253373978218453,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.GardenRuin.Medium.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.GardenRuin.Medium.01</code></p>",
   },
   {
     "id": "wr-439961-26-4",
@@ -1119,7 +1217,7 @@ const pins = [
     "markerType": "T_MapIcon_StargazerTower",
     "x": 0.09456329915532702,
     "y": 0.41133244241928796,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.01</code></p>",
   },
   {
     "id": "wr-439961-26-4-quest-DA_QP_SideQuest_FaitOfTheProphet_Core",
@@ -1128,7 +1226,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.09456329915532702,
     "y": 0.41133244241928796,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.01</code></p>",
+    "describe": "The Swamp Ruins hide countless secrets and treasures left behind by an ancient people. I can’t help but wonder what stories these walls hold."
   },
   {
     "id": "wr-439961-26-5",
@@ -1137,7 +1236,7 @@ const pins = [
     "markerType": "T_MapIcon_StargazerTower",
     "x": 0.11061986581110017,
     "y": 0.3887739988746377,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.02</code></p>",
   },
   {
     "id": "wr-439961-26-5-quest-DA_QP_SideQuest_FaitOfTheProphet_Core",
@@ -1146,7 +1245,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.11061986581110017,
     "y": 0.3887739988746377,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.02</code></p>",
+    "describe": "The Swamp Ruins hide countless secrets and treasures left behind by an ancient people. I can’t help but wonder what stories these walls hold."
   },
   {
     "id": "wr-439961-26-6",
@@ -1155,7 +1255,7 @@ const pins = [
     "markerType": "T_MapIcon_StargazerTower",
     "x": 0.1090142095243136,
     "y": 0.4207317940546116,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.03</code></p>",
   },
   {
     "id": "wr-439961-26-6-quest-DA_QP_SideQuest_FaitOfTheProphet_Core",
@@ -1164,7 +1264,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.1090142095243136,
     "y": 0.4207317940546116,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Swamp.FaitOfTheProphet.Stele.03</code></p>",
+    "describe": "The Swamp Ruins hide countless secrets and treasures left behind by an ancient people. I can’t help but wonder what stories these walls hold."
   },
   {
     "id": "wr-439961-27-0",
@@ -1173,7 +1274,8 @@ const pins = [
     "markerType": "POI_SeaAdventure_ShipBattle_Bonnet",
     "x": 0.30473312530435265,
     "y": 0.3476390561020968,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.BrethrenBonnetSidequest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.BrethrenBonnetSidequest</code></p>",
+
   },
   {
     "id": "wr-439961-29-0",
@@ -1182,7 +1284,8 @@ const pins = [
     "markerType": "T_IconPOI_Shipwreck",
     "x": 0.15068601428514558,
     "y": 0.35029873710156306,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.SecretOfTheExpedition.Ship.Skeleton</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.SecretOfTheExpedition.Ship.Skeleton</code></p>",
+
   },
   {
     "id": "wr-439961-29-0-quest-DA_QP_SideQuest_SecretOfTheExpedition_Core",
@@ -1191,7 +1294,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.15068601428514558,
     "y": 0.35029873710156306,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.SecretOfTheExpedition.Ship.Skeleton</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.SecretOfTheExpedition.Ship.Skeleton</code></p>",
+    "describe": "As if the marks on my body weren’t enough, now I seem to be seeing ghosts talking about some kind of Spanish expedition."
   },
   {
     "id": "wr-439961-30-0",
@@ -1200,7 +1304,7 @@ const pins = [
     "markerType": "T_MapIcon_Outpost_02",
     "x": 0.6028037464524031,
     "y": 0.31653458344189606,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.BigRuins.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.BigRuins.01</code></p>",
   },
   {
     "id": "wr-439961-30-1",
@@ -1209,7 +1313,7 @@ const pins = [
     "markerType": "T_MapIcon_Ruins_02",
     "x": 0.6158999510574701,
     "y": 0.3203677761368736,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.FarmSacrifice.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.FarmSacrifice.01</code></p>",
   },
   {
     "id": "wr-439961-30-1-quest-DA_QP_SideQuest_SacrificialLamb_Core",
@@ -1218,7 +1322,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.6158999510574701,
     "y": 0.3203677761368736,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.SacrificialLamb.Body.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.SacrificialLamb.Body.01</code></p>",
+    "describe": "Somebody tied a man to the ship’s wheel and left him to die a slow, agonizing death…"
   },
   {
     "id": "wr-439961-30-2",
@@ -1227,7 +1332,7 @@ const pins = [
     "markerType": "T_IconPOI_Camp_Smuggler",
     "x": 0.6077148231793033,
     "y": 0.30695160170445224,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.GroveWolfCamp.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.GroveWolfCamp.01</code></p>",
   },
   {
     "id": "wr-439961-30-3",
@@ -1236,7 +1341,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.6240850789356368,
     "y": 0.31845117978938486,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.01</code></p>",
+
   },
   {
     "id": "wr-439961-30-4",
@@ -1245,7 +1351,7 @@ const pins = [
     "markerType": "T_MapIcon_Outpost_01",
     "x": 0.6158999510574701,
     "y": 0.2973686199670084,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.01</code></p>",
   },
   {
     "id": "wr-439961-30-4-quest-DA_QP_MainQuest_LostCargo_Core",
@@ -1254,7 +1360,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.6158999510574701,
     "y": 0.2973686199670084,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.01</code></p>",
+    "describe": "The artifact that could save me has fallen into the hands of another of Blackbeard’s lackeys—Israel Hands. I’ll have to go looking for him in the Foothills."
   },
   {
     "id": "wr-439961-30-5",
@@ -1263,7 +1370,7 @@ const pins = [
     "markerType": "T_MapIcon_Outpost_01",
     "x": 0.633907232389437,
     "y": 0.3146179870944073,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.02</code></p>",
   },
   {
     "id": "wr-439961-30-5-quest-DA_QP_MainQuest_LostCargo_Core",
@@ -1272,7 +1379,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.633907232389437,
     "y": 0.3146179870944073,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.02</code></p>",
+    "describe": "The artifact that could save me has fallen into the hands of another of Blackbeard’s lackeys—Israel Hands. I’ll have to go looking for him in the Foothills."
   },
   {
     "id": "wr-439961-30-6",
@@ -1281,7 +1389,7 @@ const pins = [
     "markerType": "T_MapIcon_Outpost_01",
     "x": 0.6257221045112702,
     "y": 0.2954520236195196,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.03</code></p>",
   },
   {
     "id": "wr-439961-30-6-quest-DA_QP_MainQuest_LostCargo_Core",
@@ -1290,7 +1398,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.6257221045112702,
     "y": 0.2954520236195196,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.SmallCamp.03</code></p>",
+    "describe": "The artifact that could save me has fallen into the hands of another of Blackbeard’s lackeys—Israel Hands. I’ll have to go looking for him in the Foothills."
   },
   {
     "id": "wr-439961-30-7",
@@ -1299,7 +1408,8 @@ const pins = [
     "markerType": "POI_SeaAdventure_ShipBattle_BB_04",
     "x": 0.5897075418473362,
     "y": 0.2705362711021656,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.Brethren2Sidequest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.Brethren2Sidequest</code></p>",
+
   },
   {
     "id": "wr-439961-31-0",
@@ -1308,7 +1418,8 @@ const pins = [
     "markerType": "T_IconPOI_Quest",
     "x": 0.7741521685478719,
     "y": 0.40136616928826846,
-    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.05.Marker</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.05.Marker</code></p>",
+
   },
   {
     "id": "wr-439961-32-0",
@@ -1317,7 +1428,7 @@ const pins = [
     "markerType": "T_IconPOI_Farm",
     "x": 0.8136361015057568,
     "y": 0.33750442443941714,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.FarmVillage.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.FarmVillage.01</code></p>",
   },
   {
     "id": "wr-439961-32-1",
@@ -1326,7 +1437,7 @@ const pins = [
     "markerType": "T_MapIcon_Ruins_02",
     "x": 0.8276951279088003,
     "y": 0.3164806238929367,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.FarmSacrifice.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.FarmSacrifice.02</code></p>",
   },
   {
     "id": "wr-439961-32-1-quest-DA_QP_SideQuest_SacrificialLamb_Core",
@@ -1335,7 +1446,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.8276951279088003,
     "y": 0.3164806238929367,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.SacrificialLamb.Body.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.SacrificialLamb.Body.02</code></p>",
+    "describe": "Somebody tied a man to the ship’s wheel and left him to die a slow, agonizing death…"
   },
   {
     "id": "wr-439961-32-2",
@@ -1344,7 +1456,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.8113232487633595,
     "y": 0.3164806238929367,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.02</code></p>",
+
   },
   {
     "id": "wr-439961-32-3",
@@ -1353,7 +1466,7 @@ const pins = [
     "markerType": "T_IconPOI_Camp_Smuggler",
     "x": 0.8358810674815206,
     "y": 0.32989812876709074,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.06</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.06</code></p>",
   },
   {
     "id": "wr-439961-32-4",
@@ -1362,7 +1475,8 @@ const pins = [
     "markerType": "POI_SeaAdventure_ShipBattle_BB_08",
     "x": 0.8407926312251529,
     "y": 0.35289956569421194,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.ShipbattleMainstory</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.ShipbattleMainstory</code></p>",
+
   },
   {
     "id": "wr-439961-33-0",
@@ -1371,7 +1485,7 @@ const pins = [
     "markerType": "T_IconPOI_Farm",
     "x": 0.6821143195490235,
     "y": 0.21682064342940918,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Farm.06</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Farm.06</code></p>",
   },
   {
     "id": "wr-439961-33-1",
@@ -1380,7 +1494,7 @@ const pins = [
     "markerType": "T_MapIcon_Outpost_02",
     "x": 0.677061598334618,
     "y": 0.18993551404039966,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.GigaCampBB.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.GigaCampBB.01</code></p>",
   },
   {
     "id": "wr-439961-33-1-quest-DA_QP_FactionQuest_ResidentOfTortuga_Core",
@@ -1389,7 +1503,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.677061598334618,
     "y": 0.18993551404039966,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.ResidentsOfTortuga.JimCodart</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.ResidentsOfTortuga.JimCodart</code></p>",
+    "describe": "Hard times came to Tortuga: the governor was killed, pirates seized control of the archipelago, and the town itself was overrun by the drowned, forcing the survivors to seek shelter elsewhere."
   },
   {
     "id": "wr-439961-33-2",
@@ -1398,7 +1513,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.68037485812073,
     "y": 0.209301162247859,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.03</code></p>",
+
   },
   {
     "id": "wr-439961-33-3",
@@ -1407,7 +1523,8 @@ const pins = [
     "markerType": "POI_SeaAdventure_ShipBattle_BB_05",
     "x": 0.7064667795451323,
     "y": 0.23185960579250942,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.BrethrenSidequest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.BrethrenSidequest</code></p>",
+
   },
   {
     "id": "wr-439961-34-0",
@@ -1416,7 +1533,7 @@ const pins = [
     "markerType": "T_MapIcon_Firebowl",
     "x": 0.5841871839199517,
     "y": 0.4197540834688999,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.FireBowlRuins.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.FireBowlRuins.02</code></p>",
   },
   {
     "id": "wr-439961-34-1",
@@ -1425,7 +1542,7 @@ const pins = [
     "markerType": "T_MapIcon_Dungeon_04",
     "x": 0.5798256785187865,
     "y": 0.42358765629008677,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.02</code></p>",
   },
   {
     "id": "wr-439961-34-2",
@@ -1434,7 +1551,7 @@ const pins = [
     "markerType": "T_MapIcon_Dungeon_04",
     "x": 0.5798256785187865,
     "y": 0.415920510647713,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.Vase.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.Vase.01</code></p>",
   },
   {
     "id": "wr-439961-34-3",
@@ -1443,7 +1560,7 @@ const pins = [
     "markerType": "T_IconPOI_Farm",
     "x": 0.5907294420216995,
     "y": 0.4370051611642409,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Farm.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Farm.02</code></p>",
   },
   {
     "id": "wr-439961-34-4",
@@ -1452,7 +1569,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.5907294420216995,
     "y": 0.4101701514159327,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.04</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.04</code></p>",
+
   },
   {
     "id": "wr-439961-35-0",
@@ -1461,7 +1579,7 @@ const pins = [
     "markerType": "T_MapIcon_Firebowl",
     "x": 0.5436367395139098,
     "y": 0.22128215307124047,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.FireBowlRuins.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.FireBowlRuins.01</code></p>",
   },
   {
     "id": "wr-439961-35-0-quest-DA_QP_MainQuest_LostCargo_Core",
@@ -1470,7 +1588,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.5436367395139098,
     "y": 0.22128215307124047,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.KeyCamp.Zone</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.KeyCamp.Zone</code></p>",
+    "describe": "The artifact that could save me has fallen into the hands of another of Blackbeard’s lackeys—Israel Hands. I’ll have to go looking for him in the Foothills."
   },
   {
     "id": "wr-439961-35-1",
@@ -1479,7 +1598,7 @@ const pins = [
     "markerType": "T_MapIcon_Dungeon_04",
     "x": 0.5321764241121013,
     "y": 0.23086608512420767,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.04</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.04</code></p>",
   },
   {
     "id": "wr-439961-35-2",
@@ -1488,7 +1607,7 @@ const pins = [
     "markerType": "T_MapIcon_Dungeon_04",
     "x": 0.5370879878557335,
     "y": 0.21361500742886672,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.Vase.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Dungeon.Vase.02</code></p>",
   },
   {
     "id": "wr-439961-35-3",
@@ -1497,7 +1616,7 @@ const pins = [
     "markerType": "T_IconPOI_Farm",
     "x": 0.5239904845393809,
     "y": 0.22511572589242734,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Farm.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.Farm.03</code></p>",
   },
   {
     "id": "wr-439961-35-4",
@@ -1506,7 +1625,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.5305392361975572,
     "y": 0.21361500742886672,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.05</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.05</code></p>",
+
   },
   {
     "id": "wr-439961-35-5",
@@ -1515,7 +1635,8 @@ const pins = [
     "markerType": "POI_SeaAdventure_ShipBattle_BB_06",
     "x": 0.5567342428302624,
     "y": 0.1982807161441192,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.SmugglerSidequest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.SmugglerSidequest</code></p>",
+
   },
   {
     "id": "wr-439961-36-0",
@@ -1524,7 +1645,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.6873286691708428,
     "y": 0.40560972279773244,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.06</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.IronCaverns.06</code></p>",
+
   },
   {
     "id": "wr-439961-36-1",
@@ -1533,7 +1655,7 @@ const pins = [
     "markerType": "T_MapIcon_Outpost_01",
     "x": 0.6689121314449675,
     "y": 0.39842248649464956,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.BigCampBB.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.BigCampBB.01</code></p>",
   },
   {
     "id": "wr-439961-36-1-quest-DA_QP_MainQuest_LostCargo_Core",
@@ -1542,7 +1664,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.6689121314449675,
     "y": 0.39842248649464956,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.BigCamp.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.BigCamp.01</code></p>",
+    "describe": "The artifact that could save me has fallen into the hands of another of Blackbeard’s lackeys—Israel Hands. I’ll have to go looking for him in the Foothills."
   },
   {
     "id": "wr-439961-36-2",
@@ -1551,7 +1674,7 @@ const pins = [
     "markerType": "T_MapIcon_Outpost_01",
     "x": 0.6888633806479991,
     "y": 0.4289682407827518,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.BigCampBB.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.BigCampBB.02</code></p>",
   },
   {
     "id": "wr-439961-36-3",
@@ -1560,7 +1683,7 @@ const pins = [
     "markerType": "T_MapIcon_Outpost_01",
     "x": 0.6781204003079052,
     "y": 0.4199841954038982,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.BigCampBB.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.BigCampBB.03</code></p>",
   },
   {
     "id": "wr-439961-36-3-quest-DA_QP_MainQuest_LostCargo_Core",
@@ -1569,7 +1692,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.6781204003079052,
     "y": 0.4199841954038982,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.BigCamp.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.MainQuest.BigCamp.03</code></p>",
+    "describe": "The artifact that could save me has fallen into the hands of another of Blackbeard’s lackeys—Israel Hands. I’ll have to go looking for him in the Foothills."
   },
   {
     "id": "wr-439961-36-4",
@@ -1578,7 +1702,7 @@ const pins = [
     "markerType": "T_MapIcon_Outpost_01",
     "x": 0.699606360988093,
     "y": 0.39842248649464956,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.RockyCamp.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.RockyCamp.01</code></p>",
   },
   {
     "id": "wr-439961-36-4-quest-DA_QP_FactionQuest_Smugglers_Core",
@@ -1587,7 +1711,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.699606360988093,
     "y": 0.39842248649464956,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Highlands.FactionSmugglerQuest.Mob</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Highlands.FactionSmugglerQuest.Mob</code></p>",
+    "describe": "Long Ben is worried his tavern will run out of wine. The smugglers are in trouble—too many people gone missing, and too many caches turning up empty."
   },
   {
     "id": "wr-439961-36-5",
@@ -1596,7 +1721,7 @@ const pins = [
     "markerType": "T_MapIcon_Outpost_01",
     "x": 0.6934675150794679,
     "y": 0.39482886834310815,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.RockyCamp.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.HL.RockyCamp.02</code></p>",
   },
   {
     "id": "wr-439961-36-6",
@@ -1605,7 +1730,7 @@ const pins = [
     "markerType": "T_IconPOI_Camp_Smuggler",
     "x": 0.6765856888307489,
     "y": 0.4325618589342933,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.07</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.07</code></p>",
   },
   {
     "id": "wr-439961-37-0",
@@ -1614,7 +1739,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.6698808802365742,
     "y": 0.8253596692263875,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.02</code></p>",
+
   },
   {
     "id": "wr-439961-37-1",
@@ -1623,7 +1749,7 @@ const pins = [
     "markerType": "T_IconPOI_Cave",
     "x": 0.6780692548929553,
     "y": 0.8445332352254619,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.04</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.04</code></p>",
   },
   {
     "id": "wr-439961-37-1-quest-DA_QP_MainQuest_Revenge_Core",
@@ -1632,7 +1758,8 @@ const pins = [
     "markerType": "T_QuestIcon_Main_Active",
     "x": 0.6780692548929553,
     "y": 0.8445332352254619,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.04</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.BlackMark.04</code></p>",
+    "describe": "Thomas Richards killed my crew, sank my ship, and threw me into the sea. Time to pay that bastard a visit and settle the score. While I’m at it, I’ll take the artifact back—if I’m lucky, it’ll lift this blight from my body."
   },
   {
     "id": "wr-439961-37-2",
@@ -1641,7 +1768,7 @@ const pins = [
     "markerType": "T_IconPOI_Camp_Smuggler",
     "x": 0.6780692548929553,
     "y": 0.8349464522259247,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Treasure.Traveller.Camp.03</code></p>",
   },
   {
     "id": "wr-439961-37-3",
@@ -1650,7 +1777,7 @@ const pins = [
     "markerType": "T_MapIcon_Hut_02",
     "x": 0.6801163485570506,
     "y": 0.8277563649762718,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.FishermanHut.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.FishermanHut.01</code></p>",
   },
   {
     "id": "wr-439961-37-3-quest-DA_QP_SideQuest_SacrificialLamb_Core",
@@ -1659,7 +1786,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.6801163485570506,
     "y": 0.8277563649762718,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.SacrificialLamb.Body.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.SacrificialLamb.Body.01</code></p>",
+    "describe": "Somebody tied a man to the ship’s wheel and left him to die a slow, agonizing death…"
   },
   {
     "id": "wr-439961-37-4",
@@ -1668,7 +1796,7 @@ const pins = [
     "markerType": "T_IconPOI_Camp_Smuggler",
     "x": 0.6698808802365742,
     "y": 0.8445332352254619,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Smuggler.03</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.Smuggler.03</code></p>",
   },
   {
     "id": "wr-439961-37-4-quest-DA_QP_SideQuest_UndergroundWebQuest_Core",
@@ -1677,7 +1805,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.6698808802365742,
     "y": 0.8445332352254619,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UndergroundWeb.Hale</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.UndergroundWeb.Hale</code></p>",
+    "describe": "I found a destroyed Smugglers hideout on the island. It seems like they’re in trouble, and someone is targeting them."
   },
   {
     "id": "wr-439961-38-0",
@@ -1686,7 +1815,8 @@ const pins = [
     "markerType": "POI_SeaAdventure_ShipBattle_BonySue",
     "x": 0.7285435661973049,
     "y": 0.679705484320365,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.BonySueSidequest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.BonySueSidequest</code></p>",
+
   },
   {
     "id": "wr-439961-39-0",
@@ -1695,7 +1825,8 @@ const pins = [
     "markerType": "T_IconPOI_Shipwreck",
     "x": 0.8205596747692306,
     "y": 0.2501161198457275,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.BrigReefsUndead.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.BrigReefsUndead.01</code></p>",
+
   },
   {
     "id": "wr-439961-39-0-quest-DA_QP_FactionQuest_Brotherhood_Core",
@@ -1704,7 +1835,8 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.8205596747692306,
     "y": 0.2501161198457275,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.Brotherhood.Survivors.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.Brotherhood.Survivors.02</code></p>",
+    "describe": "Edward Teach nearly destroyed the Brethren of the Coast during his assault on Tortuga. Their forces are scattered, and Stede Bonnet’s ships—another of Blackbeard’s lieutenants—are hunting down the survivors."
   },
   {
     "id": "wr-439961-40-0",
@@ -1713,7 +1845,8 @@ const pins = [
     "markerType": "T_IconPOI_Shipwreck",
     "x": 0.7710257576012128,
     "y": 0.22263533648794542,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.BrigReefsUndead.02</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.BrigReefsUndead.02</code></p>",
+
   },
   {
     "id": "wr-439961-40-0-quest-DA_QP_FactionQuest_Brotherhood_Core",
@@ -1722,13 +1855,15 @@ const pins = [
     "markerType": "T_QuestIcon_Side_Active",
     "x": 0.7710257576012128,
     "y": 0.22263533648794542,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.Brotherhood.Survivors.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.Brotherhood.Survivors.01</code></p>",
+    "describe": "Edward Teach nearly destroyed the Brethren of the Coast during his assault on Tortuga. Their forces are scattered, and Stede Bonnet’s ships—another of Blackbeard’s lieutenants—are hunting down the survivors."
   },
   {
     "id": "wr-439961-41-0-quest-DA_QP_MainQuest_Seafarer_Core",
     "title": "How My Sea Adventure Began",
     "category": "quests-main",
     "markerType": "T_QuestIcon_Main_Active",
+    "describe": "I got myself a pretty good ship. But Caribbean waters are too rough to sail without a few good cannons.",
     "x": 0.6335570035057234,
     "y": 0.5317488363182099,
     "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.TradingPosts.Brotherhood</code></p>"
@@ -1740,7 +1875,8 @@ const pins = [
     "markerType": "T_IconPOI_Quest",
     "x": 0.5617229083572786,
     "y": 0.039870776677995295,
-    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.08.Marker</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.08.Marker</code></p>",
+
   },
   {
     "id": "wr-439961-43-0",
@@ -1749,7 +1885,8 @@ const pins = [
     "markerType": "T_IconPOI_Quest",
     "x": 0.7274603803784988,
     "y": 0.3065547284014168,
-    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.09.Marker</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.09.Marker</code></p>",
+
   },
   {
     "id": "wr-439961-44-0",
@@ -1758,7 +1895,8 @@ const pins = [
     "markerType": "POI_SeaAdventure_ShipBattle_Weevil",
     "x": 0.38232402716815483,
     "y": 0.8785429915967014,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.CitizensSidequest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.CitizensSidequest</code></p>",
+
   },
   {
     "id": "wr-439961-45-0",
@@ -1767,7 +1905,8 @@ const pins = [
     "markerType": "T_IconPOI_Shipwreck",
     "x": 0.7174946825308082,
     "y": 0.9118063340439133,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.BrigantineReefsUndead.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.BrigantineReefsUndead.01</code></p>",
+
   },
   {
     "id": "wr-439961-46-0",
@@ -1776,7 +1915,8 @@ const pins = [
     "markerType": "T_IconPOI_Shipwreck",
     "x": 0.8267113330058189,
     "y": 0.7868701286458027,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.KetchShelf.01</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Ocean.KetchShelf.01</code></p>",
+
   },
   {
     "id": "wr-439961-47-0",
@@ -1785,7 +1925,8 @@ const pins = [
     "markerType": "T_IconPOI_Quest",
     "x": 0.5335630051211395,
     "y": 0.32433768312367106,
-    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.07.Marker</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.07.Marker</code></p>",
+
   },
   {
     "id": "wr-439961-48-0",
@@ -1794,7 +1935,8 @@ const pins = [
     "markerType": "POI_SeaAdventure_Ship_NewArk",
     "x": 0.4071018313442236,
     "y": 0.44829690714484827,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.NewArkSidequest</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.NewArkSidequest</code></p>",
+
   },
   {
     "id": "wr-439961-50-0",
@@ -1803,7 +1945,8 @@ const pins = [
     "markerType": "T_IconPOI_Quest",
     "x": 0.37070989564844536,
     "y": 0.6705805914107086,
-    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.04.Marker</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.04.Marker</code></p>",
+
   },
   {
     "id": "wr-439961-51-0",
@@ -1812,7 +1955,8 @@ const pins = [
     "markerType": "T_IconPOI_Quest",
     "x": 0.7903741412375114,
     "y": 0.7493501639500496,
-    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.03.Marker</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.03.Marker</code></p>",
+
   },
   {
     "id": "wr-439961-52-0",
@@ -1821,7 +1965,8 @@ const pins = [
     "markerType": "T_IconPOI_Quest",
     "x": 0.6192047556919822,
     "y": 0.6769455646730397,
-    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.01.Marker</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.01.Marker</code></p>",
+    "mapLoot": cloneMapLoot(MAP_LOOT_BLACKBEARD_TREASURE_01)
   },
   {
     "id": "wr-439961-53-0",
@@ -1830,7 +1975,8 @@ const pins = [
     "markerType": "T_IconPOI_Quest",
     "x": 0.45373811584002394,
     "y": 0.8268446373315208,
-    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.02.Marker</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Scenario.TreasureMap.Blackbeard.02.Marker</code></p>",
+
   },
   {
     "id": "wr-439961-56-0",
@@ -1839,13 +1985,14 @@ const pins = [
     "markerType": "T_MapIcon_Smugglers",
     "x": 0.351759148727956,
     "y": 0.469248621824077,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Trade.Smugglers.Base1</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Trade.Smugglers.Base1</code></p>",
   },
   {
     "id": "wr-439961-56-0-quest-DA_QP_MainQuest_Seafarer_Core",
     "title": "How My Sea Adventure Began",
     "category": "quests-main",
     "markerType": "T_QuestIcon_Main_Active",
+    "describe": "I got myself a pretty good ship. But Caribbean waters are too rough to sail without a few good cannons.",
     "x": 0.351759148727956,
     "y": 0.469248621824077,
     "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.TradingPosts.Smugglers</code></p>"
@@ -1857,7 +2004,8 @@ const pins = [
     "markerType": "T_MapIcon_Mine",
     "x": 0.7219400965858834,
     "y": 0.9758467806585807,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.08</code></p>"
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.CJ.CopperCave.08</code></p>",
+
   },
   {
     "id": "wr-439961-60-1",
@@ -1866,8 +2014,9 @@ const pins = [
     "markerType": "POI_SeaAdventure_ShipBattle_BB_02",
     "x": 0.6900126708712476,
     "y": 1,
-    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.Hunter1Sidequest</code></p>"
-  },
+    "content": "<p class=\"wr-map-tag\"><code>Quest.Marker.Debug.Hunter1Sidequest</code></p>",
+
+  }
 ]
 
 const base = (import.meta.env.BASE_URL || '/').replace(/([^/])$/, '$1/')
@@ -1890,4 +2039,5 @@ export default {
   terrain,
   pins,
   mapCategories,
+  pinPopups,
 }

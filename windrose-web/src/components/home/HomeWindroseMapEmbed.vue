@@ -16,7 +16,10 @@ import WindroseMapViewport from '@/views/map/WindroseMapViewport.vue'
 import { useWindroseMap } from '@/views/map/useWindroseMap.js'
 
 const homeMapBundle = { ...windroseBundle, pins: [] }
-/** 略提高缩放，让群岛在预览框里更满（略裁边换铺满感） */
-const { mapContainer, mapError, mapReady } = useWindroseMap(homeMapBundle, { fitBoundsZoomOffset: 0.65 })
+const { mapContainer, mapError, mapReady } = useWindroseMap(homeMapBundle, {
+  fitBoundsZoomOffset: 0.65,
+  showMarkers: false,
+  showZoomControl: false,
+})
 const mapContainerForProp = computed(() => mapContainer)
 </script>

@@ -4,7 +4,7 @@
       <div class="container">
         <nav class="page-breadcrumb" aria-label="Breadcrumb">
           <ol>
-            <li><RouterLink to="/">Home</RouterLink></li>
+            <li><a href="/">Home</a></li>
             <li class="page-breadcrumb__sep" aria-hidden="true">/</li>
             <li><span aria-current="page">Getting Started</span></li>
           </ol>
@@ -26,10 +26,10 @@
             double-check patch notes because EA moves fast.
           </p>
           <p class="page-hero__lead">
-            Use the <RouterLink to="/map">interactive map</RouterLink> for coordinates and the
-            <RouterLink to="/wiki">wiki hub</RouterLink> for item names and stats. For invites and session flow, read
-            <RouterLink to="/guides/play-windrose-online">Play online with friends</RouterLink>. When you are comfortable
-            sailing farther and defending harder sites, continue to <RouterLink to="/advanced">Advanced</RouterLink>.
+            When you need coordinates for a callout, keep the interactive map beside the game; when you need the exact
+            name of a fish or ingot, the wiki tables answer faster than guessing in chat. Setting up co-op? Read
+            <a href="/guides/play-windrose-online">Play online with friends</a> for invites and host parity, then move to
+            Advanced once you are sailing past the starter archipelago on purpose—not by accident.
           </p>
           <ul class="page-hero__highlights">
             <li>
@@ -66,9 +66,13 @@
             <p>
               You spend a lot of time reading the horizon: where to beach for clay, which bay hides salvage, when to
               risk a night crossing. Early Access rebalance patches can nudge recipes and damage—if a number here drifts
-              from your client, trust the quest journal and tooltips you see that week. Keep the
-              <RouterLink to="/wiki">wiki</RouterLink> open for names and stats and the <RouterLink to="/map">map</RouterLink>
-              when you need pins; this hub is fan-written guidance, not official support from Windrose Crew or publishers.
+              from your client, trust the quest journal and tooltips you see that week. Keep the wiki open for lookups and
+              the map for pins; this hub is fan-written guidance, not official support from Windrose Crew or publishers.
+            </p>
+            <p>
+              Before you burn a respec token in town, sketch the next few talent purchases on our
+              <a href="/talents">Windrose talent planner</a> so the crew agrees on survival vs damage priorities—the URL
+              is shareable when someone else is rebuilding the same night.
             </p>
           </div>
 
@@ -90,9 +94,7 @@
                     greedy stamina use on land and during boarding.
                   </td>
                   <td>
-                    <RouterLink to="/wiki/weapons">Weapons</RouterLink> &amp;
-                    <RouterLink to="/wiki/consumables">consumables</RouterLink> tables; deeper cadence notes in
-                    <RouterLink to="/advanced">Advanced</RouterLink>.
+                    Weapons and consumables wiki tables; deeper cadence notes in Advanced.
                   </td>
                 </tr>
                 <tr>
@@ -102,8 +104,7 @@
                     NPC workers can lighten harvest and production once you unlock them—plan chest labels early.
                   </td>
                   <td>
-                    <RouterLink to="/wiki/resources">Resources</RouterLink> wiki; map pins for clay, salvage, and rare
-                    beaches.
+                    Resources wiki deck; map pins for clay, salvage, and rare beaches.
                   </td>
                 </tr>
                 <tr>
@@ -114,8 +115,7 @@
                     frigates as you progress.
                   </td>
                   <td>
-                    <RouterLink to="/wiki/ship">Ship wiki</RouterLink> once modules unlock;
-                    <RouterLink to="/map">map</RouterLink> for route callouts.
+                    Ship wiki once modules unlock; map for route callouts.
                   </td>
                 </tr>
                 <tr>
@@ -125,8 +125,7 @@
                     return trips as resupply beats, not sightseeing detours.
                   </td>
                   <td>
-                    Story specifics stay in-game; use <RouterLink to="/guides">Guides</RouterLink> for focused walkthroughs
-                    when writers publish them.
+                    Story specifics stay in-game; use the Guides hub for focused walkthroughs when writers publish them.
                   </td>
                 </tr>
               </tbody>
@@ -169,7 +168,8 @@
             <p>
               Respec rules and exact numbers move patch-to-patch—read each tooltip the week you play. The point is to
               <strong>commit to a crew-facing role</strong> early so talents reinforce habits (navigation, crafting, medic,
-              bruiser), not the other way around.
+              bruiser), not the other way around. When you are ready to click for real, mirror the order on the
+              <a href="/talents">talent tree page</a> first so nobody buys a dead branch by mistake.
             </p>
           </div>
 
@@ -235,7 +235,7 @@
               Early Access supports larger parties on self-hosted and dedicated servers, but late-game forts and naval
               brawls get heavy—many crews treat four players as the comfort ceiling and split bigger guilds across voice
               channels instead of one overloaded instance. Details change patch to patch; see
-              <RouterLink to="/guides/play-windrose-online">Play online with friends</RouterLink> for connectivity
+              <a href="/guides/play-windrose-online">Play online with friends</a> for connectivity
               patterns that survive router quirks.
             </p>
           </div>
@@ -254,8 +254,7 @@
               Hull reliability beats figurehead glam: anchor feel, rudder response, and cargo for one extra expedition
               matter more than cosmetics. You will progress from a small ketch toward brigs and frigates as recipes and
               story beats unlock—read mast, sail, and gunport requirements carefully because missing one rope or tar brick
-              sends the whole crew back to shore. When gunports matter, skim the
-              <RouterLink to="/wiki/ship">ship wiki</RouterLink> before you spend rare ingots on a hull your helmsman
+              sends the whole crew back to shore. When gunports matter, skim the ship wiki before you spend rare ingots on a hull your helmsman
               dreads steering.
             </p>
           </div>
@@ -265,8 +264,7 @@
             <p>
               Treat meals like loadout slots: one health-forward dish, one stamina-forward dish, and one flex buff
               before hard POIs or naval pulls. Timers and stacking rules change in EA—read each tooltip the day you
-              play. Bank dried rations for long sprays; compare ingredient costs on the
-              <RouterLink to="/wiki/resources">resources wiki</RouterLink> before you burn rare fish for marginal gains.
+              play. Bank dried rations for long sprays; compare ingredient costs on the resources wiki before you burn rare fish for marginal gains.
             </p>
           </div>
 
@@ -284,39 +282,38 @@
                 <tr>
                   <td>Coordinates &amp; pins</td>
                   <td>Interactive map</td>
-                  <td><RouterLink to="/map">/map</RouterLink></td>
+                  <td><code>/map</code></td>
                 </tr>
                 <tr>
                   <td>Loot tables &amp; crafting math</td>
                   <td>Wiki hub</td>
-                  <td><RouterLink to="/wiki">/wiki</RouterLink></td>
+                  <td><code>/wiki</code></td>
                 </tr>
                 <tr>
                   <td>Map UI literacy</td>
                   <td>Guides hub</td>
-                  <td><RouterLink to="/guides">/guides</RouterLink> (see articles list)</td>
+                  <td><code>/guides</code> (see articles list)</td>
                 </tr>
                 <tr>
                   <td>Logistics &amp; servers</td>
                   <td>Advanced</td>
-                  <td><RouterLink to="/advanced">/advanced</RouterLink></td>
+                  <td><code>/advanced</code></td>
                 </tr>
                 <tr>
                   <td>Co-op invites</td>
                   <td>Play online guide</td>
-                  <td><RouterLink to="/guides/play-windrose-online">/guides/play-windrose-online</RouterLink></td>
+                  <td><code>/guides/play-windrose-online</code></td>
                 </tr>
                 <tr>
                   <td>Mod loadouts</td>
                   <td>Mods list</td>
-                  <td><RouterLink to="/mods">/mods</RouterLink></td>
+                  <td><code>/mods</code></td>
                 </tr>
               </tbody>
             </table>
             <p>
-              When nights stay calm and sails feel predictable, open <RouterLink to="/advanced">Advanced</RouterLink> for
-              tighter combat cadence, gunpowder beats, fort defense, and dedicated server hygiene—those topics assume you
-              already speak wiki shorthand.
+              When nights stay calm and sails feel predictable, open Advanced for tighter combat cadence, gunpowder beats,
+              fort defense, and dedicated server hygiene—those topics assume you already speak wiki shorthand.
             </p>
           </div>
         </div>

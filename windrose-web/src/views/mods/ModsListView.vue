@@ -4,7 +4,7 @@
       <div class="container mods-ledger-page__masthead-inner">
         <nav class="page-breadcrumb mods-ledger-page__crumb" aria-label="Breadcrumb">
           <ol>
-            <li><RouterLink to="/">Home</RouterLink></li>
+            <li><a href="/">Home</a></li>
             <li class="page-breadcrumb__sep" aria-hidden="true">/</li>
             <li><span aria-current="page">Mods</span></li>
           </ol>
@@ -12,10 +12,15 @@
         <div class="mods-ledger-page__masthead-grid">
           <div class="mods-ledger-page__title-block">
             <p class="mods-ledger-page__kicker">Quartermaster manifest · EA</p>
-            <h1 id="mods-ledger-title">Mod loadout</h1>
+            <h1 id="mods-ledger-title">Windrose Mod loadout</h1>
             <p class="mods-ledger-page__deck">
               Same data shape as Guides, plus <strong>downloadUrl</strong> and an optional <strong>stars</strong> field
               (1–5, editorial). Ledger layout is visual only—fields stay minimal.
+            </p>
+            <p class="mods-ledger-page__deck mods-ledger-page__deck--note">
+              Install only what you trust: snapshot saves before you reorder loadouts, then cross-check gear math in the
+              equipment wiki and combat cadence notes on Advanced. Hosting a modded world? Re-read the play-online guide
+              so passwords and ports stay aligned with whoever joins.
             </p>
           </div>
           <div class="mods-ledger-page__stat-card" aria-label="Listing count">
@@ -35,7 +40,7 @@
 
         <ol v-if="sorted.length" class="mods-ledger" role="list">
           <li v-for="(m, index) in sorted" :key="m.id" class="mods-ledger__item">
-            <RouterLink :to="`/mods/${m.addressBar}`" class="mods-ledger__row">
+            <a :href="`/mods/${m.addressBar}`" class="mods-ledger__row">
               <span class="mods-ledger__rail" aria-hidden="true" />
               <span class="mods-ledger__idx" aria-hidden="true">{{ rowIndex(index) }}</span>
               <div class="mods-ledger__thumb">
@@ -76,7 +81,7 @@
                 <p class="mods-ledger__excerpt">{{ excerpt(m) }}</p>
               </div>
               <span class="mods-ledger__go" aria-hidden="true">↗</span>
-            </RouterLink>
+            </a>
           </li>
         </ol>
         <p v-else class="mods-ledger-page__empty">No mod entries yet.</p>
@@ -173,6 +178,15 @@ function excerpt(item) {
   font-size: 0.92rem;
   line-height: 1.6;
   color: var(--color-text-muted);
+}
+
+.mods-ledger-page__deck--note {
+  margin-top: 0.85rem;
+}
+
+.mods-ledger-page__deck a {
+  color: var(--color-sea);
+  font-weight: 600;
 }
 
 .mods-ledger-page__stat-card {

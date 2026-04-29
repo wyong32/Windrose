@@ -3,6 +3,7 @@ export const PRIMARY_NAV = [
   { label: 'Home', to: '/' },
   { label: 'Getting Started', to: '/getting-started' },
   { label: 'Advanced', to: '/advanced' },
+  { label: 'Talents', to: '/talents' },
   { label: 'Wiki', to: '/wiki' },
   { label: 'Interactive Map', to: '/map' },
   { label: 'Guides', to: '/guides' },

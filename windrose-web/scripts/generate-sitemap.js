@@ -15,6 +15,7 @@ const staticRoutes = [
   { path: '/', name: 'home' },
   { path: '/getting-started', name: 'getting-started' },
   { path: '/advanced', name: 'advanced' },
+  { path: '/talents', name: 'talents' },
   { path: '/wiki', name: 'wiki' },
   { path: '/wiki/resources', name: 'wiki-resources' },
   { path: '/wiki/consumables', name: 'wiki-consumables' },

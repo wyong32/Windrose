@@ -4,9 +4,9 @@
       <div class="container">
         <nav class="page-breadcrumb" aria-label="Breadcrumb">
           <ol>
-            <li><RouterLink to="/">Home</RouterLink></li>
+            <li><a href="/">Home</a></li>
             <li class="page-breadcrumb__sep" aria-hidden="true">/</li>
-            <li><RouterLink to="/wiki">Wiki</RouterLink></li>
+            <li><a href="/wiki">Wiki</a></li>
             <li class="page-breadcrumb__sep" aria-hidden="true">/</li>
             <li><span aria-current="page">{{ breadcrumbCurrent }}</span></li>
           </ol>
@@ -18,6 +18,16 @@
           <p v-if="lead" class="page-hero__lead">{{ lead }}</p>
           <p v-if="leadSecondary" class="page-hero__lead">{{ leadSecondary }}</p>
         </div>
+      </div>
+    </section>
+
+    <section class="wiki-deck-tip" aria-label="Related Compass tools">
+      <div class="container wiki-deck-tip__inner">
+        <p>
+          Armor and accessory rows read best next to the <a href="/wiki/weapons">weapons wiki</a> so you can see resist
+          goals beside the damage type you are eating in forts. Planning a respec after you swap sets? Rehearse points on
+          the talent tree page in town before you spend.
+        </p>
       </div>
     </section>
 
@@ -52,6 +62,7 @@
               <tr
                 v-for="row in filtered"
                 :key="row.id"
+                :id="'wiki-item-' + row.id"
                 :title="descriptionTitle(row)"
               >
                 <td>

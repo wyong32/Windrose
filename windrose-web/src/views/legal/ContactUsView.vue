@@ -35,7 +35,7 @@
     <p>
       If you are a rights holder or authorized representative and wish to report alleged copyright or trademark
       infringement, do not use a generic “Contact” subject line alone. Follow the procedure and required information set
-      out on our <RouterLink to="/copyright">Copyright</RouterLink> page and send your notice to the same email address
+      out on our <a href="/copyright">Copyright</a> page and send your notice to the same email address
       with the subject line specified there (“Copyright Notice” or “Trademark Notice”). Incomplete notices may delay
       processing.
     </p>
@@ -44,7 +44,7 @@
     <p>
       For questions about how we handle personal data, or to exercise rights that may apply to you under applicable law,
       please email <a href="mailto:wyong@windrosegame.net">wyong@windrosegame.net</a> with “Privacy” in the subject line and
-      refer to our <RouterLink to="/privacy-policy">Privacy Policy</RouterLink> for context.
+      refer to our <a href="/privacy-policy">Privacy Policy</a> for context.
     </p>
 
     <h2>6. Response times</h2>

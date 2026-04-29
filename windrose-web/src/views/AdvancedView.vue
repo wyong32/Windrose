@@ -4,7 +4,7 @@
       <div class="container">
         <nav class="page-breadcrumb" aria-label="Breadcrumb">
           <ol>
-            <li><RouterLink to="/">Home</RouterLink></li>
+            <li><a href="/">Home</a></li>
             <li class="page-breadcrumb__sep" aria-hidden="true">/</li>
             <li><span aria-current="page">Advanced</span></li>
           </ol>
@@ -25,10 +25,10 @@
             to do.
           </p>
           <p class="page-hero__lead">
-            Pair every opinion here with live numbers on the <RouterLink to="/wiki">wiki</RouterLink> and coordinates on
-            the <RouterLink to="/map">map</RouterLink>. New captains should stay on
-            <RouterLink to="/getting-started">Getting Started</RouterLink>; session logistics overlap
-            <RouterLink to="/guides/play-windrose-online">Play online</RouterLink>.
+            Treat the Windrose wiki as your numbers source and the interactive map as your geography source: when a guide
+            says “east of the sulfur beach,” you should be able to verify the pin and the resource name in the same minute.
+            Still on your first hull? Stay in Getting Started; when you are juggling SteamCMD or invite codes, keep
+            <a href="/guides/play-windrose-online">Play online with friends</a> in the same bookmark folder.
           </p>
           <ul class="page-hero__highlights">
             <li>
@@ -67,6 +67,17 @@
               The header art is the emotional truth of advanced Windrose: you are no longer scraping fiber—you are routing
               cargo through contested water, juggling faction timers, and keeping repair kits somewhere the boatswain can
               find them in the dark. Below is how experienced crews keep that chaos legible.
+            </p>
+          </div>
+
+          <div class="guide-chunk wr-html-prose">
+            <h2 id="talent-builder">Interactive talent builder</h2>
+            <p>
+              The in-game tree matches what you can rehearse on our
+              <a href="/talents">Windrose talent planner</a>—same Fencer, Crusher, Marksman, and Toughguy branches as
+              <a href="https://windrose.tools/talents" rel="noopener noreferrer" target="_blank">Windrose.tools</a>, with
+              branch gates, three ranks per node, and a shareable URL for Discord. Use it when you are about to respec
+              after a patch so you do not buy a node that your new musket or halberd never procs.
             </p>
           </div>
 
@@ -120,9 +131,8 @@
               Windrose sells its melee as soulslite-adjacent: dodge on committed animations, parry on audio tells, and
               posture breaks before you empty stamina vanity-swinging. Firearms buy space—pair musket windows with
               teammate staggers so elites never get a free reset. Boarding blurs the rules: treat deck fights like brawls
-              with fall hazards and friendly fire discipline, not duels. For raw numbers, pivot to
-              <RouterLink to="/wiki/weapons">weapons</RouterLink> and
-              <RouterLink to="/wiki/equipment">equipment</RouterLink> once you pick a build lane.
+              with fall hazards and friendly fire discipline, not duels. For raw numbers, pivot to the wiki weapons and
+              equipment decks once you pick a build lane.
             </p>
             <h3>Land party roles (shorthand)</h3>
             <table>
@@ -158,8 +168,7 @@
             <p>
               Match hull, armor, and gunports to the mission profile: broadside kiting wants reach and stability;
               boarding pushes want survivability and grappling tempo. Split repair stacks so one spiral does not empty
-              every chest. Compare hull modules on the <RouterLink to="/wiki/ship">ship wiki</RouterLink> before glam
-              frigates your helmsman dreads.
+              every chest. Compare hull modules on the ship wiki before glam frigates your helmsman dreads.
             </p>
             <h3>Mission type vs hull stance</h3>
             <table>
@@ -194,7 +203,7 @@
             <h2>Industry: gunpowder &amp; rare metals</h2>
             <p>
               Gunpowder loves structured beats; rare metals love escorted mining windows. When drop tables shift, re-run
-              the <RouterLink to="/wiki/resources">resources wiki</RouterLink> before rewriting guild SOPs.
+              the resources wiki before rewriting guild SOPs.
             </p>
             <table>
               <thead>
@@ -284,8 +293,8 @@
               particle-heavy megafort—Late EA sessions punish overloaded hosts harder than solo beach huts.
             </p>
             <p>
-              Long-form POI writeups live in <RouterLink to="/guides">Guides</RouterLink> when authors publish
-              screenshot-heavy articles beyond our tables.
+              Long-form POI writeups live in the Guides list when authors publish screenshot-heavy articles beyond our
+              tables.
             </p>
           </div>
 
@@ -306,7 +315,7 @@
               pipelines, not side quests you “catch up on later.” NPC workers only help if chests are labeled, inputs are
               stocked, and someone owns the morning checklist. If the crew cannot agree on words for pins and tabs, they
               will not agree on who owns the next upgrade path. Mods shift risk: snapshot saves before reordering
-              loadouts and read author notes on <RouterLink to="/mods">Mods</RouterLink>.
+              loadouts and read author notes in the Mods list when you change the client.
             </p>
           </div>
 
@@ -317,8 +326,8 @@
               tooling, JSON edits, and SteamCMD rehearsals. Share this section’s link with a trailing
               <code>#dedicated-server</code> hash so Discord mates land on the checklist immediately. Pair the official
               <a href="https://playwindrose.com/dedicated-server-guide/" rel="noopener noreferrer" target="_blank">Dedicated Server Guide</a>
-              with our <RouterLink to="/guides/play-windrose-online">play online</RouterLink> article so invite-code crews
-              and headless hosts share vocabulary (ports, passwords, world folders).
+              with our play-online article so invite-code crews and headless hosts share vocabulary (ports, passwords,
+              world folders).
             </p>
             <table>
               <thead>
@@ -356,27 +365,27 @@
               <tbody>
                 <tr>
                   <td>Beginner spine</td>
-                  <td><RouterLink to="/getting-started">Getting Started</RouterLink></td>
+                  <td><code>/getting-started</code></td>
                 </tr>
                 <tr>
                   <td>Guides list</td>
-                  <td><RouterLink to="/guides">Guides hub</RouterLink></td>
+                  <td><code>/guides</code></td>
                 </tr>
                 <tr>
                   <td>Wiki decks</td>
-                  <td><RouterLink to="/wiki">Wiki hub</RouterLink></td>
+                  <td><code>/wiki</code></td>
                 </tr>
                 <tr>
                   <td>Map / pins</td>
-                  <td><RouterLink to="/map">Interactive map</RouterLink></td>
+                  <td><code>/map</code></td>
                 </tr>
                 <tr>
                   <td>Mods curation</td>
-                  <td><RouterLink to="/mods">Mods</RouterLink></td>
+                  <td><code>/mods</code></td>
                 </tr>
                 <tr>
                   <td>Co-op connectivity</td>
-                  <td><RouterLink to="/guides/play-windrose-online">Play online guide</RouterLink></td>
+                  <td><code>/guides/play-windrose-online</code></td>
                 </tr>
               </tbody>
             </table>
@@ -441,4 +450,5 @@ onUnmounted(() => {
   flex-direction: column;
   gap: 1.35rem;
 }
+
 </style>

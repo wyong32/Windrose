@@ -4,7 +4,7 @@
       <div class="container">
         <nav class="legal-doc__crumb" aria-label="Breadcrumb">
           <ol>
-            <li><RouterLink to="/">Home</RouterLink></li>
+            <li><a href="/">Home</a></li>
             <li class="legal-doc__crumb-sep" aria-hidden="true">/</li>
             <li><span aria-current="page">{{ title }}</span></li>
           </ol>

@@ -1,0 +1,1801 @@
+{
+  "meta": {
+    "generatedAt": "2026-04-14T16:17:09.448Z",
+    "locale": "en",
+    "nodeCount": 35,
+    "perkCount": 37,
+    "branchCount": 4,
+    "sourcePaths": {
+      "heroTalentTree": "export/R5/Plugins/R5BusinessRules/Content/EntityProgression/DA_HeroTalentTree.json",
+      "talentCurveTable": "export/R5/Content/Gameplay/Character/Player/TalentSystem/CT_TalentData.json",
+      "talentTreeWidget": "export/R5/Content/UI/Meta/EntityProgression/TalentTree/WBP_TalentTree.json"
+    },
+    "warnings": []
+  },
+  "branches": [
+    {
+      "branchIndex": 1,
+      "branchTag": "Talent.Tree.Fencer",
+      "branchKey": "fencer",
+      "displayName": "Fencer",
+      "iconAssetName": "T_TalentBranch_Icon_Fencer",
+      "iconPublicPath": "/talents/assets/T_TalentBranch_Icon_Fencer.webp"
+    },
+    {
+      "branchIndex": 2,
+      "branchTag": "Talent.Tree.Crusher",
+      "branchKey": "crusher",
+      "displayName": "Crusher",
+      "iconAssetName": "T_TalentBranch_Icon_Crusher",
+      "iconPublicPath": "/talents/assets/T_TalentBranch_Icon_Crusher.webp"
+    },
+    {
+      "branchIndex": 3,
+      "branchTag": "Talent.Tree.Marksman",
+      "branchKey": "marksman",
+      "displayName": "Marksman",
+      "iconAssetName": "T_TalentBranch_Icon_Marksman",
+      "iconPublicPath": "/talents/assets/T_TalentBranch_Icon_Marksman.webp"
+    },
+    {
+      "branchIndex": 4,
+      "branchTag": "Talent.Tree.Toughguy",
+      "branchKey": "toughguy",
+      "displayName": "Toughguy",
+      "iconAssetName": "T_TalentBranch_Icon_Toughguy",
+      "iconPublicPath": "/talents/assets/T_TalentBranch_Icon_Toughguy.webp"
+    }
+  ],
+  "nodes": [
+    {
+      "id": "Talent.Tree.Fencer.SlashDamage",
+      "nodeTag": "Talent.Tree.Fencer.SlashDamage",
+      "uiNodeName": "uw_Node_Fencer_1_1",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.1.1.1",
+      "branchTag": "Talent.Tree.Fencer",
+      "branchKey": "fencer",
+      "branchIndex": 1,
+      "tierIndex": 1,
+      "slotIndex": 1,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [],
+      "perkIds": [
+        "DA_Talent_Fencer_SlashDamage"
+      ],
+      "position": {
+        "x": -106,
+        "y": -186
+      }
+    },
+    {
+      "id": "Talent.Tree.Fencer.LessStaminaForDash",
+      "nodeTag": "Talent.Tree.Fencer.LessStaminaForDash",
+      "uiNodeName": "uw_Node_Fencer_1_2",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.1.1.2",
+      "branchTag": "Talent.Tree.Fencer",
+      "branchKey": "fencer",
+      "branchIndex": 1,
+      "tierIndex": 1,
+      "slotIndex": 2,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [],
+      "perkIds": [
+        "DA_Talent_Fencer_LessStaminaForDash"
+      ],
+      "position": {
+        "x": 0,
+        "y": -214
+      }
+    },
+    {
+      "id": "Talent.Tree.Fencer.OneHandedMeleeCritChance",
+      "nodeTag": "Talent.Tree.Fencer.OneHandedMeleeCritChance",
+      "uiNodeName": "uw_Node_Fencer_1_3",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.1.1.3",
+      "branchTag": "Talent.Tree.Fencer",
+      "branchKey": "fencer",
+      "branchIndex": 1,
+      "tierIndex": 1,
+      "slotIndex": 3,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [],
+      "perkIds": [
+        "DA_Talent_Fencer_OneHandedMeleeCritChance"
+      ],
+      "position": {
+        "x": 106,
+        "y": -186
+      }
+    },
+    {
+      "id": "Talent.Tree.Fencer.OneHandedDamage",
+      "nodeTag": "Talent.Tree.Fencer.OneHandedDamage",
+      "uiNodeName": "uw_Node_Fencer_2_1",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.1.2.1",
+      "branchTag": "Talent.Tree.Fencer",
+      "branchKey": "fencer",
+      "branchIndex": 1,
+      "tierIndex": 2,
+      "slotIndex": 1,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Fencer",
+          "requiredPoints": 3
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Fencer_OneHandedDamage"
+      ],
+      "position": {
+        "x": -134,
+        "y": -322
+      }
+    },
+    {
+      "id": "Talent.Tree.Fencer.CritChanceForPerfectBlock",
+      "nodeTag": "Talent.Tree.Fencer.CritChanceForPerfectBlock",
+      "uiNodeName": "uw_Node_Fencer_2_2",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.1.2.2",
+      "branchTag": "Talent.Tree.Fencer",
+      "branchKey": "fencer",
+      "branchIndex": 1,
+      "tierIndex": 2,
+      "slotIndex": 2,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Fencer",
+          "requiredPoints": 3
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Fencer_CritChanceForPerfectBlock"
+      ],
+      "position": {
+        "x": 0,
+        "y": -350
+      }
+    },
+    {
+      "id": "Talent.Tree.Fencer.DamageForSoloEnemy",
+      "nodeTag": "Talent.Tree.Fencer.DamageForSoloEnemy",
+      "uiNodeName": "uw_Node_Fencer_2_3",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.1.2.3",
+      "branchTag": "Talent.Tree.Fencer",
+      "branchKey": "fencer",
+      "branchIndex": 1,
+      "tierIndex": 2,
+      "slotIndex": 3,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Fencer",
+          "requiredPoints": 3
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Fencer_DamageForSoloEnemy"
+      ],
+      "position": {
+        "x": 134,
+        "y": -322
+      }
+    },
+    {
+      "id": "Talent.Tree.Fencer.HealForKill",
+      "nodeTag": "Talent.Tree.Fencer.HealForKill",
+      "uiNodeName": "uw_Node_Fencer_3_2",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.1.3.2",
+      "branchTag": "Talent.Tree.Fencer",
+      "branchKey": "fencer",
+      "branchIndex": 1,
+      "tierIndex": 3,
+      "slotIndex": 2,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Fencer",
+          "requiredPoints": 6
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Fencer_HealForKill"
+      ],
+      "position": {
+        "x": -246,
+        "y": -426
+      }
+    },
+    {
+      "id": "Talent.Tree.Fencer.PassiveReloadBoost",
+      "nodeTag": "Talent.Tree.Fencer.PassiveReloadBoost",
+      "uiNodeName": "uw_Node_Fencer_3_3",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.1.3.3",
+      "branchTag": "Talent.Tree.Fencer",
+      "branchKey": "fencer",
+      "branchIndex": 1,
+      "tierIndex": 3,
+      "slotIndex": 3,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Fencer",
+          "requiredPoints": 6
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Fencer_PassiveReloadBoostForPerfectBlock",
+        "DA_Talent_Fencer_PassiveReloadBoostForPerfectDodge"
+      ],
+      "position": {
+        "x": 0,
+        "y": -490
+      }
+    },
+    {
+      "id": "Talent.Tree.Fencer.ConsecutiveMeleeHitsBonus",
+      "nodeTag": "Talent.Tree.Fencer.ConsecutiveMeleeHitsBonus",
+      "uiNodeName": "uw_Node_Fencer_3_4",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.1.3.4",
+      "branchTag": "Talent.Tree.Fencer",
+      "branchKey": "fencer",
+      "branchIndex": 1,
+      "tierIndex": 3,
+      "slotIndex": 4,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Fencer",
+          "requiredPoints": 6
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Fencer_ConsecutiveMeleeHitsBonus"
+      ],
+      "position": {
+        "x": 246,
+        "y": -426
+      }
+    },
+    {
+      "id": "Talent.Tree.Crusher.CrudeDamage",
+      "nodeTag": "Talent.Tree.Crusher.CrudeDamage",
+      "uiNodeName": "uw_Node_Crusher_1_2",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.2.1.2",
+      "branchTag": "Talent.Tree.Crusher",
+      "branchKey": "crusher",
+      "branchIndex": 2,
+      "tierIndex": 1,
+      "slotIndex": 2,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [],
+      "perkIds": [
+        "DA_Talent_Crusher_CrudeDamage"
+      ],
+      "position": {
+        "x": 202,
+        "y": -66
+      }
+    },
+    {
+      "id": "Talent.Tree.Crusher.TemporalHPHealBuff",
+      "nodeTag": "Talent.Tree.Crusher.TemporalHPHealBuff",
+      "uiNodeName": "uw_Node_Crusher_1_3",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.2.1.3",
+      "branchTag": "Talent.Tree.Crusher",
+      "branchKey": "crusher",
+      "branchIndex": 2,
+      "tierIndex": 1,
+      "slotIndex": 3,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [],
+      "perkIds": [
+        "DA_Talent_Crusher_TemporalHPHealBuff"
+      ],
+      "position": {
+        "x": 202,
+        "y": 66
+      }
+    },
+    {
+      "id": "Talent.Tree.Crusher.TwoHandedDamage",
+      "nodeTag": "Talent.Tree.Crusher.TwoHandedDamage",
+      "uiNodeName": "uw_Node_Crusher_2_1",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.2.2.1",
+      "branchTag": "Talent.Tree.Crusher",
+      "branchKey": "crusher",
+      "branchIndex": 2,
+      "tierIndex": 2,
+      "slotIndex": 1,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Crusher",
+          "requiredPoints": 3
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Crusher_TwoHandedDamage"
+      ],
+      "position": {
+        "x": 322,
+        "y": -134
+      }
+    },
+    {
+      "id": "Talent.Tree.Crusher.TwoHandedStaminaReduced",
+      "nodeTag": "Talent.Tree.Crusher.TwoHandedStaminaReduced",
+      "uiNodeName": "uw_Node_Crusher_2_2",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.2.2.2",
+      "branchTag": "Talent.Tree.Crusher",
+      "branchKey": "crusher",
+      "branchIndex": 2,
+      "tierIndex": 2,
+      "slotIndex": 2,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Crusher",
+          "requiredPoints": 3
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Crusher_TwoHandedStaminaReduced"
+      ],
+      "position": {
+        "x": 350,
+        "y": 0
+      }
+    },
+    {
+      "id": "Talent.Tree.Crusher.TwoHandedMeleeCritChance",
+      "nodeTag": "Talent.Tree.Crusher.TwoHandedMeleeCritChance",
+      "uiNodeName": "uw_Node_Crusher_2_3",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.2.2.3",
+      "branchTag": "Talent.Tree.Crusher",
+      "branchKey": "crusher",
+      "branchIndex": 2,
+      "tierIndex": 2,
+      "slotIndex": 3,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Crusher",
+          "requiredPoints": 3
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Crusher_TwoHandedMeleeCritChance"
+      ],
+      "position": {
+        "x": 322,
+        "y": 134
+      }
+    },
+    {
+      "id": "Talent.Tree.Crusher.Berserk",
+      "nodeTag": "Talent.Tree.Crusher.Berserk",
+      "uiNodeName": "uw_Node_Crusher_3_1",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.2.3.1",
+      "branchTag": "Talent.Tree.Crusher",
+      "branchKey": "crusher",
+      "branchIndex": 2,
+      "tierIndex": 3,
+      "slotIndex": 1,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Crusher",
+          "requiredPoints": 6
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Crusher_Berserk"
+      ],
+      "position": {
+        "x": 450,
+        "y": -186
+      }
+    },
+    {
+      "id": "Talent.Tree.Crusher.DamageForDeathNearby",
+      "nodeTag": "Talent.Tree.Crusher.DamageForDeathNearby",
+      "uiNodeName": "uw_Node_Crusher_3_2",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.2.3.2",
+      "branchTag": "Talent.Tree.Crusher",
+      "branchKey": "crusher",
+      "branchIndex": 2,
+      "tierIndex": 3,
+      "slotIndex": 2,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Crusher",
+          "requiredPoints": 6
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Crusher_DamageForDeathNearby"
+      ],
+      "position": {
+        "x": 490,
+        "y": 0
+      }
+    },
+    {
+      "id": "Talent.Tree.Crusher.DamageForMultipleTargets",
+      "nodeTag": "Talent.Tree.Crusher.DamageForMultipleTargets",
+      "uiNodeName": "uw_Node_Crusher_3_3",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.2.3.3",
+      "branchTag": "Talent.Tree.Crusher",
+      "branchKey": "crusher",
+      "branchIndex": 2,
+      "tierIndex": 3,
+      "slotIndex": 3,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Crusher",
+          "requiredPoints": 6
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Crusher_DamageForMultipleTargets"
+      ],
+      "position": {
+        "x": 450,
+        "y": 186
+      }
+    },
+    {
+      "id": "Talent.Tree.Marksman.PassiveReloadBonus",
+      "nodeTag": "Talent.Tree.Marksman.PassiveReloadBonus",
+      "uiNodeName": "uw_Node_Marksman_1_1",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.3.1.1",
+      "branchTag": "Talent.Tree.Marksman",
+      "branchKey": "marksman",
+      "branchIndex": 3,
+      "tierIndex": 1,
+      "slotIndex": 1,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [],
+      "perkIds": [
+        "DA_Talent_Marksman_PassiveReloadBonus"
+      ],
+      "position": {
+        "x": 106,
+        "y": 186
+      }
+    },
+    {
+      "id": "Talent.Tree.Marksman.PierceDamage",
+      "nodeTag": "Talent.Tree.Marksman.PierceDamage",
+      "uiNodeName": "uw_Node_Marksman_1_2",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.3.1.2",
+      "branchTag": "Talent.Tree.Marksman",
+      "branchKey": "marksman",
+      "branchIndex": 3,
+      "tierIndex": 1,
+      "slotIndex": 2,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [],
+      "perkIds": [
+        "DA_Talent_Marksman_PierceDamage"
+      ],
+      "position": {
+        "x": 0,
+        "y": 214
+      }
+    },
+    {
+      "id": "Talent.Tree.Marksman.RangeCritDamageBonus",
+      "nodeTag": "Talent.Tree.Marksman.RangeCritDamageBonus",
+      "uiNodeName": "uw_Node_Marksman_1_3",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.3.1.3",
+      "branchTag": "Talent.Tree.Marksman",
+      "branchKey": "marksman",
+      "branchIndex": 3,
+      "tierIndex": 1,
+      "slotIndex": 3,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [],
+      "perkIds": [
+        "DA_Talent_Marksman_RangeCritDamageBonus"
+      ],
+      "position": {
+        "x": -106,
+        "y": 186
+      }
+    },
+    {
+      "id": "Talent.Tree.Marksman.RangeDamageBonus",
+      "nodeTag": "Talent.Tree.Marksman.RangeDamageBonus",
+      "uiNodeName": "uw_Node_Marksman_2_1",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.3.2.1",
+      "branchTag": "Talent.Tree.Marksman",
+      "branchKey": "marksman",
+      "branchIndex": 3,
+      "tierIndex": 2,
+      "slotIndex": 1,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Marksman",
+          "requiredPoints": 3
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Marksman_RangeDamageBonus"
+      ],
+      "position": {
+        "x": 174,
+        "y": 302
+      }
+    },
+    {
+      "id": "Talent.Tree.Marksman.ActiveReloadSpeedBonus",
+      "nodeTag": "Talent.Tree.Marksman.ActiveReloadSpeedBonus",
+      "uiNodeName": "uw_Node_Marksman_2_2",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.3.2.2",
+      "branchTag": "Talent.Tree.Marksman",
+      "branchKey": "marksman",
+      "branchIndex": 3,
+      "tierIndex": 2,
+      "slotIndex": 2,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Marksman",
+          "requiredPoints": 3
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Marksman_ActiveReloadSpeedBonus"
+      ],
+      "position": {
+        "x": 46,
+        "y": 346
+      }
+    },
+    {
+      "id": "Talent.Tree.Marksman.DamageForDistance",
+      "nodeTag": "Talent.Tree.Marksman.DamageForDistance",
+      "uiNodeName": "uw_Node_Marksman_2_3",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.3.2.3",
+      "branchTag": "Talent.Tree.Marksman",
+      "branchKey": "marksman",
+      "branchIndex": 3,
+      "tierIndex": 2,
+      "slotIndex": 3,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Marksman",
+          "requiredPoints": 3
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Marksman_DamageForPointBlank",
+        "DA_Talent_Marksman_DamageForDistance"
+      ],
+      "position": {
+        "x": -136,
+        "y": 322
+      }
+    },
+    {
+      "id": "Talent.Tree.Marksman.ConsecutiveRangeHitsBonus",
+      "nodeTag": "Talent.Tree.Marksman.ConsecutiveRangeHitsBonus",
+      "uiNodeName": "uw_Node_Marksman_3_1",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.3.3.1",
+      "branchTag": "Talent.Tree.Marksman",
+      "branchKey": "marksman",
+      "branchIndex": 3,
+      "tierIndex": 3,
+      "slotIndex": 1,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Marksman",
+          "requiredPoints": 6
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Marksman_ConsecutiveRangeHitsBonus"
+      ],
+      "position": {
+        "x": 268,
+        "y": 404
+      }
+    },
+    {
+      "id": "Talent.Tree.Marksman.DamageForAimingState",
+      "nodeTag": "Talent.Tree.Marksman.DamageForAimingState",
+      "uiNodeName": "uw_Node_Marksman_3_2",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.3.3.2",
+      "branchTag": "Talent.Tree.Marksman",
+      "branchKey": "marksman",
+      "branchIndex": 3,
+      "tierIndex": 3,
+      "slotIndex": 2,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Marksman",
+          "requiredPoints": 6
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Marksman_DamageForAimingState"
+      ],
+      "position": {
+        "x": 98,
+        "y": 476
+      }
+    },
+    {
+      "id": "Talent.Tree.Marksman.ReloadForKill",
+      "nodeTag": "Talent.Tree.Marksman.ReloadForKill",
+      "uiNodeName": "uw_Node_Marksman_3_3",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.3.3.3",
+      "branchTag": "Talent.Tree.Marksman",
+      "branchKey": "marksman",
+      "branchIndex": 3,
+      "tierIndex": 3,
+      "slotIndex": 3,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Marksman",
+          "requiredPoints": 6
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Marksman_ReloadForKill"
+      ],
+      "position": {
+        "x": -98,
+        "y": 476
+      }
+    },
+    {
+      "id": "Talent.Tree.Marksman.Overpenetration",
+      "nodeTag": "Talent.Tree.Marksman.Overpenetration",
+      "uiNodeName": "uw_Node_Marksman_3_4",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.3.3.4",
+      "branchTag": "Talent.Tree.Marksman",
+      "branchKey": "marksman",
+      "branchIndex": 3,
+      "tierIndex": 3,
+      "slotIndex": 4,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Marksman",
+          "requiredPoints": 6
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Marksman_Overpenetration"
+      ],
+      "position": {
+        "x": -268,
+        "y": 404
+      }
+    },
+    {
+      "id": "Talent.Tree.Toughguy.HealEffectiveness",
+      "nodeTag": "Talent.Tree.Toughguy.HealEffectiveness",
+      "uiNodeName": "uw_Node_Toughguy_1_1",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.4.1.1",
+      "branchTag": "Talent.Tree.Toughguy",
+      "branchKey": "toughguy",
+      "branchIndex": 4,
+      "tierIndex": 1,
+      "slotIndex": 1,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [],
+      "perkIds": [
+        "DA_Talent_Toughguy_HealEffectiveness"
+      ],
+      "position": {
+        "x": -186,
+        "y": 106
+      }
+    },
+    {
+      "id": "Talent.Tree.Toughguy.TempHPForDamageRecivedBonus",
+      "nodeTag": "Talent.Tree.Toughguy.TempHPForDamageRecivedBonus",
+      "uiNodeName": "uw_Node_Toughguy_1_2",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.4.1.2",
+      "branchTag": "Talent.Tree.Toughguy",
+      "branchKey": "toughguy",
+      "branchIndex": 4,
+      "tierIndex": 1,
+      "slotIndex": 2,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [],
+      "perkIds": [
+        "DA_Talent_Toughguy_TempHPForDamageRecivedBonus"
+      ],
+      "position": {
+        "x": -214,
+        "y": 0
+      }
+    },
+    {
+      "id": "Talent.Tree.Toughguy.StaminaBonus",
+      "nodeTag": "Talent.Tree.Toughguy.StaminaBonus",
+      "uiNodeName": "uw_Node_Toughguy_1_3",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.4.1.3",
+      "branchTag": "Talent.Tree.Toughguy",
+      "branchKey": "toughguy",
+      "branchIndex": 4,
+      "tierIndex": 1,
+      "slotIndex": 3,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [],
+      "perkIds": [
+        "DA_Talent_Toughguy_StaminaBonus"
+      ],
+      "position": {
+        "x": -186,
+        "y": -106
+      }
+    },
+    {
+      "id": "Talent.Tree.Toughguy.GlobalDamageResist",
+      "nodeTag": "Talent.Tree.Toughguy.GlobalDamageResist",
+      "uiNodeName": "uw_Node_Toughguy_2_1",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.4.2.1",
+      "branchTag": "Talent.Tree.Toughguy",
+      "branchKey": "toughguy",
+      "branchIndex": 4,
+      "tierIndex": 2,
+      "slotIndex": 1,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Toughguy",
+          "requiredPoints": 3
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Toughguy_GlobalDamageResist"
+      ],
+      "position": {
+        "x": -322,
+        "y": 134
+      }
+    },
+    {
+      "id": "Talent.Tree.Toughguy.BlockPostureConsumptionBonus",
+      "nodeTag": "Talent.Tree.Toughguy.BlockPostureConsumptionBonus",
+      "uiNodeName": "uw_Node_Toughguy_2_2",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.4.2.2",
+      "branchTag": "Talent.Tree.Toughguy",
+      "branchKey": "toughguy",
+      "branchIndex": 4,
+      "tierIndex": 2,
+      "slotIndex": 2,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Toughguy",
+          "requiredPoints": 3
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Toughguy_BlockPostureConsumptionBonus"
+      ],
+      "position": {
+        "x": -350,
+        "y": 0
+      }
+    },
+    {
+      "id": "Talent.Tree.Toughguy.DamageForManyEnemies",
+      "nodeTag": "Talent.Tree.Toughguy.DamageForManyEnemies",
+      "uiNodeName": "uw_Node_Toughguy_2_3",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.4.2.3",
+      "branchTag": "Talent.Tree.Toughguy",
+      "branchKey": "toughguy",
+      "branchIndex": 4,
+      "tierIndex": 2,
+      "slotIndex": 3,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Toughguy",
+          "requiredPoints": 3
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Toughguy_DamageForManyEnemies"
+      ],
+      "position": {
+        "x": -322,
+        "y": -134
+      }
+    },
+    {
+      "id": "Talent.Tree.Toughguy.SaveOnLowHP",
+      "nodeTag": "Talent.Tree.Toughguy.SaveOnLowHP",
+      "uiNodeName": "uw_Node_Toughguy_3_2",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.4.3.2",
+      "branchTag": "Talent.Tree.Toughguy",
+      "branchKey": "toughguy",
+      "branchIndex": 4,
+      "tierIndex": 3,
+      "slotIndex": 2,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Toughguy",
+          "requiredPoints": 6
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Toughguy_SaveOnLowHP"
+      ],
+      "position": {
+        "x": -474,
+        "y": 126
+      }
+    },
+    {
+      "id": "Talent.Tree.Toughguy.ExtraHP",
+      "nodeTag": "Talent.Tree.Toughguy.ExtraHP",
+      "uiNodeName": "uw_Node_Toughguy_3_3",
+      "uiSlotTag": "UI.EntityProgression.TalentTree.Slot.4.3.3",
+      "branchTag": "Talent.Tree.Toughguy",
+      "branchKey": "toughguy",
+      "branchIndex": 4,
+      "tierIndex": 3,
+      "slotIndex": 3,
+      "pointCost": 1,
+      "maxNodeLevel": 3,
+      "requirements": [
+        {
+          "nodeTag": "Talent.Tree.Toughguy",
+          "requiredPoints": 6
+        }
+      ],
+      "perkIds": [
+        "DA_Talent_Toughguy_ExtraHP"
+      ],
+      "position": {
+        "x": -474,
+        "y": -126
+      }
+    }
+  ],
+  "perks": [
+    {
+      "id": "DA_Talent_Crusher_Berserk",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Crusher/DA_Talent_Crusher_Berserk.DA_Talent_Crusher_Berserk",
+      "iconAssetName": "T_Talent_Crusher_Berserk",
+      "iconPublicPath": "/talents/icons/T_Talent_Crusher_Berserk.webp",
+      "title": "Berserk",
+      "description": "For every {2} Health lost you gain an effect stack granting you {1} bonus Damage.",
+      "stats": [
+        {
+          "rowName": "Crusher_Berserk_UpperHPRatioLimit",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 1,
+            "3": 1
+          }
+        },
+        {
+          "rowName": "Crusher_Berserk_DmgMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.03,
+            "2": 0.05,
+            "3": 0.07
+          }
+        },
+        {
+          "rowName": "Crusher_Berserk_HPRatioForOneStack",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.15,
+            "3": 0.15
+          }
+        },
+        {
+          "rowName": "Crusher_Berserk_LowerHPRatioLimit",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0,
+            "3": 0
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Crusher_CrudeDamage",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Crusher/DA_Talent_Crusher_CrudeDamage.DA_Talent_Crusher_CrudeDamage",
+      "iconAssetName": "T_Talent_Crusher_CrudeDamage",
+      "iconPublicPath": "/talents/icons/T_Talent_Crusher_CrudeDamage.webp",
+      "title": "Bonecrusher",
+      "description": "Increases Crude Damage by {0}.",
+      "stats": [
+        {
+          "rowName": "Crusher_CrudeDamage_DmgMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.03,
+            "2": 0.06,
+            "3": 0.09
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Crusher_DamageForDeathNearby",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Crusher/DA_Talent_Crusher_DamageForDeathNearby.DA_Talent_Crusher_DamageForDeathNearby",
+      "iconAssetName": "T_Talent_Crusher_DamageForDeathNearby",
+      "iconPublicPath": "/talents/icons/T_Talent_Crusher_DamageForDeathNearby.webp",
+      "title": "Dominating Presence",
+      "description": "When an enemy dies within {2}m, you gain {0} Melee Damage bonus for {1}s.",
+      "stats": [
+        {
+          "rowName": "Crusher_DamageForDeathNearby_DmgMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.06,
+            "2": 0.12,
+            "3": 0.18
+          }
+        },
+        {
+          "rowName": "Crusher_DamageForDeathNearby_Duration",
+          "displayType": "ValueAsValue",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 60,
+            "3": 60
+          }
+        },
+        {
+          "rowName": "Crusher_DamageForDeathNearby_RadiusInMeters_UI",
+          "displayType": "ValueAsValue",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 8,
+            "3": 8
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Crusher_DamageForMultipleTargets",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Crusher/DA_Talent_Crusher_DamageForMultipleTargets.DA_Talent_Crusher_DamageForMultipleTargets",
+      "iconAssetName": "T_Talent_Crusher_DamageForMultipleTargets",
+      "iconPublicPath": "/talents/icons/T_Talent_Crusher_DamageForMultipleTargets.webp",
+      "title": "Momentum",
+      "description": "For hitting {2} or more enemies you gain an effect stack granting you {0} additional Damage. Every attack that hits fewer than {2} enemies removes an effect stack. Capped at {1} stacks.",
+      "stats": [
+        {
+          "rowName": "Crusher_DamageForMultipleTargets_ModPerStack",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.05,
+            "2": 0.07,
+            "3": 0.09
+          }
+        },
+        {
+          "rowName": "Crusher_DamageForMultipleTargets_MaxStack_UI",
+          "displayType": "ValueAsValue",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 3,
+            "3": 3
+          }
+        },
+        {
+          "rowName": "Crusher_DamageForMultipleTargets_RequiredTargets_UI",
+          "displayType": "ValueAsValue",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 2,
+            "3": 2
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Crusher_TemporalHPHealBuff",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Crusher/DA_Talent_Crusher_TemporalHPHealBuff.DA_Talent_Crusher_TemporalHPHealBuff",
+      "iconAssetName": "T_Talent_Crusher_TemporalHPHealBuff",
+      "iconPublicPath": "/talents/icons/T_Talent_Crusher_TemporalHPHealBuff.webp",
+      "title": "Retribution",
+      "description": "Your attacks are {0} more effective in converting Temporal Health into Health.",
+      "stats": [
+        {
+          "rowName": "Crusher_TemporalHPHealBuff_DmgDealConvMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.4,
+            "2": 0.7,
+            "3": 1
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Crusher_TwoHandedDamage",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Crusher/DA_Talent_Crusher_TwoHandedDamage.DA_Talent_Crusher_TwoHandedDamage",
+      "iconAssetName": "T_Talent_Crusher_TwoHandedDamage",
+      "iconPublicPath": "/talents/icons/T_Talent_Crusher_TwoHandedDamage.webp",
+      "title": "Massive",
+      "description": "Increases two-handed weapon Damage by {0}.",
+      "stats": [
+        {
+          "rowName": "Crusher_TwoHandedDamage_DmgMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.05,
+            "2": 0.075,
+            "3": 0.1
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Crusher_TwoHandedMeleeCritChance",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Crusher/DA_Talent_Crusher_TwoHandedMeleeCritChance.DA_Talent_Crusher_TwoHandedMeleeCritChance",
+      "iconAssetName": "T_Talent_Crusher_TwoHandedMeleeCritChance",
+      "iconPublicPath": "/talents/icons/T_Talent_Crusher_TwoHandedMeleeCritChance.webp",
+      "title": "Executioner’s Aim",
+      "description": "Increases Critical Hit Chance with two-handed melee weapons by {0}.",
+      "stats": [
+        {
+          "rowName": "Crusher_TwoHandedMeleeCritChance",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.04,
+            "2": 0.08,
+            "3": 0.12
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Crusher_TwoHandedStaminaReduced",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Crusher/DA_Talent_Crusher_TwoHandedStaminaReduced.DA_Talent_Crusher_TwoHandedStaminaReduced",
+      "iconAssetName": "T_Talent_Crusher_TwoHandedStaminaReduced",
+      "iconPublicPath": "/talents/icons/T_Talent_Crusher_TwoHandedStaminaReduced.webp",
+      "title": "Perfected Form",
+      "description": "Two-handed weapon attacks consume {0} less Stamina per attack.",
+      "stats": [
+        {
+          "rowName": "Crusher_TwoHandedStaminaReduced_StamMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": true,
+          "valuesByLevel": {
+            "1": -0.1,
+            "2": -0.175,
+            "3": -0.25
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Fencer_ConsecutiveMeleeHitsBonus",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Fencer/DA_Talent_Fencer_ConsecutiveMeleeHitsBonus.DA_Talent_Fencer_ConsecutiveMeleeHitsBonus",
+      "iconAssetName": "T_Talent_Fencer_ConsecutiveMeleeHitsBonus",
+      "iconPublicPath": "/talents/icons/T_Talent_Fencer_ConsecutiveMeleeHitsBonus.webp",
+      "title": "Deadly Finale",
+      "description": "Each consecutive hit increases your Damage by {0}, capped after {1} hits.",
+      "stats": [
+        {
+          "rowName": "Fencer_ConsecutiveMeleeHitsBonus_DamageMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.03,
+            "2": 0.04,
+            "3": 0.05
+          }
+        },
+        {
+          "rowName": "Fencer_ConsecutiveMeleeHitsBonus_MaxStack_UI",
+          "displayType": "ValueAsValue",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 5,
+            "3": 5
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Fencer_CritChanceForPerfectBlock",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Fencer/DA_Talent_Fencer_CritChanceForPerfectBlock.DA_Talent_Fencer_CritChanceForPerfectBlock",
+      "iconAssetName": "T_Talent_Fencer_DamageForBlock",
+      "iconPublicPath": "/talents/icons/T_Talent_Fencer_DamageForBlock.webp",
+      "title": "Perfect Counter",
+      "description": "After a Perfect Block, your Critical Hit Chance is increased by {0} for {1}s.",
+      "stats": [
+        {
+          "rowName": "Fencer_CritChanceForPerfectBlock_CritChanceAdd",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.05,
+            "2": 0.0875,
+            "3": 0.12
+          }
+        },
+        {
+          "rowName": "Fencer_CritChanceForPerfectBlock_Duration",
+          "displayType": "ValueAsValue",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 12,
+            "3": 12
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Fencer_DamageForSoloEnemy",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Fencer/DA_Talent_Fencer_DamageForSoloEnemy.DA_Talent_Fencer_DamageForSoloEnemy",
+      "iconAssetName": "T_Talent_Fencer_DamageForSoloEnemy",
+      "iconPublicPath": "/talents/icons/T_Talent_Fencer_DamageForSoloEnemy.webp",
+      "title": "Duelist",
+      "description": "When only one enemy is within 10m, your melee attacks deal {0} bonus Damage.",
+      "stats": [
+        {
+          "rowName": "Fencer_DamageForSoloEnemy_DmgMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.06,
+            "2": 0.09,
+            "3": 0.12
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Fencer_HealForKill",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Fencer/DA_Talent_Fencer_HealForKill.DA_Talent_Fencer_HealForKill",
+      "iconAssetName": "T_Talent_Fencer_HealForKill",
+      "iconPublicPath": "/talents/icons/T_Talent_Fencer_HealForKill.webp",
+      "title": "Executioner’s Grace",
+      "description": "On enemy kill, you gain an effect for {0} seconds, restoring {1} Health per tick.",
+      "stats": [
+        {
+          "rowName": "Fencer_HealForKill_Duration",
+          "displayType": "ValueAsValue",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 20,
+            "3": 20
+          }
+        },
+        {
+          "rowName": "Fencer_HealForKill_HealPerTick",
+          "displayType": "ValueAsValue",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 10,
+            "2": 15,
+            "3": 20
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Fencer_LessStaminaForDash",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Fencer/DA_Talent_Fencer_LessStaminaForDash.DA_Talent_Fencer_LessStaminaForDash",
+      "iconAssetName": "T_Talent_Fencer_LessStaminaForDash",
+      "iconPublicPath": "/talents/icons/T_Talent_Fencer_LessStaminaForDash.webp",
+      "title": "Agile",
+      "description": "Dash and Jump actions consume {0} less Stamina.",
+      "stats": [
+        {
+          "rowName": "Fencer_LessStaminaForDash_StamMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": true,
+          "valuesByLevel": {
+            "1": -0.15,
+            "2": -0.275,
+            "3": -0.4
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Fencer_OneHandedDamage",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Fencer/DA_Talent_Fencer_OneHandedDamage.DA_Talent_Fencer_OneHandedDamage",
+      "iconAssetName": "T_Talent_Fencer_OneHandedDamage",
+      "iconPublicPath": "/talents/icons/T_Talent_Fencer_OneHandedDamage.webp",
+      "title": "Quick Strikes",
+      "description": "Increases one-handed weapon Damage by {0}.",
+      "stats": [
+        {
+          "rowName": "Fencer_OneHandedDamage_DmgMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.04,
+            "2": 0.06,
+            "3": 0.08
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Fencer_OneHandedMeleeCritChance",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Fencer/DA_Talent_Fencer_OneHandedMeleeCritChance.DA_Talent_Fencer_OneHandedMeleeCritChance",
+      "iconAssetName": "T_Talent_Fencer_OneHandedMeleeCritChance",
+      "iconPublicPath": "/talents/icons/T_Talent_Fencer_OneHandedMeleeCritChance.webp",
+      "title": "Surgical Cuts",
+      "description": "Increases Critical Hit Chance with one-handed melee weapons by {0}.",
+      "stats": [
+        {
+          "rowName": "Fencer_OneHandedMeleeCritChance",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.03,
+            "2": 0.06,
+            "3": 0.09
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Fencer_PassiveReloadBoostForPerfectBlock",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Fencer/DA_Talent_Fencer_PassiveReloadBoostForPerfectBlock.DA_Talent_Fencer_PassiveReloadBoostForPerfectBlock",
+      "iconAssetName": "T_Talent_Fencer_PassiveReloadBoostForPerfectBlock",
+      "iconPublicPath": "/talents/icons/T_Talent_Fencer_PassiveReloadBoostForPerfectBlock.webp",
+      "title": "Disciplined Fencer",
+      "description": "Perfect Blocks restore {0} of your current Passive Gun Reload progress.",
+      "stats": [
+        {
+          "rowName": "Fencer_PassiveReloadBoostForPerfectBlock_TimeRatio",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.15,
+            "2": 0.25,
+            "3": 0.35
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Fencer_PassiveReloadBoostForPerfectDodge",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Fencer/DA_Talent_Fencer_PassiveReloadBoostForPerfectDodge.DA_Talent_Fencer_PassiveReloadBoostForPerfectDodge",
+      "iconAssetName": "T_Talent_Fencer_PassiveReloadBoostForPerfectDodge",
+      "iconPublicPath": "/talents/icons/T_Talent_Fencer_PassiveReloadBoostForPerfectDodge.webp",
+      "title": "Evasive Fencer",
+      "description": "Perfect Dashes restore {0} of your current Passive Gun Reload progress.",
+      "stats": [
+        {
+          "rowName": "Fencer_PassiveReloadBoostForPerfectDodge_TimeRatio",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.25,
+            "2": 0.4,
+            "3": 0.55
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Fencer_SlashDamage",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Fencer/DA_Talent_Fencer_SlashDamage.DA_Talent_Fencer_SlashDamage",
+      "iconAssetName": "T_Talent_Fencer_SlashDamage",
+      "iconPublicPath": "/talents/icons/T_Talent_Fencer_SlashDamage.webp",
+      "title": "Deep Cuts",
+      "description": "Increases Slash Damage by {0}.",
+      "stats": [
+        {
+          "rowName": "Fencer_SlashDamage_DmgMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.03,
+            "2": 0.06,
+            "3": 0.09
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Marksman_ActiveReloadSpeedBonus",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Marksman/DA_Talent_Marksman_ActiveReloadSpeedBonus.DA_Talent_Marksman_ActiveReloadSpeedBonus",
+      "iconAssetName": "T_Talent_Marksman_ActiveReloadSpeedBonus",
+      "iconPublicPath": "/talents/icons/T_Talent_Marksman_ActiveReloadSpeedBonus.webp",
+      "title": "Quick Hand",
+      "description": "Improves Active Reload Speed by {0}.",
+      "stats": [
+        {
+          "rowName": "Marksman_ActiveReloadSpeedBonus_PlayRateMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.1,
+            "2": 0.175,
+            "3": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Marksman_ConsecutiveRangeHitsBonus",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Marksman/DA_Talent_Marksman_ConsecutiveRangeHitsBonus.DA_Talent_Marksman_ConsecutiveRangeHitsBonus",
+      "iconAssetName": "T_Talent_Marksman_ConsecutiveRangeHitsBonus",
+      "iconPublicPath": "/talents/icons/T_Talent_Marksman_ConsecutiveRangeHitsBonus.webp",
+      "title": "Bulletstorm",
+      "description": "Consecutive ranged hits without missing grant a stacking {0} Damage bonus to your next shot, capped after {1} hits.",
+      "stats": [
+        {
+          "rowName": "Marksman_ConsecutiveRangeHitsBonus_DamageMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.05,
+            "2": 0.07,
+            "3": 0.09
+          }
+        },
+        {
+          "rowName": "Marksman_ConsecutiveRangeHitsBonus_MaxStack_UI",
+          "displayType": "ValueAsValue",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 4,
+            "3": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Marksman_DamageForAimingState",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Marksman/DA_Talent_Marksman_DamageForAimingState.DA_Talent_Marksman_DamageForAimingState",
+      "iconAssetName": "T_Talent_Marksman_DamageForAimingState",
+      "iconPublicPath": "/talents/icons/T_Talent_Marksman_DamageForAimingState.webp",
+      "title": "Sniper's Focus",
+      "description": "While aiming, you gain {0} bonus Damage every {1}s, capped after {2} stacks.",
+      "stats": [
+        {
+          "rowName": "Marksman_DamageForAimingState_DmgModPerStack",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.03,
+            "2": 0.05,
+            "3": 0.07
+          }
+        },
+        {
+          "rowName": "Marksman_DamageForAimingState_TickTime_UI",
+          "displayType": "ValueAsValue",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 2,
+            "3": 2
+          }
+        },
+        {
+          "rowName": "Marksman_DamageForAimingState_MaxStack_UI",
+          "displayType": "ValueAsValue",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 4,
+            "3": 4
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Marksman_DamageForDistance",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Marksman/DA_Talent_Marksman_DamageForDistance.DA_Talent_Marksman_DamageForDistance",
+      "iconAssetName": "T_Talent_Marksman_DamageForDistance",
+      "iconPublicPath": "/talents/icons/T_Talent_Marksman_DamageForDistance.webp",
+      "title": "Extended Reach",
+      "description": "Shots deal {0} bonus Damage per 10m between you and the target.",
+      "stats": [
+        {
+          "rowName": "Marksman_DamageForDistance_DmgModPer10m",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.01,
+            "2": 0.02,
+            "3": 0.03
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Marksman_DamageForPointBlank",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Marksman/DA_Talent_Marksman_DamageForPointBlank.DA_Talent_Marksman_DamageForPointBlank",
+      "iconAssetName": "T_Talent_Marksman_DamageForPointBlank",
+      "iconPublicPath": "/talents/icons/T_Talent_Marksman_DamageForPointBlank.webp",
+      "title": "Muzzle Reach",
+      "description": "Shots deal {0} bonus Damage at close range (below 10m).",
+      "stats": [
+        {
+          "rowName": "Marksman_DamageForPointBlank_DmgMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.04,
+            "2": 0.12,
+            "3": 0.2
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Marksman_Overpenetration",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Marksman/DA_Talent_Marksman_Overpenetration.DA_Talent_Marksman_Overpenetration",
+      "iconAssetName": "T_Talent_Marksman_Overpenetration",
+      "iconPublicPath": "/talents/icons/T_Talent_Marksman_Overpenetration.webp",
+      "title": "Overpenetration",
+      "description": "Shots penetrate enemies. After penetrating enemies bullets deal {0} less damage.",
+      "stats": [
+        {
+          "rowName": "Marksman_Overpenetration_DmgDecreasePerHit",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.5,
+            "2": 0.35,
+            "3": 0.2
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Marksman_PassiveReloadBonus",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Marksman/DA_Talent_Marksman_PassiveReloadBonus.DA_Talent_Marksman_PassiveReloadBonus",
+      "iconAssetName": "T_Talent_Marksman_PassiveReloadBonus",
+      "iconPublicPath": "/talents/icons/T_Talent_Marksman_PassiveReloadBonus.webp",
+      "title": "Planning Ahead",
+      "description": "Improves Passive Gun Reload Speed by {0}.",
+      "stats": [
+        {
+          "rowName": "Marksman_PassiveReloadBonus_TimeMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": true,
+          "valuesByLevel": {
+            "1": -0.05,
+            "2": -0.15,
+            "3": -0.25
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Marksman_PierceDamage",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Marksman/DA_Talent_Marksman_PierceDamage.DA_Talent_Marksman_PierceDamage",
+      "iconAssetName": "T_Talent_Marksman_RangeArmorPenBonus",
+      "iconPublicPath": "/talents/icons/T_Talent_Marksman_RangeArmorPenBonus.webp",
+      "title": "Deep Impact",
+      "description": "Increases Pierce Damage by {0}.",
+      "stats": [
+        {
+          "rowName": "Marksman_PierceDamage",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.03,
+            "2": 0.06,
+            "3": 0.09
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Marksman_RangeCritDamageBonus",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Marksman/DA_Talent_Marksman_RangeCritDamageBonus.DA_Talent_Marksman_RangeCritDamageBonus",
+      "iconAssetName": "T_Talent_Marksman_RangeCritDamageBonus",
+      "iconPublicPath": "/talents/icons/T_Talent_Marksman_RangeCritDamageBonus.webp",
+      "title": "Bull's Eye",
+      "description": "Hitting a critical spot deals {0} bonus Damage.",
+      "stats": [
+        {
+          "rowName": "Marksman_RangeCritDamageBonus_CritDmgMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.05,
+            "2": 0.125,
+            "3": 0.2
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Marksman_RangeDamageBonus",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Marksman/DA_Talent_Marksman_RangeDamageBonus.DA_Talent_Marksman_RangeDamageBonus",
+      "iconAssetName": "T_Talent_Marksman_RangeDamageBonus",
+      "iconPublicPath": "/talents/icons/T_Talent_Marksman_RangeDamageBonus.webp",
+      "title": "Firearm Training",
+      "description": "Increases Ranged Damage by {0}.",
+      "stats": [
+        {
+          "rowName": "Marksman_RangeDamageBonus_DmgMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.05,
+            "2": 0.075,
+            "3": 0.1
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Marksman_ReloadForKill",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Marksman/DA_Talent_Marksman_ReloadForKill.DA_Talent_Marksman_ReloadForKill",
+      "iconAssetName": "T_Talent_Marksman_ReloadForKill",
+      "iconPublicPath": "/talents/icons/T_Talent_Marksman_ReloadForKill.webp",
+      "title": "Deadly Hunter",
+      "description": "Killing an enemy has a {0} chance to instantly reload your weapon.",
+      "stats": [
+        {
+          "rowName": "Marksman_ReloadForKill_ChanceTo",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.15,
+            "2": 0.25,
+            "3": 0.35
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Toughguy_BlockPostureConsumptionBonus",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Toughguy/DA_Talent_Toughguy_BlockPostureConsumptionBonus.DA_Talent_Toughguy_BlockPostureConsumptionBonus",
+      "iconAssetName": "T_Talent_Toughguy_BlockPostureConsumptionBonus",
+      "iconPublicPath": "/talents/icons/T_Talent_Toughguy_BlockPostureConsumptionBonus.webp",
+      "title": "Flawless Defence",
+      "description": "Blocks consume {0} less Posture.",
+      "stats": [
+        {
+          "rowName": "Toughguy_BlockPostureConsumptionBonus_Mod",
+          "displayType": "RatioToPercent",
+          "inverseValue": true,
+          "valuesByLevel": {
+            "1": -0.15,
+            "2": -0.25,
+            "3": -0.35
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Toughguy_DamageForManyEnemies",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Toughguy/DA_Talent_Toughguy_DamageForManyEnemies.DA_Talent_Toughguy_DamageForManyEnemies",
+      "iconAssetName": "T_Talent_Toughguy_ResistForManyEnemies",
+      "iconPublicPath": "/talents/icons/T_Talent_Toughguy_ResistForManyEnemies.webp",
+      "title": "Outnumbered",
+      "description": "When you are close to two enemies or more, you gain {0} Melee Damage bonus.",
+      "stats": [
+        {
+          "rowName": "Toughguy_DamageForManyEnemies_Mod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.04,
+            "2": 0.07,
+            "3": 0.1
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Toughguy_ExtraHP",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Toughguy/DA_Talent_Toughguy_ExtraHP.DA_Talent_Toughguy_ExtraHP",
+      "iconAssetName": "T_Talent_Toughguy_ExtraHP",
+      "iconPublicPath": "/talents/icons/T_Talent_Toughguy_ExtraHP.webp",
+      "title": "Stout Frame",
+      "description": "Increases maximum Health by {0}.",
+      "stats": [
+        {
+          "rowName": "Toughguy_ExtraHP_Add",
+          "displayType": "ValueAsValue",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 120,
+            "2": 180,
+            "3": 240
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Toughguy_GlobalDamageResist",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Toughguy/DA_Talent_Toughguy_GlobalDamageResist.DA_Talent_Toughguy_GlobalDamageResist",
+      "iconAssetName": "T_Talent_Toughguy_GlobalDamageResist",
+      "iconPublicPath": "/talents/icons/T_Talent_Toughguy_GlobalDamageResist.webp",
+      "title": "Just a Flesh Wound",
+      "description": "Increases melee Damage Resistance by {0}.",
+      "stats": [
+        {
+          "rowName": "Toughguy_GlobalDamageResist_Mod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.06,
+            "2": 0.09,
+            "3": 0.12
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Toughguy_HealEffectiveness",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Toughguy/DA_Talent_Toughguy_HealEffectiveness.DA_Talent_Toughguy_HealEffectiveness",
+      "iconAssetName": "T_Talent_Toughguy_HealEffectivness",
+      "iconPublicPath": "/talents/icons/T_Talent_Toughguy_HealEffectivness.webp",
+      "title": "Stitches and Rum",
+      "description": "You gain {0} increased effect from Healing.",
+      "stats": [
+        {
+          "rowName": "ToughGuy_HealEffectivness_HealMod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.1,
+            "2": 0.175,
+            "3": 0.25
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Toughguy_SaveOnLowHP",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Toughguy/DA_Talent_Toughguy_SaveOnLowHP.DA_Talent_Toughguy_SaveOnLowHP",
+      "iconAssetName": "T_Talent_Toughguy_SaveOnLowHP",
+      "iconPublicPath": "/talents/icons/T_Talent_Toughguy_SaveOnLowHP.webp",
+      "title": "Too Angry to Die",
+      "description": "When you receive a killing blow, instantly restore {1} Health. Cooldown: {2} min.",
+      "stats": [
+        {
+          "rowName": "Toughguy_SaveOnLowHP_HpPercentTrigger",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.1,
+            "3": 0.1
+          }
+        },
+        {
+          "rowName": "Toughguy_SaveOnLowHP_HpPercentRestored",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.3,
+            "2": 0.5,
+            "3": 0.7
+          }
+        },
+        {
+          "rowName": "Toughguy_SaveOnLowHP_Cooldown",
+          "displayType": "SecondsAsMinutes",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 960,
+            "2": 780,
+            "3": 600
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Toughguy_StaminaBonus",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Toughguy/DA_Talent_Toughguy_StaminaBonus.DA_Talent_Toughguy_StaminaBonus",
+      "iconAssetName": "T_Talent_Toughguy_StaminaBonus",
+      "iconPublicPath": "/talents/icons/T_Talent_Toughguy_StaminaBonus.webp",
+      "title": "Marathon Runner",
+      "description": "Grants {0} additional Stamina.",
+      "stats": [
+        {
+          "rowName": "Toughguy_StaminaBonus_Add",
+          "displayType": "ValueAsValue",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 20,
+            "2": 35,
+            "3": 50
+          }
+        }
+      ]
+    },
+    {
+      "id": "DA_Talent_Toughguy_TempHPForDamageRecivedBonus",
+      "sourceRef": "/R5BusinessRules/EntityProgression/Talents/Toughguy/DA_Talent_Toughguy_TempHPForDamageRecivedBonus.DA_Talent_Toughguy_TempHPForDamageRecivedBonus",
+      "iconAssetName": "T_Talent_Toughguy_TempHPForDamageRecivedBonus",
+      "iconPublicPath": "/talents/icons/T_Talent_Toughguy_TempHPForDamageRecivedBonus.webp",
+      "title": "You Will Answer for This",
+      "description": "Increases Temporal Health gain when taking damage by {0}.",
+      "stats": [
+        {
+          "rowName": "Toughguy_TempHPForDamageRecivedBonus_Mod",
+          "displayType": "RatioToPercent",
+          "inverseValue": false,
+          "valuesByLevel": {
+            "1": 0.25,
+            "2": 0.5,
+            "3": 0.75
+          }
+        }
+      ]
+    }
+  ],
+  "assets": {
+    "backgroundPublicPath": "/talents/assets/T_TalentTree_Background.webp",
+    "slotDefaultPublicPath": "/talents/assets/T_Slot_Default.webp",
+    "slotLearnPublicPath": "/talents/assets/T_Slot_Learn.webp",
+    "slotNonLearnPublicPath": "/talents/assets/T_Slot_NonLearn.webp",
+    "slotSelectPublicPath": "/talents/assets/T_Slot_Select.webp",
+    "lockIconPublicPath": "/talents/assets/T_Icon_Talent_Lock.webp",
+    "separatorPublicPath": "/talents/assets/T_Separator_Talent.webp",
+    "branchIconPublicPaths": {
+      "Talent.Tree.Fencer": "/talents/assets/T_TalentBranch_Icon_Fencer.webp",
+      "Talent.Tree.Crusher": "/talents/assets/T_TalentBranch_Icon_Crusher.webp",
+      "Talent.Tree.Marksman": "/talents/assets/T_TalentBranch_Icon_Marksman.webp",
+      "Talent.Tree.Toughguy": "/talents/assets/T_TalentBranch_Icon_Toughguy.webp"
+    }
+  }
+}

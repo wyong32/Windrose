@@ -6,6 +6,8 @@
   "scripts": {
     "dev": "vite",
     "generate-sitemap": "node scripts/generate-sitemap.js",
+    "sync-map-pin-popups": "node scripts/sync-map-pin-popups.mjs",
+    "scrape-map-loot": "node scripts/scrape-poi-loot-into-pin-popups.mjs",
     "prebuild": "npm run generate-sitemap",
     "build": "vite build",
     "preview": "vite preview",
@@ -28,6 +30,7 @@
     "eslint-plugin-vue": "~10.8.0",
     "globals": "^17.5.0",
     "npm-run-all2": "^8.0.4",
+    "playwright": "^1.56.0",
     "oxlint": "~1.60.0",
     "prettier": "3.8.3",
     "vite": "^8.0.8",

@@ -1,7 +1,7 @@
 <template>
   <header class="site-header" role="banner">
     <div class="container header-inner">
-      <RouterLink class="brand" to="/" aria-label="Windrose Compass home">
+      <a class="brand" href="/" aria-label="Windrose Compass home">
         <img
           class="brand-logo"
           src="/images/logo.png"
@@ -12,7 +12,7 @@
           decoding="async"
         />
         <span class="brand-title">Windrose Compass</span>
-      </RouterLink>
+      </a>
 
       <button
         type="button"
@@ -35,15 +35,16 @@
       </button>
 
       <nav id="site-nav" class="site-nav" :class="{ 'is-open': menuOpen }" aria-label="Primary">
-        <RouterLink
+        <a
           v-for="item in navItems"
           :key="item.to"
           class="nav-link"
-          :to="item.to"
+          :class="{ 'nav-link--active': isPrimaryNavActive(item.to, route.path) }"
+          :href="item.to"
           @click="closeMenu"
         >
           {{ item.label }}
-        </RouterLink>
+        </a>
       </nav>
     </div>
     <div class="header-ink" aria-hidden="true" />
@@ -54,6 +55,7 @@
 import { ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
 import { PRIMARY_NAV } from '@/data/siteNav.js'
+import { isPrimaryNavActive } from '@/utils/navActive.js'
 
 const navItems = PRIMARY_NAV
 
@@ -187,7 +189,7 @@ watch(
   color: var(--color-brass);
 }
 
-.nav-link.router-link-active {
+.nav-link.nav-link--active {
   color: var(--color-parchment);
   border-color: var(--color-sea);
 }
@@ -220,7 +222,7 @@ watch(
     border-bottom: 1px solid rgba(255, 255, 255, 0.06);
   }
 
-  .nav-link.router-link-active {
+  .nav-link.nav-link--active {
     border-color: rgba(255, 255, 255, 0.06);
     border-left: 3px solid var(--color-blood);
     padding-left: 0.5rem;

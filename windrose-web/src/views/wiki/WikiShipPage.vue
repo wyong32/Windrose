@@ -4,9 +4,9 @@
       <div class="container">
         <nav class="page-breadcrumb" aria-label="Breadcrumb">
           <ol>
-            <li><RouterLink to="/">Home</RouterLink></li>
+            <li><a href="/">Home</a></li>
             <li class="page-breadcrumb__sep" aria-hidden="true">/</li>
-            <li><RouterLink to="/wiki">Wiki</RouterLink></li>
+            <li><a href="/wiki">Wiki</a></li>
             <li class="page-breadcrumb__sep" aria-hidden="true">/</li>
             <li><span aria-current="page">{{ breadcrumbCurrent }}</span></li>
           </ol>
@@ -18,6 +18,16 @@
           <p v-if="lead" class="page-hero__lead">{{ lead }}</p>
           <p v-if="leadSecondary" class="page-hero__lead">{{ leadSecondary }}</p>
         </div>
+      </div>
+    </section>
+
+    <section class="wiki-deck-tip" aria-label="Related Compass tools">
+      <div class="container wiki-deck-tip__inner">
+        <p>
+          Hull and module names make more sense when you can see where you sail them: keep the
+          <a href="/map">interactive map</a> open for route callouts, and read the Advanced logistics notes when you are
+          juggling broadside loadouts, powder banks, and repair discipline in the same week.
+        </p>
       </div>
     </section>
 
@@ -53,6 +63,7 @@
               <tr
                 v-for="row in filtered"
                 :key="row.id"
+                :id="'wiki-item-' + row.id"
                 :title="descriptionTitle(row)"
               >
                 <td>

@@ -4,7 +4,7 @@
       <div class="container">
         <nav class="page-breadcrumb" aria-label="Breadcrumb">
           <ol>
-            <li><RouterLink to="/">Home</RouterLink></li>
+            <li><a href="/">Home</a></li>
             <li class="page-breadcrumb__sep" aria-hidden="true">/</li>
             <li><span aria-current="page">Wiki</span></li>
           </ol>
@@ -20,11 +20,13 @@
           </div>
           <p class="page-hero__lead">
             Six searchable tables for Windrose Early Access—materials, meals, weapons, worn gear, ship bits, and misc
-            drops. No accounts; keep a tab open next to the game and cross-check pins on the map when geography matters.
+            drops. No accounts; keep a tab open next to the game and cross-check pins on the interactive map when
+            geography decides whether that sulfur icon is worth a detour.
           </p>
           <p class="page-hero__lead">
-            Guides—including how to play online with friends and the interactive map walkthrough—live under Guides in the
-            top nav. Windrose Compass is independent fan work—not affiliated with the game’s publisher.
+            Long-form walkthroughs and build essays live in Guides; the Getting Started hub still helps first-week crews
+            translate pin names into plans. Windrose Compass is independent fan work—not affiliated with the game’s
+            publisher.
           </p>
         </div>
       </div>
@@ -39,7 +41,7 @@
         </p>
         <ol class="wiki-hub-roster">
           <li v-for="(slug, index) in WIKI_CATEGORY_ORDER" :key="slug" class="wiki-hub-roster__item">
-            <RouterLink class="wiki-hub-roster__link" :to="`/wiki/${slug}`">
+            <a class="wiki-hub-roster__link" :href="`/wiki/${slug}`">
               <span class="wiki-hub-roster__n" aria-hidden="true">{{ deckIndex(index) }}</span>
               <span class="wiki-hub-roster__code">{{ slug }}</span>
               <span class="wiki-hub-roster__main">
@@ -47,7 +49,7 @@
                 <span class="wiki-hub-roster__tagline">{{ WIKI_CATEGORY_META[slug].tagline }}</span>
               </span>
               <span class="wiki-hub-roster__chev" aria-hidden="true">→</span>
-            </RouterLink>
+            </a>
           </li>
         </ol>
       </div>
@@ -59,9 +61,9 @@
           <h2 id="wiki-after-use-heading">How to use this hub</h2>
           <p>
             Use the numbered index above: each row opens that category’s full table. If a map popup names something you
-            do not recognize, try another deck, then cross-check pins on the
-            <RouterLink to="/map">interactive map</RouterLink>—when filters or legend jargon confuse you once, that page
-            is the fastest way to match icons to geography and move on.
+            do not recognize, try another deck, then cross-check pins on the interactive map—when filters or legend jargon
+            confuse you once, that workspace is the fastest way to match icons to geography and move on. Planning a full
+            respec? Open the talent planner in another tab so you can read perk wording beside these rows.
           </p>
 
           <p class="wiki-hub-contributor-note">

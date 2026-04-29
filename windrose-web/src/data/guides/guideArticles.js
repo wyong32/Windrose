@@ -181,7 +181,7 @@ export default [
     description: "Discover exactly how to get quagmire powder in windrose and the best farming routes. Learn how to use quagmire powder in windrose to craft Mire Metal Ingots.",
     tags: ["windrose", "quagmire powder", "farming guide", "late-game resources", "mire metal ingot"],
     publishDate: "2026-04-25",
-    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777105662/cms-uploads/cms-1777105662173-881866006.webp",
+    imageUrl: "/images/guides/guides02.webp",
     imageAlt: "Player opening an Ancient Chest in a Swamp Crypt Tablet House in Windrose, obtaining Quagmire Powder.",
     isHome: true,
     seo: {
@@ -362,7 +362,6 @@ export default [
     ]
   }`,
     title: "Windrose Travelers Camp Guide: Find the Hidden Second Chest",
-    iframeUrl: "https://www.youtube.com/embed/sx-PC9mzRwk",
     description: "Stuck at 1/2 unique chests in Windrose? Learn how to locate the hidden second chest at the Traveler's Camp in the Coastal Jungle using the shovel digging mechanic.",
     tags: ["Windrose","Travelers Camp","Hidden Chest","Exploration Guide","Survival Game"],
     publishDate: "2026-04-25",
@@ -793,7 +792,7 @@ export default [
   </td>
   <td data-row="row-zeln1p">4 to 12 Fillets
   </td>
-  </tr>
+  </tr> 
   <tr>
   <td data-row="row-psdntn">Epic (Purple)
   </td>
@@ -828,6 +827,787 @@ export default [
   </p>
   <p> A: No, Windrose doesn't feature seawater distillation for salt yet. Salt is strictly a lootable resource. You must farm it by cracking open pirate loot crates on land or successfully boarding and looting enemy ships marked with the "golden chest" icon. Treat salt as a premium combat resource.
   </p>`.trim(),
+  },
+
+  {
+    id: 6,
+    title: "Best Windrose Rapier Build: The S+ Tier Precision Setup",
+    description: "Master the S+ Tier Rapier Precision build in Windrose. Stop splitting stats. Learn the 4k damage Plague combo, exact gear progression from Thousand Cuts to Devastation, and the 0 Endurance coffee trick.",
+    tags: ["Windrose","Windrose Rapier Build"],
+    publishDate: "2026-04-29",
+    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777431772/cms-uploads/cms-1777431772400-121557798.webp",
+    imageAlt: "windrose-best-builds-rapier-build-set-up",
+    seo: {
+      title: "Best Windrose Rapier Build: The S+ Tier Precision Setup",
+      description: "Master the S+ Tier Rapier Precision build in Windrose. Stop splitting stats. Learn the 4k damage Plague combo, exact gear progression from Thousand Cuts to Devastation, and the 0 Endurance coffee trick.",
+      keywords: "Windrose Rapier Build"
+    },
+    addressBar: "windrose-best-builds-rapier-build",
+    detailsHtml: `
+  <p>Many generalized guides will tell you to balance your stats between Strength, Agility, and Vitality to survive in Windrose. That is a massive trap. The Rapier Precision build is an S+ Tier meatgrinder because it exploits a fundamental mechanic: both Rapiers and Pistols/Muskets scale exclusively with the Precision stat. By dumping every point into Precision and relying on the "Rapier Of Devastation" Epic effect to literally eat Plague Marks for huge self-heals, you bypass the need for tank stats. If you can land your Perfect Blocks, this build will let you nuke late-game Plague Crushers for 4,000+ damage in a single Heavy Attack.
+  </p>
+  <p><strong>Tip:</strong> Dry-run the talent order below on our <a href="/talents">Windrose Talent Builder</a>—same four-branch tree as in-game, and you can paste the link to your crew before you respec.
+  </p>
+  <h2>Gear Progression: From Bleed DoT to Plague Nuke
+  </h2>
+  <p>You can't just spawn in and magically have the best build. Your gear dictates your playstyle. A critical mistake rookies make is trying to force the late-game burst playstyle while still using mid-game weapons.
+  </p>
+  <p>This build has a strict, non-negotiable two-phase transition. You will start with a Damage-over-Time (DoT) setup and eventually transition into a raw burst/lifesteal god.
+  </p>
+  <p>[Insert image here: In-game screenshot comparing the stats and Epic effects of the Rapier Of A Thousand Cuts alongside the Rapier Of Devastation]
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-wscuv3">Gear Slot
+  </td>
+  <td data-row="row-wscuv3">Mid-Game Setup (Bleed Focus)
+  </td>
+  <td data-row="row-wscuv3">Late-Game Setup (Burst &amp; Heal)
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-io6hh9">Main Weapon
+  </td>
+  <td data-row="row-io6hh9">Rapier Of A Thousand Cuts (Random POI Drop)
+  </td>
+  <td data-row="row-io6hh9">Rapier Of Devastation (Cursed Swamps)
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-yu3102">Ranged Weapon
+  </td>
+  <td data-row="row-yu3102">Reliable Pistol
+  </td>
+  <td data-row="row-yu3102">Drake's Double-Barreled Pistol
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-9t06mr">Armor Set
+  </td>
+  <td data-row="row-9t06mr">Conquistador's (2x) + Pikeman's (2x)
+  </td>
+  <td data-row="row-9t06mr">Flibustier's (4x)
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-wzd1de">Ring
+  </td>
+  <td data-row="row-wzd1de">Major Spear-Thrower's Ring (+Pierce Dmg)
+  </td>
+  <td data-row="row-wzd1de">Major Warrior Ring (+Special Wep Dmg)
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-jnur59">Necklace
+  </td>
+  <td data-row="row-jnur59">Major Necklace Of Precision
+  </td>
+  <td data-row="row-jnur59">Major Necklace Of Precision
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p>Why the specific Armor swap? In the mid-game, you need the Pikeman's 2-piece set for raw survivability because your self-sustain is low. In the late game, the Rapier Of Devastation heals you when consuming Plague Marks, allowing you to drop defensive armor entirely and run the 4-piece Flibustier's set for maximum offensive output.
+  </p>
+  <h2>Stat Allocation &amp; The Zero-Endurance "Coffee Bypass"
+  </h2>
+  <p>If you look at the stats below and think "0 Endurance is suicide for a melee build," you haven't understood the consumable meta in Windrose.
+  </p>
+  <ol>
+  <li>Precision: 35
+  </li>
+  <li>Vitality: 10 (Bump this up slightly when you lose the Pikeman's 2P armor bonus).
+  </li>
+  <li>Endurance: 0 (+20 from Coffee)
+  </li>
+  </ol>
+  <p>The Diminishing Returns (DR) Reality: Hardcore data testing proves that once you push Precision past 20 points, the actual damage gain per point drops by roughly 50%. However, because we are "cheating" the system by using the Coffee consumable to grant us a free 20 Endurance, and Swamp Pie for extra Precision, dumping points into a heavily diminished Precision stat is still mathematically superior to putting points into Mastery.
+  </p>
+  <p>Never fight a boss without Coffee and the Elixir Of Cruelty (+8% Damage) active.
+  </p>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777431843/cms-uploads/cms-1777431843304-684867807.webp" alt="windrose-best-builds-rapier-build-stats" width="80%">
+  </p>
+  <h2>Playstyle Execution: The 4,000 Damage Combo
+  </h2>
+  <p>This is where the build separates the veterans from the floor-huggers. Your playstyle drastically changes based on your weapon phase.
+  </p>
+  <p>Phase 1: Thousand Cuts (Mid-Game)
+  </p>
+  <p> The epic effect of this rapier applies a bleeding DoT that stacks up to 5 times. 
+  </p>
+  <p> The Rule: Never let the stacks drop. If the DoT is about to expire, land a single light attack to refresh all 5 stacks. Let the bleed melt the enemy's health bar while you play safely behind Perfect Blocks. Fire your Pistol only when the passive reload finishes; do NOT manually reload.
+  </p>
+  <p>Phase 2: Devastation (Late-Game)
+  </p>
+  <p> This weapon applies Plague Marks. Consuming 5 or more marks with a Heavy Attack heals you massively.
+  </p>
+  <p> The Absolute Combo against Bosses/Plague Crushers:
+  </p>
+  <ol>
+  <li>Light attack until the enemy has exactly 8 stacks of Plague Marks.
+  </li>
+  <li>Immediately swap to Drake's Double-Barreled Pistol and fire. (This pistol's epic effect applies the Vulnerability debuff).
+  </li>
+  <li>Execute a Heavy Attack.
+  </li>
+  </ol>
+  <p>Because the target has Vulnerability and 8 Plague Marks, this specific sequence will easily result in almost 4,000 damage while simultaneously healing your character to full. If you master this, you do not need healing potions.
+  </p>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777432526/cms-uploads/cms-1777432526404-282747609.webp" alt="windrose-best-builds-rapier-build-consuming-plague-marks" width="80%">
+  </p>
+  <h2>Exact Talent Tree Sequences
+  </h2>
+  <p>Don't guess your talents. The synergy between the weapons and the cheat-death mechanics is tightly tuned. Apply your points in this exact order based on your current weapon.
+  </p>
+  <p>For Rapier Of A Thousand Cuts:
+  </p>
+  <ol>
+  <li>Marathon Runner (3/3)
+  </li>
+  <li>Just A Flesh Wound (3/3)
+  </li>
+  <li>Stout Frame (3/3)
+  </li>
+  <li>Too Angry To Die (1/3) -&gt; Your cheat death safety net.
+  </li>
+  <li>You Will Answer For This (2/3) -&gt; Insane synergy with the Bleed DoT passive.
+  </li>
+  </ol>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777432558/cms-uploads/cms-1777432558754-251555469.webp" alt="windrose-best-builds-rapier-build-rapier-of-a-thousand-cuts-talents" width="80%">
+  </p>
+  <p>For Rapier Of Devastation (The Final Form):
+  </p>
+  <ol>
+  <li>Marathon Runner (3/3)
+  </li>
+  <li>Just A Flesh Wound (2/3)
+  </li>
+  <li>Outnumbered (1/3)
+  </li>
+  <li>Stout Frame (2/3)
+  </li>
+  <li>Too Angry To Die (1/3)
+  </li>
+  <li>Deep Impact (3/3) -&gt; Massive boost to your Pierce Damage for the heavy attack nuke.
+  </li>
+  </ol>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777432577/cms-uploads/cms-1777432577455-608043739.webp" alt="windrose-best-builds-rapier-build-rapier-of-devastation-talents" width="80%">
+  </p>
+  <h3>FAQ: Rapier Build Troubleshooting
+  </h3>
+  <p>Q: I'm using the Rapier of Devastation, but I keep dying before I can get my Heavy Attack heal off. What's wrong?
+  </p>
+  <p> A: You are likely failing your Perfect Blocks. This build is extremely fragile because we allocate only 10 points to Vitality. If you just hold block, enemies will shatter your posture. Efficiency with this build 100% relies on hitting Perfect Blocks so you can stack Plague Marks quickly without being interrupted.
+  </p>
+  <p>Q: Where exactly do I farm the Rapier of A Thousand Cuts? I've cleared the starting island and found nothing.
+  </p>
+  <p> A: It is a random RNG drop from POI (Point of Interest) chests scattered throughout the game. You won't find it crafted at a bench. Just keep exploring ruins and camps; you will usually obtain it naturally during the mid-game progression.
+  </p>
+  <p>Q: Why use Drake's Double-Barreled Pistol instead of the Reliable Musket for late game?
+  </p>
+  <p> A: Because of debuff synergy. Drake's Pistol has an Epic effect that applies Vulnerability. The entire Rapier of Devastation combo relies on stacking 8 Plague Marks, applying Vulnerability with Drake's, and then landing the heavy attack. The Musket deals more raw ranged damage, but fails to provide the debuff needed to amplify your melee nuke.
+  </p>`,
+  },
+
+  {
+    id: 7,
+    title: "Windrose Best Boarding Build: Plague Halberd AoE Cleave (S Tier)",
+    description: "Dominate ship boarding in Windrose with the Plague Halberd AoE Cleave build. Learn how to bypass the lack of Perfect Block, melt enemy posture, and utilize the 35% massive self-heal Special Attack.",
+    tags: ["Windrose Best Boarding Build"],
+    publishDate: "2026-04-29",
+    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777433192/cms-uploads/cms-1777433192494-113586333.webp",
+    imageAlt: "windrose-best-builds-rapier-build-set-up",
+    seo: {
+      title: "Windrose Best Boarding Build: Plague Halberd AoE Cleave",
+      description: "Dominate ship boarding in Windrose with the Plague Halberd AoE Cleave build. Learn how to bypass the lack of Perfect Block, melt enemy posture, and utilize the 35% massive self-heal Special Attack.",
+      keywords: "Windrose Best Boarding Build;Plague Build"
+    },
+    addressBar: "windrose-best-builds-plague-halberd-boarding",
+    detailsHtml: `
+  <p>If you are using a 1-Handed weapon to board enemy pirate ships, you are doing it wrong. The cramped decks of a Brig or Frigate demand massive AoE damage, making the Plague Halberd the ultimate "Boarding Meatgrinder." Standard halberds in Windrose are clunky and weak, but the Plague Halberd's unique Special Attack transforms the weapon type. Be warned: You CANNOT Perfect Block with a halberd. If you try to play this like a Rapier build, your Posture will shatter instantly. But if you weave your dodges and abuse the sweeping heavy attacks, you will completely melt enemy Posture, cleave through groups, and instantly self-heal for 35% of your max HP.
+  </p>
+  <p><strong>Tip:</strong> Map the Crusher path on the <a href="/talents">Windrose Talent Builder</a> before you commit points—share the URL when your boarding party is theorycrafting loadouts.
+  </p>
+  <h2>Late-Game Gear: The Cursed Swamps Loadout
+  </h2>
+  <p>This is not a starter build. The core weapon, the Plague Halberd, is exclusively looted from Crypts or Ruins deep within the Cursed Swamps. Do not bother running the Sturdy Halberd or the Executioner; their lack of a killer Special Attack makes the halberd's slow animation a pure liability.
+  </p>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777433646/cms-uploads/cms-1777433646703-219472995.webp" alt="windrose-best-builds-plague-halberd-on-pirate ship-deck " width="80%">
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-6pmzpc">Gear Slot
+  </td>
+  <td data-row="row-6pmzpc">Best in Slot (BiS) Item
+  </td>
+  <td data-row="row-6pmzpc">Why It's Mandatory
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-is4up5">Melee Weapon
+  </td>
+  <td data-row="row-is4up5">Plague Halberd
+  </td>
+  <td data-row="row-is4up5">Exclusive Special Attack: Massive AoE damage + 35% Max HP heal.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-7aznn6">Ranged Weapon
+  </td>
+  <td data-row="row-7aznn6">Plague Pistol (or Drake's Double-Barreled)
+  </td>
+  <td data-row="row-7aznn6">Provides extra sustain when closing the gap on enemy ships.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-30hbzv">Armor Set
+  </td>
+  <td data-row="row-30hbzv">Pikeman's (4x) OR Conquistador's (4x)
+  </td>
+  <td data-row="row-30hbzv">Pikeman gives +15% Damage &amp; Health. Conquistador gives Bulwark (uninterruptible attacks).
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-g9gge1">Ring
+  </td>
+  <td data-row="row-g9gge1">Major Warrior Ring OR Major Capricorn Ring
+  </td>
+  <td data-row="row-g9gge1">Warrior = +30% Special Attack Dmg. Capricorn = +12% overall Crude Dmg.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-96xhr1">Necklace
+  </td>
+  <td data-row="row-96xhr1">Major Necklace Of Strength
+  </td>
+  <td data-row="row-96xhr1">Flat +15 Strength boost for heavy weapon scaling.
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p>Armor Choice Argument: Many players blindly run Pikeman's for the raw damage. However, when boarding a ship surrounded by 4 enemies, getting staggered mid-swing is a death sentence. Running the 4-piece Conquistador's set grants you the Bulwark effect, allowing you to tank hits without animation interruption, guaranteeing your massive Special Attack lands.
+  </p>
+  <h2>Stats &amp; The Heavy Consumable Tax
+  </h2>
+  <p>Swinging a massive polearm drains Stamina fast. Because you cannot rely on Perfect Blocks, you will take chip damage and burn Stamina dodging. This makes your consumable loadout just as important as your weapon.
+  </p>
+  <ol>
+  <li>Strength: 20 (Your primary damage scaler).
+  </li>
+  <li>Vitality: 15 (Higher than 1H builds to survive the lack of Perfect Block).
+  </li>
+  <li>Endurance: 10 (You MUST supplement this with Coffee for extra Stamina).
+  </li>
+  <li>Mastery/Precision: 0 (Completely useless for this weapon type).
+  </li>
+  </ol>
+  <p>The Boarding Diet: Before you throw your grappling hooks to board an enemy ship, you must eat a Meaty Croc Kebab (Strength food) and drink the Elixir Of Firm Hand (+13% Melee Damage). Without these, your cleave won't hit the critical threshold to one-shot low-tier pirate deckhands.
+  </p>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777433672/cms-uploads/cms-1777433672771-654605092.webp" alt="windrose-best-builds-plague-halberd-stats" width="80%">
+  </p>
+  <h2>The Anti-Block Playstyle: "If-Then" Execution
+  </h2>
+  <p>If you play this like a Rapier, you will die. The Halberd is slow and clunky. Master these absolute rules:
+  </p>
+  <ol>
+  <li>The Posture Rule: Do NOT sleep on the Heavy Attack. If you use a Heavy Attack, then you gain a massive +70% damage modifier, and the animation is surprisingly only slightly slower than a light attack. It will instantly shatter enemy shields.
+  </li>
+  <li>The No-Block Reality: If you just hold the block button against a group, then your Posture will break immediately. You MUST weave: swing -&gt; dodge away -&gt; swing -&gt; dodge away.
+  </li>
+  <li>The Nuke Strategy: The Plague Halberd's Special Attack buff does NOT expire once you hit 5 stacks. If you have 5 stacks, then hold onto it! Wait until 3 or 4 enemies swarm you on the deck, then unleash it. It will hit all of them and instantly heal you for 35% of your health.
+  </li>
+  <li>The Interruption Warning: Your Special Attack has a wind-up. If you activate it while a Plague Crusher is already mid-swing, then you will be interrupted, the ability will cancel, and you will lose your heal. (This is why Conquistador's armor is highly recommended).
+  </li>
+  </ol>
+  <p>[Insert image here: In-game action shot showing the massive AoE swing of the Special Attack hitting 3 enemies at once, with a green +35% healing number popping up on the player]
+  </p>
+  <h2>The Bonecrusher Talent Tree
+  </h2>
+  <p>This talent path ignores finesse and focuses entirely on raw survival and brute force. Apply your points in this exact order:
+  </p>
+  <ol>
+  <li>Marathon Runner (2/3) -&gt; Mandatory for Dodge stamina.
+  </li>
+  <li>Stitches and Rum (1/3)
+  </li>
+  <li>Just a Flesh Wound (1/3)
+  </li>
+  <li>Outnumbered (2/3) -&gt; Perfect for boarding scenarios.
+  </li>
+  <li>Too Angry to Die (1/3) -&gt; Your cheat-death.
+  </li>
+  <li>Stout Frame (1/3)
+  </li>
+  <li>Bonecrusher (3/3) -&gt; The core damage engine for 2-Handed Heavy Attacks.
+  </li>
+  <li>Massive (1/3)
+  </li>
+  </ol>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777433699/cms-uploads/cms-1777433699490-949119500.webp" alt="windrose-best-builds-plague-halberd-talents" width="80%">
+  </p>
+  <h3>FAQ: Halberd Build Troubleshooting
+  </h3>
+  <p>Q: I pressed my Special Attack at 5 stacks, but nothing happened and it went on cooldown. Is it a bug?
+  </p>
+  <p> A: It's not a bug; it's a harsh mechanic. The Special Attack animation takes time to execute. If you take a heavy hit or get staggered during the wind-up, the action is canceled but the stacks are still consumed. You must time it during enemy recovery frames or wear the Conquistador's armor set for uninterruptible attacks.
+  </p>
+  <p>Q: Why no points in Agility? Doesn't that make me attack faster?
+  </p>
+  <p> A: Attack speed scaling in Windrose is tied strictly to weapon type and specific weapon buffs, not the raw Agility stat. Agility scales weapons like the Saber. Putting points into Agility while holding a Strength-scaling Halberd is a complete waste of your stat pool.
+  </p>
+  <p>Q: Is this build viable for fighting agile bosses?
+  </p>
+  <p> A: It is viable, but extremely difficult. The Halberd shines in AoE situations (like clearing PoIs or boarding ships). Against fast, single-target bosses who attack relentlessly, the lack of a Perfect Block means you will spend most of your stamina dodging, leaving very few openings to actually swing your weapon. Swap to a Rapier or Saber for duels.
+  </p>`,
+  },
+
+  {
+    id: 8,
+    title: "Windrose Best Ranged Build: The Reliable Musketeer (A Tier)",
+    description: "Think guns are just secondary weapons? Wrong. Master the Reliable Musketeer build in Windrose. Learn the 0 Stamina stat exploit, sub-2-second reload trick, and the ultimate FPS headshot playstyle.",
+    tags: ["Windrose Best Ranged Build"],
+    publishDate: "2026-04-29",
+    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777434631/cms-uploads/cms-1777434631774-485868697.webp",
+    imageAlt: "windrose-best-builds-best-ranged-build",
+    seo: {
+      title: "Windrose Best Ranged Build: Reliable Musketeer",
+      description: "Hardcore breakdown of the ultimate pure ranged build in Windrose. Learn how to exploit the zero-stamina shooting mechanic, combine the Reliable Musket with the Quick Hand talent for sub-2-second reloads, and stack 30% Crit Damage for massive headshots.",
+      keywords: "windrose best ranged build, windrose reliable musket, windrose marksman build"
+    },
+    addressBar: "windrose-best-builds-best-ranged-build",
+    detailsHtml: `
+  <p>If you read on Reddit that firearms in Windrose are only useful for pulling aggro or opening fights, you've been reading garbage advice from bad players. The Reliable Musketeer is, factually, the highest sustained DPS build currently in the game. It completely breaks normal combat rules because ranged attacks consume exactly ZERO Stamina, allowing you to dump everything into Precision. By combining the "Reliable Musket" Rare effect with the "Quick Hand" talent, you bypass the agonizingly slow vanilla reload animations, dropping them to under 2 seconds. However, be warned: this is an extreme Glass Cannon. You have zero self-heals, and if you cannot consistently click heads (Headshots), or if you run out of gunpowder, this build is completely useless.
+  </p>
+  <p><strong>Tip:</strong> Preview Marksman picks (reload and crit nodes) on the <a href="/talents">interactive talent tree</a> so you know exactly how many points the full Musketeer line needs.
+  </p>
+  <p><br>
+  
+  </p>
+  <h2>Gear &amp; The Bullet Economy
+  </h2>
+  <p>Do not attempt this build with a generic starting musket. The entire playstyle hinges on a specific weapon drop: the Reliable Musket. It drops randomly from POIs in the Coastal Jungle and Foothills. Without its inherent reload speed buff, you will be swarmed and killed between shots.
+  </p>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777435100/cms-uploads/cms-1777435100123-875636507.webp" alt="windrose-best-builds-best-ranged-build-reliable-musket" width="80%">
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-xqkfof">Gear Slot
+  </td>
+  <td data-row="row-xqkfof">Best in Slot (BiS) Item
+  </td>
+  <td data-row="row-xqkfof">Why It's Mandatory
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-krn421">Melee Weapon
+  </td>
+  <td data-row="row-krn421">None (Leave empty)
+  </td>
+  <td data-row="row-krn421">You don't want to accidentally swap to melee.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-pw4gxe">Ranged Weapon
+  </td>
+  <td data-row="row-pw4gxe">Reliable Musket
+  </td>
+  <td data-row="row-pw4gxe">Massive reload speed reduction via its Rare effect.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-h1brzn">Armor Set
+  </td>
+  <td data-row="row-h1brzn">Marksman's (4x)
+  </td>
+  <td data-row="row-h1brzn">Provides a flat +15% Ranged Damage bonus.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-zug1mv">Ring
+  </td>
+  <td data-row="row-zug1mv">Major Cutthroat Ring
+  </td>
+  <td data-row="row-zug1mv">Grants +30% Critical Damage (Mandatory for Headshots).
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-ewtoiq">Necklace
+  </td>
+  <td data-row="row-ewtoiq">Major Necklace Of Precision
+  </td>
+  <td data-row="row-ewtoiq">Flat +15 Precision for pure damage scaling.
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p>The Bullet Economy Tax: You cannot run this build if you are poor. Iron Bullets are fine for trash mobs, but you MUST hoard Bullet Arborum for bosses. You will be burning through hundreds of rounds and gunpowder. Farm efficiently before committing to this as your main setup.
+  </p>
+  <h2>The Zero-Stamina Exploit &amp; Stat Dump
+  </h2>
+  <p>This is where the build breaks the game. For reasons unknown (perhaps an Early Access oversight), firing a gun in Windrose consumes absolutely no Stamina. This allows us to completely ignore the Endurance stat.
+  </p>
+  <ol>
+  <li>Precision: 35 (The absolute hard cap for your damage output).
+  </li>
+  <li>Vitality: 10 (You are a glass cannon. You rely on dodging, not tanking).
+  </li>
+  <li>Endurance: 0 (Completely unnecessary).
+  </li>
+  </ol>
+  <p>The "Double Food" Buff: To push your Precision beyond normal limits, you must double-stack food buffs. Eat a Swamp Pie (+20 Precision) and follow it immediately with a Banana Muffin (+10 Precision). Combine this with the Elixir Of Concentration (+30% Critical Damage), and your headshots will instantly delete anything short of a boss.
+  </p>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777435134/cms-uploads/cms-1777435134193-741517559.webp" alt="windrose-best-builds-best-ranged-build-stats" width="80%">
+  </p>
+  <h2>The Glass Cannon Playstyle: "If-Then" Execution
+  </h2>
+  <p>You have no self-heals and terrible Vitality. If you get cornered, you die. Memorize these combat rules:
+  </p>
+  <ol>
+  <li>The Engagement Rule: If you see a group of enemies, then you must initiate from maximum draw distance. Never walk into aggro range before firing your first shot.
+  </li>
+  <li>Target Prioritization: If the enemy group has ranged units (like Plague Witches), then they must die first. They are the only enemies that can trade damage with you reliably.
+  </li>
+  <li>The Swarm Protocol: If 1 or 2 melee enemies survive the barrage and reach your face, then DO NOT panic reload. Dodge backwards, let your "Passive Reload" mechanic finish in the background, and then turn and fire.
+  </li>
+  <li>The Ammo Saver: If an enemy has only a sliver of HP left, then do not waste a bullet. Left-click to perform a melee bash with the butt of your musket; the damage is surprisingly high and costs zero ammo.
+  </li>
+  </ol>
+  <h2>The Sniper's Talent Tree
+  </h2>
+  <p>The talent tree is the glue that holds this fragile build together. Your primary goal is rushing down the reload and damage nodes. Apply your points in this order:
+  </p>
+  <ol>
+  <li>Bull's Eye (3/3)
+  </li>
+  <li>Quick Hand (3/3) -&gt; Combines with Reliable Musket to achieve sub-2-second reloads.
+  </li>
+  <li>Bulletstorm (3/3) -&gt; Arguably the most broken ranged talent in the game for sustained DPS.
+  </li>
+  <li>Sniper's Focus (2/3)
+  </li>
+  <li>Firearm Training (1/3)
+  </li>
+  </ol>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777435188/cms-uploads/cms-1777435188673-532540595.webp" alt="windrose-best-builds-best-ranged-build-talents" width="80%">
+  </p>
+  <h3>FAQ: Musketeer Build Troubleshooting
+  </h3>
+  <p>Q: I'm running out of Gunpowder way too fast. How do I sustain this build?
+  </p>
+  <p> A: Welcome to the ranged tax. You cannot sustain this build purely through passive looting. You must actively farm Quagmire Powder in the Cursed Swamps (to craft into gunpowder) or set up dedicated resource routes for Saltpeter and Sulfur. Use a melee build to farm materials, and switch to this build for Bossing or high-tier Crypt clearing.
+  </p>
+  <p>Q: Why does the guide recommend leaving the Melee Weapon slot completely empty?
+  </p>
+  <p> A: It's an optimization trick. In panic situations when dodging and clicking rapidly, accidentally hitting your weapon swap key will pull out a sword you have zero stats for, canceling your passive reload and locking you in an animation. Emptying the slot ensures the musket's melee bash is your only close-combat action.
+  </p>
+  <p>Q: I can't find the Reliable Musket. Can I use the Dragon's Breath Blunderbuss instead?
+  </p>
+  <p> A: No. The Blunderbuss is a close-range burst weapon that scales entirely differently (Agility) and plays like a shotgun. The Reliable Musket is a Precision-scaling, long-range sniper rifle. If you don't have the Reliable Musket yet, use the highest tier standard Musket you can craft, but expect your reload times to be significantly clunkier.
+  </p>`,
+  },
+
+  {
+    id: 9,
+    title: "Windrose Best Crit Build: Saber & Dragon's Breath (A Tier)",
+    description: "Hardcore breakdown of the ultimate Agility Crit build in Windrose. Learn the exact math to reach 50.2% Crit Chance, how to perfectly weave Blunderbuss shots into Saber combos, and the punishing reality of maintaining the Deadly Finale buff.",
+    tags: ["Windrose Best Crit Build"],
+    publishDate: "2026-04-29",
+    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777446121/cms-uploads/cms-1777446121256-409191052.webp",
+    imageAlt: "windrose-best-builds-saber-dragon-set-up",
+    seo: {
+      title: "Windrose Saber & Dragon's Breath Crit Build Guide",
+      description: "Master the highest auto-attack DPS build in Windrose. Learn how to stack over 50% Crit Chance with the Saber and Dragon's Breath Blunderbuss, the hybrid combat rotation, and the strict Perfect Block requirements.",
+      keywords: "windrose saber build, windrose dragon's breath build, windrose crit build"
+    },
+    addressBar: "windrose-best-builds-saber-dragon",
+    detailsHtml: `<h1>Windrose A Tier Build: Saber Dragon Crit Setup
+  </h1>
+  <p>If you want the highest raw auto-attack DPS in the game and love an aggressive "hybrid" playstyle, this is your build. The Saber Dragon Crit setup completely abandons heavy weapons and precision rifles. Instead, it weaponizes the Agility stat to create a hyper-fast, high-risk duelist. By combining the Privateer armor set with specific talents, we can mathematically push your Crit Chance past 50%. However, be warned: this is not a brainless button-mashing build. You have zero passive damage reduction. Every single buff in this build—including your only source of healing—is instantly wiped out if you take damage. If you cannot consistently hit your Perfect Blocks, this build will feel incredibly weak.
+  </p>
+  <p><strong>Tip:</strong> The Fencer sequence below fits the <a href="/talents">Windrose Talent Builder</a> one-to-one—use it to compare against your current build without spending a respec.
+  </p>
+  <h2>Gear Overview: The Agility Arsenal
+  </h2>
+  <p>This build requires a massive shift in gear philosophy. We are abandoning Strength and Precision entirely. Both our melee and ranged weapons scale exclusively with Agility.
+  </p>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777446521/cms-uploads/cms-1777446521205-801913957.webp" alt="windrose-best-builds-saber-dragon-weapons" width="80%">
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-xj3egz">Gear Slot
+  </td>
+  <td data-row="row-xj3egz">Best in Slot (BiS) / Alternatives
+  </td>
+  <td data-row="row-xj3egz">Why It's Mandatory
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-gv9cl3">Melee Weapon
+  </td>
+  <td data-row="row-gv9cl3">Dueling Saber (High Risk/Reward) OR Razor (Safer)
+  </td>
+  <td data-row="row-gv9cl3">Fast 5-hit combos; innate +10% Crit Chance.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-pahouf">Ranged Weapon
+  </td>
+  <td data-row="row-pahouf">Dragon's Breath &gt; Reliable Blunderbuss
+  </td>
+  <td data-row="row-pahouf">Scales with Agility; massive point-blank burst damage to trigger passive reloads.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-2tdn09">Armor Set
+  </td>
+  <td data-row="row-2tdn09">Privateer (4x)
+  </td>
+  <td data-row="row-2tdn09">The 2-piece gives +10% Crit Chance. The 4-piece gives massive Crit Damage. Non-negotiable.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-ggha9c">Ring
+  </td>
+  <td data-row="row-ggha9c">Major Cutthroat Ring
+  </td>
+  <td data-row="row-ggha9c">Grants +30% Critical Damage.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-b0gxje">Necklace
+  </td>
+  <td data-row="row-b0gxje">Major Necklace Of Agility
+  </td>
+  <td data-row="row-b0gxje">Flat +15 Agility for pure scaling on both weapons.
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p>The Early Game Substitute: You can start this build relatively early in the Coastal Jungle just by obtaining the 2-piece Privateer set and a basic Razor saber. If you don't have Dragon's Breath (a late-game Cursed Swamp drop), the Reliable Blunderbuss works perfectly fine as a placeholder.
+  </p>
+  <h2>The Hard Math: Reaching 50.2% Crit Chance
+  </h2>
+  <p>We don't deal in generic terms like "high crit rate." Here is the exact mathematical breakdown of how you turn every second swing into a critical hit, alongside a staggering +90% Crit Damage modifier.
+  </p>
+  <ol>
+  <li>Base Weapon (Dueling Saber/Razor): 10%
+  </li>
+  <li>Privateer Set (2-Piece Bonus): 10%
+  </li>
+  <li>Mastery Stat (Boosted to 20 via Food): 9.2%
+  </li>
+  <li>Surgical Cuts Talent: 9%
+  </li>
+  <li>Perfect Counter Talent: 12% (Requires a Perfect Block)
+  </li>
+  </ol>
+  <p>Total Effective Crit Chance: 50.2%
+  </p>
+  <p>The Consumable Tax: Notice the Mastery stat? Do NOT hard-level Mastery. The Diminishing Returns (DR) curve heavily penalizes Mastery after 20 points. We leave our base Mastery at 0 and eat a Taco (+20 Mastery) to hit the sweet spot. Pair this with Gazpacho (+20 Agility) and the Elixir Of Concentration (+30% Critical Damage).
+  </p>
+  <h2>The Hybrid Playstyle: "If-Then" Execution
+  </h2>
+  <p>This build operates on a strict sequence. You are not a mindless hacker. You are a hybrid duelist.
+  </p>
+  <ol>
+  <li>The Opener Rule: If you initiate combat, then you MUST start by sprinting into point-blank range and firing your Blunderbuss into their face. This instantly chunks their health and starts the "passive reload" timer in the background while you draw your Saber.
+  </li>
+  <li>The Perfect Block Requirement: If you block an attack, then it MUST be a Perfect Block. A Perfect Block triggers Perfect Counter (+12% Crit) and Retaliation (+24% Damage).
+  </li>
+  <li>The Glass Cannon Penalty: If you miss a block and take actual damage, then you instantly lose your Deadly Finale buff, your Retaliation buff, AND your Executioner's Grace heal-over-time. Your DPS will crash. You must dodge unblockable/ranged attacks at all costs.
+  </li>
+  <li>The Finisher: If your passive reload clicks (you will hear a sound cue), then weave the Blunderbuss shot into the end of your 5-hit Saber combo for a massive burst execution.
+  </li>
+  </ol>
+  <h2>Stat Allocation &amp; Talent Path
+  </h2>
+  <p>Because we have no inherent tankiness and lose our only heal when damaged, we cannot go 0 Vitality like the pure Ranged build.
+  </p>
+  <ol>
+  <li>Agility: 15 (+20 from Gazpacho)
+  </li>
+  <li>Vitality: 20 (Necessary buffer for missed blocks).
+  </li>
+  <li>Endurance: 10 (The Saber has a long 5-hit combo; you need this stam to dodge afterward).
+  </li>
+  <li>Mastery: 0 (+20 from Taco)
+  </li>
+  </ol>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777446589/cms-uploads/cms-1777446589047-625009364.webp" alt="windrose-best-builds-saber-dragon-stats" width="80%">
+  </p>
+  <p>The Talent Sequence:
+  </p>
+  <ol>
+  <li>Surgical Cuts (3/3) -&gt; Mandatory raw crit increase.
+  </li>
+  <li>Perfect Counter (3/3) -&gt; Mandatory +12% crit upon perfect blocking.
+  </li>
+  <li>Deadly Finale (3/3) -&gt; Up to +25% ramping damage on consecutive hits.
+  </li>
+  <li>Quick Strikes (1/3)
+  </li>
+  <li>Deep Cuts (1/3)
+  </li>
+  <li>Executioner's Grace (1/3) -&gt; Your ONLY source of self-sustain (Heals over 20s on kill, lost on taking damage).
+  </li>
+  </ol>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777446607/cms-uploads/cms-1777446607308-232355277.webp" alt="windrose-best-builds-saber-dragon-talents" width="80%">
+  </p>
+  <h3>FAQ: Saber Crit Build Troubleshooting
+  </h3>
+  <p>Q: I have all the gear, but my damage drops off randomly during fights. Why?
+  </p>
+  <p> A: Read the fine print on your Talents. The core buffs of this build (Retaliation, Deadly Finale, Executioner's Grace) all share the same brutal penalty: "Lost on damage taken." If you are getting clipped by a stray pirate bullet or failing a Perfect Block, you are resetting your damage multipliers to zero.
+  </p>
+  <p>Q: Why use the Blunderbuss instead of a normal Pistol?
+  </p>
+  <p> A: Scaling and Combat Range. The Blunderbuss scales with Agility, perfectly matching your Saber. Pistols scale with Precision, which you have 0 points in. Furthermore, this is a melee-range build; the Blunderbuss acts as a devastating shotgun blast right before you start swinging, whereas a Pistol is meant for kiting.
+  </p>
+  <p>Q: Is the Dueling Saber really better than the Razor? The Razor seems safer.
+  </p>
+  <p> A: The Dueling Saber has a higher damage ceiling if you play perfectly, making it the BiS (Best in Slot) for veterans. However, the Razor is much more forgiving. If you are still learning enemy attack patterns and missing your Perfect Blocks frequently, stick with the Epic Razor. Only transition to the Dueling Saber when you are confident in your defensive timing.
+  </p>`,
+  },
+
+  {
+    id: 10,
+    title: "Windrose Best Talents & Stats Guide for Beginners",
+    description: "Hardcore breakdown of the windrose character build system. Learn how to allocate your max talent points, avoid splitting weapon stats, and why the Rapier double-dips the Precision stat. Complete windrose leveling guide for early game.",
+    tags: ["windrose Talents build"],
+    publishDate: "2026-04-29",
+    imageUrl: "https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777448065/cms-uploads/cms-1777448065751-665676947.webp",
+    imageAlt: "best-talents-and-stats-windrose-talents",
+    seo: {
+      title: "Windrose Talents Build & Stats Guide: Early Game Progression",
+      description: "Stop building weak characters. This hardcore Windrose progression guide explains the exact stats guide, weapon scaling, and the best survival talents to level up first. Free respec mechanics explained.",
+      keywords: "windrose Talents build, windrose stats guide, windrose progression guide"
+    },
+    addressBar: "windrose-best-talents-and-stats-guide",
+    detailsHtml: `
+  <p>Stop stressing over creating the "perfect" Windrose character build at level 5, and absolutely stop splitting your points between Strength and Agility. In Windrose, spreading your damage stats is a death sentence for your DPS. The most important mechanic you need to understand is that you can reset your stats and talents at ANY time for completely free. Treat your character UI as a built-in Windrose talent calculator. For early game progression, ignore the offensive talent trees entirely; dump your points into the left-side survival tree for the "Too Angry to Die" cheat-death mechanic, and allocate your stats to exclusively match your single primary weapon type.
+  </p>
+  <p><strong>Tip:</strong> Our <a href="/talents">Windrose Talent Builder</a> mirrors the in-game four branches (Fencer, Crusher, Marksman, Toughguy)—use it alongside this guide to click the same survival picks before you touch the respec screen.
+  </p>
+  <h2>Windrose Stats Guide: Never Split Your Damage
+  </h2>
+  <p>A major trap for new players looking up a windrose leveling guide is misunderstanding how the six core stats work. Three of them are strictly for damage scaling, and three are supportive utility. You must pick ONE damage stat and ignore the other two.
+  </p>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777448303/cms-uploads/cms-1777448303883-354825961.webp" alt="the Windrose Character Stat screen highlighting the 6 core attributes" width="80%">
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-ynq5gl">Stat Name
+  </td>
+  <td data-row="row-ynq5gl">Core Function / Scaling Math
+  </td>
+  <td data-row="row-ynq5gl">Tied Weapon Types
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-r245gk">Strength
+  </td>
+  <td data-row="row-r245gk">Scales Heavy Melee. No ranged options exist for this stat.
+  </td>
+  <td data-row="row-r245gk">Club, Halberd
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-gij4sw">Agility
+  </td>
+  <td data-row="row-gij4sw">Scales Fast/Sweeping combat &amp; AoE clearing.
+  </td>
+  <td data-row="row-gij4sw">Saber, Greatsword, Blunderbuss
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-o29w2p">Precision
+  </td>
+  <td data-row="row-o29w2p">Scales Technical &amp; Ranged combat. (Single-target focus).
+  </td>
+  <td data-row="row-o29w2p">Rapier, Pistol, Musket
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-buoyhf">Endurance
+  </td>
+  <td data-row="row-buoyhf">+5 Stamina per point. Essential for early game dodging/blocking.
+  </td>
+  <td data-row="row-buoyhf">Buffs 'Bonebreaker' (2H Club)
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-3tmf24">Vitality
+  </td>
+  <td data-row="row-3tmf24">+13 Maximum Health per point.
+  </td>
+  <td data-row="row-3tmf24">All Builds
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-kxv48f">Mastery
+  </td>
+  <td data-row="row-kxv48f">+0.5% Critical Hit Chance per point.
+  </td>
+  <td data-row="row-kxv48f">All Builds (Low priority early)
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p>The "Double-Dip" Pro Tip: If you are theorycrafting the best windrose character build, notice the anomaly in the Precision stat. If you use a Rapier, then your melee attacks scale with Precision. This is the only 1-Handed melee weapon that does this, allowing you to run a Rapier + Pistol loadout where BOTH weapons reach maximum damage by dumping points into a single stat (Precision).
+  </p>
+  <h2>Strength Build vs. Agility Build: Early Allocation
+  </h2>
+  <p>Because you can freely reset, your stat allocation should fluidly change based on the weapons you currently have equipped.
+  </p>
+  <p>The Early Game Stat Split Rule:
+  </p>
+  <ol>
+  <li>If you are playing a Windrose Strength Build (holding a Halberd), then put equal points into Endurance and Vitality to survive, and dump the rest into Strength.
+  </li>
+  <li>If you are playing a Windrose Agility Build (holding a Saber), then put equal points into Endurance and Vitality, and dump the rest into Agility.
+  </li>
+  </ol>
+  <p>Do NOT hard-level Mastery early on. 0.5% crit per point is a terrible return on investment when you have low base damage. Rely on gear (like the Privateer's set) for early crit.
+  </p>
+  <h2>The Reddit Meta: The Best Early Game Talents
+  </h2>
+  <p>If you search for windrose best talents reddit, the consensus among hardcore players is unanimous: early boss fights are entirely gated by Stamina management and not getting one-shot. You do not need +5% sword damage at level 10; you need to stay alive.
+  </p>
+  <p>If you want the smoothest progression, then prioritize the Left Talent Tree (Survival) in this exact sequence until you hit your max talent points for the early tier:
+  </p>
+  <ol>
+  <li>Marathon Runner: Grants +20/35/50 Stamina. Stamina dictates your ability to sprint, swing, and dodge. Max this first.
+  </li>
+  <li>Just a Flesh Wound: Grants 6%/9%/12% Melee Damage Resistance. Since ranged enemies are easily dodged early game, this raw melee mitigation is huge.
+  </li>
+  <li>Too Angry to Die: The absolute best 1-point wonder in the game. Upon taking a killing blow, you instantly revive at 30% health. (16-minute cooldown).
+  </li>
+  <li>Stout Frame: Grants +120/180/240 Health. At rank 3, this gives 240 HP, which is mathematically equivalent to wasting almost 20 points in Vitality. Take this to free up your stat points for pure damage.
+  </li>
+  </ol>
+  <p><img src="https://res.cloudinary.com/dnxfdv3fs/image/upload/v1777448352/cms-uploads/cms-1777448352903-916129428.webp" alt="best-talents-and-stats-windrose-talents-picks" width="80%">
+  </p>
+  <p>Once you secure these core survival nodes, you have built the ultimate safety net. From there, use the free respec system to tailor the rest of your points toward your specific weapon mastery.
+  </p>
+  <h3>FAQ: Progression &amp; Build Troubleshooting
+  </h3>
+  <p>Q: Does it cost gold or resources to use the Windrose talent calculator to reset my points?
+  </p>
+  <p> A: No. The respec system is 100% free and can be done at any time. Do not be afraid to test a Strength Halberd build for an hour, wipe your points, and swap to a Precision Rapier build if you find a better weapon.
+  </p>
+  <p>Q: Should I put points into Vitality if I have "Stout Frame" maxed out?
+  </p>
+  <p> A: In the early game, you still need a modest baseline of Vitality so you don't get one-shot by heavy boss attacks before your mitigation applies. However, your primary source of Health should come from Food Buffs and the Stout Frame talent, allowing you to heavily bias your points into your weapon stat (Str/Agi/Pre) and Endurance.
+  </p>
+  <p>Q: I have a Blunderbuss and a Rapier. How do I stat this?
+  </p>
+  <p> A: You don't. This is a mathematically broken loadout. The Blunderbuss requires Agility, and the Rapier requires Precision. If you split your points 50/50, both weapons will hit like wet noodles. Always pair weapons that share the same scaling stat (e.g., Saber + Blunderbuss = Pure Agility).
+  </p>`,
   }
 
 

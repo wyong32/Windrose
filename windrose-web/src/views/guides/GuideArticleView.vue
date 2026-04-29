@@ -4,9 +4,9 @@
       <div class="container">
         <nav class="page-breadcrumb" aria-label="Breadcrumb">
           <ol>
-            <li><RouterLink to="/">Home</RouterLink></li>
+            <li><a href="/">Home</a></li>
             <li class="page-breadcrumb__sep" aria-hidden="true">/</li>
-            <li><RouterLink to="/guides">Guides</RouterLink></li>
+            <li><a href="/guides">Guides</a></li>
             <li class="page-breadcrumb__sep" aria-hidden="true">/</li>
             <li><span aria-current="page">{{ article.title }}</span></li>
           </ol>
@@ -76,10 +76,10 @@
               <p class="aside-more__label">{{ asideMoreLabel }}</p>
               <ul class="aside-more__list">
                 <li v-for="l in asideItems" :key="l.to">
-                  <RouterLink :to="l.to">{{ l.label }}</RouterLink>
+                  <a :href="l.to">{{ l.label }}</a>
                 </li>
               </ul>
-              <RouterLink v-if="asideMoreShowGuidesLink" to="/guides" class="aside-more__all">All guides</RouterLink>
+              <a v-if="asideMoreShowGuidesLink" href="/guides" class="aside-more__all">All guides</a>
             </div>
           </div>
         </aside>
@@ -91,7 +91,7 @@
     <div class="container guide-detail__missing-inner">
       <h1>Guide not found</h1>
       <p>This slug is not in the local guides list yet.</p>
-      <RouterLink to="/guides">Back to guides</RouterLink>
+      <a href="/guides">Back to guides</a>
     </div>
   </article>
 </template>

@@ -1,0 +1,3069 @@
+{
+  "wr-439961-1-0": {
+    "runtimeName": "Tortuga",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-1-0-quest-DA_QP_MainQuest_Seafarer_Core": {
+    "runtimeName": "How My Sea Adventure Began",
+    "explorationXp": null,
+    "questExperience": 400,
+    "questDescription": "I got myself a pretty good ship. But Caribbean waters are too rough to sail without a few good cannons.",
+    "rewards": []
+  },
+  "wr-439961-2-0": {
+    "runtimeName": "Ancient Sanctuary",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-4-0": {
+    "runtimeName": "Ancient Temple",
+    "explorationXp": 100,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-4-1": {
+    "runtimeName": "Trial Circle Ruins",
+    "explorationXp": 100,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-4-2": {
+    "runtimeName": "Trial Circle Ruins",
+    "explorationXp": 100,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-4-3": {
+    "runtimeName": "Ancient Farm",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-5-0": {
+    "runtimeName": "Blackbeard Crew’s Sixth Map",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-7-0": {
+    "runtimeName": "People of Tortuga Main base",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-7-0-quest-DA_QP_MainQuest_Seafarer_Core": {
+    "runtimeName": "How My Sea Adventure Began",
+    "explorationXp": null,
+    "questExperience": 400,
+    "questDescription": "I got myself a pretty good ship. But Caribbean waters are too rough to sail without a few good cannons.",
+    "rewards": []
+  },
+  "wr-439961-10-0": {
+    "runtimeName": "Start Location",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-10-1": {
+    "runtimeName": "Copper Deposit",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-10-1-quest-DA_QP_MainQuest_Islander_Core": {
+    "runtimeName": "How My Shore Adventure Began",
+    "explorationXp": null,
+    "questExperience": 450,
+    "questDescription": "After the pirate attack, the sea washed me ashore on a deserted island. If I want to stay alive, I’ll have to set up camp.",
+    "rewards": []
+  },
+  "wr-439961-10-2": {
+    "runtimeName": "traveler's Camp",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-10-3": {
+    "runtimeName": "Ancient Ruins",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-10-4": {
+    "runtimeName": "Ancient Ruins",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-10-5": {
+    "runtimeName": "Pirate Remains",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-11-0": {
+    "runtimeName": "Jungle Cave",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-11-1": {
+    "runtimeName": "Copper Deposit",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-11-2": {
+    "runtimeName": "Destroyed Buccaneer Fort",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-11-2-quest-DA_QP_SideQuest_HuntingForAHunter_Core": {
+    "runtimeName": "Glorious Hunters",
+    "explorationXp": null,
+    "questExperience": 250,
+    "questDescription": "I came across an abandoned Buccaneers’ camp. Their notes suggest pirates attacked, forcing them to defend themselves and hide in the jungle.",
+    "rewards": [
+      {
+        "label": "Buccaneer’s Friend",
+        "quantity": 1,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_WeaponRange_Musket_Sniper.webp",
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-range-weapon-musket-sniper-base"
+      },
+      {
+        "label": "Letter of Favor",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/images/wiki/misc/did-reputation-faction-sign-01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-reputation-faction-sign-01"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Buccaneer’s Friend",
+        "quantity": 1,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_WeaponRange_Musket_Sniper.webp",
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-range-weapon-musket-sniper-base"
+      },
+      {
+        "label": "Letter of Favor",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/images/wiki/misc/did-reputation-faction-sign-01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-reputation-faction-sign-01"
+      }
+    ]
+  },
+  "wr-439961-11-3": {
+    "runtimeName": "Abandoned Buccaneer Camp",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-11-3-quest-DA_QP_SideQuest_HuntingForAHunter_Core": {
+    "runtimeName": "Glorious Hunters",
+    "explorationXp": null,
+    "questExperience": 250,
+    "questDescription": "I came across an abandoned Buccaneers’ camp. Their notes suggest pirates attacked, forcing them to defend themselves and hide in the jungle.",
+    "rewards": [
+      {
+        "label": "Buccaneer’s Friend",
+        "quantity": 1,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_WeaponRange_Musket_Sniper.webp",
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-range-weapon-musket-sniper-base"
+      },
+      {
+        "label": "Letter of Favor",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/images/wiki/misc/did-reputation-faction-sign-01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-reputation-faction-sign-01"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Buccaneer’s Friend",
+        "quantity": 1,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_WeaponRange_Musket_Sniper.webp",
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-range-weapon-musket-sniper-base"
+      },
+      {
+        "label": "Letter of Favor",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/images/wiki/misc/did-reputation-faction-sign-01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-reputation-faction-sign-01"
+      }
+    ]
+  },
+  "wr-439961-11-4": {
+    "runtimeName": "Abandoned Buccaneer Warehouse",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-11-4-quest-DA_QP_SideQuest_HuntingForAHunter_Core": {
+    "runtimeName": "Glorious Hunters",
+    "explorationXp": null,
+    "questExperience": 250,
+    "questDescription": "I came across an abandoned Buccaneers’ camp. Their notes suggest pirates attacked, forcing them to defend themselves and hide in the jungle.",
+    "rewards": [
+      {
+        "label": "Buccaneer’s Friend",
+        "quantity": 1,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_WeaponRange_Musket_Sniper.webp",
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-range-weapon-musket-sniper-base"
+      },
+      {
+        "label": "Letter of Favor",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/images/wiki/misc/did-reputation-faction-sign-01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-reputation-faction-sign-01"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Buccaneer’s Friend",
+        "quantity": 1,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_WeaponRange_Musket_Sniper.webp",
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-range-weapon-musket-sniper-base"
+      },
+      {
+        "label": "Letter of Favor",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/images/wiki/misc/did-reputation-faction-sign-01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-reputation-faction-sign-01"
+      }
+    ]
+  },
+  "wr-439961-11-5": {
+    "runtimeName": "Blackbeard Pirate Camp",
+    "explorationXp": 25,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-11-5-quest-DA_QP_MainQuest_RescueOfProsoners_Core": {
+    "runtimeName": "Rescuing the Crew",
+    "explorationXp": null,
+    "questExperience": 150,
+    "questDescription": "The pirates are holding plenty of sailors captive. If we free them, they might help us get off this island.",
+    "rewards": []
+  },
+  "wr-439961-11-6": {
+    "runtimeName": "Shipwreck",
+    "explorationXp": 25,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-11-6-quest-DA_QP_MainQuest_INeedBiggerBoat_Core": {
+    "runtimeName": "I Need a Bigger Boat",
+    "explorationXp": null,
+    "questExperience": 250,
+    "questDescription": "Even if this island looks like a little paradise, I won’t last long here. I need to get back to civilization.",
+    "rewards": []
+  },
+  "wr-439961-11-7": {
+    "runtimeName": "Shipwreck",
+    "explorationXp": 25,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": [],
+    "poiRewards": [
+      {
+        "label": "Decoration: Pier Decorations",
+        "rarity": "legendary",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T01_DecorationRecipe_01.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-recipe-deco-pier"
+      },
+      {
+        "label": "Guinea",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T02_CoinGuinea_01.webp?v=1776349577",
+        "quantity": 5,
+        "wikiCategory": "resources",
+        "wikiItemId": "guinea"
+      },
+      {
+        "label": "Homemade Gunpowder",
+        "rarity": "uncommon",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Craft_Ammo_Powder_T2.webp?v=1776349577",
+        "quantity": 10,
+        "wikiCategory": "weapons",
+        "wikiItemId": "aid-ammo-gunpowder-homemade-t02"
+      },
+      {
+        "label": "Piastre",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T02_CoinPiastre_01.webp?v=1776349577",
+        "quantity": 40,
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      },
+      {
+        "label": "Rum Bottle",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_TradeCraft_Alcohol_Rum.webp?v=1776349577",
+        "quantity": 2,
+        "wikiCategory": "consumables",
+        "wikiItemId": "cid-food-rum-bottle-t03"
+      },
+      {
+        "label": "Silver Ingot",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Craft_T02_SilverIngot_01.webp?v=1776349577",
+        "quantity": 5,
+        "wikiCategory": "resources",
+        "wikiItemId": "silverIngot"
+      }
+    ],
+    "chestCount": 4
+  },
+  "wr-439961-11-7-quest-DA_QP_MainQuest_INeedBiggerBoat_Core": {
+    "runtimeName": "I Need a Bigger Boat",
+    "explorationXp": null,
+    "questExperience": 250,
+    "questDescription": "Even if this island looks like a little paradise, I won’t last long here. I need to get back to civilization.",
+    "rewards": []
+  },
+  "wr-439961-11-8": {
+    "runtimeName": "POI_SeaAdventure_ShipBattle_KetchForDestroy",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-12-0": {
+    "runtimeName": "Copper Deposit",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-12-1": {
+    "runtimeName": "Trial Circle Ruins",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-12-2": {
+    "runtimeName": "Blackbeard Pirate Camp",
+    "explorationXp": 25,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-12-2-quest-DA_QP_MainQuest_RescueOfProsoners_Core": {
+    "runtimeName": "Rescuing the Crew",
+    "explorationXp": null,
+    "questExperience": 150,
+    "questDescription": "The pirates are holding plenty of sailors captive. If we free them, they might help us get off this island.",
+    "rewards": []
+  },
+  "wr-439961-12-3": {
+    "runtimeName": "Blackbeard Pirate Camp",
+    "explorationXp": 25,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-12-3-quest-DA_QP_MainQuest_RescueOfProsoners_Core": {
+    "runtimeName": "Rescuing the Crew",
+    "explorationXp": null,
+    "questExperience": 150,
+    "questDescription": "The pirates are holding plenty of sailors captive. If we free them, they might help us get off this island.",
+    "rewards": []
+  },
+  "wr-439961-12-4": {
+    "runtimeName": "Blackbeard Pirate Camp",
+    "explorationXp": 25,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-12-4-quest-DA_QP_MainQuest_RescueOfProsoners_Core": {
+    "runtimeName": "Rescuing the Crew",
+    "explorationXp": null,
+    "questExperience": 150,
+    "questDescription": "The pirates are holding plenty of sailors captive. If we free them, they might help us get off this island.",
+    "rewards": []
+  },
+  "wr-439961-12-5": {
+    "runtimeName": "Smuggler's Cache",
+    "explorationXp": 25,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-12-6": {
+    "runtimeName": "POI_SeaAdventure_ShipBattle_BB_01",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-13-0": {
+    "runtimeName": "Copper Deposit",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": [],
+    "poiRewards": [
+      {
+        "label": "Decoration: Luxurious Bed",
+        "rarity": "legendary",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T01_DecorationRecipe_01.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-recipe-utility-bed-t04-cool"
+      },
+      {
+        "label": "Devil Always Gets His Due",
+        "rarity": "legendary",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_Misc_BritishJournal_T3.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-cj-exquemelin-note-5-t02"
+      },
+      {
+        "label": "Great Healing Potion",
+        "rarity": "epic",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Consumables_T03_HealingElixir_01.webp?v=1776349577",
+        "quantity": 10,
+        "wikiCategory": "consumables",
+        "wikiItemId": "cid-alchemy-potion-great-healing-t01"
+      },
+      {
+        "label": "Homeward Journey",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Consumables_T1_Recall_01.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "consumables",
+        "wikiItemId": "cid-alchemy-potion-recall-t01"
+      }
+    ],
+    "chestCount": 2
+  },
+  "wr-439961-13-1": {
+    "runtimeName": "Blackbeard Pirate Camp",
+    "explorationXp": 100,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": [],
+    "poiRewards": [
+      {
+        "label": "Decoration: Luxurious Bed",
+        "rarity": "legendary",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T01_DecorationRecipe_01.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-recipe-utility-bed-t04-cool"
+      },
+      {
+        "label": "Devil Always Gets His Due",
+        "rarity": "legendary",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_Misc_BritishJournal_T3.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-cj-exquemelin-note-5-t02"
+      },
+      {
+        "label": "Great Healing Potion",
+        "rarity": "epic",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Consumables_T03_HealingElixir_01.webp?v=1776349577",
+        "quantity": 10,
+        "wikiCategory": "consumables",
+        "wikiItemId": "cid-alchemy-potion-great-healing-t01"
+      },
+      {
+        "label": "Homeward Journey",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Consumables_T1_Recall_01.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "consumables",
+        "wikiItemId": "cid-alchemy-potion-recall-t01"
+      }
+    ],
+    "chestCount": 2
+  },
+  "wr-439961-13-1-quest-DA_QP_MainQuest_Revenge_Core": {
+    "runtimeName": "Revenge Is Best Served Cold",
+    "explorationXp": null,
+    "questExperience": 250,
+    "questDescription": "Thomas Richards killed my crew, sank my ship, and threw me into the sea. Time to pay that bastard a visit and settle the score. While I’m at it, I’ll take the artifact back—if I’m lucky, it’ll lift this blight from my body.",
+    "rewards": []
+  },
+  "wr-439961-13-1-quest-DA_QP_SideQuest_AboutDoctorsAndSecretsQuest_Core": {
+    "runtimeName": "The Bitter Pill",
+    "explorationXp": null,
+    "questExperience": 500,
+    "questDescription": "Someone tipped the pirates off about my ship’s route. Doctor Galen is convinced that the traitor is among the Governor’s inner circle.",
+    "rewards": [
+      {
+        "label": "Piastre",
+        "quantity": 300,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Loot_T02_CoinPiastre_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      },
+      {
+        "label": "Guinea",
+        "quantity": 15,
+        "rarity": "rare",
+        "image": "/images/wiki/resources/guinea.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "guinea"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Piastre",
+        "quantity": 300,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Loot_T02_CoinPiastre_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      },
+      {
+        "label": "Guinea",
+        "quantity": 15,
+        "rarity": "rare",
+        "image": "/images/wiki/resources/guinea.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "guinea"
+      }
+    ]
+  },
+  "wr-439961-13-2": {
+    "runtimeName": "Ancient Ruins",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": [],
+    "poiRewards": [
+      {
+        "label": "Decoration: Pier Decorations",
+        "rarity": "legendary",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T01_DecorationRecipe_01.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-recipe-deco-pier"
+      },
+      {
+        "label": "Guinea",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T02_CoinGuinea_01.webp?v=1776349577",
+        "quantity": 5,
+        "wikiCategory": "resources",
+        "wikiItemId": "guinea"
+      },
+      {
+        "label": "Homemade Gunpowder",
+        "rarity": "uncommon",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Craft_Ammo_Powder_T2.webp?v=1776349577",
+        "quantity": 10,
+        "wikiCategory": "weapons",
+        "wikiItemId": "aid-ammo-gunpowder-homemade-t02"
+      },
+      {
+        "label": "Piastre",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T02_CoinPiastre_01.webp?v=1776349577",
+        "quantity": 40,
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      },
+      {
+        "label": "Rum Bottle",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_TradeCraft_Alcohol_Rum.webp?v=1776349577",
+        "quantity": 2,
+        "wikiCategory": "consumables",
+        "wikiItemId": "cid-food-rum-bottle-t03"
+      },
+      {
+        "label": "Silver Ingot",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Craft_T02_SilverIngot_01.webp?v=1776349577",
+        "quantity": 5,
+        "wikiCategory": "resources",
+        "wikiItemId": "silverIngot"
+      }
+    ],
+    "chestCount": 4
+  },
+  "wr-439961-13-3": {
+    "runtimeName": "Ancient Ruins",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": [],
+    "poiRewards": [
+      {
+        "label": "Decoration: Luxurious Bed",
+        "rarity": "legendary",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T01_DecorationRecipe_01.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-recipe-utility-bed-t04-cool"
+      },
+      {
+        "label": "Devil Always Gets His Due",
+        "rarity": "legendary",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_Misc_BritishJournal_T3.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-cj-exquemelin-note-5-t02"
+      },
+      {
+        "label": "Great Healing Potion",
+        "rarity": "epic",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Consumables_T03_HealingElixir_01.webp?v=1776349577",
+        "quantity": 10,
+        "wikiCategory": "consumables",
+        "wikiItemId": "cid-alchemy-potion-great-healing-t01"
+      },
+      {
+        "label": "Homeward Journey",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Consumables_T1_Recall_01.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "consumables",
+        "wikiItemId": "cid-alchemy-potion-recall-t01"
+      }
+    ],
+    "chestCount": 2
+  },
+  "wr-439961-13-4": {
+    "runtimeName": "Smuggler's Cache",
+    "explorationXp": 25,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": [],
+    "poiRewards": [
+      {
+        "label": "Decoration: Pier Decorations",
+        "rarity": "legendary",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T01_DecorationRecipe_01.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-recipe-deco-pier"
+      },
+      {
+        "label": "Guinea",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T02_CoinGuinea_01.webp?v=1776349577",
+        "quantity": 5,
+        "wikiCategory": "resources",
+        "wikiItemId": "guinea"
+      },
+      {
+        "label": "Homemade Gunpowder",
+        "rarity": "uncommon",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Craft_Ammo_Powder_T2.webp?v=1776349577",
+        "quantity": 10,
+        "wikiCategory": "weapons",
+        "wikiItemId": "aid-ammo-gunpowder-homemade-t02"
+      },
+      {
+        "label": "Piastre",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T02_CoinPiastre_01.webp?v=1776349577",
+        "quantity": 40,
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      },
+      {
+        "label": "Rum Bottle",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_TradeCraft_Alcohol_Rum.webp?v=1776349577",
+        "quantity": 2,
+        "wikiCategory": "consumables",
+        "wikiItemId": "cid-food-rum-bottle-t03"
+      },
+      {
+        "label": "Silver Ingot",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Craft_T02_SilverIngot_01.webp?v=1776349577",
+        "quantity": 5,
+        "wikiCategory": "resources",
+        "wikiItemId": "silverIngot"
+      }
+    ],
+    "chestCount": 4
+  },
+  "wr-439961-13-5": {
+    "runtimeName": "Blackbeard Pirate Camp",
+    "explorationXp": 25,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": [],
+    "poiRewards": [
+      {
+        "label": "Decoration: Pier Decorations",
+        "rarity": "legendary",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T01_DecorationRecipe_01.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-recipe-deco-pier"
+      },
+      {
+        "label": "Guinea",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T02_CoinGuinea_01.webp?v=1776349577",
+        "quantity": 5,
+        "wikiCategory": "resources",
+        "wikiItemId": "guinea"
+      },
+      {
+        "label": "Homemade Gunpowder",
+        "rarity": "uncommon",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Craft_Ammo_Powder_T2.webp?v=1776349577",
+        "quantity": 10,
+        "wikiCategory": "weapons",
+        "wikiItemId": "aid-ammo-gunpowder-homemade-t02"
+      },
+      {
+        "label": "Piastre",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T02_CoinPiastre_01.webp?v=1776349577",
+        "quantity": 40,
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      },
+      {
+        "label": "Rum Bottle",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_TradeCraft_Alcohol_Rum.webp?v=1776349577",
+        "quantity": 2,
+        "wikiCategory": "consumables",
+        "wikiItemId": "cid-food-rum-bottle-t03"
+      },
+      {
+        "label": "Silver Ingot",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Craft_T02_SilverIngot_01.webp?v=1776349577",
+        "quantity": 5,
+        "wikiCategory": "resources",
+        "wikiItemId": "silverIngot"
+      }
+    ],
+    "chestCount": 4
+  },
+  "wr-439961-14-0": {
+    "runtimeName": "Copper Deposit",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-14-1": {
+    "runtimeName": "Blackbeard Outpost in Ancient Ruins",
+    "explorationXp": 100,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-14-1-quest-DA_QP_MainQuest_Revenge_Core": {
+    "runtimeName": "Revenge Is Best Served Cold",
+    "explorationXp": null,
+    "questExperience": 250,
+    "questDescription": "Thomas Richards killed my crew, sank my ship, and threw me into the sea. Time to pay that bastard a visit and settle the score. While I’m at it, I’ll take the artifact back—if I’m lucky, it’ll lift this blight from my body.",
+    "rewards": []
+  },
+  "wr-439961-14-2": {
+    "runtimeName": "traveler's Camp",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-14-3": {
+    "runtimeName": "POI_SeaAdventure_ShipBattle_BB_07",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-15-0": {
+    "runtimeName": "Ancient Ruins",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-15-1": {
+    "runtimeName": "Blackbeard Pirate Camp",
+    "explorationXp": 25,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-15-2": {
+    "runtimeName": "Blackbeard Camp Near Shipwreck",
+    "explorationXp": 100,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-15-2-quest-DA_QP_MainQuest_Revenge_Core": {
+    "runtimeName": "Revenge Is Best Served Cold",
+    "explorationXp": null,
+    "questExperience": 250,
+    "questDescription": "Thomas Richards killed my crew, sank my ship, and threw me into the sea. Time to pay that bastard a visit and settle the score. While I’m at it, I’ll take the artifact back—if I’m lucky, it’ll lift this blight from my body.",
+    "rewards": []
+  },
+  "wr-439961-15-3": {
+    "runtimeName": "POI_SeaAdventure_ShipBattle_BB_03",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-16-0": {
+    "runtimeName": "Rogue Buccaneers Main base",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-16-0-quest-DA_QP_MainQuest_Seafarer_Core": {
+    "runtimeName": "How My Sea Adventure Began",
+    "explorationXp": null,
+    "questExperience": 400,
+    "questDescription": "I got myself a pretty good ship. But Caribbean waters are too rough to sail without a few good cannons.",
+    "rewards": []
+  },
+  "wr-439961-19-0": {
+    "runtimeName": "Undead-Infested Shipwrecks",
+    "explorationXp": 100,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-19-1": {
+    "runtimeName": "Copper Deposit",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-19-2": {
+    "runtimeName": "Trial Circle Ruins",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-19-3": {
+    "runtimeName": "Ancient Grave",
+    "explorationXp": 25,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-19-4": {
+    "runtimeName": "Ancient Ruins",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-20-0": {
+    "runtimeName": "traveler's Camp",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-20-1": {
+    "runtimeName": "POI_SeaAdventure_Ship_PrancingPony",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-20-2": {
+    "runtimeName": "Ancient Debris Site",
+    "explorationXp": 30,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-20-3": {
+    "runtimeName": "Ruin with a Flowerbed",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-20-4": {
+    "runtimeName": "Ruin with a Flowerbed",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-20-5": {
+    "runtimeName": "Ruin with a Flowerbed",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-20-6": {
+    "runtimeName": "Priestess's Chambers",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-20-6-quest-DA_QP_MainQuest_ForgottenRelic_Core": {
+    "runtimeName": "Forgotten Relics",
+    "explorationXp": null,
+    "questExperience": 600,
+    "questDescription": "It turns out the artifact is one of Charon’s Obols—relics of an ancient being who ferries souls to the realm of the dead. The traveler I rescued warned that this relic will soon turn me into one of the undead. To avoid such a grim fate, I’ll have to find the remaining Obols.",
+    "rewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_02.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t03"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_02.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t03"
+      }
+    ]
+  },
+  "wr-439961-20-7": {
+    "runtimeName": "Sacrificial Altar",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-20-7-quest-DA_QP_SideQuest_JokesOfTheGods_Core": {
+    "runtimeName": "Jokes of the Gods",
+    "explorationXp": null,
+    "questExperience": 400,
+    "questDescription": "At the centre of the flooded platform stands an ancient stone altar. Carved into it is the beginning of a tale about the Itzeltek's priest and his daughter.",
+    "rewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 5,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      },
+      {
+        "label": "Gold Ingot",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_GoldIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "goldIngot"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 5,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      },
+      {
+        "label": "Gold Ingot",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_GoldIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "goldIngot"
+      }
+    ]
+  },
+  "wr-439961-20-8": {
+    "runtimeName": "Sacrificial Altar",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-20-8-quest-DA_QP_SideQuest_JokesOfTheGods_Core": {
+    "runtimeName": "Jokes of the Gods",
+    "explorationXp": null,
+    "questExperience": 400,
+    "questDescription": "At the centre of the flooded platform stands an ancient stone altar. Carved into it is the beginning of a tale about the Itzeltek's priest and his daughter.",
+    "rewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 5,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      },
+      {
+        "label": "Gold Ingot",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_GoldIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "goldIngot"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 5,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      },
+      {
+        "label": "Gold Ingot",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_GoldIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "goldIngot"
+      }
+    ]
+  },
+  "wr-439961-20-9": {
+    "runtimeName": "Sacrificial Altar",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-20-9-quest-DA_QP_SideQuest_JokesOfTheGods_Core": {
+    "runtimeName": "Jokes of the Gods",
+    "explorationXp": null,
+    "questExperience": 400,
+    "questDescription": "At the centre of the flooded platform stands an ancient stone altar. Carved into it is the beginning of a tale about the Itzeltek's priest and his daughter.",
+    "rewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 5,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      },
+      {
+        "label": "Gold Ingot",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_GoldIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "goldIngot"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 5,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      },
+      {
+        "label": "Gold Ingot",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_GoldIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "goldIngot"
+      }
+    ]
+  },
+  "wr-439961-21-0": {
+    "runtimeName": "traveler's Camp",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-21-1": {
+    "runtimeName": "Ancient Ruins",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-21-1-quest-DA_QP_MainQuest_ForgottenRelic_Core": {
+    "runtimeName": "Forgotten Relics",
+    "explorationXp": null,
+    "questExperience": 600,
+    "questDescription": "It turns out the artifact is one of Charon’s Obols—relics of an ancient being who ferries souls to the realm of the dead. The traveler I rescued warned that this relic will soon turn me into one of the undead. To avoid such a grim fate, I’ll have to find the remaining Obols.",
+    "rewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_02.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t03"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_02.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t03"
+      }
+    ]
+  },
+  "wr-439961-21-2": {
+    "runtimeName": "Ancient Ruins",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-21-2-quest-DA_QP_MainQuest_ForgottenRelic_Core": {
+    "runtimeName": "Forgotten Relics",
+    "explorationXp": null,
+    "questExperience": 600,
+    "questDescription": "It turns out the artifact is one of Charon’s Obols—relics of an ancient being who ferries souls to the realm of the dead. The traveler I rescued warned that this relic will soon turn me into one of the undead. To avoid such a grim fate, I’ll have to find the remaining Obols.",
+    "rewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_02.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t03"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_02.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t03"
+      }
+    ]
+  },
+  "wr-439961-21-3": {
+    "runtimeName": "Ancient Debris Site",
+    "explorationXp": 30,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-21-4": {
+    "runtimeName": "Ancient Debris Site",
+    "explorationXp": 30,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-21-5": {
+    "runtimeName": "Tainted Ruins",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-21-5-quest-DA_QP_MainQuest_ForgottenRelic_Core": {
+    "runtimeName": "Forgotten Relics",
+    "explorationXp": null,
+    "questExperience": 600,
+    "questDescription": "It turns out the artifact is one of Charon’s Obols—relics of an ancient being who ferries souls to the realm of the dead. The traveler I rescued warned that this relic will soon turn me into one of the undead. To avoid such a grim fate, I’ll have to find the remaining Obols.",
+    "rewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_02.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t03"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_02.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t03"
+      }
+    ]
+  },
+  "wr-439961-21-6": {
+    "runtimeName": "Tainted Ruins",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-21-6-quest-DA_QP_MainQuest_ForgottenRelic_Core": {
+    "runtimeName": "Forgotten Relics",
+    "explorationXp": null,
+    "questExperience": 600,
+    "questDescription": "It turns out the artifact is one of Charon’s Obols—relics of an ancient being who ferries souls to the realm of the dead. The traveler I rescued warned that this relic will soon turn me into one of the undead. To avoid such a grim fate, I’ll have to find the remaining Obols.",
+    "rewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_02.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t03"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_02.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t03"
+      }
+    ]
+  },
+  "wr-439961-24-0": {
+    "runtimeName": "Copper Deposit",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-24-1": {
+    "runtimeName": "Inhabited Ruin",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-24-1-quest-DA_QP_SideQuest_FearHasBigEyes_Core": {
+    "runtimeName": "Eyes Wide with Fear",
+    "explorationXp": null,
+    "questExperience": 150,
+    "questDescription": "I came across pages from the journal of another man who, like me, was shipwrecked and struggled to survive.",
+    "rewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 1,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      },
+      {
+        "label": "Guinea",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/images/wiki/resources/guinea.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "guinea"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 1,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      },
+      {
+        "label": "Guinea",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/images/wiki/resources/guinea.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "guinea"
+      }
+    ]
+  },
+  "wr-439961-24-2": {
+    "runtimeName": "Old Cabin",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-24-2-quest-DA_QP_SideQuest_FearHasBigEyes_Core": {
+    "runtimeName": "Eyes Wide with Fear",
+    "explorationXp": null,
+    "questExperience": 150,
+    "questDescription": "I came across pages from the journal of another man who, like me, was shipwrecked and struggled to survive.",
+    "rewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 1,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      },
+      {
+        "label": "Guinea",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/images/wiki/resources/guinea.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "guinea"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 1,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      },
+      {
+        "label": "Guinea",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/images/wiki/resources/guinea.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "guinea"
+      }
+    ]
+  },
+  "wr-439961-24-3": {
+    "runtimeName": "Shipwreck Site",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-24-3-quest-DA_QP_SideQuest_FearHasBigEyes_Core": {
+    "runtimeName": "Eyes Wide with Fear",
+    "explorationXp": null,
+    "questExperience": 150,
+    "questDescription": "I came across pages from the journal of another man who, like me, was shipwrecked and struggled to survive.",
+    "rewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 1,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      },
+      {
+        "label": "Guinea",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/images/wiki/resources/guinea.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "guinea"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 1,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      },
+      {
+        "label": "Guinea",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/images/wiki/resources/guinea.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "guinea"
+      }
+    ]
+  },
+  "wr-439961-25-0": {
+    "runtimeName": "Ancient Altar",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-25-1": {
+    "runtimeName": "Ancient Altar",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-25-2": {
+    "runtimeName": "Ancient Altar",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-25-3": {
+    "runtimeName": "Ancient Altar",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-25-4": {
+    "runtimeName": "Ancient Altar",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-25-5": {
+    "runtimeName": "Ancient Debris Site",
+    "explorationXp": 30,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-25-6": {
+    "runtimeName": "Crypt",
+    "explorationXp": 100,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-26-0": {
+    "runtimeName": "Frescoed Ruins",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-26-0-quest-DA_QP_MainQuest_ForgottenRelic_Core": {
+    "runtimeName": "Forgotten Relics",
+    "explorationXp": null,
+    "questExperience": 600,
+    "questDescription": "It turns out the artifact is one of Charon’s Obols—relics of an ancient being who ferries souls to the realm of the dead. The traveler I rescued warned that this relic will soon turn me into one of the undead. To avoid such a grim fate, I’ll have to find the remaining Obols.",
+    "rewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_02.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t03"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_02.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t03"
+      }
+    ]
+  },
+  "wr-439961-26-1": {
+    "runtimeName": "Frescoed Ruins",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-26-1-quest-DA_QP_MainQuest_ForgottenRelic_Core": {
+    "runtimeName": "Forgotten Relics",
+    "explorationXp": null,
+    "questExperience": 600,
+    "questDescription": "It turns out the artifact is one of Charon’s Obols—relics of an ancient being who ferries souls to the realm of the dead. The traveler I rescued warned that this relic will soon turn me into one of the undead. To avoid such a grim fate, I’ll have to find the remaining Obols.",
+    "rewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_02.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t03"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_02.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t03"
+      }
+    ]
+  },
+  "wr-439961-26-2": {
+    "runtimeName": "Frescoed Ruins",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-26-2-quest-DA_QP_MainQuest_ForgottenRelic_Core": {
+    "runtimeName": "Forgotten Relics",
+    "explorationXp": null,
+    "questExperience": 600,
+    "questDescription": "It turns out the artifact is one of Charon’s Obols—relics of an ancient being who ferries souls to the realm of the dead. The traveler I rescued warned that this relic will soon turn me into one of the undead. To avoid such a grim fate, I’ll have to find the remaining Obols.",
+    "rewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_02.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t03"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_02.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t03"
+      }
+    ]
+  },
+  "wr-439961-26-3": {
+    "runtimeName": "Ruin with a Flowerbed",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-26-4": {
+    "runtimeName": "Stargazer tower",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-26-4-quest-DA_QP_SideQuest_FaitOfTheProphet_Core": {
+    "runtimeName": "Fate of the Prophets",
+    "explorationXp": null,
+    "questExperience": 300,
+    "questDescription": "The Swamp Ruins hide countless secrets and treasures left behind by an ancient people. I can’t help but wonder what stories these walls hold.",
+    "rewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      }
+    ]
+  },
+  "wr-439961-26-5": {
+    "runtimeName": "Stargazer tower",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-26-5-quest-DA_QP_SideQuest_FaitOfTheProphet_Core": {
+    "runtimeName": "Fate of the Prophets",
+    "explorationXp": null,
+    "questExperience": 300,
+    "questDescription": "The Swamp Ruins hide countless secrets and treasures left behind by an ancient people. I can’t help but wonder what stories these walls hold.",
+    "rewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      }
+    ]
+  },
+  "wr-439961-26-6": {
+    "runtimeName": "Stargazer tower",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-26-6-quest-DA_QP_SideQuest_FaitOfTheProphet_Core": {
+    "runtimeName": "Fate of the Prophets",
+    "explorationXp": null,
+    "questExperience": 300,
+    "questDescription": "The Swamp Ruins hide countless secrets and treasures left behind by an ancient people. I can’t help but wonder what stories these walls hold.",
+    "rewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Tumbaga Ingot",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Craft_T03_TumbagoIngot_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "did-resource-tumbago-ingot-t03"
+      }
+    ]
+  },
+  "wr-439961-27-0": {
+    "runtimeName": "POI_SeaAdventure_ShipBattle_Bonnet",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-29-0": {
+    "runtimeName": "Very Old Shipwreck",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-29-0-quest-DA_QP_SideQuest_SecretOfTheExpedition_Core": {
+    "runtimeName": "Mystery of the Expedition",
+    "explorationXp": null,
+    "questExperience": 400,
+    "questDescription": "As if the marks on my body weren’t enough, now I seem to be seeing ghosts talking about some kind of Spanish expedition.",
+    "rewards": []
+  },
+  "wr-439961-30-0": {
+    "runtimeName": "Blackbeard Ruins Excavation Site",
+    "explorationXp": 100,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-30-1": {
+    "runtimeName": "Ancient Farm",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-30-1-quest-DA_QP_SideQuest_SacrificialLamb_Core": {
+    "runtimeName": "Sacrificial Lamb",
+    "explorationXp": null,
+    "questExperience": 350,
+    "questDescription": "Somebody tied a man to the ship’s wheel and left him to die a slow, agonizing death…",
+    "rewards": [
+      {
+        "label": "Piastre",
+        "quantity": 200,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Loot_T02_CoinPiastre_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Piastre",
+        "quantity": 200,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Loot_T02_CoinPiastre_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      }
+    ]
+  },
+  "wr-439961-30-2": {
+    "runtimeName": "Ransacked Blackbeard Pirate Camp",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-30-3": {
+    "runtimeName": "Iron Deposit",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-30-4": {
+    "runtimeName": "Small Pirate Camp",
+    "explorationXp": 25,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-30-4-quest-DA_QP_MainQuest_LostCargo_Core": {
+    "runtimeName": "Needle in a Haystack",
+    "explorationXp": null,
+    "questExperience": 550,
+    "questDescription": "The artifact that could save me has fallen into the hands of another of Blackbeard’s lackeys—Israel Hands. I’ll have to go looking for him in the Foothills.",
+    "rewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t02"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t02"
+      }
+    ]
+  },
+  "wr-439961-30-5": {
+    "runtimeName": "Small Pirate Camp",
+    "explorationXp": 25,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-30-5-quest-DA_QP_MainQuest_LostCargo_Core": {
+    "runtimeName": "Needle in a Haystack",
+    "explorationXp": null,
+    "questExperience": 550,
+    "questDescription": "The artifact that could save me has fallen into the hands of another of Blackbeard’s lackeys—Israel Hands. I’ll have to go looking for him in the Foothills.",
+    "rewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t02"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t02"
+      }
+    ]
+  },
+  "wr-439961-30-6": {
+    "runtimeName": "Small Pirate Camp",
+    "explorationXp": 25,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-30-6-quest-DA_QP_MainQuest_LostCargo_Core": {
+    "runtimeName": "Needle in a Haystack",
+    "explorationXp": null,
+    "questExperience": 550,
+    "questDescription": "The artifact that could save me has fallen into the hands of another of Blackbeard’s lackeys—Israel Hands. I’ll have to go looking for him in the Foothills.",
+    "rewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t02"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t02"
+      }
+    ]
+  },
+  "wr-439961-30-7": {
+    "runtimeName": "POI_SeaAdventure_ShipBattle_BB_04",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-31-0": {
+    "runtimeName": "Blackbeard Crew’s Fifth Map",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-32-0": {
+    "runtimeName": "Ancient Village",
+    "explorationXp": 100,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-32-1": {
+    "runtimeName": "Ancient Farm",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-32-1-quest-DA_QP_SideQuest_SacrificialLamb_Core": {
+    "runtimeName": "Sacrificial Lamb",
+    "explorationXp": null,
+    "questExperience": 350,
+    "questDescription": "Somebody tied a man to the ship’s wheel and left him to die a slow, agonizing death…",
+    "rewards": [
+      {
+        "label": "Piastre",
+        "quantity": 200,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Loot_T02_CoinPiastre_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Piastre",
+        "quantity": 200,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Loot_T02_CoinPiastre_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      }
+    ]
+  },
+  "wr-439961-32-2": {
+    "runtimeName": "Iron Deposit",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-32-3": {
+    "runtimeName": "traveler's Camp",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": [],
+    "poiRewards": [
+      {
+        "label": "Decoration: Luxurious Bed",
+        "rarity": "legendary",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T01_DecorationRecipe_01.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-recipe-utility-bed-t04-cool"
+      },
+      {
+        "label": "Devil Always Gets His Due",
+        "rarity": "legendary",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_Misc_BritishJournal_T3.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-cj-exquemelin-note-5-t02"
+      },
+      {
+        "label": "Great Healing Potion",
+        "rarity": "epic",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Consumables_T03_HealingElixir_01.webp?v=1776349577",
+        "quantity": 10,
+        "wikiCategory": "consumables",
+        "wikiItemId": "cid-alchemy-potion-great-healing-t01"
+      },
+      {
+        "label": "Homeward Journey",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Consumables_T1_Recall_01.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "consumables",
+        "wikiItemId": "cid-alchemy-potion-recall-t01"
+      }
+    ],
+    "chestCount": 2
+  },
+  "wr-439961-32-4": {
+    "runtimeName": "POI_SeaAdventure_ShipBattle_BB_08",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": [],
+    "poiRewards": [
+      {
+        "label": "Decoration: Luxurious Bed",
+        "rarity": "legendary",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T01_DecorationRecipe_01.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-recipe-utility-bed-t04-cool"
+      },
+      {
+        "label": "Devil Always Gets His Due",
+        "rarity": "legendary",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_Misc_BritishJournal_T3.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-cj-exquemelin-note-5-t02"
+      },
+      {
+        "label": "Great Healing Potion",
+        "rarity": "epic",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Consumables_T03_HealingElixir_01.webp?v=1776349577",
+        "quantity": 10,
+        "wikiCategory": "consumables",
+        "wikiItemId": "cid-alchemy-potion-great-healing-t01"
+      },
+      {
+        "label": "Homeward Journey",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Consumables_T1_Recall_01.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "consumables",
+        "wikiItemId": "cid-alchemy-potion-recall-t01"
+      }
+    ],
+    "chestCount": 2
+  },
+  "wr-439961-33-0": {
+    "runtimeName": "Ancient Farm",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-33-1": {
+    "runtimeName": "Blackbeard Outpost",
+    "explorationXp": 100,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-33-1-quest-DA_QP_FactionQuest_ResidentOfTortuga_Core": {
+    "runtimeName": "Catastrophe’s Aftermath",
+    "explorationXp": null,
+    "questExperience": 400,
+    "questDescription": "Hard times came to Tortuga: the governor was killed, pirates seized control of the archipelago, and the town itself was overrun by the drowned, forcing the survivors to seek shelter elsewhere.",
+    "rewards": [
+      {
+        "label": "Piastre",
+        "quantity": 200,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Loot_T02_CoinPiastre_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      },
+      {
+        "label": "Letter of Favor",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/images/wiki/misc/did-reputation-faction-sign-01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-reputation-faction-sign-01"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Piastre",
+        "quantity": 200,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Loot_T02_CoinPiastre_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      },
+      {
+        "label": "Letter of Favor",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/images/wiki/misc/did-reputation-faction-sign-01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-reputation-faction-sign-01"
+      }
+    ]
+  },
+  "wr-439961-33-2": {
+    "runtimeName": "Iron Deposit",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-33-3": {
+    "runtimeName": "POI_SeaAdventure_ShipBattle_BB_05",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-34-0": {
+    "runtimeName": "Ancient Fire Sanctuary",
+    "explorationXp": 100,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-34-1": {
+    "runtimeName": "Trial Circle Ruins",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-34-2": {
+    "runtimeName": "Trial Circle Ruins",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-34-3": {
+    "runtimeName": "Ancient Farm",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-34-4": {
+    "runtimeName": "Iron Deposit",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-35-0": {
+    "runtimeName": "Ancient Fire Sanctuary",
+    "explorationXp": 100,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-35-0-quest-DA_QP_MainQuest_LostCargo_Core": {
+    "runtimeName": "Needle in a Haystack",
+    "explorationXp": null,
+    "questExperience": 550,
+    "questDescription": "The artifact that could save me has fallen into the hands of another of Blackbeard’s lackeys—Israel Hands. I’ll have to go looking for him in the Foothills.",
+    "rewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t02"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t02"
+      }
+    ]
+  },
+  "wr-439961-35-1": {
+    "runtimeName": "Trial Circle Ruins",
+    "explorationXp": 100,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-35-2": {
+    "runtimeName": "Trial Circle Ruins",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-35-3": {
+    "runtimeName": "Ancient Farm",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-35-4": {
+    "runtimeName": "Iron Deposit",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-35-5": {
+    "runtimeName": "POI_SeaAdventure_ShipBattle_BB_06",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-36-0": {
+    "runtimeName": "Iron Deposit",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-36-1": {
+    "runtimeName": "Large Pirate Camp",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-36-1-quest-DA_QP_MainQuest_LostCargo_Core": {
+    "runtimeName": "Needle in a Haystack",
+    "explorationXp": null,
+    "questExperience": 550,
+    "questDescription": "The artifact that could save me has fallen into the hands of another of Blackbeard’s lackeys—Israel Hands. I’ll have to go looking for him in the Foothills.",
+    "rewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t02"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t02"
+      }
+    ]
+  },
+  "wr-439961-36-2": {
+    "runtimeName": "Large Pirate Camp",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-36-3": {
+    "runtimeName": "Large Pirate Camp",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-36-3-quest-DA_QP_MainQuest_LostCargo_Core": {
+    "runtimeName": "Needle in a Haystack",
+    "explorationXp": null,
+    "questExperience": 550,
+    "questDescription": "The artifact that could save me has fallen into the hands of another of Blackbeard’s lackeys—Israel Hands. I’ll have to go looking for him in the Foothills.",
+    "rewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t02"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Charon's Obol",
+        "quantity": 1,
+        "rarity": "legendary",
+        "image": "/map-loot-icons/T_ItemIcon_artefact_obol_01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-ancient-relic-t02"
+      }
+    ]
+  },
+  "wr-439961-36-4": {
+    "runtimeName": "Cliffside Pirate Camp",
+    "explorationXp": 25,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-36-4-quest-DA_QP_FactionQuest_Smugglers_Core": {
+    "runtimeName": "Smugglers",
+    "explorationXp": null,
+    "questExperience": 300,
+    "questDescription": "Long Ben is worried his tavern will run out of wine. The smugglers are in trouble—too many people gone missing, and too many caches turning up empty.",
+    "rewards": [
+      {
+        "label": "Piastre",
+        "quantity": 150,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Loot_T02_CoinPiastre_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      },
+      {
+        "label": "Letter of Favor",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/images/wiki/misc/did-reputation-faction-sign-01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-reputation-faction-sign-01"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Piastre",
+        "quantity": 150,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Loot_T02_CoinPiastre_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      },
+      {
+        "label": "Letter of Favor",
+        "quantity": 10,
+        "rarity": "rare",
+        "image": "/images/wiki/misc/did-reputation-faction-sign-01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-reputation-faction-sign-01"
+      }
+    ]
+  },
+  "wr-439961-36-5": {
+    "runtimeName": "Cliffside Pirate Camp",
+    "explorationXp": 25,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-36-6": {
+    "runtimeName": "traveler's Camp",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-37-0": {
+    "runtimeName": "Copper Deposit",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-37-1": {
+    "runtimeName": "Jungle Cave",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-37-1-quest-DA_QP_MainQuest_Revenge_Core": {
+    "runtimeName": "Revenge Is Best Served Cold",
+    "explorationXp": null,
+    "questExperience": 250,
+    "questDescription": "Thomas Richards killed my crew, sank my ship, and threw me into the sea. Time to pay that bastard a visit and settle the score. While I’m at it, I’ll take the artifact back—if I’m lucky, it’ll lift this blight from my body.",
+    "rewards": []
+  },
+  "wr-439961-37-2": {
+    "runtimeName": "traveler's Camp",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-37-3": {
+    "runtimeName": "Fisherman's Hut",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-37-3-quest-DA_QP_SideQuest_SacrificialLamb_Core": {
+    "runtimeName": "Sacrificial Lamb",
+    "explorationXp": null,
+    "questExperience": 350,
+    "questDescription": "Somebody tied a man to the ship’s wheel and left him to die a slow, agonizing death…",
+    "rewards": [
+      {
+        "label": "Piastre",
+        "quantity": 200,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Loot_T02_CoinPiastre_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Piastre",
+        "quantity": 200,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Loot_T02_CoinPiastre_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      }
+    ]
+  },
+  "wr-439961-37-4": {
+    "runtimeName": "Smuggler's Cache",
+    "explorationXp": 25,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-37-4-quest-DA_QP_SideQuest_UndergroundWebQuest_Core": {
+    "runtimeName": "Underground Network",
+    "explorationXp": null,
+    "questExperience": 400,
+    "questDescription": "I found a destroyed Smugglers hideout on the island. It seems like they’re in trouble, and someone is targeting them.",
+    "rewards": [
+      {
+        "label": "Piastre",
+        "quantity": 50,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Loot_T02_CoinPiastre_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      },
+      {
+        "label": "Letter of Favor",
+        "quantity": 5,
+        "rarity": "rare",
+        "image": "/images/wiki/misc/did-reputation-faction-sign-01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-reputation-faction-sign-01"
+      },
+      {
+        "label": "Brandy",
+        "quantity": 4,
+        "rarity": "epic",
+        "image": "/map-loot-icons/T_ItemIcon_TradeCraft_Alcohol_Brandy.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "brandy"
+      },
+      {
+        "label": "Madeira",
+        "quantity": 4,
+        "rarity": "epic",
+        "image": "/map-loot-icons/T_ItemIcon_TradeCraft_Alcohol_Madeira.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "madeira"
+      },
+      {
+        "label": "Whiskey",
+        "quantity": 4,
+        "rarity": "epic",
+        "image": "/map-loot-icons/T_ItemIcon_TradeCraft_Alcohol_Whiskey.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "whiskey"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Piastre",
+        "quantity": 50,
+        "rarity": "rare",
+        "image": "/map-loot-icons/T_ItemIcon_Loot_T02_CoinPiastre_01.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      },
+      {
+        "label": "Letter of Favor",
+        "quantity": 5,
+        "rarity": "rare",
+        "image": "/images/wiki/misc/did-reputation-faction-sign-01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-reputation-faction-sign-01"
+      },
+      {
+        "label": "Brandy",
+        "quantity": 4,
+        "rarity": "epic",
+        "image": "/map-loot-icons/T_ItemIcon_TradeCraft_Alcohol_Brandy.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "brandy"
+      },
+      {
+        "label": "Madeira",
+        "quantity": 4,
+        "rarity": "epic",
+        "image": "/map-loot-icons/T_ItemIcon_TradeCraft_Alcohol_Madeira.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "madeira"
+      },
+      {
+        "label": "Whiskey",
+        "quantity": 4,
+        "rarity": "epic",
+        "image": "/map-loot-icons/T_ItemIcon_TradeCraft_Alcohol_Whiskey.webp",
+        "wikiCategory": "resources",
+        "wikiItemId": "whiskey"
+      }
+    ]
+  },
+  "wr-439961-38-0": {
+    "runtimeName": "POI_SeaAdventure_ShipBattle_BonySue",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-39-0": {
+    "runtimeName": "Shipwrecked Brig",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-39-0-quest-DA_QP_FactionQuest_Brotherhood_Core": {
+    "runtimeName": "Brethren of The Coast",
+    "explorationXp": null,
+    "questExperience": 550,
+    "questDescription": "Edward Teach nearly destroyed the Brethren of the Coast during his assault on Tortuga. Their forces are scattered, and Stede Bonnet’s ships—another of Blackbeard’s lieutenants—are hunting down the survivors.",
+    "rewards": [
+      {
+        "label": "Letter of Favor",
+        "quantity": 20,
+        "rarity": "rare",
+        "image": "/images/wiki/misc/did-reputation-faction-sign-01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-reputation-faction-sign-01"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Letter of Favor",
+        "quantity": 20,
+        "rarity": "rare",
+        "image": "/images/wiki/misc/did-reputation-faction-sign-01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-reputation-faction-sign-01"
+      }
+    ]
+  },
+  "wr-439961-40-0": {
+    "runtimeName": "Shipwrecked Brig",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-40-0-quest-DA_QP_FactionQuest_Brotherhood_Core": {
+    "runtimeName": "Brethren of The Coast",
+    "explorationXp": null,
+    "questExperience": 550,
+    "questDescription": "Edward Teach nearly destroyed the Brethren of the Coast during his assault on Tortuga. Their forces are scattered, and Stede Bonnet’s ships—another of Blackbeard’s lieutenants—are hunting down the survivors.",
+    "rewards": [
+      {
+        "label": "Letter of Favor",
+        "quantity": 20,
+        "rarity": "rare",
+        "image": "/images/wiki/misc/did-reputation-faction-sign-01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-reputation-faction-sign-01"
+      }
+    ],
+    "questRewards": [
+      {
+        "label": "Letter of Favor",
+        "quantity": 20,
+        "rarity": "rare",
+        "image": "/images/wiki/misc/did-reputation-faction-sign-01.webp",
+        "wikiCategory": "misc",
+        "wikiItemId": "did-reputation-faction-sign-01"
+      }
+    ]
+  },
+  "wr-439961-41-0": {
+    "runtimeName": "Brethren of the Coast Main Base",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-41-0-quest-DA_QP_MainQuest_Seafarer_Core": {
+    "runtimeName": "How My Sea Adventure Began",
+    "explorationXp": null,
+    "questExperience": 400,
+    "questDescription": "I got myself a pretty good ship. But Caribbean waters are too rough to sail without a few good cannons.",
+    "rewards": []
+  },
+  "wr-439961-42-0": {
+    "runtimeName": "Blackbeard Crew’s Eighth Map",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-43-0": {
+    "runtimeName": "Blackbeard Crew’s Ninth Map",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-44-0": {
+    "runtimeName": "POI_SeaAdventure_ShipBattle_Weevil",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-45-0": {
+    "runtimeName": "Shipwrecked Brigantine",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-46-0": {
+    "runtimeName": "Shipwreck",
+    "explorationXp": 50,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-47-0": {
+    "runtimeName": "Blackbeard Crew’s Seventh Map",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": [],
+    "poiRewards": [
+      {
+        "label": "Cane Sugar",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_Tortuga_CaneSugar_01.webp?v=1776349577",
+        "quantityText": "5 - 10",
+        "wikiCategory": "resources",
+        "wikiItemId": "caneSugar"
+      },
+      {
+        "label": "Decoration:Herb Preparations",
+        "rarity": "legendary",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T01_DecorationRecipe_01.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "misc",
+        "wikiItemId": "did-misc-recipe-deco-kitchen-t02"
+      },
+      {
+        "label": "Guinea",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T02_CoinGuinea_01.webp?v=1776349577",
+        "quantity": 4,
+        "wikiCategory": "resources",
+        "wikiItemId": "guinea"
+      },
+      {
+        "label": "Healing Herbs",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Resources_T02_HealingHerbs_01.webp?v=1776349577",
+        "quantity": 15,
+        "wikiCategory": "resources",
+        "wikiItemId": "healingHerbs"
+      },
+      {
+        "label": "Mountain Goat Horn",
+        "rarity": "common",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T02_GoatHorn_01.webp?v=1776349577",
+        "quantity": 2,
+        "wikiCategory": "resources",
+        "wikiItemId": "mountainGoatHorn"
+      },
+      {
+        "label": "Piastre",
+        "rarity": "rare",
+        "chanceText": "100%",
+        "chance": 100,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/New/T_ItemIcon_Loot_T02_CoinPiastre_01.webp?v=1776349577",
+        "quantity": 20,
+        "wikiCategory": "resources",
+        "wikiItemId": "piastre"
+      },
+      {
+        "label": "Club",
+        "rarity": "uncommon",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponMelee_Club_Blank.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-melee-weapon-club-blank-base"
+      },
+      {
+        "label": "Halberd",
+        "rarity": "uncommon",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponMelee_Halberd_Blank.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-melee-weapon-halberd-blank-base"
+      },
+      {
+        "label": "Rapier",
+        "rarity": "uncommon",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponMelee_Rapier_Blank.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-melee-weapon-rapier-blank-base"
+      },
+      {
+        "label": "Two-Handed Sword",
+        "rarity": "uncommon",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponMelee_GreatSword_Blank.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-melee-weapon-greatsword-blank-base"
+      },
+      {
+        "label": "Blunderbuss",
+        "rarity": "uncommon",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponRange_Blunderbuss_Blank.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-range-weapon-blunderbuss-blank-base"
+      },
+      {
+        "label": "Bonebreaker",
+        "rarity": "epic",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponMelee_Club_Tremor.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-melee-weapon-club-massive-advanced"
+      },
+      {
+        "label": "Cutlass",
+        "rarity": "epic",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponMelee_Saber_Boarding.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-melee-weapon-saber-boarding-advanced"
+      },
+      {
+        "label": "Dueling Greatsword",
+        "rarity": "epic",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponMelee_GreatSword_Parrying.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-melee-weapon-greatsword-parrying-advanced"
+      },
+      {
+        "label": "Dueling Saber",
+        "rarity": "epic",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponMelee_Saber_Parrying.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-melee-weapon-saber-parrying-advanced"
+      },
+      {
+        "label": "Musket",
+        "rarity": "uncommon",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponRange_Musket_Blank.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-range-weapon-musket-blank-base"
+      },
+      {
+        "label": "Pistol",
+        "rarity": "uncommon",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponRange_Pistol_Blank.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-range-weapon-pistol-blank-base"
+      },
+      {
+        "label": "Rapier of a Thousand Cuts",
+        "rarity": "epic",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponMelee_Rapier_Bleeding.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-melee-weapon-rapier-bleeding-advanced"
+      },
+      {
+        "label": "Razor",
+        "rarity": "epic",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponMelee_Saber_Flaweless.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-melee-weapon-saber-flawless-advanced"
+      },
+      {
+        "label": "Stalwart Greatsword",
+        "rarity": "epic",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponMelee_GreatSword_Reliable.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-melee-weapon-greatsword-reliable-advanced"
+      },
+      {
+        "label": "Sturdy Halberd",
+        "rarity": "epic",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponMelee_Halberd_Reliable.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-melee-weapon-halberd-reliable-advanced"
+      },
+      {
+        "label": "Sturdy Mace",
+        "rarity": "epic",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponMelee_Club_Stunning.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-melee-weapon-club-reliable-advanced"
+      },
+      {
+        "label": "Sturdy Rapier",
+        "rarity": "epic",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponMelee_Rapier_Reliable.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-melee-weapon-rapier-reliable-advanced"
+      },
+      {
+        "label": "Sturdy Saber",
+        "rarity": "epic",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponMelee_Saber_Blank.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-melee-weapon-saber-reliable-advanced"
+      },
+      {
+        "label": "Drake’s Double-Barreled Pistol",
+        "rarity": "epic",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponRange_Pistol_DrakesDoom.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-range-weapon-pistol-drakes-doom-advanced"
+      },
+      {
+        "label": "Infantry Musket",
+        "rarity": "epic",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponRange_Musket_Infantry.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-range-weapon-musket-infantry-advanced"
+      },
+      {
+        "label": "Reliable Blunderbuss",
+        "rarity": "epic",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponRange_Blunderbuss_Reliable.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-range-weapon-blunderbuss-reliable-advanced"
+      },
+      {
+        "label": "Reliable Musket",
+        "rarity": "epic",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponRange_Musket_Reliable.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-range-weapon-musket-reliable-advanced"
+      },
+      {
+        "label": "Reliable Pistol",
+        "rarity": "epic",
+        "chanceText": "0%",
+        "chance": 0,
+        "image": "https://cdn.pixel6.tools/windrose/images/icons/Items/Weapon/T_ItemIcon_WeaponRange_Pistol_Reliable.webp?v=1776349577",
+        "quantity": 1,
+        "wikiCategory": "weapons",
+        "wikiItemId": "eid-range-weapon-pistol-reliable-advanced"
+      }
+    ],
+    "chestCount": 5
+  },
+  "wr-439961-48-0": {
+    "runtimeName": "POI_SeaAdventure_Ship_NewArk",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-50-0": {
+    "runtimeName": "Blackbeard Crew’s Fourth Map",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-51-0": {
+    "runtimeName": "Blackbeard Crew’s Third Map",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-52-0": {
+    "runtimeName": "Blackbeard Crew’s First Map",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-53-0": {
+    "runtimeName": "Blackbeard Crew’s Second Map",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-56-0": {
+    "runtimeName": "Smugglers of Port Royal Main base",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-56-0-quest-DA_QP_MainQuest_Seafarer_Core": {
+    "runtimeName": "How My Sea Adventure Began",
+    "explorationXp": null,
+    "questExperience": 400,
+    "questDescription": "I got myself a pretty good ship. But Caribbean waters are too rough to sail without a few good cannons.",
+    "rewards": []
+  },
+  "wr-439961-60-0": {
+    "runtimeName": "Copper Deposit",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  },
+  "wr-439961-60-1": {
+    "runtimeName": "POI_SeaAdventure_ShipBattle_BB_02",
+    "explorationXp": null,
+    "questExperience": null,
+    "questDescription": "",
+    "rewards": []
+  }
+}

@@ -4,47 +4,26 @@
       <div class="container">
         <nav class="page-breadcrumb" aria-label="Breadcrumb">
           <ol>
-            <li><RouterLink to="/">Home</RouterLink></li>
+            <li><a href="/">Home</a></li>
             <li class="page-breadcrumb__sep" aria-hidden="true">/</li>
             <li><span aria-current="page">Interactive Map</span></li>
           </ol>
         </nav>
-        <div class="page-hero__shell">
+        <div class="page-hero__shell page-hero__shell--compact">
           <span class="page-hero__sigil" aria-hidden="true" />
-          <p class="page-hero__eyebrow">Atlas · coordinates · POI search</p>
-          <h1 id="map-hero-title">
-            Windrose Interactive Map: Archipelago Chart, POI Search &amp; Coordinate Readout
-          </h1>
+          <p class="page-hero__eyebrow">Atlas · POI layers · search</p>
+          <h1 id="map-hero-title">Windrose Interactive Map</h1>
           <div class="page-hero__meta">
-            <span>Pan &amp; zoom</span>
-            <span>Layered markers</span>
-            <span>Fan-maintained pins</span>
+            <span>Layers</span>
+            <span>Search</span>
+            <span>Coordinates</span>
           </div>
-          <p class="page-hero__lead">
-            Plan voyages on the fan vector chart for Windrose Early Access—ocean tint plus island silhouettes you can read
-            at a glance. Toggle camps, resources, wrecks, ruins, and exploration pins, then search by name, tag, or
-            category to jump the camera—handy when you are routing a loot loop or lining up callouts with your crew.
+          <p class="page-hero__lead page-hero__lead--single">
+            Pan and zoom the fan archipelago, toggle marker types in the left panel, and search to jump the camera. Cursor
+            coordinates read out normalized x/y for callouts, screenshot grids, and the same shorthand the wiki tables use
+            when a row mentions a landmark. Debating a respec before you sail? Rehearse the build on the talent planner,
+            then come back here for pins.
           </p>
-          <p class="page-hero__lead">
-            Cursor coordinates show normalized chart positions so you can line up screenshots, wiki entries, and squad
-            callouts without guessing at in-world GPS. Bookmark this page as your compass hub for open-world pirate
-            survival PvE.
-          </p>
-          <ul class="page-hero__highlights">
-            <li>
-              <strong>Search-first</strong>
-              Type a POI title or tag and press Enter to cycle matches while the map keeps your filters honest.
-            </li>
-            <li>
-              <strong>Readable chart</strong>
-              Vector coastlines keep the archipelago lightweight on laptops while POI markers stay sharp at zoom.
-            </li>
-            <li>
-              <strong>Community atlas</strong>
-              Pins and coastlines are maintained by fans—when a patch moves a camp, expect this chart to catch up shortly
-              after the wiki does.
-            </li>
-          </ul>
         </div>
       </div>
     </section>
@@ -62,7 +41,7 @@
               >
                 <div class="wr-map__layers-head">
                   <h2 class="wr-map__layers-title">Layers</h2>
-                  <p class="wr-map__layers-hint">Toggle types · click a name to cycle pins.</p>
+                  <p class="wr-map__layers-hint">Expand a group, toggle types, or search above.</p>
                 </div>
                 <div class="wr-map__layers-body village-filter-rail__body">
                   <section
@@ -150,13 +129,14 @@
           <p>
             This atlas pairs the community vector seascape with structured POI markers so solo captains and crews can
             scout camps, farming loops, wrecks, ruins, and exploration objectives without tab-hunting through
-            spreadsheets. The layout mirrors how Windrose players actually navigate: scan the chart, filter noise, then
-            deep-link mental notes to precise shoreline features.
+            spreadsheets. When a popup drops a weird material name, look up the matching row in the wiki resources deck
+            (or another category) before you reroute the whole night.
           </p>
           <p>
             Because everything loads with the page, response times stay predictable and the chart stays readable even on
-            modest laptops—important when you are alt-tabbing between Discord, the wiki, and the game during Early Access
-            nights.
+            modest laptops—important when you are alt-tabbing between Discord, the wiki, and the game during Early
+            Access nights. Still learning pin vocabulary? The Getting Started hub explains how we think about markers;
+            Advanced covers when those same pins become haul routes and fort timers.
           </p>
 
           <h2 id="map-how-heading">How to use this map</h2>
@@ -186,7 +166,8 @@
               <dd>
                 Volunteers curate the pin list for Windrose Compass and ship updates with the site. If something is wrong
                 after a patch, it is usually just a slow refresh—check again after a few days or ping whoever keeps this
-                site updated.
+                site updated. Cross-check unusual loot against long-form Guides articles that focus on
+                that biome so you know whether it is data lag or a real spawn change.
               </dd>
             </div>
             <div class="wr-map__faq-item">
@@ -273,11 +254,25 @@ function onMasterChange(cat, e) {
   - .map-page：Leaflet / rtv-* 控件层叠作用域前缀，避免污染全站。
 -->
 <style>
+/* 地图页 hero 压缩，把视觉重心让给下方图台 */
+.map-page .page-hero--chart {
+  padding-bottom: 0.6rem;
+}
+
+.map-page .page-hero__shell--compact {
+  padding-bottom: clamp(0.85rem, 1.6vw, 1.15rem);
+}
+
+.map-page .page-hero__lead--single {
+  margin-bottom: 0;
+  max-width: 46rem;
+}
+
 /* Map page — aligned with site tokens; ocean fill matches chart edges */
 .wr-map {
   --wr-map-ocean: #2a77c4;
-  --wr-map-viewport-height: 620px;
-  padding-bottom: 2.5rem;
+  --wr-map-viewport-height: 680px;
+  padding-bottom: 2.25rem;
 }
 
 @media (max-width: 1024px) {
@@ -312,10 +307,11 @@ function onMasterChange(cat, e) {
 }
 
 .wr-map__panel {
-  border-radius: 8px;
-  border: 1px solid var(--color-border);
+  border-radius: 10px;
+  border: 1px solid rgba(160, 188, 210, 0.12);
   background: var(--color-bg-elevated);
   overflow: hidden;
+  box-shadow: 0 4px 28px rgba(0, 0, 0, 0.2);
 }
 
 /* Left: layers only · Right: search bar + map; on narrow screens map column stacks first */
@@ -470,7 +466,7 @@ function onMasterChange(cat, e) {
 
 @media (min-width: 1025px) {
   .wr-map__panel--split {
-    grid-template-columns: minmax(232px, 17.5rem) minmax(0, 1fr);
+    grid-template-columns: minmax(188px, 14rem) minmax(0, 1fr);
     grid-template-rows: var(--wr-map-viewport-height);
     align-items: stretch;
   }
@@ -484,7 +480,8 @@ function onMasterChange(cat, e) {
     order: 0;
     height: 100%;
     max-height: none;
-    overflow: hidden;
+    overflow-x: hidden;
+    overflow-y: auto;
     border-right: 1px solid rgba(160, 188, 210, 0.14);
     box-shadow: inset -8px 0 20px rgba(0, 0, 0, 0.12);
   }
@@ -841,13 +838,9 @@ function onMasterChange(cat, e) {
   pointer-events: none;
 }
 
-.map-page .leaflet-container {
-  background: rgba(10, 14, 22, 0.98);
-  font-family: inherit;
-}
-
-.wr-map .leaflet-container {
+.map-page.wr-map .leaflet-container {
   background: var(--wr-map-ocean);
+  font-family: inherit;
 }
 
 .map-page .leaflet-control-zoom a {
@@ -931,6 +924,146 @@ function onMasterChange(cat, e) {
 
 .map-page .rtv-map-popup strong {
   color: var(--color-gold-hot);
+}
+
+.map-page .rtv-map-popup__desc {
+  margin: 0.5rem 0 0;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  color: rgba(230, 236, 244, 0.88);
+  font-weight: 400;
+}
+
+.map-page .rtv-map-popup__roll-meta {
+  margin: 0.5rem 0 0.35rem;
+  font-size: 0.78rem;
+  line-height: 1.45;
+  color: rgba(230, 236, 244, 0.88);
+}
+
+.map-page .rtv-map-popup__rolls {
+  margin-top: 0.35rem;
+}
+
+.map-page .rtv-map-popup__loot-wrap {
+  margin-top: 0.35rem;
+  max-height: min(240px, 45vh);
+  overflow: auto;
+  border-radius: 6px;
+  border: 1px solid rgba(160, 188, 210, 0.16);
+  background: rgba(4, 8, 14, 0.5);
+}
+
+.map-page .rtv-map-popup__loot-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.74rem;
+}
+
+.map-page .rtv-map-popup__loot-table th {
+  position: sticky;
+  top: 0;
+  background: rgba(12, 18, 28, 0.96);
+  text-align: left;
+  padding: 0.3rem 0.38rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  font-size: 0.58rem;
+  color: var(--color-text-muted);
+  border-bottom: 1px solid rgba(160, 188, 210, 0.22);
+}
+
+.map-page .rtv-map-popup__loot-table th:nth-child(2),
+.map-page .rtv-map-popup__loot-table th:nth-child(3) {
+  text-align: right;
+}
+
+.map-page .rtv-map-popup__loot-table td {
+  padding: 0.28rem 0.38rem;
+  vertical-align: middle;
+  border-bottom: 1px solid rgba(160, 188, 210, 0.08);
+}
+
+.map-page .rtv-map-popup__loot-cell {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.38rem;
+  min-width: 0;
+}
+
+.map-page .rtv-map-popup__loot-icon {
+  flex-shrink: 0;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  object-fit: contain;
+  border: 1px solid rgba(160, 188, 210, 0.18);
+  background: rgba(6, 10, 18, 0.65);
+}
+
+.map-page .rtv-map-popup__loot-icon--ph {
+  display: inline-block;
+  width: 28px;
+  height: 28px;
+  border-radius: 4px;
+  border: 1px dashed rgba(160, 188, 210, 0.2);
+  background: rgba(6, 10, 18, 0.35);
+}
+
+.map-page .rtv-map-popup__loot-link {
+  font-weight: 600;
+  color: var(--color-parchment);
+  text-decoration: none;
+}
+
+.map-page .rtv-map-popup__loot-name {
+  font-weight: 600;
+  color: var(--color-parchment);
+}
+
+.map-page .rtv-map-popup__loot-link:hover {
+  color: var(--color-gold-hot);
+  text-decoration: underline;
+}
+
+.map-page .rtv-map-popup__loot-name--common {
+  color: #c5d0de;
+}
+
+.map-page .rtv-map-popup__loot-name--uncommon {
+  color: #9dd89d;
+}
+
+.map-page .rtv-map-popup__loot-name--rare {
+  color: #8ec8ff;
+}
+
+.map-page .rtv-map-popup__loot-name--epic {
+  color: #c4b6dc;
+}
+
+.map-page .rtv-map-popup__loot-name--legendary {
+  color: #f0d78c;
+}
+
+.map-page .rtv-map-popup__loot-td-q,
+.map-page .rtv-map-popup__loot-td-ch {
+  font-variant-numeric: tabular-nums;
+  text-align: right;
+  white-space: nowrap;
+  color: rgba(230, 236, 244, 0.92);
+}
+
+.map-page .rtv-map-popup__loot-foot {
+  margin: 0.45rem 0 0;
+  font-size: 0.72rem;
+  line-height: 1.45;
+  color: var(--color-text-muted);
+}
+
+.map-page .rtv-map-popup__loot-foot a {
+  color: var(--color-sea);
 }
 
 .map-page .rtv-map-popup__html code {

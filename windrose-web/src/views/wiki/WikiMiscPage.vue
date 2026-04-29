@@ -4,9 +4,9 @@
       <div class="container">
         <nav class="page-breadcrumb" aria-label="Breadcrumb">
           <ol>
-            <li><RouterLink to="/">Home</RouterLink></li>
+            <li><a href="/">Home</a></li>
             <li class="page-breadcrumb__sep" aria-hidden="true">/</li>
-            <li><RouterLink to="/wiki">Wiki</RouterLink></li>
+            <li><a href="/wiki">Wiki</a></li>
             <li class="page-breadcrumb__sep" aria-hidden="true">/</li>
             <li><span aria-current="page">{{ breadcrumbCurrent }}</span></li>
           </ol>
@@ -18,6 +18,16 @@
           <p v-if="lead" class="page-hero__lead">{{ lead }}</p>
           <p v-if="leadSecondary" class="page-hero__lead">{{ leadSecondary }}</p>
         </div>
+      </div>
+    </section>
+
+    <section class="wiki-deck-tip" aria-label="Related Compass tools">
+      <div class="container wiki-deck-tip__inner">
+        <p>
+          Quest keys, trophies, and oddities usually tie back to a pin or a guide: search this table, then match the place
+          name on the Windrose map; if the write-up is narrative-heavy, open the matching article in
+          <a href="/guides">Guides</a> instead of guessing from the item text alone.
+        </p>
       </div>
     </section>
 
@@ -52,6 +62,7 @@
               <tr
                 v-for="row in filtered"
                 :key="row.id"
+                :id="'wiki-item-' + row.id"
                 :title="descriptionTitle(row)"
               >
                 <td>

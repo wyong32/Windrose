@@ -14,11 +14,15 @@ import { buildDocumentTitle } from '@/utils/pageSeo.js'
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
-  scrollBehavior(to, _from, savedPosition) {
+  scrollBehavior(to, from, savedPosition) {
     if (to.hash) {
       return { el: to.hash, behavior: 'auto', top: 96 }
     }
     if (savedPosition) return savedPosition
+    /* 同一路由仅 query 变化（如天赋加点写 ?talents=）时不要滚回顶部 */
+    if (from && to.path === from.path && to.name === from.name) {
+      return false
+    }
     return { top: 0 }
   },
   routes: [
@@ -61,6 +65,19 @@ const router = createRouter({
           'Windrose advanced guide: soulslite combat cadence, ship outfit choices, gunpowder routes, forts, dedicated server notes—pairs with wiki and map.',
         keywords:
           'Windrose advanced guide, Windrose combat tips, Windrose ship build, gunpowder farming Windrose, Windrose forts, dedicated server Windrose, Windrose Compass',
+      },
+    },
+    {
+      path: '/talents',
+      name: 'talents',
+      component: () => import('@/views/TalentsView.vue'),
+      meta: {
+        title:
+          'Windrose Talent Tree Planner — Click Nodes, Share Talent Point Builds (Fencer, Crusher, Marksman, Toughguy)',
+        description:
+          'Free interactive Windrose skill tree: click talent nodes to spend points, see branch gates and 3 ranks per node, respect the level cap, copy a shareable URL. In-game respec costs nothing—use this page to try a build before you commit. Guides cover stats, Rapier, Halberd boarding, Musketeer, Saber crit.',
+        keywords:
+          'Windrose Talents, Windrose skill, Windrose skills, Windrose skill tree, Windrose talent tree, Windrose skill planner, Windrose Fencer, Windrose Crusher, Windrose Marksman, Windrose Toughguy, Windrose talent points, Windrose respec, Windrose Early Access, Windrose Compass',
       },
     },
     {

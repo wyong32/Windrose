@@ -1,7 +1,7 @@
 /**
- * Windrose 地图页 Leaflet 逻辑（对齐 roadtovostok-web `useRasterMapPage.js`）：
- * 接收 `windroseMap.js` 的 default bundle，负责底图、标点、搜索、路由 ?loc=、侧栏筛选。
- * 数据约定：`mapCategories[].list[].category` 与每条 pin 的 `category`（子类 slug）一致；大类 `id` 由该 slug 在 `mapCategories` 中反查。
+ * Windrose 地图页 Leaflet：接收 `windroseMap.js` bundle，负责底图、标点（可选）、搜索、路由 ?loc=、侧栏筛选。
+ * 数据约定：`mapCategories[].list[].category` 与 pin `category` 一致；`describe` 等可选字段写在 `windroseMap.js` 的 pins 上。
+ * 弹窗：`pinPopups` 中 `rewards`/`questRewards` 为 runtime 任务奖励；`poiRewards` 为从官网弹窗抓取的箱表，展示时与任务奖励 **拼接**；若 pin 上有 **`mapLoot`**（经核对手写），其 `rewards` 仍 **覆盖**整表。
  */
 import { useRoute } from 'vue-router'
 import { reactive, ref, computed, watch, nextTick, onMounted, onUnmounted } from 'vue'
@@ -20,7 +20,14 @@ const ERR_IMG =
 const ERR_TERRAIN = 'Island outline data is missing. Try refreshing the page; if it keeps happening, the site bundle may be incomplete.'
 
 export function useWindroseMap(bundle, options = {}) {
-  const { coordHud: coordHudRef, fitBoundsZoomOffset = 0 } = options
+  const {
+    coordHud: coordHudRef,
+    fitBoundsZoomOffset = 0,
+    /** 为 false 时不创建任何 Leaflet 标点（首页纯底图预览） */
+    showMarkers = true,
+    /** 为 false 时不显示 Leaflet 缩放按钮（首页减少控件干扰） */
+    showZoomControl = true,
+  } = options
   const {
     imageUrl,
     pins,
@@ -31,7 +38,44 @@ export function useWindroseMap(bundle, options = {}) {
     leafletVirtualWidth,
     leafletVirtualHeight,
     terrain = null,
+    pinPopups = null,
   } = bundle
+
+  const pinPopupById =
+    pinPopups && typeof pinPopups === 'object' && !Array.isArray(pinPopups) ? pinPopups : {}
+
+  /** 合并 `pinPopups`（任务 + 可选 `poiRewards` 箱表）与 pin 上可选的 `mapLoot`；不臆造默认掉落。 */
+  function popupForPin(p) {
+    const pop = pinPopupById[p.id]
+    const ml = p?.mapLoot
+    if (!pop && !ml) return null
+    const base = pop ? { ...pop } : {}
+
+    if (pop) {
+      const hasPoi = Array.isArray(base.poiRewards) && base.poiRewards.length > 0
+      const questPart =
+        Array.isArray(base.questRewards) && base.questRewards.length
+          ? base.questRewards
+          : !hasPoi && Array.isArray(base.rewards)
+            ? base.rewards
+            : []
+      const poiPart = hasPoi ? base.poiRewards : []
+      if (questPart.length || poiPart.length) {
+        base.rewards = [...questPart, ...poiPart]
+      }
+    }
+
+    if (ml && typeof ml === 'object') {
+      if (ml.chestCount != null) base.chestCount = ml.chestCount
+      if (Array.isArray(ml.rewards) && ml.rewards.length) {
+        base.rewards = ml.rewards
+      }
+      if (ml.explorationXp != null) base.explorationXp = ml.explorationXp
+    }
+    return base
+  }
+
+  const siteBase = (import.meta.env.BASE_URL || '/').replace(/([^/])$/, '$1/')
 
   const onByDefault = defaultOnCategoryIds(mapCategories)
   const vectorW = Number(leafletVirtualWidth) || Number(leafletVirtualSize) || 1000
@@ -64,8 +108,9 @@ export function useWindroseMap(bundle, options = {}) {
       ),
     ),
   )
+  const firstCategoryId = mapCategories[0]?.id
   const categoryExpanded = reactive(
-    Object.fromEntries(mapCategories.map((c) => [c.id, onByDefault.has(c.id)])),
+    Object.fromEntries(mapCategories.map((c) => [c.id, c.id === firstCategoryId])),
   )
   const kindCycle = reactive({})
 
@@ -81,7 +126,11 @@ export function useWindroseMap(bundle, options = {}) {
     return { appearance, labels }
   })
 
+  /** 与 `windrose-map-pin-popups.json`（`sync-map-pin-popups` 同源 API）对齐：有 `runtimeName` 时用官网标点标题 */
   function pinTitle(p) {
+    const pop = pinPopupById[p.id]
+    const rn = pop?.runtimeName != null ? String(pop.runtimeName).trim() : ''
+    if (rn) return rn
     return p?.title ?? ''
   }
 
@@ -90,6 +139,7 @@ export function useWindroseMap(bundle, options = {}) {
     if (String(pinTitle(p)).toLowerCase().includes(qLower)) return true
     if (String(p?.id ?? '').toLowerCase().includes(qLower)) return true
     if (String(p?.category ?? '').toLowerCase().includes(qLower)) return true
+    if (String(p?.describe ?? '').toLowerCase().includes(qLower)) return true
     const kl = String(kindMetaById.value.labels[p?.category] ?? '').toLowerCase()
     if (kl.includes(qLower)) return true
     const plain = String(p?.content ?? '')
@@ -223,6 +273,7 @@ export function useWindroseMap(bundle, options = {}) {
   )
 
   function syncRouteLocQuery() {
+    if (!showMarkers) return
     const raw = route.query.loc
     if (raw == null || raw === '' || !mapReady.value) return
     const match = mapPoints.value.find((x) => String(x.id) === String(raw))
@@ -248,15 +299,93 @@ export function useWindroseMap(bundle, options = {}) {
       .replaceAll('"', '&quot;')
   }
 
+  /**
+   * @param {object} pop
+   * @param {string} base 含尾部斜杠的站点 base（与 Vite BASE_URL 一致）
+   */
+  function buildRollSectionHtml(pop, base) {
+    if (!pop) return ''
+    const metaParts = []
+    const chestN = pop.chestCount != null ? Number(pop.chestCount) : NaN
+    if (Number.isFinite(chestN) && chestN > 0)
+      metaParts.push(`Chests <strong>${escapeHtml(String(chestN))}</strong>`)
+    const explN = pop.explorationXp != null ? Number(pop.explorationXp) : NaN
+    if (Number.isFinite(explN) && explN > 0)
+      metaParts.push(`Exploration <strong>${escapeHtml(String(explN))} XP</strong>`)
+    const qxN = pop.questExperience != null ? Number(pop.questExperience) : NaN
+    if (Number.isFinite(qxN) && qxN > 0)
+      metaParts.push(`Quest reward <strong>${escapeHtml(String(qxN))} XP</strong>`)
+    const meta = metaParts.length
+      ? `<p class="rtv-map-popup__roll-meta">${metaParts.join(' · ')}</p>`
+      : ''
+
+    const rewardList = Array.isArray(pop.rewards) ? pop.rewards : []
+    const rows = rewardList
+      .map((r) => {
+        const rc = String(r.rarity || '')
+          .toLowerCase()
+          .replace(/\s+/g, '')
+        const nameExtra =
+          rc && /^(common|uncommon|rare|epic|legendary)$/.test(rc) ? ` rtv-map-popup__loot-name--${rc}` : ''
+        let nameHtml
+        if (r.wikiCategory && r.wikiItemId) {
+          const href = `${base}wiki/${encodeURIComponent(r.wikiCategory)}#wiki-item-${encodeURIComponent(r.wikiItemId)}`
+          nameHtml = `<a class="rtv-map-popup__loot-link${nameExtra}" href="${href}">${escapeHtml(r.label)}</a>`
+        } else {
+          nameHtml = `<span class="rtv-map-popup__loot-name${nameExtra}">${escapeHtml(r.label)}</span>`
+        }
+        const icon = r.image
+          ? `<img class="rtv-map-popup__loot-icon" src="${escapeHtml(r.image)}" alt="" width="28" height="28" loading="lazy" decoding="async" />`
+          : '<span class="rtv-map-popup__loot-icon rtv-map-popup__loot-icon--ph" aria-hidden="true"></span>'
+        const ch =
+          r.chanceText != null && String(r.chanceText).trim() !== ''
+            ? escapeHtml(String(r.chanceText))
+            : r.chance != null
+              ? `${escapeHtml(String(r.chance))}%`
+              : '—'
+        const qtyRaw = r.quantityText != null ? r.quantityText : r.quantity
+        const qtyCell = qtyRaw != null && String(qtyRaw) !== '' ? escapeHtml(String(qtyRaw)) : '—'
+        return `<tr><td class="rtv-map-popup__loot-td-item"><span class="rtv-map-popup__loot-cell">${icon}${nameHtml}</span></td><td class="rtv-map-popup__loot-td-q">${qtyCell}</td><td class="rtv-map-popup__loot-td-ch">${ch}</td></tr>`
+      })
+      .join('')
+
+    const table = rows
+      ? `<div class="rtv-map-popup__loot-wrap"><table class="rtv-map-popup__loot-table"><thead><tr><th scope="col">Item</th><th scope="col">QTY</th><th scope="col">Chance</th></tr></thead><tbody>${rows}</tbody></table></div>`
+      : ''
+
+    if (!meta && !table) return ''
+    return `<div class="rtv-map-popup__rolls">${meta}${table}</div>`
+  }
+
   function buildPopupHtml(p) {
     const title = pinTitle(p)
     const hero = heroForPin(p)
+    const pop = popupForPin(p)
+
+    const descFromPin = p.describe != null && String(p.describe).trim() !== '' ? String(p.describe) : ''
+    const descFromApi =
+      !descFromPin && pop?.questDescription && String(pop.questDescription).trim() !== ''
+        ? String(pop.questDescription)
+        : ''
+    const descText = descFromPin || descFromApi
+    const desc = descText ? `<p class="rtv-map-popup__desc">${escapeHtml(descText)}</p>` : ''
+
+    const rolls = buildRollSectionHtml(pop, siteBase)
     const thumb = hero
       ? `<div class="rtv-map-popup__thumb"><img src="${escapeHtml(hero.src)}" alt="${escapeHtml(hero.alt)}" width="88" height="88" loading="lazy" decoding="async"></div>`
       : ''
-    const cls = thumb ? 'rtv-map-popup rtv-map-popup--with-media' : 'rtv-map-popup'
     const body = p.content ? `<div class="rtv-map-popup__html">${String(p.content)}</div>` : ''
-    return `<div class="${cls}"><div class="rtv-map-popup__body"><strong>${escapeHtml(title)}</strong>${body}</div>${thumb}</div>`
+
+    const hasRollBlock = Boolean(rolls)
+    const cls = [
+      'rtv-map-popup',
+      thumb ? 'rtv-map-popup--with-media' : '',
+      hasRollBlock ? 'rtv-map-popup--with-rolls' : '',
+    ]
+      .filter(Boolean)
+      .join(' ')
+
+    return `<div class="${cls}"><div class="rtv-map-popup__body"><strong>${escapeHtml(title)}</strong>${rolls}${desc}${body}</div>${thumb}</div>`
   }
 
   function normalizedToLatLng(xNorm, yNorm, w, h) {
@@ -352,7 +481,9 @@ export function useWindroseMap(bundle, options = {}) {
       }
     }
 
-    L.control.zoom({ position: 'topright' }).addTo(mapInstance)
+    if (showZoomControl) {
+      L.control.zoom({ position: 'topright' }).addTo(mapInstance)
+    }
 
     if (coordHudRef) {
       mapInstance.on('mousemove', (e) => {
@@ -365,39 +496,52 @@ export function useWindroseMap(bundle, options = {}) {
     }
 
     markerById.clear()
-    markersLayer = L.layerGroup()
-    const appear = kindMetaById.value.appearance
-    const pinPx = MAP_PIN_LEAFLET_ICON_PX
-    const pinHalf = pinPx / 2
-    const selectPoi = (id) => {
-      selectedPoiId.value = id
+    if (showMarkers) {
+      markersLayer = L.layerGroup()
+      const appear = kindMetaById.value.appearance
+      const pinPx = MAP_PIN_LEAFLET_ICON_PX
+      const pinHalf = pinPx / 2
+      const selectPoi = (id) => {
+        selectedPoiId.value = id
+      }
+
+      for (const p of mapPoints.value) {
+        const latlng = normalizedToLatLng(p.x, p.y, w, h)
+        const icon = L.divIcon({
+          className: `rtv-map-marker ${markerModifierForPin(p)}`,
+          html: buildMapPinHtml(p, appear[p.category]),
+          iconSize: [pinPx, pinPx],
+          iconAnchor: [pinHalf, pinHalf],
+          popupAnchor: [0, -(pinHalf + 4)],
+        })
+        const marker = L.marker(latlng, { icon, title: pinTitle(p) })
+        const hasRichPopup = Boolean(heroForPin(p))
+        const pp = popupForPin(p)
+        const needsWide =
+          Boolean(pp?.rewards?.length) ||
+          (pp?.chestCount != null && Number(pp.chestCount) > 0) ||
+          (pp?.explorationXp != null && Number(pp.explorationXp) > 0) ||
+          (pp?.questExperience != null && Number(pp.questExperience) > 0)
+        marker.bindPopup(buildPopupHtml(p), {
+          className: 'rtv-map-popup-wrap',
+          maxWidth: needsWide ? 440 : hasRichPopup ? 360 : 300,
+          offset: L.point(0, -6),
+        })
+        marker.on('click', () => selectPoi(p.id))
+        marker.on('popupopen', () => selectPoi(p.id))
+        markerById.set(p.id, marker)
+        markersLayer.addLayer(marker)
+      }
+      markersLayer.addTo(mapInstance)
+      applyMarkerVisibility()
+    } else {
+      markersLayer = null
     }
 
-    for (const p of mapPoints.value) {
-      const latlng = normalizedToLatLng(p.x, p.y, w, h)
-      const icon = L.divIcon({
-        className: `rtv-map-marker ${markerModifierForPin(p)}`,
-        html: buildMapPinHtml(p, appear[p.category]),
-        iconSize: [pinPx, pinPx],
-        iconAnchor: [pinHalf, pinHalf],
-        popupAnchor: [0, -(pinHalf + 4)],
-      })
-      const marker = L.marker(latlng, { icon, title: pinTitle(p) })
-      const hasRichPopup = Boolean(heroForPin(p))
-      marker.bindPopup(buildPopupHtml(p), {
-        className: 'rtv-map-popup-wrap',
-        maxWidth: hasRichPopup ? 380 : 300,
-        offset: L.point(0, -6),
-      })
-      marker.on('click', () => selectPoi(p.id))
-      marker.on('popupopen', () => selectPoi(p.id))
-      markerById.set(p.id, marker)
-      markersLayer.addLayer(marker)
-    }
-    markersLayer.addTo(mapInstance)
-    applyMarkerVisibility()
-
-    const zoomToPins = (!useRasterBasemap || basemapIsOgSocialCard) && mapPoints.value.length > 0
+    const zoomToPins =
+      showMarkers &&
+      (!useRasterBasemap || basemapIsOgSocialCard) &&
+      mapPoints.value.length > 0
     if (zoomToPins) {
       const bb = mapPoints.value.reduce(
         (acc, p) => {

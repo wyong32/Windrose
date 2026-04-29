@@ -51,7 +51,7 @@
       notices, you may write to
       <a href="mailto:wyong@windrosegame.net">wyong@windrosegame.net</a>. Please use a descriptive subject line and
       include URLs or screenshots where relevant. For legal or takedown notices, see our
-      <RouterLink to="/copyright">Copyright</RouterLink> page for required notice contents.
+      <a href="/copyright">Copyright</a> page for required notice contents.
     </p>
     <p>
       For gameplay support, refunds, or anti-cheat matters, you must contact the game’s official support channels; we

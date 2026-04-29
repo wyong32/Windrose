@@ -25,9 +25,10 @@
           </ul>
 
           <p class="hero-lede">
-            Windrose Compass is a fan-made companion for Windrose in Early Access: maps, wiki-style lists, and player
-            guides in one place. Use the online co-op guide when you want the crew in the same world with invite codes;
-            keep the interactive map open for archipelago callouts while you sail.
+            Windrose Compass is a fan-made companion for Windrose in Early Access: the same session usually has you
+            juggling the interactive map for pins, the wiki for item names, and longer guides when you need more than a
+            table row—use the buttons above for the fastest hop; the play-online article is there when you want invite
+            codes and host parity explained in plain language.
           </p>
 
           <p class="hero-tagline" role="presentation">
@@ -35,10 +36,10 @@
           </p>
 
           <div class="hero-actions">
-            <RouterLink class="btn btn-primary" to="/guides/play-windrose-online">Play online with friends</RouterLink>
-            <RouterLink class="btn btn-ghost" to="/guides">All guides</RouterLink>
-            <RouterLink class="btn btn-map" to="/map">Interactive Map</RouterLink>
-            <RouterLink class="btn btn-wiki" to="/wiki">Browse wiki</RouterLink>
+            <a class="btn btn-primary" href="/guides/play-windrose-online">Play online with friends</a>
+            <a class="btn btn-ghost" href="/guides">All guides</a>
+            <a class="btn btn-map" href="/map">Interactive Map</a>
+            <a class="btn btn-wiki" href="/wiki">Browse wiki</a>
           </div>
 
           <p class="hero-note">Fan resource · not affiliated with Windrose developers or publishers.</p>
@@ -52,13 +53,14 @@
           <header class="home-section-head">
             <h2 id="quick-heading" class="section-title">Quick Links</h2>
             <p class="section-lead">
-              Four doorways we keep updated: online co-op with friends, the big atlas, quick-reference wiki lists, and a
-              short list of hand-picked mods.
+              These four entry points mirror how crews actually play: get everyone into the same world, read the chart
+              like a second monitor, skim Windrose wiki tables between voyages, and only then peek at curated mods when
+              you are ready to change the client.
             </p>
           </header>
           <ul class="quick-links-grid" role="list">
             <li>
-              <RouterLink class="quick-link-card" to="/guides/play-windrose-online">
+              <a class="quick-link-card" href="/guides/play-windrose-online">
                 <span class="quick-link-card__glyph" aria-hidden="true">
                   <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect
@@ -83,10 +85,10 @@
                   </span>
                 </span>
                 <span class="quick-link-card__chev" aria-hidden="true">→</span>
-              </RouterLink>
+              </a>
             </li>
             <li>
-              <RouterLink class="quick-link-card" to="/map">
+              <a class="quick-link-card" href="/map">
                 <span class="quick-link-card__glyph" aria-hidden="true">
                   <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -107,10 +109,10 @@
                   </span>
                 </span>
                 <span class="quick-link-card__chev" aria-hidden="true">→</span>
-              </RouterLink>
+              </a>
             </li>
             <li>
-              <RouterLink class="quick-link-card" to="/wiki">
+              <a class="quick-link-card" href="/wiki">
                 <span class="quick-link-card__glyph" aria-hidden="true">
                   <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <path
@@ -131,10 +133,10 @@
                   </span>
                 </span>
                 <span class="quick-link-card__chev" aria-hidden="true">→</span>
-              </RouterLink>
+              </a>
             </li>
             <li>
-              <RouterLink class="quick-link-card" to="/mods">
+              <a class="quick-link-card" href="/mods">
                 <span class="quick-link-card__glyph" aria-hidden="true">
                   <svg viewBox="0 0 32 32" fill="none" xmlns="http://www.w3.org/2000/svg">
                     <rect
@@ -157,7 +159,7 @@
                   </span>
                 </span>
                 <span class="quick-link-card__chev" aria-hidden="true">→</span>
-              </RouterLink>
+              </a>
             </li>
           </ul>
         </div>
@@ -172,8 +174,9 @@
               <h2 id="map-heading" class="section-title">Windrose Interactive Map</h2>
               <p class="section-lead">
                 Plan runs the way you already talk in voice: camps for rest, mines and farms for upkeep, ruins and
-                wrecks for risky loot, and exploration pins for “we should check that island later.” The full map page
-                layers all of that on one chart with search and filters so you are not juggling five browser tabs.
+                wrecks for risky loot, and exploration pins for “we should check that island later.” When a popup names
+                an odd resource, cross-check the resources deck on the wiki, then come back to the chart—the full map
+                workspace adds search, filters, and coordinates so you are not juggling five tabs mid-expedition.
               </p>
             </header>
             <ul class="map-teaser-bullets" aria-label="What the full map adds">
@@ -182,10 +185,11 @@
               <li>Glance at the corner readout when you need a clean x/y callout for screenshots or squad pings.</li>
               <li>Open a pin card for notes and art; copy the page URL if you want someone else to land on the same spot.</li>
             </ul>
-            <RouterLink class="home-cta-link" to="/map">Open full map workspace →</RouterLink>
+            <a class="home-cta-link" href="/map">Open full map workspace →</a>
             <p class="map-teaser-footnote">
-              The preview here is coastline-only so the home page stays light. Open the map page for every marker type,
-              search, and the readout your crew expects from a proper atlas.
+              The preview here is coastline-only so the home page stays light. The full atlas links above include every
+              marker family plus the corner readout—pair it with Getting Started when you are still learning pin
+              vocabulary, or with Advanced when the crew starts routing faction hauls and fort nights.
             </p>
           </div>
           <div ref="mapTeaserRoot" class="map-teaser-visual">
@@ -202,23 +206,24 @@
           <h2 id="wiki-home-heading" class="section-title">Windrose Wiki</h2>
           <p class="section-lead">
             Six stacks line up with how you browse in game: materials, food and tonics, weapons, worn kit, ship parts,
-            and a grab-bag for odd quest items. Pick a stack, skim the rows, and hop back to the map when you are ready
-            to sail.
+            and a grab-bag for odd quest items. When a guide mentions a craft you cannot place, search the right deck
+            here, then sanity-check the route on the interactive map before you burn sail time. Planning a respec?
+            Cross-check numbers with the talent tree planner the same night you change gear.
           </p>
         </header>
         <ul class="wiki-home-grid" role="list">
           <li v-for="slug in wikiOrder" :key="slug">
-            <RouterLink class="wiki-home-card" :to="`/wiki/${slug}`">
+            <a class="wiki-home-card" :href="`/wiki/${slug}`">
               <span class="wiki-home-card__eyebrow">Deck</span>
               <h3 class="wiki-home-card__title">{{ wikiMeta[slug].label }}</h3>
               <p class="wiki-home-card__tagline">{{ wikiMeta[slug].tagline }}</p>
               <p class="wiki-home-card__desc">{{ wikiMeta[slug].description }}</p>
               <span class="wiki-home-card__cta">Browse {{ wikiMeta[slug].label }} →</span>
-            </RouterLink>
+            </a>
           </li>
         </ul>
         <p class="wiki-home-all">
-          <RouterLink class="home-cta-link" to="/wiki">Open wiki hub overview →</RouterLink>
+          <a class="home-cta-link" href="/wiki">Open wiki hub overview →</a>
         </p>
       </div>
     </section>
@@ -228,14 +233,15 @@
         <header class="home-section-head">
           <h2 id="guides-heading" class="section-title">Windrose Guides</h2>
           <p class="section-lead">
-            A couple of longer reads we think belong on the front deck—same articles you will find in the Guides hub,
-            picked for new crews and map regulars.
+            Longer Windrose guides land here first—builds, routes, and systems essays you can read between sessions.
+            They complement the wiki tables and the map: use guides for narrative and boss context, then fall back to
+            data decks when you only need a number or icon name.
           </p>
         </header>
         <ul v-if="homeGuides.length" class="guides-home-grid" role="list">
           <li v-for="g in homeGuides" :key="g.id">
             <article class="guides-home-card">
-              <RouterLink class="guides-home-card__link" :to="`/guides/${g.addressBar}`">
+              <a class="guides-home-card__link" :href="`/guides/${g.addressBar}`">
                 <div class="guides-home-card__media">
                   <img :src="g.imageUrl" :alt="g.imageAlt" width="640" height="360" loading="lazy" decoding="async" />
                 </div>
@@ -245,13 +251,13 @@
                   <p class="guides-home-card__excerpt">{{ g.description }}</p>
                   <span class="guides-home-card__cta">Read article →</span>
                 </div>
-              </RouterLink>
+              </a>
             </article>
           </li>
         </ul>
         <p v-else class="guides-home-empty">No guides flagged for the home page yet.</p>
         <p class="guides-home-all">
-          <RouterLink class="home-cta-link" to="/guides">Browse all guides →</RouterLink>
+          <a class="home-cta-link" href="/guides">Browse all guides →</a>
         </p>
       </div>
     </section>
@@ -274,6 +280,11 @@
             <p class="about-lead">
               Windrose Compass is a fan-run dock for Windrose in Early Access: one place to open the chart, skim gear
               lists, and read guides when you are not in the client.
+            </p>
+            <p>
+              Most nights you will still live inside three tabs—the map for geography, the wiki for item truth, and
+              occasionally talents or guides when you are changing builds or hosting friends. None of that replaces the
+              game client; it just cuts down Discord guesswork.
             </p>
             <p>
               We are not the official game site. Patch notes and in-game tooltips still win when a number changes—we

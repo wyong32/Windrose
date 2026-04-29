@@ -4,9 +4,9 @@
       <div class="container">
         <nav class="page-breadcrumb" aria-label="Breadcrumb">
           <ol>
-            <li><RouterLink to="/">Home</RouterLink></li>
+            <li><a href="/">Home</a></li>
             <li class="page-breadcrumb__sep" aria-hidden="true">/</li>
-            <li><RouterLink to="/mods">Mods</RouterLink></li>
+            <li><a href="/mods">Mods</a></li>
             <li class="page-breadcrumb__sep" aria-hidden="true">/</li>
             <li><span aria-current="page">{{ article.title }}</span></li>
           </ol>
@@ -89,10 +89,10 @@
             <p class="mod-article__more-label">More mods</p>
             <ul class="mod-article__morelist">
               <li v-for="l in asideItems" :key="l.to">
-                <RouterLink :to="l.to">{{ l.label }}</RouterLink>
+                <a :href="l.to">{{ l.label }}</a>
               </li>
             </ul>
-            <RouterLink to="/mods" class="mod-article__more-all">All mods</RouterLink>
+            <a href="/mods" class="mod-article__more-all">All mods</a>
           </div>
         </aside>
 
@@ -107,7 +107,7 @@
     <div class="container mod-article__missing-inner">
       <h1>Mod not found</h1>
       <p>This slug is not in the local manifest.</p>
-      <RouterLink to="/mods">Back to mods</RouterLink>
+      <a href="/mods">Back to mods</a>
     </div>
   </article>
 </template>

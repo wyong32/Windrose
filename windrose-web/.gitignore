@@ -41,3 +41,8 @@ __screenshots__/
 # 地图调试等临时导出
 tmp-map-runtime.json
 tmp-*.json
+tmp-*.html
+tmp-talents*.js
+
+# Cursor IDE — do not commit vendored skill packs into the app repo
+.cursor/

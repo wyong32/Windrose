@@ -76,7 +76,12 @@
           <p class="footer-nav-heading">Quick links</p>
           <ul class="footer-nav-list">
             <li v-for="link in quickLinks" :key="link.to">
-              <RouterLink class="footer-nav-link" :to="link.to">{{ link.label }}</RouterLink>
+              <a
+                class="footer-nav-link"
+                :class="{ 'footer-nav-link--active': isPrimaryNavActive(link.to, route.path) }"
+                :href="link.to"
+                >{{ link.label }}</a
+              >
             </li>
           </ul>
         </nav>
@@ -84,7 +89,12 @@
           <p class="footer-nav-heading">Legal</p>
           <ul class="footer-nav-list">
             <li v-for="link in legalLinks" :key="link.to">
-              <RouterLink class="footer-nav-link footer-nav-link--legal" :to="link.to">{{ link.label }}</RouterLink>
+              <a
+                class="footer-nav-link footer-nav-link--legal"
+                :class="{ 'footer-nav-link--active': isExactPathActive(link.to, route.path) }"
+                :href="link.to"
+                >{{ link.label }}</a
+              >
             </li>
           </ul>
         </nav>
@@ -101,7 +111,11 @@
 
 <script setup>
 import { computed } from 'vue'
+import { useRoute } from 'vue-router'
 import { PRIMARY_NAV, LEGAL_NAV, OFFICIAL_OUTBOUND } from '@/data/siteNav.js'
+import { isPrimaryNavActive, isExactPathActive } from '@/utils/navActive.js'
+
+const route = useRoute()
 
 const year = new Date().getFullYear()
 const quickLinks = PRIMARY_NAV
@@ -280,7 +294,7 @@ const outbound = computed(() =>
   color: var(--color-sea);
 }
 
-.footer-nav-link.router-link-active {
+.footer-nav-link.footer-nav-link--active {
   color: var(--color-brass);
 }
 

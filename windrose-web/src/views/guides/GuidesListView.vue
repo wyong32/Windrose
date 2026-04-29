@@ -4,9 +4,9 @@
       <div class="container">
         <nav class="page-breadcrumb" aria-label="Breadcrumb">
           <ol>
-            <li><RouterLink to="/">Home</RouterLink></li>
+            <li><a href="/">Home</a></li>
             <li class="page-breadcrumb__sep" aria-hidden="true">/</li>
-            <li><span aria-current="page">Guides</span></li>
+            <li><span aria-current="page">Windrose Guides</span></li>
           </ol>
         </nav>
         <div class="page-hero__shell">
@@ -19,9 +19,10 @@
             <span>Patch-safe</span>
           </div>
           <p class="page-hero__lead">
-            Long-form articles ship here first: map literacy, camp taxonomy, and sailing checks written for Windrose Early
-            Access. Each card opens a detail page with sidebar context—tags, publish date, and cross-links to the wiki
-            or map when relevant.
+            Long-form articles ship here first: map literacy, camp habits, Windrose build breakdowns, and sailing checks
+            written for Early Access crews. Each card opens a detail page with tags and publish date—when you only need a
+            stat table afterward, use the wiki; when you need coordinates for that same topic, pair it with the
+            interactive map.
           </p>
         </div>
       </div>
@@ -32,7 +33,7 @@
         <h2 id="guides-list-heading" class="guides-hub__list-title">Latest articles</h2>
         <ul class="guides-hub__grid" role="list">
           <li v-for="a in sorted" :key="a.id">
-            <RouterLink :to="`/guides/${a.addressBar}`" class="guides-card">
+            <a :href="`/guides/${a.addressBar}`" class="guides-card">
               <div class="guides-card__media">
                 <img
                   :src="a.imageUrl"
@@ -53,9 +54,16 @@
                 <h3 class="guides-card__title">{{ a.title }}</h3>
                 <p class="guides-card__excerpt">{{ excerpt(a) }}</p>
               </div>
-            </RouterLink>
+            </a>
           </li>
         </ul>
+        <div class="guides-hub__after prose-after wr-html-prose">
+          <p>
+            New to the archipelago? Read Getting Started before you deep-dive build guides. If an article cites a weapon
+            family you do not recognize, verify the row in the weapons wiki the same session—patch weeks can shuffle names
+            faster than prose updates.
+          </p>
+        </div>
       </div>
     </section>
   </article>
@@ -81,6 +89,25 @@ function excerpt(item) {
 
 .guides-hub__grid-wrap {
   padding: 1.5rem 0 2.5rem;
+}
+
+.guides-hub__after {
+  margin-top: 1.75rem;
+  padding-top: 1.25rem;
+  border-top: 1px solid rgba(160, 188, 210, 0.14);
+  max-width: 68ch;
+}
+
+.guides-hub__after p {
+  margin: 0;
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--color-text-muted);
+}
+
+.guides-hub__after a {
+  color: var(--color-sea);
+  font-weight: 600;
 }
 
 .guides-hub__list-title {
