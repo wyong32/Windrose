@@ -19,10 +19,8 @@
             <span>Coordinates</span>
           </div>
           <p class="page-hero__lead page-hero__lead--single">
-            Pan and zoom the fan archipelago, toggle marker types in the left panel, and search to jump the camera. Cursor
-            coordinates read out normalized x/y for callouts, screenshot grids, and the same shorthand the wiki tables use
-            when a row mentions a landmark. Debating a respec before you sail? Rehearse the build on the talent planner,
-            then come back here for pins.
+            Pan, zoom, toggle layers, search markers—corner HUD gives x/y for callouts. Plan a build on
+            <a href="/talents">Talents &amp; Build</a>, then return here for pins.
           </p>
         </div>
       </div>
@@ -265,7 +263,6 @@ function onMasterChange(cat, e) {
 
 .map-page .page-hero__lead--single {
   margin-bottom: 0;
-  max-width: 46rem;
 }
 
 /* Map page — aligned with site tokens; ocean fill matches chart edges */

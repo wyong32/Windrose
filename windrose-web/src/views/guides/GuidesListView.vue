@@ -19,10 +19,8 @@
             <span>Patch-safe</span>
           </div>
           <p class="page-hero__lead">
-            Long-form articles ship here first: map literacy, camp habits, Windrose build breakdowns, and sailing checks
-            written for Early Access crews. Each card opens a detail page with tags and publish date—when you only need a
-            stat table afterward, use the wiki; when you need coordinates for that same topic, pair it with the
-            interactive map.
+            Long reads for routes, builds, and systems—each card is a full article. Need tables or coordinates? Use the
+            wiki or map next.
           </p>
         </div>
       </div>

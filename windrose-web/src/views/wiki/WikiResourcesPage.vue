@@ -107,12 +107,11 @@ const props = defineProps({
   lead: {
     type: String,
     default:
-      'Ores, fibers, salvage, and biome drops in one filterable Windrose table. Use the Description column and row hover tips—there are no separate detail pages here.',
+      'Ores, fibers, and drops in one filterable table—use Description and hover tips; match odd pin names to rows here.',
   },
   leadSecondary: {
     type: String,
-    default:
-      'If a map pin names something odd, open the interactive map guide and compare the pin wording to the names in this list.',
+    default: '',
   },
 })
 

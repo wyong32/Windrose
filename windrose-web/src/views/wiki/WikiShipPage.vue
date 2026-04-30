@@ -107,12 +107,11 @@ const props = defineProps({
   lead: {
     type: String,
     default:
-      'Hull modules, gunports, and deck gadgets for Windrose naval combat—each row includes the description plus a Stat column when we have cannon damage, reload pacing, or range notes.',
+      'Hulls, cannons, deck gear—descriptions plus a Stat column when we have it. Use the map when routes matter.',
   },
   leadSecondary: {
     type: String,
-    default:
-      'Use the interactive map for geography and the wiki ship deck when you are comparing hull loadouts.',
+    default: '',
   },
 })
 

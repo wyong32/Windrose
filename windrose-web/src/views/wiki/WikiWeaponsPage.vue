@@ -107,12 +107,11 @@ const props = defineProps({
   lead: {
     type: String,
     default:
-      'Melee, ranged, and thrown Windrose weapons in one table: categories, short stat blurbs where we have them, and rarity. Filter to compare heavy melee costs against musket lines before you spend materials.',
+      'Melee, ranged, thrown—filter by category or name before you spend mats. After combat patches, verify feel in-game.',
   },
   leadSecondary: {
     type: String,
-    default:
-      'For dodge and parry rhythm after a combat patch, test changes in-game—this page stays focused on weapon names and what the tooltip says.',
+    default: '',
   },
 })
 

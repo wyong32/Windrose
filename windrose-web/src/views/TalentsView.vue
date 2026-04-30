@@ -19,32 +19,21 @@
             <span>Shareable build URLs</span>
           </div>
           <p class="page-hero__lead">
-            This page is an <strong>interactive skill tree</strong>: you click nodes to assign
-            <strong>talent points</strong> (same four branches as the game), see locks and three ranks per talent, and
-            copy a link so your crew loads the same plan. Point cap and branch layout mirror the live client; data can
-            drift after patches—double-check in-game.
-          </p>
-          <p class="page-hero__lead">
-            English sites often say “<strong>talent builder</strong>”—it just means a <strong>web tool to plan your
-            talents</strong> before you click confirm in town. Respec is free, but rehearsing here avoids menu juggling on
-            a moving ship.
+            Click the four in-game branches, spend <strong>talent points</strong>, copy the URL—same locks and three ranks
+            per node as the client. Cap follows level; respec is free in town.
           </p>
           <ul class="page-hero__highlights">
             <li>
-              <strong>Four branches, one build</strong>
-              Map <strong>Fencer</strong> (one-hand &amp; finesse), <strong>Crusher</strong> (two-hand &amp; cleave),
-              <strong>Marksman</strong> (firearms), and <strong>Toughguy</strong> (stamina, mitigation, cheat-death)—the
-              same labels you see in the character sheet.
+              <strong>Branches</strong>
+              Fencer, Crusher, Marksman, Toughguy—labels match the character sheet.
             </li>
             <li>
-              <strong>Shareable links</strong>
-              Your selections live in the address bar—drop the link in Discord when the crew debates who tanks boarding
-              or who holds the musket line.
+              <strong>Share</strong>
+              The build lives in the address bar—drop it in voice or Discord.
             </li>
             <li>
-              <strong>Guides that match this UI</strong>
-              Below we link five player-written builds (stats, Rapier, Plague Halberd boarding, Reliable Musketeer, Saber
-              crit) that spell out exact talent order—open them side-by-side with the planner.
+              <strong>Guides</strong>
+              Build articles below—open next to the planner before you respec.
             </li>
           </ul>
         </div>
@@ -54,13 +43,16 @@
     <div class="guide-legacy">
       <div class="container">
         <div class="guide-body-content">
+          <div class="talents-page__planner">
+            <TalentTreePlanner />
+          </div>
+
           <div class="guide-chunk wr-html-prose">
             <h2 id="how-the-planner-works">How this Windrose talent planner works</h2>
             <p>
-              The interactive tree sits below (it is rendered outside the narrow prose column so the art lines up with
-              the official layout). Click nodes to add ranks until you hit the
-              <strong>level-based talent point cap</strong>; locked branches still show their gates so you can plan what
-              to unlock next. When you are happy with the route, copy the page URL—anyone can load the same
+              The interactive tree is above—full width so the layout matches the in-game art. Click nodes to add ranks until
+              you hit the <strong>level-based talent point cap</strong>; locked branches still show their gates so you can
+              plan what to unlock next. When you are happy with the route, copy the page URL—anyone can load the same
               <strong>Windrose skill tree</strong> snapshot in their browser.
             </p>
             <p>
@@ -68,10 +60,6 @@
               pages explain when survival talents matter more than damage. For raw item math while you respec, keep the
               wiki and the map open so you are not guessing material names mid-build.
             </p>
-          </div>
-
-          <div class="talents-page__planner">
-            <TalentTreePlanner />
           </div>
 
           <section class="talents-related" aria-labelledby="talents-guides-heading">
@@ -199,7 +187,7 @@ onUnmounted(() => {
 }
 
 .talents-page__planner {
-  margin-top: 0.25rem;
+  margin-top: 0;
 }
 
 .talents-related {

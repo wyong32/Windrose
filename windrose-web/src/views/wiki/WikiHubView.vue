@@ -19,14 +19,8 @@
             <span>Fan-maintained</span>
           </div>
           <p class="page-hero__lead">
-            Six searchable tables for Windrose Early Access—materials, meals, weapons, worn gear, ship bits, and misc
-            drops. No accounts; keep a tab open next to the game and cross-check pins on the interactive map when
-            geography decides whether that sulfur icon is worth a detour.
-          </p>
-          <p class="page-hero__lead">
-            Long-form walkthroughs and build essays live in Guides; the Getting Started hub still helps first-week crews
-            translate pin names into plans. Windrose Compass is independent fan work—not affiliated with the game’s
-            publisher.
+            Six filterable tables for materials, food, weapons, gear, ship parts, and misc—no login. Fan-maintained; not an
+            official site.
           </p>
         </div>
       </div>

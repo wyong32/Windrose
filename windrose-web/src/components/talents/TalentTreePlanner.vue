@@ -32,118 +32,124 @@
     </header>
 
     <div class="wr-talent-planner__body">
-      <!-- 与游戏内树布局一致：1200 逻辑单位 → %；背景图 scale(1.75)+cover；节点 7%×7% -->
-      <div class="wr-talent-planner__frame" tabindex="0">
-        <img
-          class="wr-talent-planner__bg"
-          :src="assets.backgroundPublicPath"
-          alt=""
-          width="1024"
-          height="1024"
-          decoding="async"
-          fetchpriority="low"
-        />
-        <button
-          v-for="node in tree.nodes"
-          :key="node.id"
-          type="button"
-          class="wr-talent-node"
-          :class="{
-            'wr-talent-node--selected': selectedId === node.id,
-            'wr-talent-node--locked': isLocked(node),
-          }"
-          :style="nodeStyle(node)"
-          :aria-label="nodeLabel(node)"
-          @click.prevent="onNodeClick(node, $event)"
-          @contextmenu.prevent="onNodeRight(node, $event)"
-        >
-          <span
-            class="wr-talent-node__slot"
-            :style="{
-              backgroundImage: `url(${slotImage(node)})`,
-            }"
-          />
-          <img
-            class="wr-talent-node__icon"
-            :src="primaryPerk(node).iconPublicPath"
-            alt=""
-            loading="lazy"
-            decoding="async"
-          />
-          <img
-            v-if="isLocked(node)"
-            class="wr-talent-node__lock"
-            :src="assets.lockIconPublicPath"
-            width="20"
-            height="20"
-            alt=""
-          />
-          <span class="wr-talent-node__lvl">{{ levelOf(node) }}/{{ node.maxNodeLevel }}</span>
-        </button>
-      </div>
-
-      <aside class="wr-talent-planner__aside" aria-live="polite">
-        <template v-if="selectedNode">
-          <h3 class="wr-talent-planner__aside-title">{{ branchName(selectedNode.branchTag) }}</h3>
-          <div
-            v-for="(perk, idx) in selectedPerkList"
-            :key="perk.id"
-            class="wr-talent-perk-block"
-          >
-            <div class="wr-talent-perk">
-              <img class="wr-talent-perk__icon" :src="perk.iconPublicPath" width="48" height="48" alt="" />
-              <div>
-                <h4 class="wr-talent-perk__name">{{ perk.title }}</h4>
-                <p class="wr-talent-perk__desc">{{ formatPerkDescription(perk, displayLevel(selectedNode)) }}</p>
-              </div>
-            </div>
-            <div v-if="idx < selectedPerkList.length - 1" class="wr-talent-perk__sep" role="separator" />
-          </div>
-          <p class="wr-talent-planner__aside-meta">
-            Node level <strong>{{ levelOf(selectedNode) }}</strong> · Cost per rank {{ selectedNode.pointCost }}
-          </p>
-        </template>
-        <p v-else class="wr-talent-planner__aside-empty">Select a talent node on the tree to see descriptions and values.</p>
-      </aside>
-
-      <section class="wr-talent-planner__alloc" aria-labelledby="wr-talent-alloc-h">
-        <h3 id="wr-talent-alloc-h" class="wr-talent-planner__alloc-title">Allocated talents</h3>
-        <p v-if="spentPoints === 0" class="wr-talent-planner__alloc-empty">No points spent yet.</p>
-        <ol v-else class="wr-talent-planner__alloc-list">
-          <li
-            v-for="(node, idx) in allocatedNodesSorted"
-            :key="node.id"
-            class="wr-talent-planner__alloc-item"
-          >
-            <span class="wr-talent-planner__alloc-idx" aria-hidden="true">{{ idx + 1 }}</span>
+      <div class="wr-talent-planner__layout">
+        <div class="wr-talent-planner__dial-wrap">
+          <!-- 与游戏内树布局一致：1200 逻辑单位 → %；背景图 scale(1.75)+cover；节点 7%×7% -->
+          <div class="wr-talent-planner__frame" tabindex="0">
+            <img
+              class="wr-talent-planner__bg"
+              :src="assets.backgroundPublicPath"
+              alt=""
+              width="1024"
+              height="1024"
+              decoding="async"
+              fetchpriority="low"
+            />
             <button
+              v-for="node in tree.nodes"
+              :key="node.id"
               type="button"
-              class="wr-talent-planner__alloc-row"
-              :class="{ 'wr-talent-planner__alloc-row--active': selectedId === node.id }"
-              @click="selectNodeFromList(node)"
+              class="wr-talent-node"
+              :class="{
+                'wr-talent-node--selected': selectedId === node.id,
+                'wr-talent-node--locked': isLocked(node),
+              }"
+              :style="nodeStyle(node)"
+              :aria-label="nodeLabel(node)"
+              @click.prevent="onNodeClick(node, $event)"
+              @contextmenu.prevent="onNodeRight(node, $event)"
             >
+              <span
+                class="wr-talent-node__slot"
+                :style="{
+                  backgroundImage: `url(${slotImage(node)})`,
+                }"
+              />
               <img
-                class="wr-talent-planner__alloc-icon"
+                class="wr-talent-node__icon"
                 :src="primaryPerk(node).iconPublicPath"
-                width="40"
-                height="40"
+                alt=""
+                loading="lazy"
+                decoding="async"
+              />
+              <img
+                v-if="isLocked(node)"
+                class="wr-talent-node__lock"
+                :src="assets.lockIconPublicPath"
+                width="20"
+                height="20"
                 alt=""
               />
-              <span class="wr-talent-planner__alloc-text">
-                <span class="wr-talent-planner__alloc-branch">{{ branchName(node.branchTag) }}</span>
-                <span class="wr-talent-planner__alloc-name">{{ primaryPerk(node).title }}</span>
-              </span>
-              <span class="wr-talent-planner__alloc-ranks">{{ levelOf(node) }}/{{ node.maxNodeLevel }}</span>
+              <span class="wr-talent-node__lvl">{{ levelOf(node) }}/{{ node.maxNodeLevel }}</span>
             </button>
-          </li>
-        </ol>
-      </section>
+          </div>
+        </div>
+
+        <div class="wr-talent-planner__rail">
+          <aside class="wr-talent-planner__aside" aria-live="polite">
+            <template v-if="selectedNode">
+              <h3 class="wr-talent-planner__aside-title">{{ branchName(selectedNode.branchTag) }}</h3>
+              <div
+                v-for="(perk, idx) in selectedPerkList"
+                :key="perk.id"
+                class="wr-talent-perk-block"
+              >
+                <div class="wr-talent-perk">
+                  <img class="wr-talent-perk__icon" :src="perk.iconPublicPath" width="48" height="48" alt="" />
+                  <div>
+                    <h4 class="wr-talent-perk__name">{{ perk.title }}</h4>
+                    <p class="wr-talent-perk__desc">{{ formatPerkDescription(perk, displayLevel(selectedNode)) }}</p>
+                  </div>
+                </div>
+                <div v-if="idx < selectedPerkList.length - 1" class="wr-talent-perk__sep" role="separator" />
+              </div>
+              <p class="wr-talent-planner__aside-meta">
+                Node level <strong>{{ levelOf(selectedNode) }}</strong> · Cost per rank {{ selectedNode.pointCost }}
+              </p>
+            </template>
+            <p v-else class="wr-talent-planner__aside-empty">Select a talent node on the tree to see descriptions and values.</p>
+          </aside>
+
+          <section class="wr-talent-planner__alloc" aria-labelledby="wr-talent-alloc-h">
+            <h3 id="wr-talent-alloc-h" class="wr-talent-planner__alloc-title">Allocated talents</h3>
+            <p v-if="spentPoints === 0" class="wr-talent-planner__alloc-empty">No points spent yet.</p>
+            <ol v-else class="wr-talent-planner__alloc-list">
+              <li
+                v-for="(node, idx) in allocatedNodesSorted"
+                :key="node.id"
+                class="wr-talent-planner__alloc-item"
+              >
+                <span class="wr-talent-planner__alloc-idx" aria-hidden="true">{{ idx + 1 }}</span>
+                <button
+                  type="button"
+                  class="wr-talent-planner__alloc-row"
+                  :class="{ 'wr-talent-planner__alloc-row--active': selectedId === node.id }"
+                  @click="selectNodeFromList(node)"
+                >
+                  <img
+                    class="wr-talent-planner__alloc-icon"
+                    :src="primaryPerk(node).iconPublicPath"
+                    width="40"
+                    height="40"
+                    alt=""
+                  />
+                  <span class="wr-talent-planner__alloc-text">
+                    <span class="wr-talent-planner__alloc-branch">{{ branchName(node.branchTag) }}</span>
+                    <span class="wr-talent-planner__alloc-name">{{ primaryPerk(node).title }}</span>
+                  </span>
+                  <span class="wr-talent-planner__alloc-ranks">{{ levelOf(node) }}/{{ node.maxNodeLevel }}</span>
+                </button>
+              </li>
+            </ol>
+          </section>
+        </div>
+      </div>
     </div>
   </div>
 </template>
 
 <script setup>
-import { computed, reactive, ref, watch } from 'vue'
+import { computed, onMounted, reactive, ref, watch } from 'vue'
 import { useRoute, useRouter } from 'vue-router'
 import talentTree from '@/data/talents/talentTree.json'
 import { formatPerkDescription } from '@/utils/talentFormat.js'
@@ -187,7 +193,7 @@ const minCharacterLevel = computed(() =>
 
 function onCharacterLevelInput(ev) {
   characterLevel.value = clampCharacterLevel(/** @type {HTMLInputElement} */ (ev.target).value)
-  syncQuery()
+  stripTalentParamsFromUrl()
 }
 
 function levelOf(node) {
@@ -293,12 +299,12 @@ function onNodeClick(node, ev) {
   if (ev.shiftKey) {
     if (canDecrease(node)) levels[node.id] = levelOf(node) - 1
     if (levels[node.id] === 0) delete levels[node.id]
-    syncQuery()
+    stripTalentParamsFromUrl()
     return
   }
   if (canIncrease(node)) {
     levels[node.id] = levelOf(node) + 1
-    syncQuery()
+    stripTalentParamsFromUrl()
   }
 }
 
@@ -307,7 +313,7 @@ function onNodeRight(node) {
   if (canDecrease(node)) {
     levels[node.id] = levelOf(node) - 1
     if (levels[node.id] === 0) delete levels[node.id]
-    syncQuery()
+    stripTalentParamsFromUrl()
   }
 }
 
@@ -315,7 +321,7 @@ function resetBuild() {
   for (const k of Object.keys(levels)) delete levels[k]
   selectedId.value = null
   characterLevel.value = DEFAULT_CHARACTER_LEVEL
-  syncQuery()
+  stripTalentParamsFromUrl()
 }
 
 function utf8ToB64(str) {
@@ -361,20 +367,18 @@ function parseLevelQuery(raw) {
   return clampCharacterLevel(s)
 }
 
-function syncQuery() {
-  const t = encodeBuild()
-  const lvl = clampCharacterLevel(characterLevel.value)
+function stripTalentParamsFromUrl() {
   const q = { ...route.query }
-  if (t) q.talents = t
-  else delete q.talents
-  if (lvl === DEFAULT_CHARACTER_LEVEL) delete q.lvl
-  else q.lvl = String(lvl)
-
-  const prevT = typeof route.query.talents === 'string' ? route.query.talents : ''
-  const prevLvl = parseLevelQuery(route.query.lvl)
-
-  if (prevT === (t || '') && prevLvl === lvl) return
-  router.replace({ path: route.path, query: q })
+  let changed = false
+  if ('talents' in q) {
+    delete q.talents
+    changed = true
+  }
+  if ('lvl' in q) {
+    delete q.lvl
+    changed = true
+  }
+  if (changed) router.replace({ path: route.path, query: q })
 }
 
 function adjustCharacterLevelToSpent() {
@@ -400,34 +404,20 @@ async function copyShareLink() {
   }
 }
 
-watch(
-  () => route.query.lvl,
-  () => {
-    characterLevel.value = parseLevelQuery(route.query.lvl)
-    adjustCharacterLevelToSpent()
-    syncQuery()
-  },
-  { immediate: true },
-)
+onMounted(() => {
+  characterLevel.value = parseLevelQuery(route.query.lvl)
+  const tKey = typeof route.query.talents === 'string' ? route.query.talents : ''
+  if (tKey) decodeBuild(tKey)
+  adjustCharacterLevelToSpent()
+})
 
 watch(
   () => (typeof route.query.talents === 'string' ? route.query.talents : ''),
   (tKey) => {
-    if (tKey) decodeBuild(tKey)
-    else if (route.query.talents === undefined || route.query.talents === null) {
-      for (const k of Object.keys(levels)) delete levels[k]
+    if (tKey) {
+      decodeBuild(tKey)
+      adjustCharacterLevelToSpent()
     }
-    adjustCharacterLevelToSpent()
-    syncQuery()
-  },
-  { immediate: true },
-)
-
-watch(
-  () => JSON.stringify(levels),
-  () => {
-    adjustCharacterLevelToSpent()
-    syncQuery()
   },
 )
 </script>
@@ -567,12 +557,57 @@ watch(
   gap: 0;
 }
 
-/* 正方形容器 + 背景图 scale(1.75) + cover，节点用 % 叠在上面 */
+.wr-talent-planner__layout {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.wr-talent-planner__dial-wrap {
+  width: 100%;
+  max-width: 768px;
+  margin-inline: auto;
+  flex-shrink: 0;
+}
+
+.wr-talent-planner__rail {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+  border-top: 1px solid var(--wr-talent-border);
+}
+
+@media (min-width: 960px) {
+  .wr-talent-planner__layout {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 0 1rem;
+    padding: 0.65rem 0.85rem 0.85rem;
+  }
+
+  .wr-talent-planner__dial-wrap {
+    flex: 0 0 auto;
+    width: min(52vw, 768px);
+    max-width: 768px;
+    margin-inline: 0;
+  }
+
+  .wr-talent-planner__rail {
+    flex: 1 1 260px;
+    min-width: 220px;
+    max-width: 380px;
+    border-top: none;
+    border-left: 1px solid var(--wr-talent-border);
+    max-height: min(calc(100vw - 12rem), 720px);
+    overflow-y: auto;
+    overflow-x: hidden;
+  }
+}
+
+/* 正方形容器 + 背景图 scale(1.75) + cover，节点用 % 叠在上面（仅缩小容器，不改 % 与 transform，标点不乱） */
 .wr-talent-planner__frame {
   position: relative;
   width: 100%;
-  max-width: 1024px;
-  margin-inline: auto;
   aspect-ratio: 1 / 1;
   overflow: hidden;
   outline: none;
@@ -654,11 +689,16 @@ watch(
 }
 
 .wr-talent-planner__aside {
-  border-top: 1px solid var(--wr-talent-border);
   padding: 1rem 1rem 1.15rem;
   background: rgba(0, 0, 0, 0.25);
   overflow: visible;
   color-scheme: dark;
+}
+
+@media (min-width: 960px) {
+  .wr-talent-planner__aside {
+    border-bottom: 1px solid var(--wr-talent-border);
+  }
 }
 
 .wr-talent-planner__aside-title {
@@ -715,9 +755,10 @@ watch(
 }
 
 .wr-talent-planner__alloc {
-  border-top: 1px solid var(--wr-talent-border);
   padding: 0.9rem 1rem 1.1rem;
   background: rgba(0, 0, 0, 0.2);
+  flex: 1 1 auto;
+  min-height: 0;
 }
 
 .wr-talent-planner__alloc-title {

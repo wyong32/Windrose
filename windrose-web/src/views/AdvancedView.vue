@@ -19,30 +19,23 @@
             <span>Forts &amp; hosts</span>
           </div>
           <p class="page-hero__lead">
-            Built for crews who cleared the opening archipelago and now juggle harder POIs, faction hauls, and fleet
-            nights where one bad powder bank wipes the expedition. Early Access currently spans multiple biomes and
-            dozens of islands with dense authored content—pressure comes from timers overlapping, not from lacking things
-            to do.
-          </p>
-          <p class="page-hero__lead">
-            Treat the Windrose wiki as your numbers source and the interactive map as your geography source: when a guide
-            says “east of the sulfur beach,” you should be able to verify the pin and the resource name in the same minute.
-            Still on your first hull? Stay in Getting Started; when you are juggling SteamCMD or invite codes, keep
-            <a href="/guides/play-windrose-online">Play online with friends</a> in the same bookmark folder.
+            For crews past the beach: harder POIs, factions, fleet nights. Wiki for numbers, map for pins—verify a guide’s
+            “east of the beach” in one pass. Still on your first hull? Use
+            <a href="/getting-started">Getting Started</a>. SteamCMD or invites?
+            <a href="/guides/play-windrose-online">Play online with friends</a>.
           </p>
           <ul class="page-hero__highlights">
             <li>
-              <strong>Combat discipline</strong>
-              Spacing, parry audio tells, and voice calls matter more than raw DPS once elites start one-tapping greedy
-              stamina bars—especially during boarding transitions.
+              <strong>Combat</strong>
+              Parry calls and spacing beat raw DPS on elites and boarding.
             </li>
             <li>
-              <strong>Fleet economics</strong>
-              Hull stance, repair stacks, and a gunpowder pipeline beat cosmetic rigging once broadsides become routine.
+              <strong>Fleet</strong>
+              Repairs and gunpowder beat shiny rigging when broadsides are real.
             </li>
             <li>
-              <strong>Hosts &amp; saves</strong>
-              Dedicated servers and mod swings need backups and dry runs—patch day is the wrong time to learn SteamCMD.
+              <strong>Hosts</strong>
+              Backups and dry runs—patch day is not the day to learn SteamCMD.
             </li>
           </ul>
         </div>

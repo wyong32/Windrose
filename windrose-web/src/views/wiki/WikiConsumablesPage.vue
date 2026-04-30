@@ -105,12 +105,11 @@ const props = defineProps({
   lead: {
     type: String,
     default:
-      'Meals, medicine, and expendable buffs for Windrose PvE survival—stack rules, categories, and rarity tags in one filterable table. Search by name or effect text when you need the right meal before a fight.',
+      'Food, medicine, and buffs—filter by name, category, or effect. Pair with Resources when a recipe names a mat.',
   },
   leadSecondary: {
     type: String,
-    default:
-      'Pair this deck with the Resources wiki when a recipe calls for a specific fish or spice, and plan boarding windows using your crew’s own combat notes.',
+    default: '',
   },
 })
 

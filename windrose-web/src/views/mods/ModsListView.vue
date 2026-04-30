@@ -14,13 +14,10 @@
             <p class="mods-ledger-page__kicker">Quartermaster manifest · EA</p>
             <h1 id="mods-ledger-title">Windrose Mod loadout</h1>
             <p class="mods-ledger-page__deck">
-              Same data shape as Guides, plus <strong>downloadUrl</strong> and an optional <strong>stars</strong> field
-              (1–5, editorial). Ledger layout is visual only—fields stay minimal.
+              Curated spots—optional <strong>stars</strong> and <strong>downloadUrl</strong>; same article shape as Guides.
             </p>
             <p class="mods-ledger-page__deck mods-ledger-page__deck--note">
-              Install only what you trust: snapshot saves before you reorder loadouts, then cross-check gear math in the
-              equipment wiki and combat cadence notes on Advanced. Hosting a modded world? Re-read the play-online guide
-              so passwords and ports stay aligned with whoever joins.
+              Snapshot saves before loadout changes. Modded host? Match passwords and ports with whoever joins.
             </p>
           </div>
           <div class="mods-ledger-page__stat-card" aria-label="Listing count">

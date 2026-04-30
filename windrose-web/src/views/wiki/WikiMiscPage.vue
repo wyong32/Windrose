@@ -105,12 +105,11 @@ const props = defineProps({
   lead: {
     type: String,
     default:
-      'Catch-all Windrose rows: currencies, trophies, quest keys, and anything that refuses a tidy bucket. If it shows up in a popup but not elsewhere, it probably lives here.',
+      'Quest keys, currencies, oddities—filter when a popup name does not fit other decks. Tooltip wins after a patch.',
   },
   leadSecondary: {
     type: String,
-    default:
-      'If two items share a similar name after a patch, compare the in-game tooltip with the description column here.',
+    default: '',
   },
 })
 

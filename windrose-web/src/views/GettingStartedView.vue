@@ -19,30 +19,23 @@
             <span>Sails &amp; Tortuga</span>
           </div>
           <p class="page-hero__lead">
-            Windrose is a PvE pirate survival adventure: procedural archipelagos stitched with hand-built forts, camps,
-            and quest hubs, plus soulslite-style melee and full naval fights with boarding. In Early Access the main
-            story is already long-form for many crews (often cited around 50–70 hours, depending on how much you explore),
-            with multiple biomes, dozens of islands, and 90+ authored points of interest in the shipping build—always
-            double-check patch notes because EA moves fast.
-          </p>
-          <p class="page-hero__lead">
-            When you need coordinates for a callout, keep the interactive map beside the game; when you need the exact
-            name of a fish or ingot, the wiki tables answer faster than guessing in chat. Setting up co-op? Read
-            <a href="/guides/play-windrose-online">Play online with friends</a> for invites and host parity, then move to
-            Advanced once you are sailing past the starter archipelago on purpose—not by accident.
+            PvE pirate survival—archipelagos, camps, melee, and naval fights. EA changes fast; trust your client for live
+            numbers. Map for coordinates, wiki for item names. Co-op?
+            <a href="/guides/play-windrose-online">Play online with friends</a>, then
+            <a href="/advanced">Advanced</a> when you outgrow the starter chain.
           </p>
           <ul class="page-hero__highlights">
             <li>
-              <strong>Survive the shoreline</strong>
-              Fiber, stone tools, food, and a safe fire loop come before chasing every distant smoke column.
+              <strong>Survive</strong>
+              Fiber, tools, food, and fire before you chase smoke on the horizon.
             </li>
             <li>
-              <strong>Claim a foothold</strong>
-              Compact bases with benches, storage, and lighting beat sprawling builds you cannot defend or restock.
+              <strong>Base</strong>
+              Benches, storage, lights—small and defensible beats huge and empty.
             </li>
             <li>
-              <strong>Grow into the world</strong>
-              Talents, Tortuga errands, factions, and your first proper hull are stepping stones—not a day-one sprint.
+              <strong>Scale up</strong>
+              Talents, Tortuga, factions, hull—milestones, not a day-one sprint.
             </li>
           </ul>
         </div>

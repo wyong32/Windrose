@@ -105,12 +105,11 @@ const props = defineProps({
   lead: {
     type: String,
     default:
-      'Armor sets, gathering tools, and worn trinkets that never fit the other Windrose decks—grouped here so crafters can answer “which breastplate was that?” without loading the full weapons list.',
+      'Armor, tools, trinkets—gear that is not under Weapons. Numbers may lag patches; trust live tooltips for exact stats.',
   },
   leadSecondary: {
     type: String,
-    default:
-      'Exact numbers on gear may update slower than the game after a patch. Use the Resources list for forge ingredients and cross-check guides when you plan full loadouts.',
+    default: '',
   },
 })
 
