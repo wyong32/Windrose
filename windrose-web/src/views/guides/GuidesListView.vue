@@ -12,7 +12,7 @@
         <div class="page-hero__shell">
           <span class="page-hero__sigil" aria-hidden="true" />
           <p class="page-hero__eyebrow">Editorial · routes &amp; systems</p>
-          <h1 id="guides-hub-title">Guides</h1>
+          <h1 id="guides-hub-title">Windrose Guides</h1>
           <div class="page-hero__meta">
             <span>Map tactics</span>
             <span>Progression</span>
