@@ -30,21 +30,6 @@
           <em>summary</em> echo developer FAQ / press summaries—treat as orientation, not promises.
         </p>
 
-        <figure class="wr-update-figure">
-          <img
-            src="/images/getting-01.webp"
-            alt="Moonlit archipelago and open water: Early Access voyages shift with each patch—verify build numbers before you plan routes."
-            width="1120"
-            height="480"
-            loading="eager"
-            fetchpriority="low"
-            decoding="async"
-          />
-          <figcaption class="wr-update-figure__cap">
-            Same archipelago, new patch notes—always match the hub to your installed version.
-          </figcaption>
-        </figure>
-
         <section class="wr-update-timeline-section" aria-labelledby="timeline-h">
           <div class="wr-update-timeline-section__head">
             <h2 id="timeline-h">Public timeline</h2>
@@ -175,20 +160,6 @@
             </li>
           </ol>
         </section>
-
-        <figure class="wr-update-figure wr-update-figure--after-timeline">
-          <img
-            src="/images/advanced-01.webp"
-            alt="Open ocean at night: major content waves and later biomes still sit past the current build—see Steam news for what is live."
-            width="1120"
-            height="480"
-            loading="lazy"
-            decoding="async"
-          />
-          <figcaption class="wr-update-figure__cap">
-            Big updates (Ashlands-scale) are on the horizon—this art is mood, not a feature guarantee.
-          </figcaption>
-        </figure>
 
         <section class="wr-update-sidebar" aria-label="Quick links &amp; tips">
           <div class="wr-update-sidebar__block">
