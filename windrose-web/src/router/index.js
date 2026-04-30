@@ -169,11 +169,11 @@ const router = createRouter({
       name: 'map',
       component: () => import('@/views/MapView.vue'),
       meta: {
-        title: 'Windrose Interactive Map — POIs, Camps & Coordinates',
+        title: 'Windrose Interactive Map — POI Search, Camps, Resources & Coordinates',
         description:
-          'Fan Windrose map: pan and zoom the archipelago, toggle camps and resources, search POIs by name or tag, read coordinates for wiki notes and callouts.',
+          'Windrose Interactive Map (Early Access): pan and zoom the archipelago, search POIs by name or tag, toggle camps and resources, copy coordinates for sailing routes. Windrose Compass.',
         keywords:
-          'Windrose map, interactive map Windrose, POI search, quest markers, archipelago map, camps map, coordinates Windrose, Windrose Early Access, Windrose Compass',
+          'Windrose Interactive Map, Windrose map, interactive map Windrose, POI search Windrose, quest markers, archipelago map, camps map, resource markers, coordinates Windrose, Windrose Early Access, Windrose Compass',
       },
     },
     {
