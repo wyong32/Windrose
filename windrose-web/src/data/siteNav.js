@@ -6,6 +6,7 @@ export const PRIMARY_NAV = [
   { label: 'Talents & Build', to: '/talents' },
   { label: 'Wiki', to: '/wiki' },
   { label: 'Interactive Map', to: '/map' },
+  { label: 'Updates & Roadmap', to: '/update' },
   { label: 'Guides', to: '/guides' },
   { label: 'Mods', to: '/mods' },
 ]

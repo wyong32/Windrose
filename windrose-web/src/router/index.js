@@ -177,6 +177,19 @@ const router = createRouter({
       },
     },
     {
+      path: '/update',
+      name: 'update',
+      component: () => import('@/views/UpdateView.vue'),
+      meta: {
+        title:
+          'Windrose Game Update & Roadmap — Early Access Timeline & Patch Notes',
+        description:
+          'Windrose game update roadmap timeline: EA launch Apr 2026, milestones, patch 0.10.0.4.268, windrose.support, Ashlands & fix-pack plans from Kraken Express Steam Community—plus player checklist. Unofficial Windrose Compass digest.',
+        keywords:
+          'windrose game update roadmap, Windrose update, Windrose Ashlands, Windrose patch notes, Windrose Early Access, Kraken Express, Windrose Steam Community, Windrose roadmap, Windrose Compass',
+      },
+    },
+    {
       path: '/guides',
       name: 'guides',
       component: () => import('@/views/guides/GuidesListView.vue'),

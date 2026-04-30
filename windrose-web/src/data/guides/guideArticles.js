@@ -1613,8 +1613,660 @@ export default [
   </p>
   <p> A: You don't. This is a mathematically broken loadout. The Blunderbuss requires Agility, and the Rapier requires Precision. If you split your points 50/50, both weapons will hit like wet noodles. Always pair weapons that share the same scaling stat (e.g., Saber + Blunderbuss = Pure Agility).
   </p>`,
+  },
+
+  {
+    id: 11,
+    title: "Windrose Advanced Fish Guide: Secret Weapon & Collection",
+    description: "Hardcore advanced windrose fishing guide. Learn the exact loot pool for all 10 fish, how to exploit the shallow water spawn bug, and the reality of the secret Smasher fish weapon.",
+    tags: ["Windrose Advanced Fish Guide"],
+    publishDate: "2026-04-30",
+    imageUrl: "/images/guides/guide11.webp",
+    imageAlt: "windrose-fishing-guide-all-fish",
+    seo: {
+      title: "Windrose Fish Guide: The Secret Weapon, Collection & Ring",
+      description: "Advanced Windrose fishing guide. Discover how to fish up the secret Smasher weapon, exploit the collection bug to get the Fisherman's Ring, and cook advanced Fillet recipes.",
+      keywords: "windrose fish weapon,windrose fish sword,windrose fish collection,windrose all fish,windrose fishing ring"
+    },
+    addressBar: "windrose-advanced-fish-guide-secret-weapon-collection",
+    detailsHtml: `
+  <p>If you already know how to craft a fishing rod and reel in the basics, it's time to talk about the endgame of Windrose fishing. This isn't just about farming fillets anymore. By mindlessly casting your line, you can randomly hook a secret weapon called the "Smasher"—which the community falsely calls a sword, but is actually a 1-Handed Mace with massive knockback. Furthermore, you need to exploit the current "shallow water bug" to quickly complete your 10-fish collection before the devs patch it. Doing so unlocks the Fisherman's Ring, though mathematically, the sheer act of grinding for this ring will leave you with so many Fish Fillets that the ring's buff becomes instantly obsolete.
+  </p>
+  <h2>The Secret Windrose Fish Weapon: Smasher
+  </h2>
+  <p>Let's clear up the Reddit rumors immediately. Many players search for a windrose fish sword because of leaked screenshots. The item exists, but its official name is the Smasher, and mechanically, it is a One-handed Rare Mace.
+  </p>
+  <p>You cannot craft this. It is a pure RNG drop obtained exclusively by fishing. It does not matter if you fish in Shallow or Deep waters; every successful catch has a fractional chance to pull up the Smasher instead of a fish.
+  </p>
+  <p>Is it actually good?
+  </p>
+  <p> No. In terms of raw stats, it sits firmly in the D-Tier of weapon tier lists. 
+  </p>
+  <p> If you are looking for a weapon to push Cursed Swamp crypts, then throw this in your stash immediately. It cannot be ascended to Epic tier. However, its "Fun Level" is S-Tier because it possesses a hidden modifier that applies a massive knockback effect on hit, making it hilarious for knocking pirates off their ships during boarding.
+  </p>
+  <p><img src="/images/guides/guide11-01.webp" alt="windrose-how-to-get-smasher-secret-weapon-loot" width="80%">
+  </p>
+  <h2>Windrose All Fish: The Collection Exploit
+  </h2>
+  <p>To fully complete your windrose fish collection, you need to catch 10 distinct species. By design, the game splits these into two loot tables: Shallows and Deep Waters.
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-jijbv0">Fish Species
+  </td>
+  <td data-row="row-jijbv0">Intended Water Type
+  </td>
+  <td data-row="row-jijbv0">Rarity
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-3w1qr1">Blue Tang
+  </td>
+  <td data-row="row-3w1qr1">Shallows
+  </td>
+  <td data-row="row-3w1qr1">Uncommon
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-vddd2u">Moon Angelfish
+  </td>
+  <td data-row="row-vddd2u">Shallows
+  </td>
+  <td data-row="row-vddd2u">Uncommon
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-blqjuw">Queen Angelfish
+  </td>
+  <td data-row="row-blqjuw">Shallows
+  </td>
+  <td data-row="row-blqjuw">Uncommon
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-z44g4e">Pink Wrasse
+  </td>
+  <td data-row="row-z44g4e">Shallows
+  </td>
+  <td data-row="row-z44g4e">Uncommon
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-thzj47">Sapphire Wrasse
+  </td>
+  <td data-row="row-thzj47">Shallows
+  </td>
+  <td data-row="row-thzj47">Uncommon
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-iw2v8b">Reef Snapper
+  </td>
+  <td data-row="row-iw2v8b">Shallows
+  </td>
+  <td data-row="row-iw2v8b">Rare
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-xcku2a">Emerald Bluefish
+  </td>
+  <td data-row="row-xcku2a">Deep Waters
+  </td>
+  <td data-row="row-xcku2a">Rare
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-k904ko">Red Snapper
+  </td>
+  <td data-row="row-k904ko">Deep Waters
+  </td>
+  <td data-row="row-k904ko">Rare
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-wivf57">Giant Mackerel
+  </td>
+  <td data-row="row-wivf57">Deep Waters
+  </td>
+  <td data-row="row-wivf57">Epic
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-i2nwg7">Large Barracuda
+  </td>
+  <td data-row="row-i2nwg7">Deep Waters
+  </td>
+  <td data-row="row-i2nwg7">Epic
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p>The Early Access Bug: Currently, there is a recognized bug in the build. If you stand on the starting beach (Shallows), then you can still randomly pull up Deep Water Epics like the Giant Mackerel. Exploit this oversight to finish your collection quickly before it gets patched, saving you from having to sail your ship into the open ocean just to fish.
+  </p>
+  <h2>The Windrose Fishing Ring Paradox
+  </h2>
+  <p>Once you catch all 10 fish at least once, the Collection UI will award you the Fisherman's Ring. Equipping this ring grants a 15% base chance to catch an extra fish per cast. You can even upgrade it at the Jeweler's Bench to the Major Fisherman's Ring for a 30% chance.
+  </p>
+  <p>The Hardcore Reality: This ring is a completionist trap. The RNG required to catch all 10 distinct fish means you will pull up hundreds of duplicates along the way. By the time the game finally hands you this ring, you will have processed so many Fish Fillets that you won't need to fish again for the rest of your playthrough. Only wear this if you are feeding a 4-player dedicated server.
+  </p>
+  <p><img src="/images/guides/guide11-02.webp" alt="windrose-fishing-guide-fishermans-ring" width="80%">
+  </p>
+  <h2>Advanced Processing: Beyond the Skewer
+  </h2>
+  <p>In our basic windrose fishing guide, we covered the Seafood Platter. But once you start processing Rare and Epic fish, you'll be swimming in Fillets. Here is how you should categorize your cooking based on the stats you need:
+  </p>
+  <ol>
+  <li>Need Agility? Craft Chowder (Rare): 3x Fish Fillet, 3x Sweet Potato, 2x Salt = +10 Agility.
+  </li>
+  <li>Need raw Tankiness? Craft Fish and Tostones (Rare): 3x Fish Fillet, 3x Banana, 2x Nuts = +10 Vitality.
+  </li>
+  <li>Boss Fight Prep: Seafood Platter (Epic): 7x Fish Fillet, 4x Lime, 3x Crab Meat, 4x Salt = +20 Vitality.
+  </li>
+  </ol>
+  <p>Pro Tip: Running out of Salt for Chowder? Don't grind crates. Sail to the Brethren of the Coast Provisioner; you can just buy Salt in bulk for a mere 2 Piastre per piece.
+  </p>
+  <h3>FAQ: Advanced Fish &amp; Weapons
+  </h3>
+  <p>Q: Can the Smasher weapon roll with different stats or Epic effects?
+  </p>
+  <p> A: No. The Smasher is a fixed-stat Rare drop. Because it explicitly "cannot be ascended" at the crafting bench, what you pull out of the water is exactly what you get permanently. It is a novelty item, not a late-game carry.
+  </p>
+  <p>Q: I've caught 9/10 fish but the Large Barracuda won't drop in the shallows anymore. Was it patched?
+  </p>
+  <p> A: While the bug allows deep fish to spawn in shallows, the drop rate for Epics in the wrong biome is abysmally low. If you are stuck on the last Epic fish, stop relying on the bug. Take your ship into the Deep Ocean and cast there to force the correct loot table.
+  </p>
+  <p>Q: Do larger fish take longer to reel in?
+  </p>
+  <p> A: No. Windrose does not use a tension or stamina mini-game for reeling. Whether you hook an Uncommon Blue Tang or the Secret Smasher weapon, the mechanic is identical: wait for the flat splash, click once, and instantly loot it.
+  </p>`,
+  },
+
+  {
+    id: 12,
+    title: "Windrose Secret Weapon Guide: How to Get the Smasher",
+    description: "Hardcore deep dive into the Windrose secret weapon, Smasher. Learn the agonizing fishing RNG required to obtain it, the Weaponsmith crafting costs, and the truth about its A-Tier Strength scaling but terrible proc rates.",
+    tags: ["Windrose Secret Weapon","windorse fish weapon"],
+    publishDate: "2026-04-30",
+    imageUrl: "/images/guides/guide12.webp",
+    imageAlt: "windrose-how-to-get-smasher-secret-weapon-crafting",
+    seo: {
+      title: "Windrose Secret Weapon Guide: How to Get the Smasher",
+      description: "Looking for the secret fish sword in Windrose? Learn how to get the Smasher via fishing, its actual combat stats, the massive knockback effect, and why it's a D-Tier meme weapon.",
+      keywords: "windrose smasher, windrose secret weapon, how to get smasher windrose"
+    },
+    addressBar: "smasher-secret-weapon",
+    detailsHtml: `
+  <p>Forget the Reddit rumors of an overpowered "Fish Sword" or a massive two-handed club that will carry you through the endgame. The secret aquatic weapon in Windrose is called "Smasher," and mechanically, it is a 1-Handed Mace. You obtain it through sheer, agonizing fishing RNG. While it boasts an A-Tier Strength scaling and can be upgraded to Level 15 at your Weaponsmith Workshop, it is permanently locked at Rare quality. Competitively, it is absolute garbage (firmly sitting in D-Tier for pure DPS). However, you don't farm this for damage. You farm it because its unique passive gives you a chance to send enemies hurtling backward through space and time, making it the ultimate meme weapon for knocking pirates off their ships.
+  </p>
+  <h2>How To Get Smasher: The Brutal RNG
+  </h2>
+  <p>There is no secret boss, no hidden puzzle, and no dedicated questline. Smasher is obtained exclusively by fishing.
+  </p>
+  <p>If you are looking for an optimized farming location, then stop stressing. Hardcore testing confirms that water depth does not matter. While some players pull it from the deep High Seas, others have caught it in the shallow waters right outside their coastal base. The drop rate is exceptionally low. Expect to loot over 500 generic fish before you see this item.
+  </p>
+  <p>The Ultimate Farming Bypass: Do not attempt to actively farm this with a basic rod. If you want to preserve your sanity, then you must first complete the 10-fish collection challenge to obtain and ascend the Major Fisherman's Ring. That massive +30% chance to catch an extra fish applies to the loot table rolls, significantly cutting down the time it takes to brute-force the Smasher drop.
+  </p>
+  <p><img src="/images/guides/guide12-01.webp" alt="windrose-how-to-get-smasher-secret-weapon-stats" width="80%">
+  </p>
+  <h2>Crafting &amp; Stat Breakdown
+  </h2>
+  <p>Getting the Smasher from the water is only step one. It doesn't instantly become a god-tier weapon in your hands. You must treat it like any other weapon schematic.
+  </p>
+  <p>Take it to your Weaponsmith Workshop. It is crafted and upgraded using standard mid-to-late game materials.
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-ghwby1">Weapon Attribute
+  </td>
+  <td data-row="row-ghwby1">Confirmed Data
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-9cyj3q">Weapon Class
+  </td>
+  <td data-row="row-9cyj3q">1-Handed Mace
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-vor4gf">Max Upgrade Level
+  </td>
+  <td data-row="row-vor4gf">Level 15
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-ujpk4r">Ascension Limit
+  </td>
+  <td data-row="row-ujpk4r">Cannot be ascended to Epic (Locked at Rare)
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-t1ngtv">Stat Scaling
+  </td>
+  <td data-row="row-t1ngtv">A-Tier in Strength
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-0sjm4y">Base Output (Upgraded)
+  </td>
+  <td data-row="row-0sjm4y">225 Crude Damage
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-5cf31u">Crafting Materials Required
+  </td>
+  <td data-row="row-5cf31u">Ingots, Smithing Flux, etc. (Standard Weaponsmith costs)
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p><img src="/images/guides/guide12-02.webp" alt="windrose-how-to-get-smasher-secret-weapon-crafting" width="80%">
+  </p>
+  <h2>Combat Viability: The "Fish Ro Dah" Effect
+  </h2>
+  <p>Let's rip the band-aid off: How good is Smasher in Windrose? It is awful.
+  </p>
+  <p>Because it is hard-locked at Rare quality, its base damage simply cannot compete with Epic weapons. Furthermore, its unique ability reads: "Hits have a small chance to knock enemies down, the higher your Strength, the higher the chance."
+  </p>
+  <p>The 60 Strength Reality Check: Our testers pushed their character to an aggressive 60 Strength purely to test this weapon's scaling. The result? The knockback effect only procs roughly 1 in every 5 or 6 hits. For a slow 1-Handed Mace, relying on a 15-20% chance to CC an enemy during a lethal Cursed Swamp fight is a guaranteed way to get yourself killed.
+  </p>
+  <p>So why use it?
+  </p>
+  <p> For the sheer disrespect. When the ability actually procs, the visual effect is spectacular. It temporarily staggers enemies and launches them backward. Because the game engine recognizes it as a Mace, it naturally deals excellent Posture damage to shields. Using it to violently bat Plague Thralls off narrow cliffs or launching rival pirates into the ocean during a boarding sequence is undeniably the most fun you will have in the game.
+  </p>
+  <p><img src="/images/guides/guide12-03.webp" alt="windrose-how-to-get-smasher-secret-weapon-knockback" width="80%">
+  </p>
+  <h3>FAQ: Smasher Truths
+  </h3>
+  <p>Q: Is there any hidden material to upgrade the Smasher to Epic tier?
+  </p>
+  <p> A: No. The game code explicitly locks this weapon at Rare. Do not waste time searching for a secret "Legendary Fish Scale" to ascend it. What you see is what you get.
+  </p>
+  <p>Q: Does my Fishing level or the type of Fishing Rod affect the drop rate?
+  </p>
+  <p> A: Currently, rod tiers only dictate what type of fish you can reliably catch without snapping lines, but the global loot pool trigger for the Smasher seems entirely RNG-based. Your only real mathematical advantage is equipping the Major Fisherman's Ring.
+  </p>
+  <p>Q: Does the Smasher deal Water/Magic damage?
+  </p>
+  <p> A: No. Despite being a giant fish, it deals purely physical 225 Crude damage. It acts exactly like an iron club wrapped in scales.
+  </p>`,
+  },
+
+  {
+    id: 13,
+    title: "Windrose Ships Guide: Unlocks, Frigate Materials & Best Variants",
+    description: "Comprehensive SEO guide on all windrose ships. Learn the exact windrose brig materials and windrose frigate materials required. Discover why the Blackbeard Frigate with 36lb cannons dominates the Brethren HP trap, and how to get a 100% material refund on ship disassembly.",
+    tags: ["Windrose All Ships"],
+    publishDate: "2026-04-30",
+    imageUrl: "/images/guides/guide13.webp",
+    imageAlt: "windrose-all-ships-and-how-to-unlock-them",
+    seo: {
+      title: "Windrose Ships Guide: Unlocks, Frigate Materials & Best Variants",
+      description: "Hardcore Windrose ships guide. Stop building the wrong ships. Learn how to unlock the Brig and Frigate, the exact materials required, and why the Blackbeard variants are the absolute meta.",
+      keywords: "windrose ships,windrose brig, windrose frigate, windrose brig materials, windrose frigate materials"
+    },
+    addressBar: "windrose-all-ships-and-how-to-unlock-them",
+    detailsHtml: `
+  <p>If you are hoarding resources because you are afraid of building the "wrong" ship in Windrose, stop worrying. A core mechanic that the game poorly explains is that disassembling a ship refunds 100% of your materials. This means you should always upgrade the moment you can. However, picking the right variant is a matter of life and death. Do NOT fall into the trap of building the "Brethren" ships just because they have the highest Health pools. In advanced naval combat, speed and heavy artillery win out. You want to rush the Blackbeard Brig and eventually the Blackbeard Frigate, as it is currently the only ship in the game capable of mounting devastating 36lb cannons. Be prepared: the progression is heavily gated by Piastre costs and your Faction Reputation.
+  </p>
+  <h2>Early Game: The Boat &amp; The Ketch
+  </h2>
+  <p>Before we dive into the massive warships, we need to establish the baseline. You get the basic sailboat automatically.
+  </p>
+  <p>The "Recall Exploit" (If-Then Logic): If your main warship is destroyed or you just need to fast travel via recall, then ALWAYS recall the basic Boat instead of your massive Brig. The tiny Boat physically spawns much closer to the shore, saving you an agonizing swim.
+  </p>
+  <p>Your first real crafted vessel is the Ketch (Unlocked via the 'Need A Bigger Boat' quest). There are three variants, but at this stage of the game, do not waste extra resources min-maxing. Build the Stock Ketch (50,000 HP, 19kn). It perfectly balances health and speed to clear the Coastal Jungle zones. The Blackbeard Ketch is fast, but 35,000 HP is too squishy for beginners learning naval combat.
+  </p>
+  <p><img src="/images/guides/guide13-01.webp" alt="windrose-all-ships-and-how-to-unlock-them-brig" width="80%">
+  </p>
+  <h2>Windrose Brig: The Mid-Game Power Spike
+  </h2>
+  <p>This is where the training wheels come off. The Windrose Brig (Brigantine) represents a massive leap in firepower, doubling your broadside capacity.
+  </p>
+  <p>The Unlock Wall: You cannot simply farm materials and build this. You MUST raise your Reputation Level to 2 with the Brethren Of The Coast Faction. Only then will the Provisioner sell you the blueprints for a hefty 1,000 Piastre.
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-qtjs1l">Windrose Brig Variant
+  </td>
+  <td data-row="row-qtjs1l">Health Pool
+  </td>
+  <td data-row="row-qtjs1l">Speed
+  </td>
+  <td data-row="row-qtjs1l">Cannon Loadout
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-kx377i">Stock Brig
+  </td>
+  <td data-row="row-kx377i">70,000
+  </td>
+  <td data-row="row-kx377i">20kn
+  </td>
+  <td data-row="row-kx377i">6 x 12lb
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-rqehdk">Brethren Brig
+  </td>
+  <td data-row="row-rqehdk">90,000
+  </td>
+  <td data-row="row-rqehdk">18kn
+  </td>
+  <td data-row="row-rqehdk">6 x 12lb
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-punk9l">Blackbeard Brig (Meta)
+  </td>
+  <td data-row="row-punk9l">50,000
+  </td>
+  <td data-row="row-punk9l">22kn
+  </td>
+  <td data-row="row-punk9l">6 x 12lb or 24lb
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p>The Meta Choice: Build the Blackbeard Brig. Yes, it has 40,000 less HP than the Brethren version. But it moves at a blistering 22kn and, critically, it allows you to mount 24lb cannons. Equipping 6x Perfectly Ordered 24-Pounders gives you the DPS to annihilate enemies before they can chew through your low health pool.
+  </p>
+  <h3>Windrose Brig Materials Breakdown
+  </h3>
+  <p>The sticker shock is real. Alongside the 1,000 Piastre blueprint cost, you must buy 30x Shipwright's Tools from the Provisioner (10 Piastre each = 300 Piastre). Total cash needed: 1,300 Piastre.
+  </p>
+  <ol>
+  <li>200x Nails (Requires 40 Copper Ingots or 20 Iron Ingots)
+  </li>
+  <li>80x Copper Ingots (240 Copper Ore + 80 Charcoal)
+  </li>
+  <li>40x Timber (120 Hardwood)
+  </li>
+  <li>200x Wooden Planks (400 Wood)
+  </li>
+  <li>160x Fabric (40 Linen Fabric + 120 Coarse Fabric)
+  </li>
+  <li>40x Rope
+  </li>
+  </ol>
+  <h2>Windrose Frigate: The Ultimate Glass Cannon Meta
+  </h2>
+  <p>The Windrose Frigate is the undisputed king of the Early Access build. To unlock it, you must grind your Brethren Faction Reputation to Level 4 and pay an absurd 3,000 Piastre for the blueprints.
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-l6ur2a">Windrose Frigate Variant
+  </td>
+  <td data-row="row-l6ur2a">Health Pool
+  </td>
+  <td data-row="row-l6ur2a">Speed
+  </td>
+  <td data-row="row-l6ur2a">Cannon Loadout
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-4achgl">Stock Frigate
+  </td>
+  <td data-row="row-4achgl">160,000
+  </td>
+  <td data-row="row-4achgl">18kn
+  </td>
+  <td data-row="row-4achgl">12 x 24lb + 6 x 12lb
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-zivwor">Brethren Frigate
+  </td>
+  <td data-row="row-zivwor">200,000
+  </td>
+  <td data-row="row-zivwor">16kn
+  </td>
+  <td data-row="row-zivwor">12 x 24lb + 6 x 12lb
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-er71jr">Blackbeard Frigate (Meta)
+  </td>
+  <td data-row="row-er71jr">110,000
+  </td>
+  <td data-row="row-er71jr">20kn
+  </td>
+  <td data-row="row-er71jr">12 x 24lb/36lb + 6 x 12lb/24lb
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p>The Glass Cannon Argument: 200k HP sounds amazing on paper, but the Brethren Frigate is an unmaneuverable brick. You absolutely must build the Blackbeard Frigate. Why? It is the ONLY ship in the game that can equip 36lb cannons. The stopping power of twelve 36-pounders is unmatched. You compensate for the lower 110k HP by combining the Hull Bracing: Keelhold gear with Naval Tactics III: Stretch The Supply, giving you uninterruptible +60% Repair Kit durations.
+  </p>
+  <p><img src="/images/guides/guide13-02.webp" alt="windrose-all-ships-and-how-to-unlock-them-frigate" width="80%">
+  </p>
+  <h3>Windrose Frigate Materials (The Heavy Grind)
+  </h3>
+  <p>You need an extra 50x Shipwright's Tools (500 Piastre) on top of the 3,000 Piastre blueprint. This is an industrial-level grind:
+  </p>
+  <ol>
+  <li>300x Nails
+  </li>
+  <li>120x Foothills Iron Ingots (Requires 360 Iron Ore)
+  </li>
+  <li>320x Wooden Planks
+  </li>
+  <li>160x Timber (480 Hardwood)
+  </li>
+  <li>80x Tarred Planks (80 Planks + 80 Tar)
+  </li>
+  <li>240x Linen Fabric (720 Flax Fiber)
+  </li>
+  <li>80x Tarred Fabric (80 Linen + 80 Tar)
+  </li>
+  <li>80x Rope
+  </li>
+  </ol>
+  <p>The Ultimate Farming Bypass: If you are losing your mind farming 480 Hardwood and 720 Flax Fiber manually, then stop swinging your axe. Once you defeat the boss "Israel Hands" in the Foothills, you unlock Merchant Contracts. Use these contracts to passively farm Hardwood and Flax, saving yourself dozens of hours.
+  </p>
+  <h3>FAQ: Ship Unlocks &amp; Costs
+  </h3>
+  <p>Q: If I disassemble my Brig to build the Frigate, do I lose the Shipwright's Tools?
+  </p>
+  <p> A: No. Disassembling a ship refunds 100% of the materials used in its construction, including the expensive Piastre-bought Shipwright's Tools. You will not be penalized for stepping up through the ship tiers.
+  </p>
+  <p>Q: Can I put 36lb cannons on the Stock or Brethren Frigate?
+  </p>
+  <p> A: Absolutely not. This is why the Blackbeard variant is highly recommended. The Stock and Brethren Frigates are hard-capped at 24lb cannons for their main batteries. If you want max DPS, Blackbeard is the only option.
+  </p>
+  <p>Q: Where do I get Tar for the Tarred Planks and Fabric?
+  </p>
+  <p> A: Tar is an advanced resource primarily obtained by processing Quagmire Powder and other materials from the Cursed Swamps biome. You will need to heavily farm the Swamp Crypts to supply a Frigate build.
+  </p>`,
+  },
+
+  {
+    id: 14,
+    title: "Windrose Wharf Guide: Equipping Cannons & Ship Building",
+    description: "Hardcore Windrose base building guide. Learn the exact main quests required to unlock the Wharf, its cheap construction costs, and the critical difference between equipping cannons here versus upgrading them at the Shipwright's Workshop",
+    tags: ["Windrose Wharf"],
+    publishDate: "2026-04-30",
+    imageUrl: "/images/guides/guide14.webp",
+    imageAlt: "windrose-wharf-how-to-build-it-and-what-it-does-ship-building-menu",
+    seo: {
+      title: "Windrose Wharf Guide: How to Build & Add Cannons",
+      description: "Stop sailing to Tortuga to find a shipwright. Learn how to unlock and build the Wharf in Windrose, how to add cannons to your ship, and how to customize sails",
+      keywords: "windrose wharf,"
+    },
+    addressBar: "windrose-wharf-equipping-cannons-ship-building",
+    detailsHtml: `
+  <p>If you just built your first Ketch, received a quest to sink three enemy ships, and are currently sailing to Tortuga hoping to find an NPC to install your cannons—turn around immediately. You are wasting your time. In Windrose, you do not visit an NPC shipyard to arm your vessel. The Wharf is a player-constructed utility building that you must place on the coastline of your own base. You cannot build it until you push the main storyline past the "I Need A Bigger Boat" quest. Once placed, this single table becomes your absolute hub for dragging and dropping cannons onto your ship, customizing sails, and eventually spending Piastre to construct massive Frigates. Just remember the golden rule: The Wharf is for EQUIPPING gear; you cannot upgrade the stats of your cannons here.
+  </p>
+  <h2>How to Unlock &amp; Build the Wharf
+  </h2>
+  <p>Many new players open their Build menu (B), check the Utilities tab next to the Fast Travel Bell, and see absolutely nothing. This is because the Wharf schematic is hard-locked behind the early-game progression.
+  </p>
+  <p>The Quest Prerequisites: You must complete the following Main Quests before the game trusts you with naval infrastructure:
+  </p>
+  <ol>
+  <li>Rescuing The Crew
+  </li>
+  <li>I Need A Bigger Boat
+  </li>
+  <li>How My Sea Adventure Began (Specifically, you must progress this until you are explicitly tasked to "Craft 12-pounder cannons for your ship").
+  </li>
+  </ol>
+  <p>Once unlocked, the construction is laughably cheap, but placement is strict. Like the Fast Travel Bell, it must be built along the coastline, near the water. You cannot build this in the middle of a forest base.
+  </p>
+  <p>Cost: 10x Wood, 10x Coarse Fabric.
+  </p>
+  <p><img src="/images/guides/guide14-01.webp" alt="windrose-wharf-how-to-build-it-and-what-it-does-ship-building-customization" width="80%">
+  </p>
+  <h2>Equipping Cannons: The Drag-and-Drop Mechanic
+  </h2>
+  <p>This is where 90% of the confusion happens. Having 12-pounder cannons in your character's backpack does not magically make them appear on your ship's broadside.
+  </p>
+  <p>The "Equip vs. Upgrade" Reality Check:
+  </p>
+  <p> If you interact with the Wharf table (press E), then navigate to the "Ship Selection" menu. Hit 'Manage Ship'. This opens the Cargo and Gear UI. Here, you physically drag your Cannons, Hull Bracing, and Naval Tactics from your inventory into the 'Ship Gear' slots.
+  </p>
+  <p>However, if you want to make your 12lb cannons hit harder, the Wharf is useless. The Wharf only mounts the hardware. To actually upgrade the tier/damage of Ship Gear, you must take the items out of the ship and process them at a completely different base station: the Shipwright's Workshop.
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-u5vq7i">Base Station
+  </td>
+  <td data-row="row-u5vq7i">Core Naval Function
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-7xg1c3">The Wharf
+  </td>
+  <td data-row="row-7xg1c3">Equip/Unequip Cannons &amp; Hull Gear, Customize Sails, Build New Ships.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-lmo71u">Shipwright's Workshop
+  </td>
+  <td data-row="row-lmo71u">Craft Cannons/Hull Bracing from raw materials, Upgrade Gear Tiers.
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p><img src="/images/guides/guide14-02.webp" alt="windrose-wharf-how-to-build-it-and-what-it-does-ship-management" width="80%">
+  </p>
+  <h2>Customization &amp; The Shipyard
+  </h2>
+  <p>The Wharf isn't just for guns. It contains two other vital tabs for your fleet progression:
+  </p>
+  <ol>
+  <li>Customization (Cosmetics): Located near the 'Cargo and Gear' tab. This is where you flex your pirate identity. You can change your ship's sails, flags, and alter the vessel's name.
+  </li>
+  <li>Shipyard (Progression): This is the second main menu at the Wharf. As you grind Reputation with the four main Factions (like the Brethren Of The Coast), this tab is where you will physically spend your Piastre and massive piles of resources to construct Brigs and Frigates. (Check our comprehensive Windrose Ships Guide for exact Frigate material costs).
+  </li>
+  </ol>
+  <p><img src="/images/guides/guide14-03.webp" alt="windrose-wharf-how-to-build-it-and-what-it-does-ship-building-shipbuilding" width="80%">
+  </p>
+  <h3>FAQ: Wharf Troubleshooting
+  </h3>
+  <p>Q: I built the Wharf, but it says my ship is "Out of Range" to manage. Why?
+  </p>
+  <p> A: You can only manage the gear of ships that are physically docked near the Wharf's radius. If you parked your ship on the other side of the island, you must sail it back or use the Recall function (at the Fast Travel Bell or Wharf) to summon it to your current location before the 'Manage Ship' button will activate.
+  </p>
+  <p>Q: Can I build multiple Wharfs on different islands?
+  </p>
+  <p> A: Yes. Because the crafting cost is incredibly cheap (10 Wood, 10 Coarse Fabric), it is highly recommended to drop a Wharf at any major outpost you construct across the map. This prevents you from having to sail all the way back to your starter base just to swap out a broken cannon.
+  </p>
+  <p>Q: I bought a ship blueprint, but it's not showing up in the Shipyard tab.
+  </p>
+  <p> A: Check your inventory. When you buy blueprints from a Faction Provisioner, they usually exist as a consumable item in your bag. You must right-click to "learn" or "read" the schematic first before the Shipyard UI registers that you have unlocked the vessel.
+  </p>`,
+  },
+
+  {
+    id: 15,
+    title: "Windrose Best Base Location: Where to Build & Fast Travel Strategy",
+    iframeUrl: "",
+    description: "Hardcore base building guide for Windrose. Learn why you shouldn't build massive stone castles on the starter island, how to exploit Faction hubs to save your 10 fast travel bell limits, and the importance of flat terrain and biome borders.",
+    tags: ["Windrose Best Base Location"],
+    publishDate: "2026-04-30",
+    imageUrl: "/images/guides/guide15.webp",
+    imageAlt: "windrose best base location",
+    seo: {
+      title: "Windrose Best Base Location: Where to Build & Fast Travel Strategy",
+      description: "Stop looking for map coordinates. Windrose is procedurally generated. Learn the hardcore strategy for choosing the best base location by saving fast travel bells and exploiting biome borders.",
+      keywords: "Windrose Best Base Location,Windrose Fast Travel"
+    },
+    addressBar: "windrose-best-base-location",
+    detailsHtml: `
+  <p>If you are searching Reddit or YouTube for exact map coordinates to build your ultimate base, stop right now. Windrose features a procedurally generated map; no two worlds are identical, and "centralized islands" do not exist. Furthermore, do not build a massive, permanent fortress on the first beach you wash up on. You will unlock significantly better building materials (like Hewn Stone) later, and trying to remodel a thatched-roof starter shack is a nightmare. Instead of looking for pretty scenery, hardcore players choose their main base location based on strict functional criteria: flat coastal terrain to avoid roofing bugs, proximity to heavy metal nodes (Copper and Iron), and strategic exploitation of the 10-Fast-Travel-Bell limit by nesting near Faction Hubs.
+  </p>
+  <p><img src="/images/guides/guide15-01.webp" alt="windrose best base location map" width="50%">
+  </p>
+  <h2>The Fast Travel Bell Economy (Saving Slots)
+  </h2>
+  <p>The single biggest mistake new players make is ignoring the Fast Travel limit. You are only allowed to place exactly 10 Fast Travel Bells across the entire map. In the late game, when you need bells at specific swamps and deep-ocean fishing spots, this 10-slot limit is suffocating.
+  </p>
+  <p>The "Faction Hub" Exploit:
+  </p>
+  <p> If you build your main base deep in the wilderness, then you are forced to waste 1 of your precious 10 bells just to travel home. 
+  </p>
+  <p> The Solution: Major POIs (Points of Interest) like the Buccaneer's Camp or the People of Tortuga HQ feature integral, pre-placed fast travel points (often indicated by a cookpot over a fire). Build your main base on the outskirts of these Faction Hubs. You can use the game's built-in teleport to travel to the Faction Hub, and simply walk 30 seconds to your front door. You just saved a Fast Travel Bell.
+  </p>
+  <h2>The Ideal Location Checklist
+  </h2>
+  <p>Because the map is randomized, you must sail around and physically scout for an island that ticks these three hardcore criteria:
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-53dss2">Location Criteria
+  </td>
+  <td data-row="row-53dss2">Why It's Mandatory
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-9fy8mq">1. Flat Coastal Terrain
+  </td>
+  <td data-row="row-9fy8mq">Windrose's building system struggles with uneven ground. If you build on a slope, laying foundations and snapping roofs will bug out, driving you insane. You also need a gentle beach slope to easily dock ships and place the Wharf.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-8qb7bc">2. The "Two-fer" Biome Border
+  </td>
+  <td data-row="row-8qb7bc">Look for an island that sits on the border of the Coastal Jungle and the Foothills. Your goal is to have walking access to both Copper veins (Jungle) and Iron/Hardwood nodes (Foothills). Ores respawn, so having both nearby eliminates the need for annoying mining outposts.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-2153wc">3. High Tree Density
+  </td>
+  <td data-row="row-2153wc">You will burn through thousands of wood planks just building basic walls and fueling smelters. Settle on an island choked with palm trees so you can farm 500 wood within minutes of your front door.
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p><img src="/images/guides/guide15-02.webp" alt="windrose best base location 2" width="50%">
+  </p>
+  <h2>The Starter Island Trap
+  </h2>
+  <p>Almost everyone builds their first shack right where they wash up. That is fine for survival, but do not upgrade it to stone.
+  </p>
+  <p>The starter islands only contain a fraction of the tier-1 biome resources. Furthermore, the game is in Early Access, meaning major updates could wipe or alter terrain. Build a minimal wooden structure, place a few storage chests, craft your first Ketch, and immediately set sail to find a proper "Two-fer" island (Jungle/Foothill border) for your permanent stone fortress.
+  </p>
+  <p>The Ship Recall Mechanic: Don't worry about stranding your massive warship if you teleport. If you fast travel home without your ship, then you can simply interact with your Fast Travel Bell or Wharf and summon your boat directly to your location (as long as you are near water).
+  </p>
+  <h3>FAQ: Base Building Realities
+  </h3>
+  <p>Q: I built on a hill and now my roof tiles won't snap together. How do I fix it?
+  </p>
+  <p> A: You can't easily. The structural integrity system demands flat foundations. You either have to manually level the ground (which is tedious) or, more practically, tear it down and move to a flat sandy beach. Always prioritize flat land over a "cool view."
+  </p>
+  <p>Q: I reached my 10 Fast Travel limit. Do I have to permanently delete one to explore?
+  </p>
+  <p> A: Yes, but there's a workaround. Hardcore explorers always keep 1 Bell active in their inventory. When they reach a new island, they drop the bell, throw down a chest, explore, and then pick the bell back up when leaving. Treat your 10th bell as a "mobile checkpoint" rather than a permanent fixture.
+  </p>
+  <p>Q: Can I build multiple bases across the map?
+  </p>
+  <p> A: Yes, there is no hard limit on structures. However, moving fully stocked chests of heavy ore between bases is a logistical nightmare. It is highly recommended to maintain ONE massive, centralized warehouse base, and just build tiny "tent + campfire" outposts in dangerous zones like the Cursed Swamps.
+  </p>`,
   }
-
-
 
 ]

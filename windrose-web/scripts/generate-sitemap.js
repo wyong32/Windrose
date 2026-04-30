@@ -24,6 +24,7 @@ const staticRoutes = [
   { path: '/wiki/ship', name: 'wiki-ship' },
   { path: '/wiki/misc', name: 'wiki-misc' },
   { path: '/map', name: 'map' },
+  { path: '/update', name: 'update' },
   { path: '/guides', name: 'guides' },
   { path: '/mods', name: 'mods' },
   { path: '/privacy-policy', name: 'privacy-policy' },
