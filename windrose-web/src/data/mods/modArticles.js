@@ -338,4 +338,72 @@ export default [
       </p>
     `.trim(),
   },
+  {
+    id: 5,
+    title: 'Windrose mod — 1 Million Fast Travel Bells',
+    description:
+      'Nexus listing for MrDracconus’s Fast Travel Bell cap lift: raise the world total toward one million bells so map-wide routes stay practical for huge crews. Binaries and variant archives stay on Download mod—Compass covers ~mods install and server/client parity.',
+    tags: ['Nexus Mods', 'Early Access', 'QoL', 'Fast travel'],
+    publishDate: '2026-05-02',
+    imageUrl: '/images/mods/mod05.webp',
+    imageAlt: 'Windrose Compass — mod spotlight atmosphere',
+    downloadUrl: 'https://www.nexusmods.com/windrose/mods/287',
+    stars: 4,
+    seo: {
+      title: 'Windrose Mod — 1 Million Fast Travel Bells (Nexus · Fast Travel QoL)',
+      description:
+        'Windrose mod for Fast Travel Bells: raises total placeable bells on the map (Nexus 287, MrDracconus). Compass notes ~mods install, optional archives on Files tab, and dedicated/listen-server vs client parity.',
+      keywords:
+        'Windrose mod, Windrose mods, Windrose fast travel bell, Windrose Fast Travel Bells, Windrose Nexus mods, Windrose Compass, Nexus Mods Windrose, ~mods Windrose, Windrose co-op mods, Early Access modding',
+    },
+    addressBar: '1-million-fast-travel-bells',
+    detailsHtml: `
+      <p>
+        The <strong>Windrose mod</strong> on <strong>Download mod</strong> increases how many <strong>Fast Travel Bells</strong> can exist
+        <em>in the world at once</em>—by default the author targets up to <strong>one million</strong> total placed bells (subject to the exact
+        archive you pick on Nexus). Feature wording, optional multipliers, and checksums live on the listing; this note is the crew briefing for
+        installs and multiplayer parity.
+      </p>
+
+      <h2>Clip from Nexus before you unzip</h2>
+      <ul>
+        <li><strong>Author:</strong> MrDracconus — watch the <strong>Files</strong> tab for version <strong>1</strong> and any alternate packages (e.g. different scaling options if offered).</li>
+        <li><strong>Intent:</strong> Windrose normally caps how many bells the map can hold; this pack raises that ceiling so large bases and long routes do not brick at the default global limit.</li>
+        <li><strong>Permissions:</strong> Nexus states redistribution and derivative rules—respect them before you repack or mirror.</li>
+      </ul>
+
+      <h2>Installation (still follow the readme first)</h2>
+      <p>
+        Drop the author’s <code>.pak</code> into <code>…\\Windrose\\R5\\Content\\Paks\\~mods</code> on each machine that should honour the new cap.
+        If Nexus offers multiple downloads (for example different scaling tiers), pick one archive per session line-up—do not mix mystery zips.
+      </p>
+
+      <h2>Solo &amp; listen hosts</h2>
+      <p>
+        Boot offline after install, place or remove a bell where you usually hit limits, and confirm the UI still behaves. If anything feels off,
+        compare against a vanilla backup save rather than corrupting the league night save.
+      </p>
+
+      <h2>Dedicated &amp; co-op: everyone who places bells needs the same pak</h2>
+      <p>
+        The author notes that servers need the mod on the host <em>and</em> on clients—players without it can hit the old placement rules while others think the cap is raised. Brief your fleet with the exact archive name from <strong>Download mod</strong>, then rehearse the workflow from our
+        <a href="/guides/play-windrose-online">play-online guide</a> so mismatched installs do not masquerade as “desync”.
+      </p>
+
+      <h2>After it loads</h2>
+      <ul>
+        <li>Agree where new bells go—your <a href="/map">interactive map</a> pins stay the single source of truth for routes.</li>
+        <li>If camps sprawl, peek <a href="/wiki/resources">resources</a> so rebuild costs stay predictable after you scatter bells everywhere.</li>
+      </ul>
+
+      <h2>Elsewhere on Compass</h2>
+      <p>
+        Browse the <a href="/mods">mods shelf</a> for other Windrose mod spotlights, or dig into the <a href="/wiki">wiki hub</a> when balance patches change costs again.
+      </p>
+
+      <p>
+        <em>Windrose Compass is fan-made; binaries stay on the mod network—use Download mod. Nexus Mods listing 287 if the URL moves.</em>
+      </p>
+    `.trim(),
+  },
 ]

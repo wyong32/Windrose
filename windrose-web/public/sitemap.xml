@@ -3,121 +3,121 @@
 
   <url>
     <loc>https://windrosegame.net/</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/getting-started</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/advanced</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.88</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/talents</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/wiki</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.92</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/wiki/resources</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/wiki/consumables</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/wiki/weapons</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/wiki/equipment</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/wiki/ship</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/wiki/misc</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.82</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/map</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.95</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/update</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/guides</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.88</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/mods</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.82</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/privacy-policy</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.35</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/terms-of-use</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.35</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/copyright</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.35</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/about-us</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.45</priority>
   </url>
   <url>
     <loc>https://windrosegame.net/contact-us</loc>
-    <lastmod>2026-04-30</lastmod>
+    <lastmod>2026-05-06</lastmod>
     <changefreq>yearly</changefreq>
     <priority>0.45</priority>
   </url>
@@ -232,6 +232,12 @@
   <url>
     <loc>https://windrosegame.net/mods/windrose-nexus-deck-briefing</loc>
     <lastmod>2026-04-28</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.72</priority>
+  </url>
+  <url>
+    <loc>https://windrosegame.net/mods/1-million-fast-travel-bells</loc>
+    <lastmod>2026-05-02</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.72</priority>
   </url>

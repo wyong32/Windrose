@@ -243,6 +243,10 @@ const router = createRouter({
       redirect: '/mods/windrose-nexus-deck-briefing',
     },
     {
+      path: '/mods/windrose-nexus-mod-287',
+      redirect: '/mods/1-million-fast-travel-bells',
+    },
+    {
       path: '/mods/:addressBar',
       name: 'mod-article',
       component: () => import('@/views/mods/ModArticleView.vue'),
