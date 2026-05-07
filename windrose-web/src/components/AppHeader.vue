@@ -104,8 +104,6 @@ watch(
   justify-content: space-between;
   gap: 1rem;
   min-height: 4.25rem;
-  /* 防止窄屏下绝对定位导航或子项溢出到视口右侧（部分 iOS Safari flex + 媒体查询组合） */
-  overflow-x: hidden;
 }
 
 .brand {
