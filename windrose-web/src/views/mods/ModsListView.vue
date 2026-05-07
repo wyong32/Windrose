@@ -25,6 +25,10 @@
             <span class="mods-ledger-page__stat-label">entries</span>
           </div>
         </div>
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-mods-list-01" :rotation-index="0" />
+        </div>
       </div>
     </header>
 
@@ -83,12 +87,17 @@
         </ol>
         <p v-else class="mods-ledger-page__empty">No mod entries yet.</p>
       </div>
+      <!-- 广告位 -->
+      <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <GptBanner gpt-slot-id="div-gpt-ad-mods-list-02" :rotation-index="1" />
+      </div>
     </section>
   </article>
 </template>
 
 <script setup>
 import { computed } from 'vue'
+import GptBanner from '@/components/GptBanner.vue'
 import modArticles from '@/data/mods/modArticles.js'
 import { publicAssetUrl } from '@/utils/publicAssetUrl.js'
 

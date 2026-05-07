@@ -39,6 +39,11 @@
             </li>
           </ul>
         </div>
+
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-advanced-01" :rotation-index="0" />
+        </div>
       </div>
     </section>
 
@@ -73,6 +78,11 @@
             </p>
           </div>
 
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-advanced-02" :rotation-index="1" />
+          </div>
+
           <div class="guide-chunk wr-html-prose">
             <h2>Operating picture</h2>
             <table>
@@ -105,6 +115,11 @@
               When three systems demand attention at once, write the smallest possible checklist on map pins—words beat
               paragraphs under fire.
             </p>
+          </div>
+
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-advanced-03" :rotation-index="2" />
           </div>
 
           <div class="guide-chunk wr-html-prose">
@@ -191,6 +206,11 @@
             </table>
           </div>
 
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-advanced-04" :rotation-index="3" />
+          </div>
+
           <div class="guide-chunk wr-html-prose">
             <h2>Industry: gunpowder &amp; rare metals</h2>
             <p>
@@ -265,6 +285,11 @@
             </table>
           </div>
 
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-advanced-05" :rotation-index="4" />
+          </div>
+
           <div class="guide-chunk wr-html-prose">
             <figure>
               <img
@@ -309,6 +334,11 @@
               will not agree on who owns the next upgrade path. Mods shift risk: snapshot saves before reordering
               loadouts and read author notes in the Mods list when you change the client.
             </p>
+          </div>
+
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-advanced-06" :rotation-index="5" />
           </div>
 
           <div class="guide-chunk wr-html-prose">
@@ -383,6 +413,11 @@
             </table>
           </div>
         </div>
+
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-advanced-07" :rotation-index="6" />
+        </div>
       </div>
     </div>
   </article>
@@ -391,6 +426,7 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
+import GptBanner from '@/components/GptBanner.vue'
 import { resolveCanonicalUrl } from '@/seo/documentMeta.js'
 import { buildDocumentTitle } from '@/utils/pageSeo.js'
 

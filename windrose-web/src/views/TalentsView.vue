@@ -37,6 +37,11 @@
             </li>
           </ul>
         </div>
+
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-talents-01" :rotation-index="0" />
+        </div>
       </div>
     </section>
 
@@ -45,6 +50,11 @@
         <div class="guide-body-content">
           <div class="talents-page__planner">
             <TalentTreePlanner />
+          </div>
+
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-talents-02" :rotation-index="1" />
           </div>
 
           <div class="guide-chunk wr-html-prose">
@@ -60,6 +70,11 @@
               pages explain when survival talents matter more than damage. For raw item math while you respec, keep the
               wiki and the map open so you are not guessing material names mid-build.
             </p>
+          </div>
+          
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-talents-03" :rotation-index="2" />
           </div>
 
           <section class="talents-related" aria-labelledby="talents-guides-heading">
@@ -80,6 +95,11 @@
             </p>
           </section>
 
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-talents-04" :rotation-index="3" />
+          </div>
+
           <div class="guide-chunk wr-html-prose">
             <h2 id="patches-and-planning">Patches change numbers—plan talent order here</h2>
             <p>
@@ -98,6 +118,7 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
+import GptBanner from '@/components/GptBanner.vue'
 import TalentTreePlanner from '@/components/talents/TalentTreePlanner.vue'
 import { resolveCanonicalUrl } from '@/seo/documentMeta.js'
 import { buildDocumentTitle } from '@/utils/pageSeo.js'

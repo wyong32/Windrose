@@ -18,6 +18,10 @@
           <p v-if="lead" class="page-hero__lead">{{ lead }}</p>
           <p v-if="leadSecondary" class="page-hero__lead">{{ leadSecondary }}</p>
         </div>
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-wiki-misc-01" :rotation-index="0" />
+        </div>
       </div>
     </section>
 
@@ -33,6 +37,10 @@
 
     <section class="wiki-category-section" aria-labelledby="wiki-msc-table-heading">
       <div class="container">
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-wiki-misc-02" :rotation-index="1" />
+        </div>
         <h2 id="wiki-msc-table-heading" class="wiki-page-table-heading">{{ tableSectionTitle }}</h2>
         <div class="wiki-res-toolbar wiki-res-toolbar--end">
           <div class="wiki-res-search">
@@ -81,6 +89,10 @@
             </tbody>
           </table>
         </div>
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-wiki-misc-03" :rotation-index="2" />
+        </div>
       </div>
     </section>
   </article>
@@ -88,6 +100,7 @@
 
 <script setup>
 import { computed, ref } from 'vue'
+import GptBanner from '@/components/GptBanner.vue'
 import bundledItems from '@/data/wiki/items/misc.js'
 
 const props = defineProps({

@@ -23,6 +23,10 @@
             <a href="/talents">Talents &amp; Build</a>, then return here for pins.
           </p>
         </div>
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-map-01" :rotation-index="0" />
+        </div>
       </div>
     </section>
 
@@ -117,6 +121,11 @@
         </div>
 
         <p v-if="mapError" class="wr-map__error" role="alert">{{ mapError }}</p>
+
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-map-02" :rotation-index="1" />
+        </div>
       </div>
     </section>
 
@@ -157,6 +166,11 @@
             </li>
           </ol>
 
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-map-03" :rotation-index="2" />
+          </div>
+
           <h2 id="map-faq-heading">FAQ: Windrose map &amp; POI data</h2>
           <dl class="wr-map__faq">
             <div class="wr-map__faq-item">
@@ -190,6 +204,11 @@
               </dd>
             </div>
           </dl>
+
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-map-04" :rotation-index="3" />
+          </div>
         </div>
       </div>
     </section>
@@ -199,6 +218,7 @@
 <script setup>
 import { computed, nextTick, ref } from 'vue'
 import windroseBundle from '@/data/map/windroseMap.js'
+import GptBanner from '@/components/GptBanner.vue'
 import MapPinSearch from '@/views/map/MapPinSearch.vue'
 import WindroseMapViewport from '@/views/map/WindroseMapViewport.vue'
 import { useWindroseMap } from '@/views/map/useWindroseMap.js'

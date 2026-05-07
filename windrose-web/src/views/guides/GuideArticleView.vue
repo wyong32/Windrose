@@ -20,12 +20,21 @@
             <span v-for="t in article.tags" :key="t">{{ t }}</span>
           </div>
         </div>
+
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-guide-article-01" :rotation-index="0" />
+        </div>
       </div>
     </section>
 
     <div class="guide-detail__split-wrap">
       <div class="container guide-detail__split">
         <main ref="guideMainEl" class="guide-detail__main" @click.capture="onGuideMainClickCapture">
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-guide-article-02" :rotation-index="1" />
+          </div>
           <div
             v-if="article.iframeUrl"
             class="guide-detail__embed ratio-16-9"
@@ -39,6 +48,10 @@
             />
           </div>
           <div class="guide-detail__prose wr-html-prose" v-html="article.detailsHtml" />
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-guide-article-03" :rotation-index="2" />
+          </div>
         </main>
 
         <aside class="guide-detail__aside" aria-label="Article sidebar">
@@ -54,10 +67,16 @@
               />
             </figure>
 
+            <!-- 广告位 -->
+            <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+              <GptBanner gpt-slot-id="div-gpt-ad-guide-article-04" :rotation-index="3" />
+            </div>
+
             <div class="aside-block">
               <p class="aside-block__label">Summary</p>
               <p class="aside-block__summary">{{ summaryText }}</p>
             </div>
+            
 
             <div class="aside-meta">
               <div>
@@ -70,6 +89,11 @@
                   <li v-for="t in article.tags" :key="t">{{ t }}</li>
                 </ul>
               </div>
+            </div>
+
+            <!-- 广告位 -->
+            <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+              <GptBanner gpt-slot-id="div-gpt-ad-guide-article-05" :rotation-index="4" />
             </div>
 
             <div v-if="asideItems.length" class="aside-more">
@@ -98,6 +122,7 @@
 
 <script setup>
 import { computed, ref, watch } from 'vue'
+import GptBanner from '@/components/GptBanner.vue'
 import { publicAssetUrl } from '@/utils/publicAssetUrl.js'
 import { useRoute } from 'vue-router'
 import guideArticles from '@/data/guides/guideArticles.js'
@@ -105,7 +130,6 @@ import { getByAddressBar } from '@/utils/contentLookup.js'
 
 const route = useRoute()
 const guideMainEl = ref(null)
-/** 顶部 embed 的起始秒（与正文时间戳联动）；换篇时清零 */
 const guideVideoStartSeconds = ref(null)
 
 watch(

@@ -20,12 +20,21 @@
             <span v-for="t in article.tags" :key="t">{{ t }}</span>
           </div>
         </div>
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-mod-article-01" :rotation-index="0" />
+        </div>
       </div>
     </section>
 
     <div class="mod-article__split-wrap">
       <div class="container mod-article__split">
         <aside class="mod-article__rail" aria-label="Mod sidebar">
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-mod-article-02" :rotation-index="1" />
+          </div>
+
           <figure class="mod-article__cover">
             <img
               :src="coverSrc"
@@ -49,6 +58,11 @@
             <span aria-hidden="true">↗</span>
           </a>
 
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-mod-article-03" :rotation-index="2" />
+          </div>
+
           <div v-if="ratingStars.length" class="mod-article__rating">
             <p class="mod-article__rating-eyebrow">Compass score</p>
             <p
@@ -70,6 +84,11 @@
               mod or author support. For install folders, versions, conflicts, and patch notes, use the Nexus page opened
               via <strong>Download mod</strong> and the author’s notes there.
             </p>
+          </div>
+
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-mod-article-04" :rotation-index="3" />
           </div>
 
           <div class="mod-article__meta">
@@ -97,7 +116,15 @@
         </aside>
 
         <main class="mod-article__main">
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-mod-article-05" :rotation-index="4" />
+          </div>
           <div class="mod-article__prose wr-html-prose" v-html="article.detailsHtml" />
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-mod-article-06" :rotation-index="5" />
+          </div>
         </main>
       </div>
     </div>
@@ -115,6 +142,7 @@
 <script setup>
 import { computed, ref, watch } from 'vue'
 import { useRoute } from 'vue-router'
+import GptBanner from '@/components/GptBanner.vue'
 import modArticles from '@/data/mods/modArticles.js'
 import { getByAddressBar } from '@/utils/contentLookup.js'
 import { publicAssetUrl } from '@/utils/publicAssetUrl.js'

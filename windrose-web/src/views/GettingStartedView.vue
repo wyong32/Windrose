@@ -19,8 +19,8 @@
             <span>Sails &amp; Tortuga</span>
           </div>
           <p class="page-hero__lead">
-            PvE pirate survival—archipelagos, camps, melee, and naval fights. EA changes fast; trust your client for live
-            numbers. Map for coordinates, wiki for item names. Co-op?
+            PvE pirate survival—archipelagos, camps, melee, and naval fights. EA changes fast; trust
+            your client for live numbers. Map for coordinates, wiki for item names. Co-op?
             <a href="/guides/play-windrose-online">Play online with friends</a>, then
             <a href="/advanced">Advanced</a> when you outgrow the starter chain.
           </p>
@@ -38,6 +38,11 @@
               Talents, Tortuga, factions, hull—milestones, not a day-one sprint.
             </li>
           </ul>
+        </div>
+
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-getting-started-01" :rotation-index="0" />
         </div>
       </div>
     </section>
@@ -57,16 +62,23 @@
               />
             </figure>
             <p>
-              You spend a lot of time reading the horizon: where to beach for clay, which bay hides salvage, when to
-              risk a night crossing. Early Access rebalance patches can nudge recipes and damage—if a number here drifts
-              from your client, trust the quest journal and tooltips you see that week. Keep the wiki open for lookups and
-              the map for pins; this hub is fan-written guidance, not official support from Windrose Crew or publishers.
+              You spend a lot of time reading the horizon: where to beach for clay, which bay hides
+              salvage, when to risk a night crossing. Early Access rebalance patches can nudge
+              recipes and damage—if a number here drifts from your client, trust the quest journal
+              and tooltips you see that week. Keep the wiki open for lookups and the map for pins;
+              this hub is fan-written guidance, not official support from Windrose Crew or
+              publishers.
             </p>
             <p>
               Before you burn a respec token in town, sketch the next few talent purchases on our
-              <a href="/talents">Windrose talent planner</a> so the crew agrees on survival vs damage priorities—the URL
-              is shareable when someone else is rebuilding the same night.
+              <a href="/talents">Windrose talent planner</a> so the crew agrees on survival vs
+              damage priorities—the URL is shareable when someone else is rebuilding the same night.
             </p>
+          </div>
+
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-getting-started-02" :rotation-index="1" />
           </div>
 
           <div class="guide-chunk wr-html-prose">
@@ -83,46 +95,47 @@
                 <tr>
                   <td>Combat</td>
                   <td>
-                    Lock-on melee with dodge and parry windows, firearms for spacing—wildlife, forts, and bosses punish
-                    greedy stamina use on land and during boarding.
+                    Lock-on melee with dodge and parry windows, firearms for spacing—wildlife,
+                    forts, and bosses punish greedy stamina use on land and during boarding.
                   </td>
-                  <td>
-                    Weapons and consumables wiki tables; deeper cadence notes in Advanced.
-                  </td>
+                  <td>Weapons and consumables wiki tables; deeper cadence notes in Advanced.</td>
                 </tr>
                 <tr>
                   <td>Crafting &amp; workers</td>
                   <td>
-                    Bench chains, charcoal, repairs, and ammunition feed everything from stone axes to frigate outfits.
-                    NPC workers can lighten harvest and production once you unlock them—plan chest labels early.
+                    Bench chains, charcoal, repairs, and ammunition feed everything from stone axes
+                    to frigate outfits. NPC workers can lighten harvest and production once you
+                    unlock them—plan chest labels early.
                   </td>
-                  <td>
-                    Resources wiki deck; map pins for clay, salvage, and rare beaches.
-                  </td>
+                  <td>Resources wiki deck; map pins for clay, salvage, and rare beaches.</td>
                 </tr>
                 <tr>
                   <td>Sailing &amp; naval</td>
                   <td>
-                    Wind, draft, and crew tasks matter: trade broadsides at range or commit to boarding with seamless
-                    ship-to-shore transitions. Early Access ships range from a nimble ketch up to heavier brigs and
-                    frigates as you progress.
+                    Wind, draft, and crew tasks matter: trade broadsides at range or commit to
+                    boarding with seamless ship-to-shore transitions. Early Access ships range from
+                    a nimble ketch up to heavier brigs and frigates as you progress.
                   </td>
-                  <td>
-                    Ship wiki once modules unlock; map for route callouts.
-                  </td>
+                  <td>Ship wiki once modules unlock; map for route callouts.</td>
                 </tr>
                 <tr>
                   <td>Tortuga &amp; factions</td>
                   <td>
-                    The pirate town anchors quests, trade, and reputation swings that feed better gear and workers. Treat
-                    return trips as resupply beats, not sightseeing detours.
+                    The pirate town anchors quests, trade, and reputation swings that feed better
+                    gear and workers. Treat return trips as resupply beats, not sightseeing detours.
                   </td>
                   <td>
-                    Story specifics stay in-game; use the Guides hub for focused walkthroughs when writers publish them.
+                    Story specifics stay in-game; use the Guides hub for focused walkthroughs when
+                    writers publish them.
                   </td>
                 </tr>
               </tbody>
             </table>
+          </div>
+
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-getting-started-03" :rotation-index="2" />
           </div>
 
           <div class="guide-chunk wr-html-prose">
@@ -143,12 +156,16 @@
                 </tr>
                 <tr>
                   <td>Builder</td>
-                  <td>You enjoy snapping foundations, rooflines, and lighting for night crafting.</td>
+                  <td>
+                    You enjoy snapping foundations, rooflines, and lighting for night crafting.
+                  </td>
                   <td>You sprint past shelter to chase boats before benches exist.</td>
                 </tr>
                 <tr>
                   <td>Medic / quartermaster</td>
-                  <td>You track food buff timers, chest tabs, and repair kits before naval pulls.</td>
+                  <td>
+                    You track food buff timers, chest tabs, and repair kits before naval pulls.
+                  </td>
                   <td>You dislike spreadsheet discipline mid-voyage.</td>
                 </tr>
                 <tr>
@@ -159,11 +176,18 @@
               </tbody>
             </table>
             <p>
-              Respec rules and exact numbers move patch-to-patch—read each tooltip the week you play. The point is to
-              <strong>commit to a crew-facing role</strong> early so talents reinforce habits (navigation, crafting, medic,
-              bruiser), not the other way around. When you are ready to click for real, mirror the order on the
+              Respec rules and exact numbers move patch-to-patch—read each tooltip the week you
+              play. The point is to
+              <strong>commit to a crew-facing role</strong> early so talents reinforce habits
+              (navigation, crafting, medic, bruiser), not the other way around. When you are ready
+              to click for real, mirror the order on the
               <a href="/talents">talent tree page</a> first so nobody buys a dead branch by mistake.
             </p>
+          </div>
+
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-getting-started-04" :rotation-index="3" />
           </div>
 
           <div class="guide-chunk wr-html-prose">
@@ -179,11 +203,12 @@
             </figure>
             <h2>The first 30 minutes: gathering &amp; tools</h2>
             <p>
-              The still-life beat above is the fantasy of “camp solved”—in reality you earn it minute by minute. Touch
-              every starter loop once: punch trees and rocks, pick fiber, loot nearby crates, and craft stone tools before
-              you sprint for distant smoke. Clay and salvage usually hug shorelines—bank them early because furnaces and
-              mortars gate boats and ballistics. If wildlife deletes you, treat it as a spacing lesson: lock on, back off,
-              use elevation, and keep a spare meal in the hotbar.
+              The still-life beat above is the fantasy of “camp solved”—in reality you earn it
+              minute by minute. Touch every starter loop once: punch trees and rocks, pick fiber,
+              loot nearby crates, and craft stone tools before you sprint for distant smoke. Clay
+              and salvage usually hug shorelines—bank them early because furnaces and mortars gate
+              boats and ballistics. If wildlife deletes you, treat it as a spacing lesson: lock on,
+              back off, use elevation, and keep a spare meal in the hotbar.
             </p>
           </div>
 
@@ -216,18 +241,26 @@
                 <tr>
                   <td>When Tortuga unlocks</td>
                   <td>Cash-in quests, buy missing basics, hire first workers</td>
-                  <td>Travel light: sell junk, bank rares, note which vendors reset which recipes.</td>
+                  <td>
+                    Travel light: sell junk, bank rares, note which vendors reset which recipes.
+                  </td>
                 </tr>
               </tbody>
             </table>
           </div>
 
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-getting-started-05" :rotation-index="4" />
+          </div>
+
           <div class="guide-chunk wr-html-prose">
             <h2>Co-op headcount (performance-aware)</h2>
             <p>
-              Early Access supports larger parties on self-hosted and dedicated servers, but late-game forts and naval
-              brawls get heavy—many crews treat four players as the comfort ceiling and split bigger guilds across voice
-              channels instead of one overloaded instance. Details change patch to patch; see
+              Early Access supports larger parties on self-hosted and dedicated servers, but
+              late-game forts and naval brawls get heavy—many crews treat four players as the
+              comfort ceiling and split bigger guilds across voice channels instead of one
+              overloaded instance. Details change patch to patch; see
               <a href="/guides/play-windrose-online">Play online with friends</a> for connectivity
               patterns that survive router quirks.
             </p>
@@ -236,28 +269,36 @@
           <div class="guide-chunk wr-html-prose">
             <h2>Building your first shelter</h2>
             <p>
-              Start compact near water but off obvious patrol vectors: foundation ring, walls, bed or bedroll, storage,
-              and a sheltered crafting cluster beat a sprawling fort you cannot light or defend. EA building includes
-              several distinctive style families—pick one early so pieces snap cleanly and upgrades feel cohesive. Learn
-              roof snapping before you decorate; mid-game teardowns tax morale. Keep interior lights for night benches
+              Start compact near water but off obvious patrol vectors: foundation ring, walls, bed
+              or bedroll, storage, and a sheltered crafting cluster beat a sprawling fort you cannot
+              light or defend. EA building includes several distinctive style families—pick one
+              early so pieces snap cleanly and upgrades feel cohesive. Learn roof snapping before
+              you decorate; mid-game teardowns tax morale. Keep interior lights for night benches
               and pin a repair hammer so storm chip damage never strands you off-cycle.
             </p>
             <h2>Crafting your first boat</h2>
             <p>
-              Hull reliability beats figurehead glam: anchor feel, rudder response, and cargo for one extra expedition
-              matter more than cosmetics. You will progress from a small ketch toward brigs and frigates as recipes and
-              story beats unlock—read mast, sail, and gunport requirements carefully because missing one rope or tar brick
-              sends the whole crew back to shore. When gunports matter, skim the ship wiki before you spend rare ingots on a hull your helmsman
-              dreads steering.
+              Hull reliability beats figurehead glam: anchor feel, rudder response, and cargo for
+              one extra expedition matter more than cosmetics. You will progress from a small ketch
+              toward brigs and frigates as recipes and story beats unlock—read mast, sail, and
+              gunport requirements carefully because missing one rope or tar brick sends the whole
+              crew back to shore. When gunports matter, skim the ship wiki before you spend rare
+              ingots on a hull your helmsman dreads steering.
             </p>
+          </div>
+
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-getting-started-06" :rotation-index="5" />
           </div>
 
           <div class="guide-chunk wr-html-prose">
             <h2>Essential survival: food buffs</h2>
             <p>
-              Treat meals like loadout slots: one health-forward dish, one stamina-forward dish, and one flex buff
-              before hard POIs or naval pulls. Timers and stacking rules change in EA—read each tooltip the day you
-              play. Bank dried rations for long sprays; compare ingredient costs on the resources wiki before you burn rare fish for marginal gains.
+              Treat meals like loadout slots: one health-forward dish, one stamina-forward dish, and
+              one flex buff before hard POIs or naval pulls. Timers and stacking rules change in
+              EA—read each tooltip the day you play. Bank dried rations for long sprays; compare
+              ingredient costs on the resources wiki before you burn rare fish for marginal gains.
             </p>
           </div>
 
@@ -305,10 +346,17 @@
               </tbody>
             </table>
             <p>
-              When nights stay calm and sails feel predictable, open Advanced for tighter combat cadence, gunpowder beats,
-              fort defense, and dedicated server hygiene—those topics assume you already speak wiki shorthand.
+              When nights stay calm and sails feel predictable, open Advanced for tighter combat
+              cadence, gunpowder beats, fort defense, and dedicated server hygiene—those topics
+              assume you already speak wiki shorthand.
             </p>
           </div>
+
+          <!-- 广告位 -->
+          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <GptBanner gpt-slot-id="div-gpt-ad-getting-started-07" :rotation-index="6" />
+          </div>
+
         </div>
       </div>
     </div>
@@ -318,6 +366,7 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
+import GptBanner from '@/components/GptBanner.vue'
 import { resolveCanonicalUrl } from '@/seo/documentMeta.js'
 import { buildDocumentTitle } from '@/utils/pageSeo.js'
 

@@ -20,6 +20,10 @@
             <a href="https://steamcommunity.com/app/3041230" rel="noopener noreferrer">Steam Community · Windrose</a>.
           </p>
         </div>
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-update-01" :rotation-index="0" />
+        </div>
       </div>
     </section>
 
@@ -161,6 +165,11 @@
           </ol>
         </section>
 
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-update-02" :rotation-index="1" />
+        </div>
+
         <section class="wr-update-sidebar" aria-label="Quick links &amp; tips">
           <div class="wr-update-sidebar__block">
             <h3 class="wr-update-sidebar__h">Player checklist</h3>
@@ -180,6 +189,11 @@
             </ul>
           </div>
         </section>
+
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-update-03" :rotation-index="2" />
+        </div>
       </div>
     </div>
   </article>
@@ -188,6 +202,7 @@
 <script setup>
 import { onMounted, onUnmounted } from 'vue'
 import { useRoute } from 'vue-router'
+import GptBanner from '@/components/GptBanner.vue'
 import { resolveCanonicalUrl } from '@/seo/documentMeta.js'
 import { buildDocumentTitle } from '@/utils/pageSeo.js'
 

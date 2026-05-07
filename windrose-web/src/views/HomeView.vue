@@ -44,6 +44,11 @@
 
           <p class="hero-note">Fan resource · not affiliated with Windrose developers or publishers.</p>
         </div>
+
+        <!-- 广告位（单元路径按 rotationIndex 在 banner_1～3 间轮换） -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-home-banner-1" :rotation-index="0" />
+        </div>
       </div>
     </section>
 
@@ -163,6 +168,9 @@
             </li>
           </ul>
         </div>
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-home-banner-2" :rotation-index="1" />
+        </div>
       </div>
     </section>
 
@@ -197,6 +205,9 @@
             <div v-else class="map-teaser-visual__stub" aria-hidden="true" />
           </div>
         </div>
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-home-banner-3" :rotation-index="2" />
+        </div>
       </div>
     </section>
 
@@ -225,6 +236,9 @@
         <p class="wiki-home-all">
           <a class="home-cta-link" href="/wiki">Open wiki hub overview →</a>
         </p>
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-home-banner-4" :rotation-index="3" />
+        </div>
       </div>
     </section>
 
@@ -259,6 +273,9 @@
         <p class="guides-home-all">
           <a class="home-cta-link" href="/guides">Browse all guides →</a>
         </p>
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-home-banner-5" :rotation-index="4" />
+        </div>
       </div>
     </section>
 
@@ -301,6 +318,9 @@
             </ul>
           </div>
         </div>
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-home-banner-6" :rotation-index="5" />
+        </div>
       </div>
     </section>
 
@@ -319,6 +339,9 @@
             <dd class="faq-card__a">{{ item.a }}</dd>
           </div>
         </dl>
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-home-banner-7" :rotation-index="6" />
+        </div>
       </div>
     </section>
   </div>
@@ -326,6 +349,7 @@
 
 <script setup>
 import { computed, defineAsyncComponent, onMounted, onUnmounted, ref } from 'vue'
+import GptBanner from '@/components/GptBanner.vue'
 import guideArticles from '@/data/guides/guideArticles.js'
 import { WIKI_CATEGORY_ORDER, WIKI_CATEGORY_META } from '@/data/wiki/categories.js'
 

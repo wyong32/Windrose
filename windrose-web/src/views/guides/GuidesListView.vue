@@ -23,6 +23,10 @@
             wiki or map next.
           </p>
         </div>
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-guides-list-01" :rotation-index="0" />
+        </div>
       </div>
     </section>
 
@@ -55,12 +59,20 @@
             </a>
           </li>
         </ul>
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-guides-list-02" :rotation-index="1" />
+        </div>
         <div class="guides-hub__after prose-after wr-html-prose">
           <p>
             New to the archipelago? Read Getting Started before you deep-dive build guides. If an article cites a weapon
             family you do not recognize, verify the row in the weapons wiki the same session—patch weeks can shuffle names
             faster than prose updates.
           </p>
+        </div>
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-guides-list-03" :rotation-index="2" />
         </div>
       </div>
     </section>
@@ -69,6 +81,7 @@
 
 <script setup>
 import { computed } from 'vue'
+import GptBanner from '@/components/GptBanner.vue'
 import guideArticles from '@/data/guides/guideArticles.js'
 
 const sorted = computed(() =>

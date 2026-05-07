@@ -23,6 +23,11 @@
             official site.
           </p>
         </div>
+
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-wiki-hub-01" :rotation-index="0" />
+        </div>
       </div>
     </section>
 
@@ -46,6 +51,10 @@
             </a>
           </li>
         </ol>
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-wiki-hub-02" :rotation-index="1" />
+        </div>
       </div>
     </section>
 
@@ -65,12 +74,17 @@
             soon or ping the maintainers wherever this site is published.
           </p>
         </div>
+        <!-- 广告位 -->
+        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <GptBanner gpt-slot-id="div-gpt-ad-wiki-hub-03" :rotation-index="2" />
+        </div>
       </div>
     </section>
   </article>
 </template>
 
 <script setup>
+import GptBanner from '@/components/GptBanner.vue'
 import { WIKI_CATEGORY_ORDER, WIKI_CATEGORY_META } from '@/data/wiki/categories.js'
 
 function deckIndex(i) {
