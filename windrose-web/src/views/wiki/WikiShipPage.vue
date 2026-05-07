@@ -19,7 +19,7 @@
           <p v-if="leadSecondary" class="page-hero__lead">{{ leadSecondary }}</p>
         </div>
         <!-- 广告位 -->
-        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
           <GptBanner gpt-slot-id="div-gpt-ad-wiki-ship-01" :rotation-index="0" />
         </div>
       </div>
@@ -38,7 +38,7 @@
     <section class="wiki-category-section" aria-labelledby="wiki-shp-table-heading">
       <div class="container">
         <!-- 广告位 -->
-        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
           <GptBanner gpt-slot-id="div-gpt-ad-wiki-ship-02" :rotation-index="1" />
         </div>
         <h2 id="wiki-shp-table-heading" class="wiki-page-table-heading">{{ tableSectionTitle }}</h2>
@@ -92,7 +92,7 @@
           </table>
         </div>
         <!-- 广告位 -->
-        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
           <GptBanner gpt-slot-id="div-gpt-ad-wiki-ship-03" :rotation-index="2" />
         </div>
       </div>

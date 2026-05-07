@@ -24,7 +24,7 @@
           </p>
         </div>
         <!-- 广告位 -->
-        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
           <GptBanner gpt-slot-id="div-gpt-ad-map-01" :rotation-index="0" />
         </div>
       </div>
@@ -123,7 +123,7 @@
         <p v-if="mapError" class="wr-map__error" role="alert">{{ mapError }}</p>
 
         <!-- 广告位 -->
-        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
           <GptBanner gpt-slot-id="div-gpt-ad-map-02" :rotation-index="1" />
         </div>
       </div>
@@ -167,7 +167,7 @@
           </ol>
 
           <!-- 广告位 -->
-          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
             <GptBanner gpt-slot-id="div-gpt-ad-map-03" :rotation-index="2" />
           </div>
 
@@ -206,7 +206,7 @@
           </dl>
 
           <!-- 广告位 -->
-          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
             <GptBanner gpt-slot-id="div-gpt-ad-map-04" :rotation-index="3" />
           </div>
         </div>

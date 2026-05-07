@@ -21,7 +21,7 @@
           </p>
         </div>
         <!-- 广告位 -->
-        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
           <GptBanner gpt-slot-id="div-gpt-ad-update-01" :rotation-index="0" />
         </div>
       </div>
@@ -166,7 +166,7 @@
         </section>
 
         <!-- 广告位 -->
-        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
           <GptBanner gpt-slot-id="div-gpt-ad-update-02" :rotation-index="1" />
         </div>
 
@@ -191,7 +191,7 @@
         </section>
 
         <!-- 广告位 -->
-        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
           <GptBanner gpt-slot-id="div-gpt-ad-update-03" :rotation-index="2" />
         </div>
       </div>

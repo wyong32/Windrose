@@ -46,7 +46,7 @@
         </div>
 
         <!-- 广告位（单元路径按 rotationIndex 在 banner_1～3 间轮换） -->
-        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
           <GptBanner gpt-slot-id="div-gpt-ad-home-banner-1" :rotation-index="0" />
         </div>
       </div>
@@ -168,7 +168,7 @@
             </li>
           </ul>
         </div>
-        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
           <GptBanner gpt-slot-id="div-gpt-ad-home-banner-2" :rotation-index="1" />
         </div>
       </div>
@@ -205,7 +205,7 @@
             <div v-else class="map-teaser-visual__stub" aria-hidden="true" />
           </div>
         </div>
-        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
           <GptBanner gpt-slot-id="div-gpt-ad-home-banner-3" :rotation-index="2" />
         </div>
       </div>
@@ -236,7 +236,7 @@
         <p class="wiki-home-all">
           <a class="home-cta-link" href="/wiki">Open wiki hub overview →</a>
         </p>
-        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
           <GptBanner gpt-slot-id="div-gpt-ad-home-banner-4" :rotation-index="3" />
         </div>
       </div>
@@ -273,7 +273,7 @@
         <p class="guides-home-all">
           <a class="home-cta-link" href="/guides">Browse all guides →</a>
         </p>
-        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
           <GptBanner gpt-slot-id="div-gpt-ad-home-banner-5" :rotation-index="4" />
         </div>
       </div>
@@ -318,7 +318,7 @@
             </ul>
           </div>
         </div>
-        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
           <GptBanner gpt-slot-id="div-gpt-ad-home-banner-6" :rotation-index="5" />
         </div>
       </div>
@@ -339,7 +339,7 @@
             <dd class="faq-card__a">{{ item.a }}</dd>
           </div>
         </dl>
-        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
           <GptBanner gpt-slot-id="div-gpt-ad-home-banner-7" :rotation-index="6" />
         </div>
       </div>

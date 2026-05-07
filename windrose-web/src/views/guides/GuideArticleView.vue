@@ -22,7 +22,7 @@
         </div>
 
         <!-- 广告位 -->
-        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
           <GptBanner gpt-slot-id="div-gpt-ad-guide-article-01" :rotation-index="0" />
         </div>
       </div>
@@ -32,7 +32,7 @@
       <div class="container guide-detail__split">
         <main ref="guideMainEl" class="guide-detail__main" @click.capture="onGuideMainClickCapture">
           <!-- 广告位 -->
-          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
             <GptBanner gpt-slot-id="div-gpt-ad-guide-article-02" :rotation-index="1" />
           </div>
           <div
@@ -49,7 +49,7 @@
           </div>
           <div class="guide-detail__prose wr-html-prose" v-html="article.detailsHtml" />
           <!-- 广告位 -->
-          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
             <GptBanner gpt-slot-id="div-gpt-ad-guide-article-03" :rotation-index="2" />
           </div>
         </main>
@@ -68,7 +68,7 @@
             </figure>
 
             <!-- 广告位 -->
-            <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
               <GptBanner gpt-slot-id="div-gpt-ad-guide-article-04" :rotation-index="3" />
             </div>
 
@@ -92,7 +92,7 @@
             </div>
 
             <!-- 广告位 -->
-            <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+            <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
               <GptBanner gpt-slot-id="div-gpt-ad-guide-article-05" :rotation-index="4" />
             </div>
 

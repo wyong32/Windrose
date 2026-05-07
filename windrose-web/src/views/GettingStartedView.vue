@@ -41,7 +41,7 @@
         </div>
 
         <!-- 广告位 -->
-        <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
           <GptBanner gpt-slot-id="div-gpt-ad-getting-started-01" :rotation-index="0" />
         </div>
       </div>
@@ -77,7 +77,7 @@
           </div>
 
           <!-- 广告位 -->
-          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
             <GptBanner gpt-slot-id="div-gpt-ad-getting-started-02" :rotation-index="1" />
           </div>
 
@@ -134,7 +134,7 @@
           </div>
 
           <!-- 广告位 -->
-          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
             <GptBanner gpt-slot-id="div-gpt-ad-getting-started-03" :rotation-index="2" />
           </div>
 
@@ -186,7 +186,7 @@
           </div>
 
           <!-- 广告位 -->
-          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
             <GptBanner gpt-slot-id="div-gpt-ad-getting-started-04" :rotation-index="3" />
           </div>
 
@@ -250,7 +250,7 @@
           </div>
 
           <!-- 广告位 -->
-          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
             <GptBanner gpt-slot-id="div-gpt-ad-getting-started-05" :rotation-index="4" />
           </div>
 
@@ -288,7 +288,7 @@
           </div>
 
           <!-- 广告位 -->
-          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
             <GptBanner gpt-slot-id="div-gpt-ad-getting-started-06" :rotation-index="5" />
           </div>
 
@@ -353,7 +353,7 @@
           </div>
 
           <!-- 广告位 -->
-          <div class="ad-wrap" style="width: 100%; height: 100px; display: flex; justify-content: center; align-items: center;">
+          <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
             <GptBanner gpt-slot-id="div-gpt-ad-getting-started-07" :rotation-index="6" />
           </div>
 

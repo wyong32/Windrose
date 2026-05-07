@@ -104,6 +104,8 @@ watch(
   justify-content: space-between;
   gap: 1rem;
   min-height: 4.25rem;
+  /* 防止窄屏下绝对定位导航或子项溢出到视口右侧（部分 iOS Safari flex + 媒体查询组合） */
+  overflow-x: hidden;
 }
 
 .brand {
@@ -163,12 +165,30 @@ watch(
   outline-offset: 2px;
 }
 
+/*
+ * 移动优先：默认隐藏主导航，避免在部分 WebKit（尤其 iOS）上「桌面 display:flex」
+ * 未被 max-width 内 display:none 覆盖时，导航仍占 flex 第三列挤在右侧的问题。
+ */
 .site-nav {
+  display: none;
+  box-sizing: border-box;
+}
+
+.site-nav.is-open {
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: flex-end;
-  gap: 0.25rem 0.65rem;
+  position: absolute;
+  top: 100%;
+  left: 0;
+  right: 0;
+  z-index: 1;
+  flex-direction: column;
+  flex-wrap: nowrap;
+  align-items: stretch;
+  justify-content: flex-start;
+  gap: 0;
+  padding: 0.75rem 1.25rem 1rem;
+  background: rgba(6, 7, 10, 0.98);
+  border-bottom: 1px solid var(--color-border);
 }
 
 .nav-link {
@@ -189,50 +209,16 @@ watch(
   color: var(--color-brass);
 }
 
-.nav-link.nav-link--active {
+.site-nav.is-open .nav-link {
+  padding: 0.65rem 0;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+}
+
+.site-nav.is-open .nav-link.nav-link--active {
   color: var(--color-parchment);
-  border-color: var(--color-sea);
-}
-
-/* ≤1024：平板与手机共用抽屉导航（汉堡） */
-@media (max-width: 1024px) {
-  .nav-toggle {
-    display: inline-flex;
-  }
-
-  .site-nav {
-    position: absolute;
-    top: 100%;
-    left: 0;
-    right: 0;
-    flex-direction: column;
-    align-items: stretch;
-    padding: 0.75rem 1.25rem 1rem;
-    background: rgba(6, 7, 10, 0.98);
-    border-bottom: 1px solid var(--color-border);
-    display: none;
-  }
-
-  .site-nav.is-open {
-    display: flex;
-  }
-
-  .nav-link {
-    padding: 0.65rem 0;
-    border-bottom: 1px solid rgba(255, 255, 255, 0.06);
-  }
-
-  .nav-link.nav-link--active {
-    border-color: rgba(255, 255, 255, 0.06);
-    border-left: 3px solid var(--color-blood);
-    padding-left: 0.5rem;
-  }
-}
-
-@media (min-width: 1025px) {
-  .nav-toggle {
-    display: none;
-  }
+  border-color: rgba(255, 255, 255, 0.06);
+  border-left: 3px solid var(--color-blood);
+  padding-left: 0.5rem;
 }
 
 /* ≤768：窄屏顶栏与触控目标 */
@@ -253,13 +239,50 @@ watch(
     padding: 0.45rem;
   }
 
-  .site-nav {
+  .site-nav.is-open {
     padding: 0.65rem 1rem 0.9rem;
   }
 
-  .nav-link {
+  .site-nav.is-open .nav-link {
     padding: 0.7rem 0;
     font-size: 0.8rem;
+  }
+}
+
+/* ≥1025：桌面横排导航，隐藏汉堡；必须同时覆盖 .site-nav.is-open，以免展开态残留抽屉样式 */
+@media (min-width: 1025px) {
+  .nav-toggle {
+    display: none;
+  }
+
+  .site-nav,
+  .site-nav.is-open {
+    display: flex;
+    position: static;
+    flex-direction: row;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0.25rem 0.65rem;
+    padding: 0;
+    background: transparent;
+    border-bottom: none;
+    z-index: auto;
+  }
+
+  .site-nav .nav-link,
+  .site-nav.is-open .nav-link {
+    padding: 0.45rem 0.35rem;
+    border-bottom: 2px solid transparent;
+    border-left: none;
+    font-size: 0.78rem;
+  }
+
+  .site-nav .nav-link.nav-link--active,
+  .site-nav.is-open .nav-link.nav-link--active {
+    color: var(--color-parchment);
+    border-color: var(--color-sea);
+    padding-left: 0.35rem;
   }
 }
 </style>
