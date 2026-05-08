@@ -2267,6 +2267,688 @@ export default [
   </p>
   <p> A: Yes, there is no hard limit on structures. However, moving fully stocked chests of heavy ore between bases is a logistical nightmare. It is highly recommended to maintain ONE massive, centralized warehouse base, and just build tiny "tent + campfire" outposts in dangerous zones like the Cursed Swamps.
   </p>`,
+  },
+
+  {
+    id: 16,
+    title: "Windrose Best Ship Gear Guide: Cannons, Hull & Tactics",
+    iframeUrl: "",
+    description: "Stop wasting Piastre on bad ship upgrades. Learn the ultimate Windrose ship gear loadouts, the Keelhold invincible repair combo, and the best cannons for Brig and Frigate.",
+    tags: ["Windrose Best Ship"],
+    publishDate: "2026-05-08",
+    imageUrl: "/images/guides/guide16.webp",
+    imageAlt: "Windrose Best Ship Gear Cannons Hull & Tactics",
+    seo: {
+      title: "Windrose Ultimate Ship Gear & Cannon Meta Guide",
+      description: "Learn why Perfectly Ordered cannons dominate the early game, how to build the Immortal Keelhold hull combo, and exactly how the Shipwright's Workshop ascension system works.",
+      keywords: "windrose best ship gear, windrose best cannons, windrose best hull"
+    },
+    addressBar: "best-ship-gear-cannons-hull",
+    detailsHtml: `
+  <p>Sailing a Blackbeard Frigate means nothing if your gear slots are filled with trash. In Windrose, late-game naval combat is decided entirely by the synergy between your Cannons, Hull Modifications, and Naval Tactics. Do not blindly buy the "Tempered" cannons because the damage number looks high; sitting around waiting 6 seconds to trigger a buff in a broadside battle will get you sunk. Instead, you need to rely on the "Perfectly Ordered" reload meta for smaller ships, and transition to "Devastating" debuff stacking for Frigates. More importantly, if you aren't running the "Immortal Keelhold" combo (Epic Keelhold Hull + Tactics III) to make your mid-combat repairs uninterruptible, you are actively griefing your own playthrough.
+  </p>
+  <h2>Windrose Best Ship Cannons: The Two Metas
+  </h2>
+  <p>Every named cannon schematic requires Reputation with the Buccaneers Faction. Do not waste materials testing them all. We have done the math. Your cannon choice depends entirely on how many weapon slots your ship has.
+  </p>
+  <p>The Single-Slot Meta (For Ketch &amp; Brig): Perfectly Ordered
+  </p>
+  <p> When you only have one broadside slot, sustained DPS is everything. You must craft the highest poundage Perfectly Ordered cannons your ship supports (e.g., 24-pounders on a Blackbeard Brig).
+  </p>
+  <p> The Synergy: The Rare effect gives you +30% reload speed if you hit an enemy within 4 seconds of your last reload. Once ascended to Epic, you also get +30% aiming speed. If you hold down the fire button and don't miss, then this buff is permanently active, allowing you to drown the enemy in lead.
+  </p>
+  <p>The Dual-Slot Meta (For Frigates): Devastating Stack
+  </p>
+  <p> Frigates have two cannon slots. This changes everything. If you own the Blackbeard Frigate, then you must install 36-Pounders: Devastating.
+  </p>
+  <p> The Synergy: The Devastating trait applies the 'Raked' debuff, increasing all damage taken by the target by 10% (stacking up to 3 times). Because you have two batteries firing constantly, you will instantly push the enemy to +30% vulnerability, turning your 36-pounders into tactical nukes.
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-etc7v3">Cannon Type
+  </td>
+  <td data-row="row-etc7v3">Rare Effect (Base)
+  </td>
+  <td data-row="row-etc7v3">Epic Effect (Ascended)
+  </td>
+  <td data-row="row-etc7v3">Verdict
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-hxmc6d">Devastating
+  </td>
+  <td data-row="row-hxmc6d">Applies 'Raked' (Up to +30% Dmg taken).
+  </td>
+  <td data-row="row-hxmc6d">+15% Reload Speed.
+  </td>
+  <td data-row="row-hxmc6d">BiS for Dual-Slot Frigates.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-f5ruwl">Perfectly Ordered
+  </td>
+  <td data-row="row-f5ruwl">+30% Reload Speed on quick follow-up hits.
+  </td>
+  <td data-row="row-f5ruwl">+30% Aiming Speed.
+  </td>
+  <td data-row="row-f5ruwl">BiS for Ketch and Brig.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-4rb9nh">Tempered
+  </td>
+  <td data-row="row-4rb9nh">+40% Dmg if you wait 6s after reloading.
+  </td>
+  <td data-row="row-4rb9nh">+20% Dmg to Weak Spots.
+  </td>
+  <td data-row="row-4rb9nh">TRAP. Waiting 6 seconds ruins your DPS. Avoid.
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p><img src="/images/guides/guide16-01.webp" alt="windrose-ship-gear-ship-best-cannons-best-hull-ship-upgrades-double-cannons" width="50%">
+  </p>
+  <h2>The "Immortal Keelhold" Defense Combo
+  </h2>
+  <p>Hull Modification dictates your DEF stat, but its passive abilities are what keep you alive. You must combine your Hull with the correct Naval Tactic to break the game's repair mechanics.
+  </p>
+  <p>1. The Hull: Bracing Keelhold (Epic)
+  </p>
+  <p> Normally, when you use a Repair Kit, taking cannon fire reduces the heal's duration. 
+  </p>
+  <p> If you use an Epic Keelhold, then taking damage no longer affects repair duration, AND the base duration is extended by 30%.
+  </p>
+  <p>2. The Tactic: Naval Tactics III (Stretch The Supply)
+  </p>
+  <p> Naval Tactics are passive buffs bought from the Smugglers (Level 3) for 500 Piastre. Tactic III increases the duration of Repair Kits by another 30%, and Grog buffs by a massive 200%.
+  </p>
+  <p>The Final Result: When combined, your Master Combat Repair Kits last 60% longer and CANNOT be interrupted. You can literally sail straight into a 3-ship pirate blockade, pop a Repair Kit and a Grog (+15% Dmg Res), and out-heal their combined damage.
+  </p>
+  <p>Warning: Do NOT buy Naval Tactics IV (Shipshape). It heals 3% every 3 seconds only while out of combat. It is completely useless when you actually need it.
+  </p>
+  <p><img src="/images/guides/guide16-02.webp" alt="windrose-ship-gear-ship-best-cannons-best-hull-ship-gear-ascending" width="50%">
+  </p>
+  <h2>Boarding Party Gear: The Material Sink
+  </h2>
+  <p>Unlike Cannons and Hulls, Boarding Party Gear is weird. There are no variants, and it cannot be ascended past Uncommon rarity.
+  </p>
+  <p>Its only purpose is to increase your crew's auto-attack damage during the boarding cutscene phase. You upgrade it from Level 1 to 15 using raw materials at the Shipwright. Advice: Level this passively. Do not bankrupt your Iron Ingot supply rushing this to Level 15 while your Cannons are still Level 1.
+  </p>
+  <h2>How to Upgrade &amp; Ascend Gear
+  </h2>
+  <p>A common beginner mistake is trying to upgrade gear while it is attached to the ship.
+  </p>
+  <ol>
+  <li>Unequip First: Go to the Wharf, select 'Manage Ship', and drag the cannons/hull into your personal backpack.
+  </li>
+  <li>The Shipwright's Workshop: Walk over to this base station. Use the Upgrade tab to push the item's raw level (e.g., Level 1 to 10), which increases base ATK/DEF. (Note: Level caps unlock as you defeat 'Local Threat' bosses in new biomes).
+  </li>
+  <li>The Ascension Tab: Use this tab to bump the rarity from Rare to Epic, unlocking the second broken passive ability. Hard Requirement: You will need Tumbaga Ingots to ascend any late-game ship gear, so start farming the Cursed Swamps.
+  </li>
+  </ol>
+  <p><img src="/images/guides/guide16-03.webp" alt="windrose-ship-gear-ship-best-cannons-best-hull-ship-upgrades" width="50%">
+  </p>
+  <h3>FAQ: Ship Gear Optimization
+  </h3>
+  <p>Q: I bought the 36-pounder schematic, but it won't let me equip them on my Stock Frigate. Why?
+  </p>
+  <p> A: Hull weight limits. Only the Blackbeard variant of the Frigate is structurally designed to carry 36-pounder cannons. If you built the Stock or Brethren Frigate, you are hard-capped at 24-pounders.
+  </p>
+  <p>Q: Can I stack two different Naval Tactics?
+  </p>
+  <p> A: No. Your ship only has one dedicated Naval Tactics gear slot. This is why choosing Tactic III (Stretch The Supply) is critical, as its synergy with consumables outweighs the gimmick effects of the others.
+  </p>
+  <p>Q: Is there any reason to use the 'Standfast' Hull instead of Keelhold?
+  </p>
+  <p> A: Standfast gives a flat 25% damage reduction for 3 seconds when hit. It's decent for burst mitigation, but in protracted 5-minute naval battles against multiple Frigates, the raw uninterrupted HP regeneration of the Keelhold combo mathematically provides vastly superior effective health.
+  </p>`,
+  },
+
+  {
+    id: 17,
+    title: "Windrose Ultimate Weapon Tier List & Ascension Guide",
+    iframeUrl: "",
+    description: "Learn the Soulslike perfect block mechanics that define weapon viability, the exact Ascension costs, and why the Rapier of Devastation and Plague Halberd are the undisputed S-Tier gods.",
+    tags: ["Windrose Best Weapons Tier List"],
+    publishDate: "2026-05-08",
+    imageUrl: "/images/guides/guide17.webp",
+    imageAlt: "windrose-best-weapons-tier-list",
+    seo: {
+      title: "Windrose Best Weapons Tier List: The Ultimate Meta Guide",
+      description: "Stop wasting Tumbaga Ingots on trash. Discover the definitive Windrose Best Weapons Tier List. Learn why the Rapier of Devastation is S-Tier, and why most 2-Handed Greatswords are absolute garbage.",
+      keywords: "windrose weapon tier list, windrose rapier of devastation, windrose best melee weapon, windrose best ranged weapon"
+    },
+    addressBar: "best-weapons-tier-list",
+    detailsHtml: `
+  <p>If you think Windrose is just a pirate simulator where you can mash the left-click button with a giant club and win, you are going to get slaughtered. The combat in this game is heavily Soulslike. Your entire build's viability hinges on Stamina management and the ability to execute 'Perfect Blocks'. Here is the harsh truth that noob-friendly guides won't tell you: if a melee weapon cannot Perfect Block, it is instantly garbage UNLESS its special ability is overwhelmingly broken. Do NOT waste your extremely rare Tumbaga Ingots ascending C-Tier Greatswords. You must funnel all your resources into obtaining the true S-Tier gods of the Cursed Swamps: The Rapier of Devastation and the Plague Halberd.
+  </p>
+  <h2>The Ascension Trap (Save Your Tumbaga)
+  </h2>
+  <p>Every named weapon drops at Rare quality, giving it one unique passive. You can upgrade its base damage level normally, but the real power spike requires Ascension to Epic quality at the Weaponsmith Workshop. Ascending unlocks the bolded, second Epic ability.
+  </p>
+  <p>The Catch: Ascension costs Tumbaga Ingots. These are the rarest mid-to-late game resources. If you Ascend a B-Tier weapon early on, you will deeply regret it when you finally loot an S-Tier weapon and have no Ingots left.
+  </p>
+  <h2>Windrose Weapon Tier List
+  </h2>
+  <p>We rank weapons based on their scaling synergy, attack frames, ability to Perfect Block, and how broken their Epic effects are.
+  </p>
+  <h3>S-Tier (Game-Breaking Meta)
+  </h3>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-viua8r">Weapon Name
+  </td>
+  <td data-row="row-viua8r">Type (Stat)
+  </td>
+  <td data-row="row-viua8r">Why It Breaks the Game
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-1s6m9a">Rapier Of Devastation
+  </td>
+  <td data-row="row-1s6m9a">1H Sword (Precision)
+  </td>
+  <td data-row="row-1s6m9a">The Undisputed King. Extremely fast attacks. Perfect Block capable. Epic Effect: Consuming 5+ Plague Marks with a Heavy Attack instantly restores 40% of Max Health. It removes the need for healing potions.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-wzqpsv">Plague Halberd
+  </td>
+  <td data-row="row-wzqpsv">2H Halberd (Strength)
+  </td>
+  <td data-row="row-wzqpsv">The only 2H weapon worth using. You cannot Perfect Block, but the [F] Special Attack hits in a massive AoE cleave that instantly restores 35% Max Health. It is the ultimate ship-boarding weapon.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-3b20ua">Reliable Musket
+  </td>
+  <td data-row="row-3b20ua">Musket (Precision)
+  </td>
+  <td data-row="row-3b20ua">Ranged attacks cost 0 Stamina. Paired with the 'Quick Hand' talent, its Rare effect drops reload times to sub-2 seconds, and its Epic effect gives +20% Crit Damage. The highest sustained DPS in the game.
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p><img src="/images/guides/guide17-01.webp" alt="best-weapons-tier-list-ascend-1" width="50%">
+  </p>
+  <h3>A-Tier (Excellent Replacements)
+  </h3>
+  <p>These are the weapons you should use to farm the S-Tier weapons.
+  </p>
+  <ol>
+  <li>Rapier Of A Thousand Cuts (Precision): The best early-to-mid game carry. Applies a 5x stacking Bleed DoT. The Epic effect turns that bleed into Temporal Health recovery. Only replaced by the Devastation rapier.
+  </li>
+  <li>Drake's Double-Barreled Pistol (Precision): The ultimate secondary weapon. Its Epic effect applies Vulnerability (+15% Damage Taken). You fire this once to apply the debuff, then swap to your Rapier for a massive nuke.
+  </li>
+  <li>Arboris Saber (Strength): A great 1H Plague weapon with huge frontal damage on its [F] attack, but falls short of S-Tier because it lacks the massive percentage-based self-healing of the top tier.
+  </li>
+  </ol>
+  <h3>B-Tier &amp; C-Tier (Niche or Flawed)
+  </h3>
+  <p>Weapons here have severe drawbacks or force you into clunky playstyles.
+  </p>
+  <ol>
+  <li>Razor / Dueling Saber (Agility - B Tier): Great for Agility Crit builds, but zero self-sustain. If you miss a Perfect Block, your DPS plummets.
+  </li>
+  <li>Soul Eater (Strength - C Tier): Dropped by the Hands Boss. The AoE life-drain sounds amazing, but a 2-minute cooldown makes it utterly useless for general map clearing.
+  </li>
+  <li>Executioner (Strength - C Tier): Requires getting kills to stack Crit Chance. Completely useless against a single, high-HP Boss where you cannot build stacks.
+  </li>
+  </ol>
+  <h3>D-Tier (The "Do Not Equip" List)
+  </h3>
+  <p>If you see these, leave them in a chest. They are a waste of inventory space.
+  </p>
+  <ol>
+  <li>Smasher: A Rare 1H Mace obtained via fishing. It cannot be Ascended. Its knockback proc rate is pathetic. It is a meme weapon.
+  </li>
+  <li>Infantry Musket: Adds a melee bayonet attack. In a game where the Reliable Musket exists, rushing into melee range with a ranged weapon is suicidal.
+  </li>
+  <li>All Generic "Sturdy" Maces/Greatswords: Maces and Greatswords inherently cannot Perfect Block. Giving them "+1 Posture Point" or "-15% Stamina cost" does not fix the core issue that you will get staggered to death by Plague Thralls.
+  </li>
+  </ol>
+  <p><img src="/images/guides/guide17-02.webp" alt="windrose-best-builds-rapier-build-rapier-of-a-thousand-cuts" width="50%">
+  </p>
+  <h2>The Precision "Double-Dip" Early Strategy
+  </h2>
+  <p>If you are struggling in the first 10 hours, stop spreading your stats. 
+  </p>
+  <p> If you use a Rapier (which uniquely scales with Precision instead of Agility) paired with a Pistol (which also scales with Precision), then you can dump 100% of your offensive points into a single stat. 
+  </p>
+  <p> Farm POIs until you find the Rapier Of A Thousand Cuts and a Reliable Pistol. This setup will effortlessly carry you all the way to the Cursed Swamps.
+  </p>
+  <h3>FAQ: Weapon Mechanics
+  </h3>
+  <p>Q: Why does the Halberd rank S-Tier if you said weapons that can't Perfect Block are trash?
+  </p>
+  <p> A: It's the singular exception to the rule. The Plague Halberd's Special Attack deals insane AoE damage and heals 35% of your max HP. It out-heals the chip damage you take from being unable to Perfect Block. No other 2-Handed weapon has this broken level of sustain.
+  </p>
+  <p>Q: Should I level Mastery to boost my critical hits with the S-Tier weapons?
+  </p>
+  <p> A: No. Due to harsh Diminishing Returns (DR) on stats, hard-leveling Mastery is a waste. Rely on food buffs (like Tacos) to boost Mastery, and dump your actual level-up points into Precision (for Rapiers/Muskets) or Strength (for Halberds).
+  </p>
+  <p>Q: Can I dual-wield pistols?
+  </p>
+  <p> A: No. Windrose strictly enforces a "One Melee, One Ranged" loadout system. However, using Drake's Double-Barreled Pistol mimics the burst damage of dual-wielding by firing two quick shots in succession.
+  </p>`,
+  },
+
+  {
+    id: 18,
+    title: "Windrose Best Armor Sets Guide: Early to Late Game Meta",
+    iframeUrl: "",
+    description: "Windrose best armor sets. Learn why the Pikeman and Conquistador 2-piece bonuses are mandatory for early game survival, how Flibustier's supports 1-Handed builds, and why the Tracker set is universally garbage.",
+    tags: ["Windrose Best Armor Sets"],
+    publishDate: "2026-05-08",
+    imageUrl: "/images/guides/guide18.webp",
+    imageAlt: "windrose-best-armor-sets",
+    seo: {
+      title: "Windrose Best Armor Sets & Set Bonuses Explained",
+      description: "Stop dying in Windrose. Discover the definitive Windrose Best Armor Sets Tier List for early, mid, and late game. Learn the OP 2-piece combo and how each set bonus defines your build.",
+      keywords: "windrose best armor sets, windrose conquistador set, windrose pikeman set, windrose marksman set, windrose privateer set"
+    },
+    addressBar: "best-armor-sets",
+    detailsHtml: `
+  <p>Stop equipping random Rare armor pieces just because the base stats look good. In Windrose, armor sets are everything. Your entire survivability and build identity are dictated by the 2-piece and 4-piece set bonuses. For early to mid-game progression, do NOT try to create a full set; instead, combine the 2-piece bonuses of the Conquistador and Pikeman sets for an insane early-game tankiness that will trivialize most mob encounters. In the late game, specific full 4-piece sets become mandatory to unlock your true damage potential. Forget "style over substance"; if your armor isn't actively making your build stronger, it belongs in the trash.
+  </p>
+  <p><img src="/images/guides/guide18-01.webp" alt="windrose-best-armor-sets" width="50%">
+  </p>
+  <h2>Armor Sets &amp; Their Game-Changing Bonuses
+  </h2>
+  <p>All Rare armor in Windrose (excluding jewelry) belongs to one of six distinct sets. Each set activates a unique bonus when you equip 2 or 4 pieces. Understanding these bonuses is critical. Common and Uncommon armor pieces have no meaningful set bonuses and should be immediately upgraded the moment you find Rare alternatives.
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-aqykt0">Armor Set
+  </td>
+  <td data-row="row-aqykt0">2-Piece Bonus
+  </td>
+  <td data-row="row-aqykt0">4-Piece Bonus
+  </td>
+  <td data-row="row-aqykt0">Primary Upgrade Resource
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-4tsg2q">Conquistador
+  </td>
+  <td data-row="row-4tsg2q">+15% Damage Resistance
+  </td>
+  <td data-row="row-4tsg2q">Grants Bulwark (uninterruptible actions)
+  </td>
+  <td data-row="row-4tsg2q">Ingots
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-5ctvxe">Flibustier
+  </td>
+  <td data-row="row-5ctvxe">Attacks consume 20% less Stamina
+  </td>
+  <td data-row="row-5ctvxe">+15% One-handed weapon Damage
+  </td>
+  <td data-row="row-5ctvxe">Leather
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-gbcznh">Marksman
+  </td>
+  <td data-row="row-gbcznh">Sprinting, Jump, Dash consume 30% less Stamina
+  </td>
+  <td data-row="row-gbcznh">+15% Ranged Damage
+  </td>
+  <td data-row="row-gbcznh">Cloth/Linen
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-780ta8">Pikeman
+  </td>
+  <td data-row="row-780ta8">+160 Maximum Health
+  </td>
+  <td data-row="row-780ta8">+15% Two-handed weapon Damage
+  </td>
+  <td data-row="row-780ta8">Ingots
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-gy0htf">Privateer
+  </td>
+  <td data-row="row-gy0htf">+10% Critical Hit Chance
+  </td>
+  <td data-row="row-gy0htf">+10% Critical Damage per nearby enemy (up to 30%)
+  </td>
+  <td data-row="row-gy0htf">Cloth/Linen
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-wuu5n6">Tracker
+  </td>
+  <td data-row="row-wuu5n6">+35% Healing Effectiveness
+  </td>
+  <td data-row="row-wuu5n6">+15% Damage Resistance
+  </td>
+  <td data-row="row-wuu5n6">Leather
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <h2>Best Early to Mid-Game Armor Sets: The Tankiness Duo
+  </h2>
+  <p>If you're dying repeatedly in the Coastal Jungle or Foothills, your armor is the problem. Your primary goal is to not get one-shot and to reduce incoming damage. Forget about maximizing your DPS; you'll deal zero damage when you're dead.
+  </p>
+  <p>The "Hardcore Starter" Combo:
+  </p>
+  <p> You MUST equip a hybrid 2-piece set to maximize early-game survivability. This combination is universally superior to any single full set until the late game:
+  </p>
+  <ol>
+  <li>Conquistador Set (2-Piece Bonus): +15% Damage Resistance
+  </li>
+  <li>Pikeman Set (2-Piece Bonus): +160 Maximum Health
+  </li>
+  </ol>
+  <p>Why this works: Windrose mobs hit like trucks, especially in groups. This combo gives you both flat HP (which is huge when your base Vitality is low) and percentage-based damage reduction. This is a massive +25-30% effective health increase that will make your early game dramatically smoother.
+  </p>
+  <p><img src="/images/guides/guide18-02.webp" alt="windrose-best-armor-sets-all-armor-sets-4-pieces">
+  </p>
+  <h2>Best Late-Game Armor Sets: Build-Defining Choices
+  </h2>
+  <p>Once you are in the Cursed Swamps and have access to Epic weapons and higher stats, you will transition to a full 4-piece set. Your choice here is completely dependent on your chosen character build. Do NOT blindly pick the Pikeman's 4-piece if you are running a Rapier.
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-s5c14v">Character Build
+  </td>
+  <td data-row="row-s5c14v">Recommended 4-Piece Armor Set
+  </td>
+  <td data-row="row-s5c14v">Why It's Mandatory (Internal Link)
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-87s0b9">1-Handed Melee (e.g., Rapier Precision Build)
+  </td>
+  <td data-row="row-87s0b9">Flibustier (4P)
+  </td>
+  <td data-row="row-87s0b9">[Link to: Rapier Precision Build Guide] for its +15% One-handed weapon Damage.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-knov57">2-Handed Melee (e.g., Plague Halberd AoE/Cleave Build)
+  </td>
+  <td data-row="row-knov57">Pikeman (4P)
+  </td>
+  <td data-row="row-knov57">[Link to: Plague Halberd AoE/Cleave Build Guide] for its +15% Two-handed weapon Damage.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-mt8ycy">Pure Ranged (e.g., Reliable Musketeer Build)
+  </td>
+  <td data-row="row-mt8ycy">Marksman (4P)
+  </td>
+  <td data-row="row-mt8ycy">[Link to: Reliable Musketeer Build Guide] for its +15% Ranged Damage.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-8llysa">Crit Build (e.g., Saber Dragon Crit Build)
+  </td>
+  <td data-row="row-8llysa">Privateer (4P)
+  </td>
+  <td data-row="row-8llysa">[Link to: Saber Dragon Crit Build Guide] for its insane +30% Critical Damage scaling.
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p>The "Tracker Set" Trap: Do NOT use the Tracker Set. Its 2-piece (+35% healing effectiveness) is okay, but its 4-piece (+15% Damage Resistance) is literally the same as the Conquistador 2-piece, but requires two more slots. It is universally considered a waste of resources due to its lack of build-defining power.
+  </p>
+  <p><img src="/images/guides/guide18-03.webp" alt="windrose-best-armor-sets-all-armor-sets-two-pieces">
+  </p>
+  <h3>FAQ: Armor Upgrades &amp; Costs
+  </h3>
+  <p>Q: How do I get Conquistador's Pants or Pikeman's Cuirass? They don't drop from POIs.
+  </p>
+  <p> A: Most 2-piece set bonuses come from random POI drops in Coastal Jungle and Foothills. However, the last two pieces of every set (Pants/Cuirass or Pants/Jacket) are typically purchased as blueprints from Faction Provisioners (e.g., Smugglers of Port Royal or Rogue Buccaneers) once you reach Reputation Level 2.
+  </p>
+  <p>Q: Is it worth upgrading my armor pieces from Uncommon to Rare?
+  </p>
+  <p> A: Yes, absolutely. Common and Uncommon armor pieces provide no set bonuses. The moment you find a Rare piece for a set you want to build, even if it's not a direct upgrade in base defense, it is worth equipping for the set bonus activation. The base defense difference between Uncommon and Rare is minimal, but the set bonus is game-changing.
+  </p>
+  <p>Q: Does the upgrade cost for armor pieces increase with rarity?
+  </p>
+  <p> A: Yes. Base armor pieces (gloves, boots) are cheap to upgrade. Mid-tier pieces (helmets, hats) are medium cost. The final pieces (cuirass, jacket) are the most expensive, often requiring higher-tier ingots or rarer leathers as primary resources.
+  </p>`,
+  },
+
+  {
+    id: 19,
+    title: "Windrose Boar Whistle Guide: Find the Altar & The Crocodile Whistle Truth",
+    iframeUrl: "",
+    description: "On obtaining the Legendary Boar Whistle in Windrose. Discover the Ancient Altar in the Foothills, find all 3 Ritual Oils in the ruins, and learn why Truffle is the ultimate aggro-management tool for squishy builds. Debunking the Crocodile Whistle myth.",
+    tags: ["Windrose Boar Whistle"],
+    publishDate: "2026-05-08",
+    imageUrl: "/images/guides/guide19.webp",
+    imageAlt: "windrose-how-to-get-boar-whistle-crocodile-whistle",
+    seo: {
+      title: "Windrose Boar Whistle Guide: Find the Altar & The Crocodile Whistle Truth",
+      description: "Stop searching for the Crocodile Whistle; it doesn't exist yet. Learn how to get the Legendary Boar Whistle in Windrose, find the Ancient Altar, and use Truffle to manage boss aggro.",
+      keywords: "windrose boar whistle, windrose crocodile whistle"
+    },
+    addressBar: "boar-whistle-crocodile-whistle",
+    detailsHtml: `
+  <p>If you are tearing your hair out looking for the Crocodile Whistle because you saw it on a datamined wiki site, stop immediately. It currently does not exist in the live game. However, the Legendary Boar Whistle is very real and is arguably the most powerful utility item for squishy builds (like the Ranged Musketeer). It is not a DPS pet; it is an Aggro-Management tool. By locating a specific "Ancient Village" POI in the Foothills and solving a simple 3-part Ritual Oil puzzle, you unlock an unlimited-use summon that will actively taunt enemies off you. This gives you the critical 5-second window needed to heal or reload your musket during chaotic boss fights.
+  </p>
+  <p><img src="/images/guides/guide19-01.webp" alt="windrose-how-to-get-boar-whistle-crocodile-whistle-item-ancient-village-location" width="50%">
+  </p>
+  <h2>Debunking the Crocodile Whistle Myth
+  </h2>
+  <p>Let's address the elephant (or rather, the reptile) in the room. Many players stumble into Discord asking, "How do I get the Crocodile Whistle?"
+  </p>
+  <p>The Reality Check: While data miners have found code strings suggesting a Crocodile companion, it is absolutely impossible to obtain in the current Early Access build of Windrose. Any guide telling you to "farm Plague Crocodiles in the Swamps" is farming you for clicks. We will update this guide instantly if the developers activate it in a future patch. Focus all your energy on getting the Boar Whistle instead.
+  </p>
+  <p><img src="/images/guides/guide19-02.webp" alt="windrose-how-to-get-boar-whistle-crocodile-whistle-ancient-altar" width="50%">
+  </p>
+  <h2>How to Get the Legendary Boar Whistle
+  </h2>
+  <p>The Boar Whistle summons a wild boar named 'Truffle' to fight alongside you. It is a Legendary rarity item, has unlimited uses, and operates on a short cooldown.
+  </p>
+  <p>Step 1: Locating the Ancient Altar
+  </p>
+  <p> You cannot find this item in the starting Coastal Jungle. You must sail to the Foothills biome. Because maps are procedurally generated, you cannot rely on fixed coordinates. 
+  </p>
+  <p> If you hover over POI icons on your map in the Foothills, then look specifically for one named "Ancient Village" with the description: "A ruined village now inhabited by animals. Above the wreckage rises a mysterious altar of the ancients."
+  </p>
+  <p>[Insert image here: In-game screenshot of the map highlighting the 'Ancient Village' POI tooltip]
+  </p>
+  <p>Step 2: The Offering Requirements
+  </p>
+  <p> Once you reach the top of the hill at the village, you will find the Ancient Altar. Interacting with it demands a sacrifice:
+  </p>
+  <ol>
+  <li>20x Meat: Easily farmed by killing the Level 8 Goats and Wolves swarming the village perimeter.
+  </li>
+  <li>3x Ritual Oil: These are hidden in chests within three distinct ruins surrounding the Altar.
+  </li>
+  </ol>
+  <p><img src="/images/guides/guide19-03.webp" alt="windrose-how-to-get-boar-whistle-crocodile-whistle-southwest-ritual-oil-location" width="50%">
+  </p>
+  <h2>The Ritual Oil Locations (The Puzzle Walkthrough)
+  </h2>
+  <p>Do not wander aimlessly. The three Ritual Oils are placed in a counter-clockwise pattern around the central Altar.
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-slu81p">Ritual Oil Number
+  </td>
+  <td data-row="row-slu81p">Relative Location to Altar
+  </td>
+  <td data-row="row-slu81p">Obstacle / How to Obtain
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-ewl1he">Ritual Oil 1
+  </td>
+  <td data-row="row-ewl1he">Southwest (The Wolf Den)
+  </td>
+  <td data-row="row-ewl1he">Guarded by a pack of Level 8 Wolves. Clear them out and open the chest sitting openly in the middle of the ruined structure.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-fbuegk">Ritual Oil 2
+  </td>
+  <td data-row="row-fbuegk">Southeast (The Goat Ruin)
+  </td>
+  <td data-row="row-fbuegk">Guarded by several aggressive Goats. The chest is located directly in the center of the dilapidated courtyard.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-3dfr9o">Ritual Oil 3
+  </td>
+  <td data-row="row-3dfr9o">East (The Climbing Puzzle)
+  </td>
+  <td data-row="row-3dfr9o">This is the only tricky one. You cannot simply walk to the chest. If you approach the ruin, then look for a fallen stone pillar leaning against the outer wall. Walk up the pillar and jump down into the enclosed room to reach the final chest.
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p><img src="/images/guides/guide19-04.webp" alt="windrose-how-to-get-boar-whistle-crocodile-whistle-southwest-ritual-oil-chest" width="50%">
+  </p>
+  <h2>Combat Meta: How to Actually Use Truffle
+  </h2>
+  <p>Once you make the offering and obtain the Boar Whistle, drag it to your hotbar.
+  </p>
+  <p>The Aggro Reality: Do NOT summon Truffle at the start of a boss fight and expect him to solo it. His DPS is negligible, and he will die quickly if focused. He is a tactical Aggro-Breaker.
+  </p>
+  <p>The Proper Execution: If you are playing a fragile build (like the 0-Endurance Reliable Musketeer or a Glass Cannon Rapier build) and you miss a Perfect Block, dropping to 20% HP... then blow the whistle immediately. Truffle spawns instantly and will usually rip the enemy's attention away from you. This buys you exactly the time you need to pop a Master Combat Repair Kit, drink a Health Potion, or reload your musket safely. When Truffle dies, just wait out the short cooldown and repeat the cycle.
+  </p>
+  <p><img src="/images/guides/guide19-05.webp" alt="windrose-how-to-get-boar-whistle-crocodile-whistle-truffle-combat" width="50%">
+  </p>
+  <h3>FAQ: Whistle Mechanics
+  </h3>
+  <p>Q: Does the Boar Whistle take up a weapon slot?
+  </p>
+  <p> A: No. The Boar Whistle sits in your generic inventory and can be placed on any free hotkey slot (1-8). It does not interfere with your melee or ranged weapon equip slots.
+  </p>
+  <p>Q: Can Truffle be killed, and do I lose the whistle if he dies?
+  </p>
+  <p> A: Truffle can absolutely be killed by enemies. He is relatively tanky but not immortal. However, the whistle is a permanent Legendary item. If Truffle dies, you simply have to wait for the whistle's internal cooldown timer to finish before summoning him again.
+  </p>
+  <p>Q: Can I summon Truffle while boarding an enemy ship?
+  </p>
+  <p> A: Yes! This is actually one of his best uses. The cramped quarters of an enemy ship deck mean you are easily surrounded. Popping Truffle immediately upon boarding creates chaos and splits the enemy pirates' attention, allowing you to use heavy AoE attacks (like the Plague Halberd) without getting interrupted.
+  </p>`,
+  },
+
+  {
+    id: 20,
+    title: "Windrose Gunpowder Guide: Millstone Crafting & Loot Routes",
+    iframeUrl: "",
+    description: "Running out of ammo? Learn how to get gunpowder in Windrose. Discover the bizarre Corn requirement to unlock the Millstones, the fastest looting routes, and how to automate production with Mortar Joe.",
+    tags: ["Windrose Gunpowder"],
+    publishDate: "2026-05-08",
+    imageUrl: "/images/guides/guide20.webp",
+    imageAlt: "windrose-how-to-get-gunpowder-millstones-menu",
+    seo: {
+      title: "Windrose Gunpowder Guide: Crafting & Automation",
+      description: "How to farm and craft gunpowder in Windrose. Learn the counter-intuitive Corn trigger for the Millstones, how to combine Ash and Sulfur, and why Mortar Joe is mandatory for Musketeer builds.",
+      keywords: "windrose gunpowder"
+    },
+    addressBar: "how-to-get-gunpowder",
+    detailsHtml: `
+  <p>If you are trying to play a pure Ranged build in Windrose, you have probably realized that Gunpowder is the absolute bottleneck of your DPS. Here is the frustrating reality of Early Access: you cannot craft your own Gunpowder until the mid-game. The game hides the crafting station (Millstones) behind an incredibly counter-intuitive trigger—you have to harvest Corn. Before you reach the Foothills to find that Corn, your only option is to play aggressively and loot gunpowder directly off dead pirates. Once you finally establish your base production line, do not waste raw materials without assigning the worker "Mortar Joe" to your Millstones for a massive +50% yield bonus.
+  </p>
+  <h2>Early Game Meta: Aggressive Looting
+  </h2>
+  <p>Do not pull out your hair trying to find a gunpowder schematic in the Coastal Jungle. It does not exist there. During the early game, you must treat Gunpowder purely as a looted consumable, exactly like healing potions.
+  </p>
+  <p>If you run out of ammo, then you must switch to a Saber or Rapier and assault pirate encampments.
+  </p>
+  <ol>
+  <li>Enemy Pirates: Basic Sailors and Musketeer enemies in the Foothills have a very high drop rate for Gunpowder. Clearing a single large pirate camp will typically net you almost a full stack.
+  </li>
+  <li>POI Chests: Ancient Chests inside ruins and sunken ships are guaranteed to drop small clusters of ammo.
+  </li>
+  </ol>
+  <p><img src="/images/guides/guide20-01.webp" alt="gunpowder-equipped-in-inventory" width="50%">
+  </p>
+  <h2>The Counter-Intuitive Unlock: Harvest Corn
+  </h2>
+  <p>This is where Windrose gets weird. To craft Gunpowder, you need a specific workstation called the Millstones. You cannot build it using standard stone or wood.
+  </p>
+  <p>The Hidden Trigger: You MUST travel to the Foothills biome and harvest a wild Corn plant. 
+  </p>
+  <p> The moment the Corn enters your inventory, the game magically unlocks the recipe for Millstone Parts at your standard Workbench.
+  </p>
+  <p>The Construction Sequence:
+  </p>
+  <ol>
+  <li>Harvest Corn in the Foothills.
+  </li>
+  <li>Go to Level 1 Workbench: Craft 1x Millstone Parts (Costs 15x Stone).
+  </li>
+  <li>Open Build Menu (B): Place the Millstones (Costs 1x Millstone Parts + 15x Wood).
+  </li>
+  </ol>
+  <p><img src="/images/guides/guide20-02.webp" alt="ancient-chest-in-ruins" width="50%">
+  </p>
+  <h2>Crafting &amp; The Resource Loop
+  </h2>
+  <p>Once your Millstones are operational, you face a new problem: fueling it. The recipe for Gunpowder is resource-heavy:
+  </p>
+  <p>1x Gunpowder = 10x Ash + 20x Sulfur
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-eeivze">Resource
+  </td>
+  <td data-row="row-eeivze">Primary Source
+  </td>
+  <td data-row="row-eeivze">Efficiency Tip
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-3t460g">Sulfur
+  </td>
+  <td data-row="row-3t460g">Nodes spawning on rocky outcroppings in the Foothills.
+  </td>
+  <td data-row="row-3t460g">Do not hand-mine forever. Once you defeat the boss "Israel Hands," you can buy bulk Sulfur from the Natural Resources Merchant.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-qd1kna">Ash
+  </td>
+  <td data-row="row-qd1kna">A passive byproduct of burning Wood into Charcoal inside a Charcoal Kiln.
+  </td>
+  <td data-row="row-qd1kna">If you are desperately low, you can force-craft Ash at the Millstones (2x Charcoal = 6x Ash). Avoid this unless it's an emergency, as Charcoal is vital for smelting.
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p><img src="/images/guides/guide20-03.webp" alt="windrose-how-to-get-gunpowder-sulfur" width="50%">
+  </p>
+  <h2>Late Game Meta: Automate with Mortar Joe
+  </h2>
+  <p>If you are playing the Reliable Musketeer build, hand-crafting Gunpowder will burn all your free time. Windrose features a Worker system that you must exploit.
+  </p>
+  <p>You can rescue and enlist specific NPCs to work at your base stations. If you assign the worker named Mortar Joe to your Millstones, then you instantly receive a massive +50% output bonus to your Gunpowder production without spending any extra Sulfur or Ash.
+  </p>
+  <p>This automation is not optional for ranged players; it is the only way to sustain the bullet economy for late-game Cursed Swamp crypts.
+  </p>
+  <h3>FAQ: Gunpowder Mechanics
+  </h3>
+  <p>Q: I have Gunpowder in my inventory, but my Pistol still won't fire. What's wrong?
+  </p>
+  <p> A: Ranged weapons require TWO separate resources to function: Gunpowder AND Bullets (Iron, Copper, or Stone). Check your Character UI. Both the Bullet and the Gunpowder must be equipped into the active Ammo slots next to your weapon.
+  </p>
+  <p>Q: Is there any way to craft Homemade Gunpowder like I found in the Swamp Chests?
+  </p>
+  <p> A: Yes, but that is a completely different tier of explosive. "Homemade Gunpowder" is found in Ancient Chests (often while farming Quagmire Powder) and is used for advanced alchemy and explosives, not standard firearm ammunition. Stick to the basic Millstones recipe for your guns.
+  </p>
+  <p>Q: Does the "Auto-Refill" option waste my gunpowder?
+  </p>
+  <p> A: No. In your inventory ammo slot, clicking the small gear icon enables Auto-Refill. This simply pulls from your backpack automatically when your equipped stack runs out during combat. It saves you from dying because you forgot to manually drag a new stack over while being chased by a Pirate.
+  </p>`,
   }
 
 ]
