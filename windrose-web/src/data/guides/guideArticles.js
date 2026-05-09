@@ -15,6 +15,7 @@
  *   detailsHtml: string
  *   head?: string
  *   isHome?: boolean
+ *   classify: string
  * }} GuideArticle
  */
 
@@ -22,6 +23,7 @@
 export default [
   {
     id: 1,
+    classify: 'gameplay',
     title: 'How to Play Windrose Online with Friends — Co-op, Invite Codes & Joining',
     description:
       'Windrose supports solo or with friends on the official site—here is the player workflow: who hosts, sharing invite codes, Connect to Server, passwords, version checks, firewalls/UPnP, and when a dedicated server helps.',
@@ -141,6 +143,7 @@ export default [
 
   {
     id: 2,
+    classify: 'gameplay',
     head: `{
     "@context": "https://schema.org",
     "@type": "VideoObject",
@@ -325,6 +328,7 @@ export default [
 
   {
     id: 3,
+    classify: 'gameplay',
     head: `{
     "@context": "https://schema.org",
     "@type": "VideoObject",
@@ -481,6 +485,7 @@ export default [
 
   {
     id: 4,
+    classify: 'gameplay',
     head: `{
     "@context": "https://schema.org",
     "@type": "VideoObject",
@@ -669,6 +674,7 @@ export default [
 
   {
     id: 5,
+    classify: 'fishing',
     head: `{
     "@context": "https://schema.org",
     "@type": "VideoObject",
@@ -831,6 +837,7 @@ export default [
 
   {
     id: 6,
+    classify: 'equipment',
     title: "Best Windrose Rapier Build: The S+ Tier Precision Setup",
     description: "Master the S+ Tier Rapier Precision build in Windrose. Stop splitting stats. Learn the 4k damage Plague combo, exact gear progression from Thousand Cuts to Devastation, and the 0 Endurance coffee trick.",
     tags: ["Windrose", "Windrose Rapier Build"],
@@ -1013,6 +1020,7 @@ export default [
 
   {
     id: 7,
+    classify: 'equipment',
     title: "Windrose Best Boarding Build: Plague Halberd AoE Cleave (S Tier)",
     description: "Dominate ship boarding in Windrose with the Plague Halberd AoE Cleave build. Learn how to bypass the lack of Perfect Block, melt enemy posture, and utilize the 35% massive self-heal Special Attack.",
     tags: ["Windrose Best Boarding Build"],
@@ -1167,6 +1175,7 @@ export default [
 
   {
     id: 8,
+    classify: 'equipment',
     title: "Windrose Best Ranged Build: The Reliable Musketeer (A Tier)",
     description: "Think guns are just secondary weapons? Wrong. Master the Reliable Musketeer build in Windrose. Learn the 0 Stamina stat exploit, sub-2-second reload trick, and the ultimate FPS headshot playstyle.",
     tags: ["Windrose Best Ranged Build"],
@@ -1314,6 +1323,7 @@ export default [
 
   {
     id: 9,
+    classify: 'equipment',
     title: "Windrose Best Crit Build: Saber & Dragon's Breath (A Tier)",
     description: "Hardcore breakdown of the ultimate Agility Crit build in Windrose. Learn the exact math to reach 50.2% Crit Chance, how to perfectly weave Blunderbuss shots into Saber combos, and the punishing reality of maintaining the Deadly Finale buff.",
     tags: ["Windrose Best Crit Build"],
@@ -1479,6 +1489,7 @@ export default [
 
   {
     id: 10,
+    classify: 'gameplay',
     title: "Windrose Best Talents & Stats Guide for Beginners",
     description: "Hardcore breakdown of the windrose character build system. Learn how to allocate your max talent points, avoid splitting weapon stats, and why the Rapier double-dips the Precision stat. Complete windrose leveling guide for early game.",
     tags: ["windrose Talents build"],
@@ -1617,6 +1628,7 @@ export default [
 
   {
     id: 11,
+    classify: 'fishing',
     title: "Windrose Advanced Fish Guide: Secret Weapon & Collection",
     description: "Hardcore advanced windrose fishing guide. Learn the exact loot pool for all 10 fish, how to exploit the shallow water spawn bug, and the reality of the secret Smasher fish weapon.",
     tags: ["Windrose Advanced Fish Guide"],
@@ -1784,6 +1796,7 @@ export default [
 
   {
     id: 12,
+    classify: 'equipment',
     title: "Windrose Secret Weapon Guide: How to Get the Smasher",
     description: "Hardcore deep dive into the Windrose secret weapon, Smasher. Learn the agonizing fishing RNG required to obtain it, the Weaponsmith crafting costs, and the truth about its A-Tier Strength scaling but terrible proc rates.",
     tags: ["Windrose Secret Weapon","windorse fish weapon"],
@@ -1895,6 +1908,7 @@ export default [
 
   {
     id: 13,
+    classify: 'ships',
     title: "Windrose Ships Guide: Unlocks, Frigate Materials & Best Variants",
     description: "Comprehensive SEO guide on all windrose ships. Learn the exact windrose brig materials and windrose frigate materials required. Discover why the Blackbeard Frigate with 36lb cannons dominates the Brethren HP trap, and how to get a 100% material refund on ship disassembly.",
     tags: ["Windrose All Ships"],
@@ -2084,6 +2098,7 @@ export default [
 
   {
     id: 14,
+    classify: 'ships',
     title: "Windrose Wharf Guide: Equipping Cannons & Ship Building",
     description: "Hardcore Windrose base building guide. Learn the exact main quests required to unlock the Wharf, its cheap construction costs, and the critical difference between equipping cannons here versus upgrading them at the Shipwright's Workshop",
     tags: ["Windrose Wharf"],
@@ -2183,6 +2198,7 @@ export default [
 
   {
     id: 15,
+    classify: 'gameplay',
     title: "Windrose Best Base Location: Where to Build & Fast Travel Strategy",
     iframeUrl: "",
     description: "Hardcore base building guide for Windrose. Learn why you shouldn't build massive stone castles on the starter island, how to exploit Faction hubs to save your 10 fast travel bell limits, and the importance of flat terrain and biome borders.",
@@ -2271,6 +2287,7 @@ export default [
 
   {
     id: 16,
+    classify: 'ships',
     title: "Windrose Best Ship Gear Guide: Cannons, Hull & Tactics",
     iframeUrl: "",
     description: "Stop wasting Piastre on bad ship upgrades. Learn the ultimate Windrose ship gear loadouts, the Keelhold invincible repair combo, and the best cannons for Brig and Frigate.",
@@ -2407,6 +2424,7 @@ export default [
 
   {
     id: 17,
+    classify: 'equipment',
     title: "Windrose Ultimate Weapon Tier List & Ascension Guide",
     iframeUrl: "",
     description: "Learn the Soulslike perfect block mechanics that define weapon viability, the exact Ascension costs, and why the Rapier of Devastation and Plague Halberd are the undisputed S-Tier gods.",
@@ -2537,6 +2555,7 @@ export default [
 
   {
     id: 18,
+    classify: 'equipment',
     title: "Windrose Best Armor Sets Guide: Early to Late Game Meta",
     iframeUrl: "",
     description: "Windrose best armor sets. Learn why the Pikeman and Conquistador 2-piece bonuses are mandatory for early game survival, how Flibustier's supports 1-Handed builds, and why the Tracker set is universally garbage.",
@@ -2721,6 +2740,7 @@ export default [
 
   {
     id: 19,
+    classify: 'gameplay',
     title: "Windrose Boar Whistle Guide: Find the Altar & The Crocodile Whistle Truth",
     iframeUrl: "",
     description: "On obtaining the Legendary Boar Whistle in Windrose. Discover the Ancient Altar in the Foothills, find all 3 Ritual Oils in the ruins, and learn why Truffle is the ultimate aggro-management tool for squishy builds. Debunking the Crocodile Whistle myth.",
@@ -2841,6 +2861,7 @@ export default [
 
   {
     id: 20,
+    classify: 'gameplay',
     title: "Windrose Gunpowder Guide: Millstone Crafting & Loot Routes",
     iframeUrl: "",
     description: "Running out of ammo? Learn how to get gunpowder in Windrose. Discover the bizarre Corn requirement to unlock the Millstones, the fastest looting routes, and how to automate production with Mortar Joe.",
@@ -2952,3 +2973,5 @@ export default [
   }
 
 ]
+
+export { GUIDE_CLASSIFY } from './guideClassify.js'
