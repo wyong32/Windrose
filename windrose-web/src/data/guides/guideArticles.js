@@ -2970,6 +2970,456 @@ export default [
   </p>
   <p> A: No. In your inventory ammo slot, clicking the small gear icon enables Auto-Refill. This simply pulls from your backpack automatically when your equipped stack runs out during combat. It saves you from dying because you forgot to manually drag a new stack over while being chased by a Pirate.
   </p>`,
+  },
+
+  {
+    id: 21,
+    classify: 'gameplay',
+    title: "Windrose Boss Guide: Defeating the High Priestess",
+    iframeUrl: "",
+    description: "Learn the deadly mistake of attacking her from behind, the Perfect Block combo to shatter her posture, and the vulnerable intermission phase.",
+    tags: ["windrose forgotten relics quest"],
+    publishDate: "2026-05-18",
+    imageUrl: "/images/guides/guide21.webp",
+    imageAlt: "windrose-how-to-beat-high-priestess",
+    seo: {
+      title: "How to Beat High Priestess in Windrose: Cursed Swamp Boss Guide",
+      description: "Stuck on the High Priestess giant toad boss in Windrose? Learn the hardcore strategy to exploit her Posture mechanics, why attacking head-on is safer than attacking her back, and the best weapons to use.",
+      keywords: "windrose high priestess boss, how to beat high priestess windrose,windrose forgotten relics quest"
+    },
+    addressBar: "how-to-beat-high-priestess",
+    detailsHtml: `<p>When you reach the end of the "Forgotten Relics" questline in the Cursed Swamps, you face the High Priestess—a gargantuan, mutated toad. A massive mistake players make when fighting giant bosses is trying to stay behind them to attack their legs. If you do this to the High Priestess, she will spam her lethal 'Tail Swipe' and 'Rollover' attacks, flattening you instantly. The hardcore counter-intuitive reality is that standing directly in front of her face is the safest place to be. By utilizing a 1-Handed weapon that can Perfect Block, you lock her into a predictable 4-hit melee combo. Shattering her Posture forces out her "true form," allowing you to burst her down easily.
+  </p>
+  <h2>Gear Preparation: Abandon 2H Weapons
+  </h2>
+  <p>Because the High Priestess is a massive HP sponge, going in under-geared will result in a 20-minute slog where you eventually run out of stamina and die.
+  </p>
+  <p>The Build Check: If you are wielding a Plague Halberd or a Greatsword, then you are playing on hard mode. Weapons that cannot Perfect Block will take massive chip damage during her melee flurries. You MUST run a fast, 1-Handed build.
+  </p>
+  <p>We strongly recommend the <a href="https://windrosegame.net/guides/windrose-best-builds-rapier-build">Rapier Of Devastation Precision Build</a> or the <a href="https://windrosegame.net/guides/windrose-best-builds-saber-dragon">Saber Dragon Crit Build</a>. Both allow for rapid Perfect Blocks and bring immense single-target DPS.
+  </p>
+  <ol>
+  <li>Weapon Tier: Must be upgraded to Level 15 at the Shipwright.
+  </li>
+  <li>Food Meta: Eat a Seafood Platter (+20 Vitality) and pop an Elixir corresponding to your damage stat.
+  </li>
+  </ol>
+  <p><img src="/images/guides/guide21-01.webp" alt="windrose-how-to-beat-high-priestess-set-up" width="50%">
+  </p>
+  <h2>High Priestess Move Set &amp; Hardcore Counters
+  </h2>
+  <p>The High Priestess looks intimidating, but her moveset is highly scriptable if you manipulate her positioning.
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-inx1j7">Boss Ability
+  </td>
+  <td data-row="row-inx1j7">The Lethal Threat
+  </td>
+  <td data-row="row-inx1j7">The Correct Counter-Action
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-ow5hiv">Melee Swipes &amp; Tongue
+  </td>
+  <td data-row="row-ow5hiv">Her bread and butter. If you miss blocks, your stamina drains instantly.
+  </td>
+  <td data-row="row-ow5hiv">Perfect Block. Lock into her rhythm. Only dodge if your stamina is broken.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-1em6ih">Tail Swipe &amp; Rollover
+  </td>
+  <td data-row="row-1em6ih">Massive AoE damage that covers her flank and rear. Hard to read.
+  </td>
+  <td data-row="row-1em6ih">DO NOT STAND BEHIND HER. Force her to use frontal melee by standing in her face.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-jteocs">Acid Globules
+  </td>
+  <td data-row="row-jteocs">Ranged AoE bombardment that leaves toxic pools on the ground.
+  </td>
+  <td data-row="row-jteocs">Do not block. Sprint laterally (sideways) until the barrage stops.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-xzgogx">The Charge
+  </td>
+  <td data-row="row-xzgogx">Glows red (Unblockable). Will one-shot fragile builds.
+  </td>
+  <td data-row="row-xzgogx">Dodge roll perpendicularly at the very last second of the wind-up.
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <h2>The Fight Strategy: "If-Then" Execution
+  </h2>
+  <p>The game tries to teach you a specific mechanic: shoot the large glowing pustules on her back. When they pop, they deal Posture damage. However, running around trying to shoot her back exposes you to her devastating Rollover attack. Ignore the pustules. Use the Face-Tank Strategy.
+  </p>
+  <p>Phase 1: The Posture Grind
+  </p>
+  <p>If you stand directly in front of her face in melee range, then her AI will loop a very predictable 4-hit combo: Right Swipe &gt; Left Swipe &gt; Right Slam &gt; Tongue Swipe.
+  </p>
+  <p>Simply stand your ground, hit your Perfect Blocks to drain her Posture meter, and weave in pistol shots (like Drake's Double-Barreled) during the brief pauses.
+  </p>
+  <p>Phase 2: The Intermission (Vulnerability)
+  </p>
+  <p>Once her Posture breaks, the giant toad collapses. This triggers the intermission. The "true form" of the High Priestess will emerge from the toad's mouth.
+  </p>
+  <p>If the true form appears, then unleash everything. Apply the Vulnerability debuff with your pistol, pop your 8-stack Plague Marks with a Heavy Attack, and nuke her. She will take massive critical damage during this short window.
+  </p>
+  <p><img src="/images/guides/guide21-02.webp" alt="high-priestess-pop" width="50%">
+  </p>
+  <p>Rinse and repeat this cycle 2 to 3 times, and the Cursed Swamp is conquered.
+  </p>
+  <h3>FAQ: Boss Fight Troubleshooting
+  </h3>
+  <p>Q: I keep running out of Stamina while trying to Perfect Block her 4-hit combo. What am I doing wrong?
+  </p>
+  <p>A: You are likely "Panic Blocking" (holding the block button too early). A standard block consumes massive Stamina and halts your regeneration. A Perfect Block (tapping right before impact) consumes almost no Stamina. Ensure you have the 'Marathon Runner' talent maxed and drink Coffee for the Endurance buff.
+  </p>
+  <p>Q: What loot do I get for beating her? Does she drop an S-Tier weapon?
+  </p>
+  <p>A: No. She drops the quest item Charon's Obol (required to progress the main story) and 10x Tears of Sorrow. S-Tier Plague weapons are looted from the Crypts scattered around her biome, not the boss herself.
+  </p>
+  <p>Q: Can I use the Boar Whistle to tank the High Priestess?
+  </p>
+  <p>A: Absolutely! Truffle is fantastic here. If you miss a Perfect Block and need to heal, blow the Boar Whistle. Truffle will draw the toad's aggro, causing her to turn around. This is the only time you should safely shoot the pustules on her back while she is distracted by the boar.
+  </p>`,
+  },
+
+  {
+    id: 22,
+    classify: 'gameplay',
+    title: "Windrose Ancient Fire Sanctuary Full Puzzle Walkthrough",
+    iframeUrl: "",
+    description: "Solving the Firebowl braziers and pressure plate puzzles in Windrose's Ancient Fire Sanctuaries. Learn the ALT+F4 reset trick, the Standing Torch meta, and exact directions for the 8-Chest and 4-Chest variants.",
+    tags: ["Windrose Ancient Fire Sanctuary"],
+    publishDate: "2026-05-18",
+    imageUrl: "/images/guides/guide22.webp",
+    imageAlt: "windrose-ancient-fire-sanctuary",
+    seo: {
+      title: "Windrose Ancient Fire Sanctuary Guide: All Firebowls & Chests",
+      description: "Stuck in the dark? This hardcore Windrose guide solves both versions (8-Chest & 4-Chest) of the Ancient Fire Sanctuary puzzle. Find all Firebowls to unlock the Tumbaga Ingot reward.",
+      keywords: "windrose ancient fire sanctuary, windrose firebowl puzzle"
+    },
+    addressBar: "ancient-fire-sanctuary-puzzle",
+    detailsHtml: `<p>The Ancient Fire Sanctuaries are currently the most frustrating POIs in Windrose. You are thrown into pitch-black ruins and tasked with finding heavy Firebowls to light central Braziers, all while navigating loose floorboards that drop you into pits. To make matters worse, there are actually TWO entirely different versions of this temple generated in the world: an 8-Chest variant and a 4-Chest variant. This guide separates both. Before you step inside, bring a Pickaxe and a stack of Wood. If you accidentally drop a Firebowl into an unreachable crevice or the physics engine locks the pressure plate puzzle, do not panic—simply hit ALT+F4 to force-close the game. Upon logging back in, the puzzle will completely reset.
+  </p>
+  <h2>Pre-Requisites: The Hardcore Survival Rules
+  </h2>
+  <p>Do not attempt these puzzles in the dark. The upper levels are notoriously hard to navigate.
+  </p>
+  <ol>
+  <li>The Torch Meta: Spam Standing Torches everywhere. They only cost 2 Wood each. Light up the entire room before you start carrying items.
+  </li>
+  <li>The Dirt Trap: Watch your step. If you see a patch of floor that looks like loose dirt/gravel instead of solid stone, then DO NOT step on it. It will collapse, dropping you to the bottom floor.
+  </li>
+  <li>Escape Routes: If you fall in, look for stone 'ladders' protruding from the walls. Alternatively, use your Pickaxe to destroy weakened pillars to create a makeshift ramp out of the pit.
+  </li>
+  </ol>
+  <h2>Variant A: The 8-Chest Sanctuary (Complex)
+  </h2>
+  <p>This is the larger variant featuring a locked door that requires solving a vase-weight puzzle.
+  </p>
+  <h3>The 4 Firebowl Locations
+  </h3>
+  <ol>
+  <li>The Thorns Room: Facing the locked door on the top floor, look to your right. Hack away the dense Thorns with your weapon to reveal a small hidden room containing the first Firebowl.
+  </li>
+  <li>The Locked Door (Vase Puzzle): This Firebowl is locked behind the main door. You must place two large vases onto the pressure plates flanking the door. Pick them up using [E]. One vase is already on its plate; the second is lying on the floor right next to the empty plate.
+  </li>
+  <li>The Drop-Down: Once you open the door via the pressure plates (Firebowl 2), go through it and immediately turn left through the hanging vines. Walk past the skeleton and carefully drop down the hole to the second floor. The third Firebowl is waiting there.
+  </li>
+  <li>The Freebie: The fourth Firebowl is already resting on its brazier at the bottom of the temple. Just press [E] to light it.
+  </li>
+  </ol>
+  <p>The Final Reward: Lighting all four Braziers unlocks the central vault, granting 5x Tumbaga Ingots (Crucial for late-game Ship Gear Ascension).
+  </p>
+  <p><img src="/images/guides/guide22-01.webp" alt="firebowl-fire-1" width="50%">
+  </p>
+  <h3>The 8 Chest Locations (Loot Sweep)
+  </h3>
+  <p>Anchor Point: Stand facing the main locked door (East).
+  </p>
+  <ol>
+  <li>Chest 1: Right of the main door. Solve a secondary pressure plate puzzle in the south room.
+  </li>
+  <li>Chest 2: Look Northwest for hanging vines. Break the weakened stone wall in the middle of the room.
+  </li>
+  <li>Chests 3 &amp; 4: Head Southeast outside the main ruins. Loot the chest by the upper tent, then drop down to the lower bonfire for the next.
+  </li>
+  <li>Chest 5: Look up and left from the main door toward the "clock tower" structure. Loot the skeleton.
+  </li>
+  <li>Chest 6: Inside the main locked door (after solving the vase puzzle), check the right corner.
+  </li>
+  <li>Chest 7: Go through the gate to the right of the main room (near Firebowl 1) and loot the skeleton.
+  </li>
+  <li>Chest 8: The central puzzle reward vault (5x Tumbaga Ingots).
+  </li>
+  </ol>
+  <p><img src="/images/guides/guide22-02.webp" alt="firebowl-eight-chest-eight-1" width="50%">
+  </p>
+  <h2>Variant B: The 4-Chest Sanctuary (Pitfalls)
+  </h2>
+  <p>This version focuses less on pressure plates and more on vertical navigation and destroying environments.
+  </p>
+  <h3>The 4 Firebowl Locations
+  </h3>
+  <p>Anchor Point: Stand in the absolute center of the four empty braziers to avoid getting lost.
+  </p>
+  <ol>
+  <li>The Southeast Tunnel: Face Southeast and drop down the dirt hole. Follow the cave, climb the stone wall, and grab the Firebowl. To get out, use your Pickaxe to smash the damaged wall. Place the bowl on the ledge, jump up, and retrieve it.
+  </li>
+  <li>The West Debris: Face West and drop down the hole. At the bottom, pull out your weapon and smash the wooden debris blocking the tunnel. The Firebowl is hidden behind it.
+  </li>
+  <li>The Northeast Roof Ramp: Face Northeast. Look for a cracked, damaged stone column. If you destroy this column with a Pickaxe, then it collapses into a perfect ramp. Run up the ramp to the roof to find the bowl.
+  </li>
+  <li>The Freebie: Already placed on the brazier. Just light it.
+  </li>
+  </ol>
+  <p><img src="/images/guides/guide22-03.webp" alt="firebowl-four-chest-three-firebowl-1" width="50%">
+  </p>
+  <h3>The 4 Chest Locations (Loot Sweep)
+  </h3>
+  <ol>
+  <li>Chest 1: On the roof. Go up the same ramp you created for Firebowl 3 (Northeast), and use the platforming ledges to jump over to it.
+  </li>
+  <li>Chest 2: Inside the West hole (where Firebowl 2 was). Loot the Old Skeleton under the smashed debris.
+  </li>
+  <li>Chest 3: Outside the ruins. Head Southwest from the braziers, behind the collapsed walls.
+  </li>
+  <li>Chest 4: The central puzzle reward vault (5x Tumbaga Ingots).
+  </li>
+  </ol>
+  <p><img src="/images/guides/guide22-04.webp" alt="firebowl-four-chest-forth-chest-four-1" width="50%">
+  </p>
+  <h3>FAQ: Sanctuary Puzzles
+  </h3>
+  <p>Q: I placed the vases on the plates, but the door didn't open. What do I do?
+  </p>
+  <p> A: The physics engine in Windrose is very sensitive. The vase must be perfectly centered on the pressure plate to trigger the weight threshold. Pick it up and drop it again. If the mechanism is completely bugged, use the ALT+F4 trick to reset the instance.
+  </p>
+  <p>Q: I fell down a dirt hole and can't find a ladder to get out. Am I trapped?
+  </p>
+  <p> A: No. Look around the walls of the pit. Many of the smooth stone pillars have hidden health bars. Hitting them with a Pickaxe or heavy weapon will shatter them, creating a ramp you can walk up. Never enter ruins without a Pickaxe.
+  </p>
+  <p>Q: Are the 5 Tumbaga Ingots guaranteed every time?
+  </p>
+  <p> A: Yes. The central puzzle chest in the Ancient Fire Sanctuary is a fixed drop for 5 Tumbaga Ingots. Because Tumbaga is required to ascend weapons and ship gear to Epic quality, completing these sanctuaries is a mandatory part of late-game progression.
+  </p>
+  <p><br>
+  
+  </p>`,
+  },
+
+  {
+    id: 23,
+    classify: 'gameplay',
+    title: "Windrose Thomas Richards Boss Fight Guide (Coastal Village)",
+    iframeUrl: "",
+    description: "Defeating Thomas Richards in the Revenge Is Best Served Cold quest. Learn the Level 5 armor upgrade requirement, the Pikeman/Conquistador combo, and how to counter the unblockable Charge & Grab.",
+    tags: ["Windrose Thomas Richards Boss"],
+    publishDate: "2026-05-18",
+    imageUrl: "/images/guides/guide23.webp",
+    imageAlt: "windrose-how-to-beat-thomas-richards-blunderbuss",
+    seo: {
+      title: "How to Beat Thomas Richards in Windrose (First Boss Guide)",
+      description: "Stuck on Thomas Richards in Windrose? This hardcore guide explains the Level 5 Gear Check, the 'Red Glint' dodge mechanics, and why the Blunderbuss kiting strategy is an early-game trap.",
+      keywords: "windrose thomas richards boss, how to beat thomas richards windrose,windrose revenge is best served cold, windrose coastal village boss"
+    },
+    addressBar: "how-to-beat-thomas-richards",
+    detailsHtml: `<p>Thomas Richards is the first major skill-check in Windrose, standing at the end of the "Revenge Is Best Served Cold" quest in the Coastal Village. If he is constantly one-shotting you, it is not your dodging—it is your gear. Windrose uses strict scaling; engaging Thomas with Level 2 or 3 armor guarantees your death. You must utilize the Shipwright to push all weapons and armor to Level 5. Furthermore, do not listen to generic guides telling you to "just kite him with a gun." At this stage of the game, you cannot craft Gunpowder. If you run out of looted ammo mid-fight, you will panic and die. Prepare for a melee duel, stack the Conquistador/Pikeman armor combo for massive HP, and memorize the dodge timing for his unblockable "Red Glint" grab attack.
+  </p>
+  <h2>The Hardcore Prep: Gear Checks &amp; Armor Metas
+  </h2>
+  <p>Thomas Richards hits like a freight train on Standard difficulty. This fight is mathematically designed to punish players who ignore base building and crafting.
+  </p>
+  <p>1. The Level 5 Hard Cap
+  </p>
+  <p> The game prevents you from upgrading gear past Level 5 until you defeat Thomas and reach the Foothills. If your weapon or chest piece is currently Level 4 or below, then you must return to the Shipwright's Workshop immediately and spend the ingots to max them out. Every single point of ATK/DEF matters here.
+  </p>
+  <p>2. The Early Game "God Tank" Combo
+  </p>
+  <p> Do not wear a random assortment of green (Uncommon) gear. You need the survivability provided by Rare Set Bonuses. The absolute best setup for this specific boss is the <a href="https://windrosegame.net/guides/windrose-best-builds-plague-halberd-boarding">Tank Duo Armor Build</a>:
+  </p>
+  <ol>
+  <li>Pikeman Set (2-Piece): Grants a flat +160 Maximum Health.
+  </li>
+  <li>Conquistador's Set (2-Piece): Grants +15% Damage Resistance.
+  </li>
+  </ol>
+  <p>This combination effectively gives you a 30% larger health pool, allowing you to survive his unblockable grab attack if you misread the dodge.
+  </p>
+  <p><img src="/images/guides/guide23-01.webp" alt="windrose-how-to-beat-thomas-richards-set-bonus" width="50%">
+  </p>
+  <p>3. The Consumable Baseline
+  </p>
+  <p> Do not eat raw bananas. Cook actual meals at the Cooking Fire to secure at least two strong Food Buffs (Strength or Agility depending on your weapon). Ensure you sit by your Bonfire to gain the Rested Buff for insane Stamina regeneration before engaging.
+  </p>
+  <h2>The "Kiting Trap" (Ranged Weapon Warning)
+  </h2>
+  <p>Many players realize that the Blunderbuss deals massive chunk damage to Thomas. This leads them to try and kite him around the arena. 
+  </p>
+  <p> The Reality Check: As we outlined in our <a href="https://windrosegame.net/guides/how-to-get-gunpowder">Gunpowder Guide</a>, you cannot craft your own gunpowder until you unlock the Millstones in the next biome. You are strictly limited to whatever gunpowder you have looted from POI chests. 
+  </p>
+  <p> If you miss a few shots and run out of ammo halfway through his health bar, then you will be forced into a melee duel with a weapon you aren't prepared to use. Treat your Blunderbuss as a combo-finisher, not your primary damage source.
+  </p>
+  <h2>Thomas Richards Move Set &amp; Counters
+  </h2>
+  <p>Once you are geared, the fight becomes a simple rhythm game. Thomas has highly telegraphed moves, but punishing them requires strict Stamina management.
+  </p>
+  <table>
+  <tbody>
+  <tr>
+  <td data-row="row-7lrhza">Thomas' Ability
+  </td>
+  <td data-row="row-7lrhza">The Lethal Threat
+  </td>
+  <td data-row="row-7lrhza">The Correct Counter-Action
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-sum5sa">Double &amp; Triple Swings
+  </td>
+  <td data-row="row-sum5sa">Standard melee combos. Drains stamina if blocked normally.
+  </td>
+  <td data-row="row-sum5sa">Perfect Block. Tap block just before impact to shatter his 'Shield' icons (Posture). If your timing is bad, Dodge backwards.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-vnlg3x">Frontal Smash (Red Glint)
+  </td>
+  <td data-row="row-vnlg3x">Unblockable heavy smash. Will crush your posture instantly.
+  </td>
+  <td data-row="row-vnlg3x">Dodge Roll (Ctrl). You cannot block red attacks. Roll perpendicularly (to the side).
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-1wuc8f">Charge &amp; Grab (Red Glint)
+  </td>
+  <td data-row="row-1wuc8f">The run-killer. He charges across the arena and grabs you for massive damage.
+  </td>
+  <td data-row="row-1wuc8f">Dodge Roll (Late Timing). Do not panic roll early. Wait until he is within 5 feet of you, then roll diagonally forward-left or forward-right.
+  </td>
+  </tr>
+  <tr>
+  <td data-row="row-z8p3un">Bomb Toss
+  </td>
+  <td data-row="row-z8p3un">Throws explosives with large AoE markers on the ground.
+  </td>
+  <td data-row="row-z8p3un">Sprint away. Use this time to drink a Healing Potion or reload your gun.
+  </td>
+  </tr>
+  </tbody>
+  </table>
+  <p>The Execution: Your entire goal is to break his Posture (the small shield icons beneath his health bar). Stand your ground, Perfect Block his normal swings, and Dodge his Red Glint attacks. 
+  </p>
+  <p> If his Posture breaks, then he becomes staggered. This is your cue to unleash heavy attacks or a point-blank Blunderbuss blast to his face. Take your time, chip him down, and the path to the Foothills will unlock.
+  </p>
+  <p><img src="/images/guides/guide23-02.webp" alt="windrose-how-to-beat-thomas-richards-come-prepared" width="50%">
+  </p>
+  <h3>FAQ: Boss Fight Troubleshooting
+  </h3>
+  <p>Q: I'm dodging correctly, but I always run out of Stamina and get hit anyway. Why?
+  </p>
+  <p> A: You are attacking too many times during your openings. Windrose combat is punishing. If you deplete your Stamina to 0 by spamming attacks, you will not have enough to dodge his follow-up Red Glint grab. Always leave a sliver of Stamina in reserve for defensive maneuvers.
+  </p>
+  <p>Q: I don't have enough Iron Ingots to upgrade all my gear to Level 5. Where do I farm?
+  </p>
+  <p> A: In the Coastal Village zone, check your map for "Ancient Debris" or "Mining Camp" POIs. Iron ore nodes respawn, so you can cycle between them. Use your Smelter to process the ore. Do not engage Thomas without Level 5 gear.
+  </p>
+  <p>Q: Does he drop a unique legendary weapon when killed?
+  </p>
+  <p> A: Not directly on his body. However, defeating him clears the zone and gives you access to the Foothills, which unlocks the next massive tier of crafting recipes, fast travel points, and access to new Faction Provisioners.
+  </p>
+  <p><br>
+  
+  </p>`,
+  },
+
+  {
+    id: 24,
+    classify: 'gameplay',
+    title: "Windrose Stargazer Tower Puzzle Solution & Quest Guide",
+    iframeUrl: "",
+    description: "Solving the Stargazer Tower puzzle in the Cursed Swamp. Learn why looking up is the only solution you need, the exact sequence to complete the Fate of the Prophets quest, and how to burst Chick Chan's boils for massive Tumbaga Ingot rewards.",
+    tags: ["Windrose Stargazer Tower"],
+    publishDate: "2026-05-18",
+    imageUrl: "/images/guides/guide24.webp",
+    imageAlt: "windrose-stargazer-tower-puzzle",
+    seo: {
+      title: "Windrose Stargazer Tower Puzzle & Fate of the Prophets Guide",
+      description: "Stuck on the Stargazer Tower stone plates in Windrose? Learn the embarrassingly simple puzzle solution, how to complete the Fate of the Prophets quest, and defeat Chick Chan for 19 Tumbaga Ingots.",
+      keywords: "windrose stargazer tower puzzle, windrose fate of the prophets quest,windrose stargazer stone positions, stargazer tower puzzle solution"
+    },
+    addressBar: "stargazer-tower-puzzle-solution",
+    detailsHtml: `<p>If you are currently running around the roof of the Stargazer Tower in the Cursed Swamp looking for hidden clues to solve the locked door, stop. You are overthinking it. The solution to the rotating stone plates is embarrassingly simple, and most players miss it purely because they don't tilt their camera upwards. However, solving this first door is only the beginning. Inside awaits an Observatory Stele that triggers the "Fate of the Prophets" questline. This is arguably the most lucrative side quest in the game. By solving two more identical towers and executing a massive Plague Crusher named Chick Chan, you will walk away with a staggering total of 19 Tumbaga Ingots—enough to Ascend multiple pieces of endgame gear to Epic rarity. Here is exactly how to do it.
+  </p>
+  <h2>The Stargazer Tower Puzzle Solution
+  </h2>
+  <p>When you approach the sunken stairwell of a Stargazer Tower (a small ziggurat structure), you are confronted by a locked door flanked by two circular stone plates. Each plate can be rotated through four different runic patterns.
+  </p>
+  <p>The Embarrassing Reality: There are no secret notes to read, and no hidden mechanisms on the roof. The answer is literally carved into the wall inches above the puzzle itself.
+  </p>
+  <p>The Execution: If you tilt your camera up and look directly at the stone panel directly above each rotating plate, then you will see a static, carved rune. 
+  </p>
+  <p> Simply interact with the left plate until the rune facing the top (the 12 o'clock position) perfectly matches the carving on the wall above it. Repeat this for the right plate. The door will groan and open immediately.
+  </p>
+  <p>[Insert image here: In-game screenshot clearly showing the static carving on the wall directly above the rotating stone plate, with both runes perfectly aligned]
+  </p>
+  <p>The Initial Reward: Inside the vault, you will find an Ancient Chest containing 3x Tumbaga Ingots and various materials. Looting this completes the specific POI for exploration XP.
+  </p>
+  <h2>The "Fate Of The Prophets" Questline
+  </h2>
+  <p>Solving the first door is just the appetizer. Inside the vault, directly behind the chest, sits a glowing Observatory Stele. Interacting with it permanently locks you into the "Fate of the Prophets" side quest.
+  </p>
+  <p>The Grind (The 1+2 Structure):
+  </p>
+  <ol>
+  <li>The game will mark two additional Stargazer Towers on your map.
+  </li>
+  <li>You must travel to both and solve the exact same "look up" puzzle to access their steles.
+  </li>
+  </ol>
+  <p>The Hardcore Warning: Do not treat these trips as simple puzzle runs. Every Stargazer Tower in the Cursed Swamp is a fortified strongpoint heavily defended by hordes of Level 15 Plague enemies. If you run in with Level 10 weapons expecting a quiet puzzle session, you will be shredded. Equip your best Cleave weapon (like the Plague Halberd) to manage the swarms before attempting to rotate the plates.
+  </p>
+  <p><img src="/images/guides/guide24-01.webp" alt="windrose-stargazer-tower-puzzle-solution-left" width="50%">
+  </p>
+  <h2>Boss Fight: Executing Chick Chan
+  </h2>
+  <p>Once you interact with all three steles, the quest updates, directing you to the "Warlord's Death Site" in the dead center of the island. There is no puzzle here—just a massive named Plague Crusher called Chick Chan wandering the swamp.
+  </p>
+  <p>The Boss Mechanic (Do Not Melee Mosh):
+  </p>
+  <p> Chick Chan is a massive HP sponge. If you just run up to its legs and start hacking away with a Saber, you are going to break your weapons before it dies. 
+  </p>
+  <p> If you want to kill it efficiently, then you must exploit its weakness. The Crusher has large, glowing boils on its body. 
+  </p>
+  <p> The Tactic: Equip your best Musket or Pistol. Backpedal and fire precise shots directly into the boils. When a boil bursts, it deals catastrophic Posture damage to Chick Chan. Once its Posture breaks and it falls to its knees, swap to your heaviest melee weapon and unleash your full combo. Rinse and repeat.
+  </p>
+  <p>The Ultimate Payout:
+  </p>
+  <p> Defeating Chick Chan and turning in the quest yields a massive injection of 10x Tumbaga Ingots. Combined with the ingots looted from the 3 Ancient Chests inside the towers (3x3=9), completing this entire sequence grants you 19 Tumbaga Ingots. This single quest will fund the Ascension of almost your entire endgame loadout.
+  </p>
+  <p><img src="/images/guides/guide24-02.webp" alt="windrose-stargazer-tower-puzzle-solution-fate-of-the-prophets-quest" width="50%">
+  </p>
+  <h3>FAQ: Stargazer Quest Troubleshooting
+  </h3>
+  <p>Q: I rotated the plates to match the wall exactly, but the door won't open. Is it bugged?
+  </p>
+  <p> A: Make sure the matching rune on the rotating plate is in the absolute top (12 o'clock) position, not just visible on the plate. If it still doesn't open, interact with the plate to spin it a full 360 degrees back to the correct position; sometimes the server needs a refresh to register the state.
+  </p>
+  <p>Q: I found Chick Chan early while exploring. Can I kill it before doing the towers?
+  </p>
+  <p> A: No. The named version of the boss, "Chick Chan," and the subsequent quest completion trigger will only spawn at the Warlord's Death Site after you have successfully interacted with all three Observatory Steles in the correct sequence.
+  </p>
+  <p>Q: What do I actually use Tumbaga Ingots for?
+  </p>
+  <p> A: Tumbaga Ingots are the premium endgame currency used at the Shipwright's Workshop and Weaponsmith. You spend them strictly to Ascend Rare weapons, armors, and ship gear into Epic tier, which unlocks their second, broken passive abilities.
+  </p>`,
   }
 
 ]
