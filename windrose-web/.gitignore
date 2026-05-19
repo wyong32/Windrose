@@ -13,6 +13,7 @@ dist
 dist-ssr
 coverage
 *.local
+.env
 
 # Editor directories and files
 .vscode/*
@@ -46,3 +47,5 @@ tmp-talents*.js
 
 # Cursor IDE — do not commit vendored skill packs into the app repo
 .cursor/
+
+.env.*

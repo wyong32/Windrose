@@ -793,3 +793,12 @@ img {
 .wr-html-prose tr:last-child td {
   border-bottom: 0;
 }
+
+/* GPT / display ad slot shell — shared across views */
+.ad-wrap {
+  width: 100%;
+  min-height: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

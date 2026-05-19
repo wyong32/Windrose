@@ -46,7 +46,7 @@
         </div>
 
         <!-- 广告位（单元路径按 rotationIndex 在 banner_1～3 间轮换） -->
-        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap">
           <GptBanner gpt-slot-id="div-gpt-ad-home-banner-1" :rotation-index="0" />
         </div>
       </div>
@@ -168,7 +168,7 @@
             </li>
           </ul>
         </div>
-        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap">
           <GptBanner gpt-slot-id="div-gpt-ad-home-banner-2" :rotation-index="1" />
         </div>
       </div>
@@ -205,7 +205,7 @@
             <div v-else class="map-teaser-visual__stub" aria-hidden="true" />
           </div>
         </div>
-        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap">
           <GptBanner gpt-slot-id="div-gpt-ad-home-banner-3" :rotation-index="2" />
         </div>
       </div>
@@ -236,7 +236,7 @@
         <p class="wiki-home-all">
           <a class="home-cta-link" href="/wiki">Open wiki hub overview →</a>
         </p>
-        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap">
           <GptBanner gpt-slot-id="div-gpt-ad-home-banner-4" :rotation-index="3" />
         </div>
       </div>
@@ -273,7 +273,7 @@
         <p class="guides-home-all">
           <a class="home-cta-link" href="/guides">Browse all guides →</a>
         </p>
-        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap">
           <GptBanner gpt-slot-id="div-gpt-ad-home-banner-5" :rotation-index="4" />
         </div>
       </div>
@@ -282,43 +282,49 @@
     <section class="about-section" aria-labelledby="about-heading">
       <div class="container">
         <div class="about-split">
-          <figure class="about-split__figure">
-            <img
-              src="/images/about-img.jpg"
-              width="960"
-              height="640"
-              alt="Windrose Compass editorial companion mood"
-              loading="lazy"
-              decoding="async"
-            />
-          </figure>
-          <div class="about-split__copy">
-            <h2 id="about-heading" class="section-title">Windrose About</h2>
-            <p class="about-lead">
-              Windrose Compass is a fan-run dock for Windrose in Early Access: one place to open the chart, skim gear
-              lists, and read guides when you are not in the client.
-            </p>
-            <p>
-              Most nights you will still live inside three tabs—the map for geography, the wiki for item truth, and
-              occasionally talents or guides when you are changing builds or hosting friends. None of that replaces the
-              game client; it just cuts down Discord guesswork.
-            </p>
-            <p>
-              We are not the official game site. Patch notes and in-game tooltips still win when a number changes—we
-              try to say so plainly when something might be out of date.
-            </p>
-            <p>
-              Whether you are planning tonight’s loot loop, comparing hull ideas with friends, or reading up before you
-              host a server for the crew, the aim is simple: fewer tabs, clearer words, more time on the water.
-            </p>
-            <ul class="about-pillars">
-              <li><strong>Maps</strong> — pan, zoom, and filter the archipelago the community marks together.</li>
-              <li><strong>Wiki</strong> — six browsable lists for the stuff you craft, wear, eat, and bolt to your ship.</li>
-              <li><strong>Guides &amp; mods</strong> — deeper write-ups and a small spotlight shelf when you want more than a table row.</li>
-            </ul>
+          <div class="about-split__main">
+            <figure class="about-split__figure">
+              <img
+                src="/images/about-img.jpg"
+                width="960"
+                height="640"
+                alt="Windrose Compass editorial companion mood"
+                loading="lazy"
+                decoding="async"
+              />
+            </figure>
+            <div class="about-split__copy">
+              <h2 id="about-heading" class="section-title">Windrose About</h2>
+              <p class="about-lead">
+                Windrose Compass is a fan-run dock for Windrose in Early Access: one place to open the chart, skim gear
+                lists, and read guides when you are not in the client.
+              </p>
+              <p>
+                Most nights you will still live inside three tabs—the map for geography, the wiki for item truth, and
+                occasionally talents or guides when you are changing builds or hosting friends. None of that replaces the
+                game client; it just cuts down Discord guesswork.
+              </p>
+              <p>
+                We are not the official game site. Patch notes and in-game tooltips still win when a number changes—we
+                try to say so plainly when something might be out of date.
+              </p>
+              <p>
+                Whether you are planning tonight’s loot loop, comparing hull ideas with friends, or reading up before you
+                host a server for the crew, the aim is simple: fewer tabs, clearer words, more time on the water.
+              </p>
+              <ul class="about-pillars">
+                <li><strong>Maps</strong> — pan, zoom, and filter the archipelago the community marks together.</li>
+                <li><strong>Wiki</strong> — six browsable lists for the stuff you craft, wear, eat, and bolt to your ship.</li>
+                <li><strong>Guides &amp; mods</strong> — deeper write-ups and a small spotlight shelf when you want more than a table row.</li>
+              </ul>
+            </div>
           </div>
+          <aside class="about-split__aside" aria-label="Site messages">
+            <HomeCommentsSection embedded about-column />
+          </aside>
         </div>
-        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
+
+        <div class="ad-wrap">
           <GptBanner gpt-slot-id="div-gpt-ad-home-banner-6" :rotation-index="5" />
         </div>
       </div>
@@ -339,7 +345,7 @@
             <dd class="faq-card__a">{{ item.a }}</dd>
           </div>
         </dl>
-        <div class="ad-wrap" style="width: 100%; min-height: 100px; display: flex; justify-content: center; align-items: center;">
+        <div class="ad-wrap">
           <GptBanner gpt-slot-id="div-gpt-ad-home-banner-7" :rotation-index="6" />
         </div>
       </div>
@@ -350,6 +356,7 @@
 <script setup>
 import { computed, defineAsyncComponent, onMounted, onUnmounted, ref } from 'vue'
 import GptBanner from '@/components/GptBanner.vue'
+import HomeCommentsSection from '@/components/home/HomeCommentsSection.vue'
 import guideArticles from '@/data/guides/guideArticles.js'
 import { WIKI_CATEGORY_ORDER, WIKI_CATEGORY_META } from '@/data/wiki/categories.js'
 
@@ -1378,14 +1385,30 @@ const faqItems = [
 .about-split {
   display: grid;
   gap: 1.75rem;
-  align-items: center;
+  align-items: start;
 }
 
 @media (min-width: 1025px) {
   .about-split {
-    grid-template-columns: minmax(0, 1fr) minmax(0, 1.05fr);
-    gap: 2.25rem;
+    grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr);
   }
+}
+
+@media (max-width: 1024px) {
+  .about-split {
+    grid-template-columns: 1fr;
+  }
+}
+
+.about-split__aside {
+  min-width: 0;
+}
+
+.about-split__main {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  min-width: 0;
 }
 
 .about-split__figure {
